@@ -27,3 +27,4 @@ jobs:
         with:
           reporter: github-pr-review
           level: warning
+      - run: npm run build
