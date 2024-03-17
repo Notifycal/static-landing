@@ -10,9 +10,6 @@ on:
       - main
 
 concurrency:
-  # Different concurrency groups for PR and push
-  # PR: <workflow>-<pr-branch-name>
-  # push: <workflow>-main as we want to cancel workflow if another push to main while this runs
   # github.head_ref is only set when the workflow was triggered by a pull_request and it
   # contains the value of the source branch of the PR.
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
@@ -22,12 +19,30 @@ env:
   AWS_REGION: eu-west-1
 
 jobs:
-  checks:
+  changes:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      infra: ${{ steps.filter.outputs.tf }}
+      web: ${{ steps.filter.outputs.web }}
+    steps:
+      # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: .github/filters.yaml
+
+  plan:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write
       id-token: write
+    needs: changes
+    # Runs if there are changes to the infra (PR) or the event isn't PR
+    if: ${{ needs.changes.outputs.infra == 'true' || github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v4
       - name: Configure AWS Credentials
@@ -44,6 +59,23 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
+      - run: tofu init && tofu plan -out plan.tfplan
+        working-directory: tf
+      - uses: actions/upload-artifact@v4
+        if: ${{ github.event_name == 'push' }}
+        with:
+          name: tf
+          path: tf/plan.tfplan
+
+  checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    needs: changes
+    if: ${{ needs.changes.outputs.web == 'true' || github.event_name != 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -59,38 +91,34 @@ jobs:
           level: warning
       - run: npm run build
       # Testing would be here, but maybe not on PR checks
-      # TODO: Run tofu plan here and post to PR
       - uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
           name: build
           path: dist/
-      - run: tofu init && tofu plan -out plan.tfplan
-        working-directory: tf
-      - uses: actions/upload-artifact@v4
-        if: ${{ github.event_name == 'push' }}
-        with:
-          name: tf
-          path: tf/plan.tfplan
 
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    # only runs when it's a push event (and this workflow only triggers with push to the main branch)
-    if: ${{ github.event_name == 'push' }}
-    steps:
-      - name: Get tofu version from .opentofu-version
-        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
-        id: tofu_version
-        working-directory: tf
-      - uses: opentofu/setup-opentofu@v1
-        with:
-          tofu_version: steps.tofu_version.outputs.tofu_version
-      - uses: actions/download-artifact@v4
-        name: "Download build"
-        with:
-          name: build
-          path: dist/
+  
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs:
+  #     - plan
+  #     - checks
+  #   permissions:
+  #     contents: read
+  #     id-token: write
+  #   # only runs when it's a push event (and this workflow only triggers with push to the main branch)
+  #   if: ${{ github.event_name == 'push' }}
+  #   steps:
+  #     - name: Get tofu version from .opentofu-version
+  #       run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
+  #       id: tofu_version
+  #       working-directory: tf
+  #     - uses: opentofu/setup-opentofu@v1
+  #       with:
+  #         tofu_version: steps.tofu_version.outputs.tofu_version
+  #     - uses: actions/download-artifact@v4
+  #       name: "Download build"
+  #       with:
+  #         name: build
+  #         path: dist/
 
