@@ -29,6 +29,13 @@ jobs:
           # Reponame-sha
           role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
+      - name: Get tofu version from .opentofu-version
+        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
+        id: tofu_version
+        working-directory: tf
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: steps.tofu_version.outputs.tofu_version
       # - name: Configure AWS Credentials
       #   if: false
       #   uses: aws-actions/configure-aws-credentials@v1
@@ -52,6 +59,8 @@ jobs:
       - run: npm run build
       # Testing would be here, but maybe not on PR checks
       # TODO: Run tofu plan here and post to PR
+      - run: tofu init && tofu plan
+        working-directory: tf
       - uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
@@ -68,6 +77,7 @@ jobs:
       - name: Get tofu version from .opentofu-version
         run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
         id: tofu_version
+        working-directory: tf
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: steps.tofu_version.outputs.tofu_version
