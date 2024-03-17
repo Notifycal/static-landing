@@ -1,0 +1,74 @@
+name: CI/CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  AWS_REGION: eu-west-1
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_CI }}
+          # Reponame-sha
+          role-session-name: ${{ github.repository }}-${{ github.run_id }}
+      - run: aws sts get-caller-identity
+      # - name: Configure AWS Credentials
+      #   if: false
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-1
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - run: npm ci
+      - uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review
+          eslint_flags: "src/"
+      - uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          reporter: github-pr-review
+          level: warning
+      - run: npm run build
+      # Testing would be here, but maybe not on PR checks
+      # TODO: Run tofu plan here and post to PR
+      - uses: actions/upload-artifact@v4
+        if: ${{ github.event_name == 'push' }}
+        with:
+          name: build
+          path: dist/
+  deploy:
+    runs-on: ubuntu-latest
+    # only runs when it's a push event (and this workflow only triggers with push to the main branch)
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Get tofu version from .opentofu-version
+        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
+        id: tofu_version
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: steps.tofu_version.outputs.tofu_version
+      - uses: actions/download-artifact@v4
+        name: "Download build"
+        with:
+          name: build
+          path: dist/
