@@ -32,6 +32,7 @@ jobs:
         run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
         id: tofu_version
         working-directory: tf
+      - run: echo ${{ steps.tofu_version.outputs.tofu_version }}
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.tofu_version.outputs.tofu_version }}
