@@ -26,7 +26,6 @@ jobs:
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_CI }}
-          # Reponame-sha
           role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
       - name: Get tofu version from .opentofu-version
@@ -35,14 +34,7 @@ jobs:
         working-directory: tf
       - uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: steps.tofu_version.outputs.tofu_version
-      # - name: Configure AWS Credentials
-      #   if: false
-      #   uses: aws-actions/configure-aws-credentials@v1
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: us-east-1
+          tofu_version: ${{ steps.tofu_version.outputs.tofu_version }}
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -59,13 +51,19 @@ jobs:
       - run: npm run build
       # Testing would be here, but maybe not on PR checks
       # TODO: Run tofu plan here and post to PR
-      - run: tofu init && tofu plan
-        working-directory: tf
       - uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
           name: build
           path: dist/
+      - run: tofu init && tofu plan -out plan.tfplan
+        working-directory: tf
+      - uses: actions/upload-artifact@v4
+        if: ${{ github.event_name == 'push' }}
+        with:
+          name: tf
+          path: tf/plan.tfplan
+
   deploy:
     runs-on: ubuntu-latest
     permissions:
