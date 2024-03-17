@@ -11,9 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-      - run: npm ci
-      - run: npm run lint
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review
+          eslint_flags: "src/"
+
 
