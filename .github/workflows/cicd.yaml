@@ -105,8 +105,17 @@ jobs:
         if: success() || failure()
       - run: |
           echo "Some steps failed"
+          echo $FOO
+          echo
+          echo $BAR
+          echo
+          echo $BAZ
           exit 1;
-        if: contains(join(steps.*.outcome, ','), 'failure')
+        env:
+          FOO: ${{ join(steps.*.outcome, ',') }}
+          BAR: ${{ toJSON(steps) }}
+          BAZ: ${{ toJSON(steps.*.outcome) }}
+        # if: contains(join(steps.*.outcome, ','), 'failure')
       # Testing would be here, but maybe not on PR checks
       - uses: actions/upload-artifact@v4
         if: github.event_name != 'pull_request'
