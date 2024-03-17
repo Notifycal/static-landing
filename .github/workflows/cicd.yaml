@@ -32,12 +32,12 @@ jobs:
         run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
         id: get_tofu_version
         working-directory: tf
-      - run: echo "${FOO}"
-        env:
-          FOO: ${{ steps.get_tofu_version.outputs.tofu_version }}
+      # - run: echo "${FOO}"
+      #   env:
+      #     FOO: ${{ steps.get_tofu_version.outputs.tofu_version }}
       - uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: ${{ steps.tofu_version.outputs.tofu_version }}
+          tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
