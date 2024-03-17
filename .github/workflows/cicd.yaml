@@ -29,10 +29,14 @@ jobs:
           role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
       - name: Get tofu version from .opentofu-version
-        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
-        id: tofu_version
+        run: |
+          stack_tofu_version=$(cat .opentofu-version)
+          echo "tofu_version=${stack_tofu_version}" >> $GITHUB_STATE
+        id: get_tofu_version
         working-directory: tf
-      - run: echo ${{ steps.tofu_version.outputs.tofu_version }}
+      - run: echo "${FOO}"
+        env:
+          FOO: ${{ steps.get_tofu_version.outputs.tofu_version }}
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.tofu_version.outputs.tofu_version }}
