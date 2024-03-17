@@ -27,7 +27,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_CI }}
           # Reponame-sha
-          role-session-name: ${{ github.repository }}-${{ github.run_id }}
+          role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
       # - name: Configure AWS Credentials
       #   if: false
