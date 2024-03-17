@@ -27,6 +27,3 @@ jobs:
         with:
           reporter: github-pr-review
           level: warning
-          level: warning
-
-
