@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  lint:
+  checks:
     runs-on: ubuntu-latest
     permissions:
       contents: read
