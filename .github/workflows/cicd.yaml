@@ -9,6 +9,15 @@ on:
     branches:
       - main
 
+concurrency:
+  # Different concurrency groups for PR and push
+  # PR: <workflow>-<pr-branch-name>
+  # push: <workflow>-main as we want to cancel workflow if another push to main while this runs
+  # github.head_ref is only set when the workflow was triggered by a pull_request and it
+  # contains the value of the source branch of the PR.
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 env:
   AWS_REGION: eu-west-1
 
@@ -32,9 +41,6 @@ jobs:
         run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
         id: get_tofu_version
         working-directory: tf
-      # - run: echo "${FOO}"
-      #   env:
-      #     FOO: ${{ steps.get_tofu_version.outputs.tofu_version }}
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
