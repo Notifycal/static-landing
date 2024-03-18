@@ -74,7 +74,7 @@ jobs:
           name: tf
           path: tf/plan.tfplan
 
-  checks:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -103,32 +103,18 @@ jobs:
           reporter: github-pr-review
           level: warning
           fail_on_error: true
+      
+      # Testing would be here, but maybe not on PR checks (time and money)
+
       - run: npm run build
         id: build
         # Want to run this regardless of the state of the previous step
         if: success() || failure()
-      # - name: Pass or fail
-      #   run: |
-      #     if [[ ${{ steps.generate_number.outputs.random_number }} == 0 ]]; then exit 0; else exit 1; fi
-      - run: |
-          echo "Evaluate previous outcomes"
-          echo $FOO
-          echo
-          echo $BAR
-          echo
-          echo $BAZ
-          echo
-          echo $TOO
-          exit 1;
-        env:
-          FOO: ${{ join(steps.*.outcome, ',') }}
-          BAR: ${{ toJSON(steps) }}
-          BAZ: ${{ toJSON(steps.*.outcome) }}
-          # This only works for steps with id
-          TOO: ${{ contains(steps.*.outcome, 'failure') }} 
+      - name: Pass or fail?
         if: success() || failure()
-        # if: contains(join(steps.*.outcome, ','), 'failure')
-      # Testing would be here, but maybe not on PR checks
+        # Check previous step outcomes (only if the step has an id)
+        run: |
+          if [[ ${{ contains(steps.*.outcome, 'failure') }} == "true" ]]; then exit 1; else exit 0; fi
       - uses: actions/upload-artifact@v4
         if: github.event_name != 'pull_request'
         with:
