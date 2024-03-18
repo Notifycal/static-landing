@@ -1,0 +1,20 @@
+formatter: "markdown table" # this is required
+
+sort:
+  enabled: true
+  by: name
+
+output:
+  file: README.md
+  mode: inject
+
+# recursive:
+#   enabled: false
+#   path: modules
+# output-values:
+#   enabled: false
+#   from: ""
+# version: ""
+# content: ""
+
+

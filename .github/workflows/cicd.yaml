@@ -28,6 +28,7 @@ jobs:
       infra: ${{ steps.filter.outputs.tf }}
       web: ${{ steps.filter.outputs.web }}
     steps:
+      # TODO: Can we only get changes between the commit that triggered this and the previous one (only in PR mode)
       # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v3
         # Skip the filter if there is no PR to filter
@@ -53,6 +54,9 @@ jobs:
       needs.changes.outputs.infra == 'true' || github.event_name != 'pull_request'
     steps:
       - uses: actions/checkout@v4
+        with:
+          # https://github.com/terraform-docs/gh-actions/issues/103#issuecomment-1430519737
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -71,6 +75,16 @@ jobs:
         working-directory: tf
       - run: tofu plan -out plan.tfplan
         working-directory: tf
+      - name: Render terraform docs and push changes back to PR
+        uses: terraform-docs/gh-actions@v0
+        if: github.event_name == 'pull_request'
+        with:
+          config-file: .terraform-docs.yaml
+          working-dir: tf
+          output-file: README.md
+          output-method: inject
+          git-push: 'true'
+          git-commit-message: 'docs(tf): generate'
       - uses: actions/upload-artifact@v4
         # Only produces artifacts when running on push or manually
         if: github.event_name != 'pull_request'
@@ -102,8 +116,6 @@ jobs:
         continue-on-error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
         id: formatcheck
-        # Want to run this regardless of the state of the previous step
-        if: success() || failure()
         with:
           reporter: github-pr-review
           level: warning
@@ -131,7 +143,8 @@ jobs:
     needs:
       - plan
       - build
-    environment: prod
+    # Need org admin to do this
+    # environment: prod
     permissions:
       contents: read
       id-token: write
@@ -177,3 +190,6 @@ jobs:
         run: aws s3 sync --delete ./dist/ s3://${{ env.BUCKET }}
         env:
           BUCKET: ${{ steps.getbucketname.outputs.s3_bucket }}
+      - name: Show URL
+        run: tofu output -raw site_url
+        working-directory: tf
