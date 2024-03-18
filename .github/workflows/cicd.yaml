@@ -67,6 +67,8 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
+      - run: tofu validate
+        working-directory: tf
       - run: tofu init && tofu plan -out plan.tfplan
         working-directory: tf
       - uses: actions/upload-artifact@v4
