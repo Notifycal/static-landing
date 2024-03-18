@@ -93,7 +93,7 @@ jobs:
         id: lintcheck
         with:
           reporter: github-pr-review
-          eslint_flags: "src/"
+          eslint_flags: 'src/'
           fail_on_error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
         id: formatcheck
@@ -103,7 +103,7 @@ jobs:
           reporter: github-pr-review
           level: warning
           fail_on_error: true
-      
+
       # Testing would be here, but maybe not on PR checks (time and money)
 
       - run: npm run build
@@ -121,27 +121,37 @@ jobs:
           name: build
           path: dist/
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - plan
-  #     - checks
-  #   permissions:
-  #     contents: read
-  #     id-token: write
-  #   # only runs when it's a push event (and this workflow only triggers with push to the main branch)
-  #   if: ${{ github.event_name == 'push' }}
-  #   steps:
-  #     - name: Get tofu version from .opentofu-version
-  #       run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_STATE
-  #       id: tofu_version
-  #       working-directory: tf
-  #     - uses: opentofu/setup-opentofu@v1
-  #       with:
-  #         tofu_version: steps.tofu_version.outputs.tofu_version
-  #     - uses: actions/download-artifact@v4
-  #       name: "Download build"
-  #       with:
-  #         name: build
-  #         path: dist/
-
+  cd:
+    runs-on: ubuntu-latest
+    needs:
+      - plan
+      - build
+    permissions:
+      contents: read
+      id-token: write
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_CI }}
+          role-session-name: run-${{ github.run_id }}
+      - run: aws sts get-caller-identity
+      - name: Get tofu version from .opentofu-version
+        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
+        id: get_tofu_version
+        working-directory: tf
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
+      - run: tofu init && tofu plan -out plan.tfplan
+        working-directory: tf
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: artifacts/build
+      - name: Display structure of downloaded files
+        run: ls -R
+      # aws s3 sync

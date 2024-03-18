@@ -57,17 +57,17 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-
 ## Addons
 
 - `@astrojs/tailwind`: CSS Framework - https://docs.astro.build/en/guides/integrations-guide/tailwind/
-- Linting and formatting (includes VS Code config and gh action)
-    - `eslint`
-    - `eslint-config-prettier`
-    - `eslint-formatter-table`
-    - `eslint-plugin-astro`
-    - `eslint-plugin-jsx-a11y`
-    - `prettier`
-    - `prettier-plugin-astro`
-    - `prettier-plugin-tailwindcss`
-    - `@typescript-eslint/parser`
+- Linting and formatting (includes VS Code config and ci)
+  - `eslint`
+  - `eslint-config-prettier`
+  - `eslint-formatter-table`
+  - `eslint-plugin-astro`
+  - `eslint-plugin-jsx-a11y`
+  - `prettier`
+  - `prettier-plugin-astro`
+  - `prettier-plugin-tailwindcss`
+  - `@typescript-eslint/parser`
+- CI/CD pipeline
