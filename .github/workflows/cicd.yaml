@@ -20,7 +20,6 @@ env:
 
 jobs:
   changes:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
@@ -31,6 +30,8 @@ jobs:
     steps:
       # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v3
+        # Skip the filter if there is no PR to filter
+        if: github.event_name == 'pull_request'
         id: filter
         with:
           filters: |
