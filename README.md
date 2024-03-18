@@ -48,7 +48,30 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm run lint`            | Lint project files                               |
+| `npm run lint:fix`        | Lint and fix project files                       |
+| `npm run prettier`        | Check formatting                                 |
+| `npm run prettier:fix`    | Fix formatting                                   |
 
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Addons
+
+- `@astrojs/tailwind`: CSS Framework - https://docs.astro.build/en/guides/integrations-guide/tailwind/
+- Linting and formatting (includes VS Code config and ci)
+  - `eslint`
+  - `eslint-config-prettier`
+  - `eslint-formatter-table`
+  - `eslint-plugin-astro`
+  - `eslint-plugin-jsx-a11y`
+  - `prettier`
+  - `prettier-plugin-astro`
+  - `prettier-plugin-tailwindcss`
+  - `@typescript-eslint/parser`
+- CI/CD pipeline
+- Dependabot
+  - Github Actions
+  - Node
+  - Terraform
