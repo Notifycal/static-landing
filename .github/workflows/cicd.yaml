@@ -177,3 +177,6 @@ jobs:
         run: aws s3 sync --delete ./dist/ s3://${{ env.BUCKET }}
         env:
           BUCKET: ${{ steps.getbucketname.outputs.s3_bucket }}
+      - name: Display URL
+        run: tofu output -raw site_url
+        working-directory: tf
