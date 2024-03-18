@@ -90,11 +90,13 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - uses: reviewdog/action-eslint@v1
+        id: lintcheck
         with:
           reporter: github-pr-review
           eslint_flags: "src/"
           fail_on_error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
+        id: formatcheck
         # Want to run this regardless of the state of the previous one
         if: success() || failure()
         with:
