@@ -151,6 +151,7 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
+          tofu_wrapper: false   # https://github.com/jqlang/jq/issues/2287
       - uses: actions/download-artifact@v4
         with:
           name: tf
@@ -166,12 +167,8 @@ jobs:
       - name: Get bucket name from outputs
         id: getbucketname
         run: |
-          tofu output bucket_name
           tofu output -raw bucket_name
           s3_bucket="$(tofu output -raw bucket_name)"
-          # tofu output -json
-          # tofu output -json | jq -r '.bucket_name.value'
-          # s3_bucket="$(tofu output -json | jq -r '.bucket_name.value')"
           echo "S3 Bucket name: ${s3_bucket}"
           echo "s3_bucket=${s3_bucket}" >> $GITHUB_OUTPUT
         working-directory: tf
