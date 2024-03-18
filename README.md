@@ -71,3 +71,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
   - `prettier-plugin-tailwindcss`
   - `@typescript-eslint/parser`
 - CI/CD pipeline
+- Dependabot
+  - Github Actions
+  - Node
+  - Terraform
