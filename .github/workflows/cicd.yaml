@@ -153,8 +153,22 @@ jobs:
         with:
           name: tf
           path: tf/
-      - name: Display structure of downloaded files
-        run: ls -R
       - run: tofu init && tofu apply plan.tfplan
         working-directory: tf
-      # aws s3 sync
+      - uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist/
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: Get bucket name from outputs
+        id: getbucketname
+        run: |
+          echo "S3 Bucket name:"
+          s3_bucket="$(tofu output -json | jq -r '.bucket_name.value' | tee /dev/tty)"
+          echo "s3_bucket=${s3_bucket}" >> $GITHUB_OUTPUT
+        working-directory: tf
+      # - name: Deploy to S3
+      #   run: aws s3 sync --delete ./dist/ s3://${{ secrets.BUCKET_ID }}
+      #   env:
+      #     BUCKET: ${{ steps.getbucketname.outputs.s3_bucket }}
