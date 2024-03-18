@@ -60,7 +60,7 @@ jobs:
           role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
       - name: Get tofu version from .opentofu-version
-        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
+        run: echo "tofu_version="$(cat .opentofu-version)"" >> $GITHUB_OUTPUT
         id: get_tofu_version
         working-directory: tf
       - uses: opentofu/setup-opentofu@v1
@@ -140,7 +140,7 @@ jobs:
           role-session-name: run-${{ github.run_id }}
       - run: aws sts get-caller-identity
       - name: Get tofu version from .opentofu-version
-        run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
+        run: echo "tofu_version="$(cat .opentofu-version)"" >> $GITHUB_OUTPUT
         id: get_tofu_version
         working-directory: tf
       - uses: opentofu/setup-opentofu@v1
