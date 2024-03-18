@@ -152,7 +152,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: tf
-          path: tf/plan.tfplan
+          path: tf/
       - name: Display structure of downloaded files
         run: ls -R
       - run: tofu init && tofu apply plan.tfplan
