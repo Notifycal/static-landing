@@ -97,16 +97,18 @@ jobs:
           fail_on_error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
         id: formatcheck
-        # Want to run this regardless of the state of the previous one
+        # Want to run this regardless of the state of the previous step
         if: success() || failure()
         with:
           reporter: github-pr-review
           level: warning
           fail_on_error: true
       - run: npm run build
+        id: build
+        # Want to run this regardless of the state of the previous step
         if: success() || failure()
       - run: |
-          echo "Some steps failed"
+          echo "Evaluate previous outcomes"
           echo $FOO
           echo
           echo $BAR
@@ -117,6 +119,8 @@ jobs:
           FOO: ${{ join(steps.*.outcome, ',') }}
           BAR: ${{ toJSON(steps) }}
           BAZ: ${{ toJSON(steps.*.outcome) }}
+          # This only works for steps with id
+          TOO: ${{ contains(steps.*.outcome, 'failure') }} 
         if: success() || failure()
         # if: contains(join(steps.*.outcome, ','), 'failure')
       # Testing would be here, but maybe not on PR checks
