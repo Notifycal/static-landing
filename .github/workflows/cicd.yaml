@@ -99,6 +99,7 @@ jobs:
           reporter: github-pr-review
           eslint_flags: 'src/'
           fail_on_error: true
+        continue-on-error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
         id: formatcheck
         # Want to run this regardless of the state of the previous step
@@ -107,15 +108,14 @@ jobs:
           reporter: github-pr-review
           level: warning
           fail_on_error: true
+        continue-on-error: true
 
-      # Testing would be here, but maybe not on PR checks (time and money)
+      # Testing would go here, but maybe not on PR checks (time and money)
 
       - run: npm run build
         id: build
-        # Want to run this regardless of the state of the previous step
-        if: success() || failure()
+        continue-on-error: true
       - name: Pass or fail?
-        if: success() || failure()
         # Check previous step outcomes (only if the step has an id)
         run: |
           if [[ ${{ contains(steps.*.outcome, 'failure') }} == "true" ]]; then exit 1; else exit 0; fi
