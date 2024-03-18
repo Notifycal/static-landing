@@ -1,4 +1,4 @@
-module.exports = ({github, context, steps, env}) => {
+export default function commentPR ({github, context, steps, env}) {
   // 1. Retrieve existing bot comments for the PR
   const { data: comments } = await github.rest.issues.listComments({
     owner: context.repo.owner,
