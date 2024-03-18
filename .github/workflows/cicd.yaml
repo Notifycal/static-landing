@@ -115,6 +115,7 @@ jobs:
           FOO: ${{ join(steps.*.outcome, ',') }}
           BAR: ${{ toJSON(steps) }}
           BAZ: ${{ toJSON(steps.*.outcome) }}
+        if: success() || failure()
         # if: contains(join(steps.*.outcome, ','), 'failure')
       # Testing would be here, but maybe not on PR checks
       - uses: actions/upload-artifact@v4
