@@ -166,10 +166,12 @@ jobs:
       - name: Get bucket name from outputs
         id: getbucketname
         run: |
-          tofu output
-          tofu output -json
-          tofu output -json | jq -r '.bucket_name.value'
-          s3_bucket="$(tofu output -json | jq -r '.bucket_name.value')"
+          tofu output bucket_name
+          tofu output -raw bucket_name
+          s3_bucket="$(tofu output -raw bucket_name)"
+          # tofu output -json
+          # tofu output -json | jq -r '.bucket_name.value'
+          # s3_bucket="$(tofu output -json | jq -r '.bucket_name.value')"
           echo "S3 Bucket name: ${s3_bucket}"
           echo "s3_bucket=${s3_bucket}" >> $GITHUB_OUTPUT
         working-directory: tf
