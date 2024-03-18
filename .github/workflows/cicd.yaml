@@ -166,6 +166,7 @@ jobs:
       - name: Get bucket name from outputs
         id: getbucketname
         run: |
+          tofu output
           tofu output -json
           tofu output -json | jq -r '.bucket_name.value'
           s3_bucket="$(tofu output -json | jq -r '.bucket_name.value')"
