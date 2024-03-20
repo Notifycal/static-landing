@@ -51,4 +51,7 @@ data "aws_iam_policy_document" "bucket_policydoc" {
 resource "aws_s3_bucket_policy" "website_bucket_policy" {
   bucket = aws_s3_bucket.static_landing.id
   policy = data.aws_iam_policy_document.bucket_policydoc.json
+
+  # This has to go before the policy, otherwise it won't apply (or require 2 applies)
+  depends_on = [ aws_s3_bucket_public_access_block.public_access ]
 }
