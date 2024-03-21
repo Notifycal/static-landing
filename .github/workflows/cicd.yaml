@@ -143,8 +143,6 @@ jobs:
     needs:
       - plan
       - build
-    # Need org admin to do this
-    # environment: prod
     permissions:
       contents: read
       id-token: write
@@ -190,6 +188,6 @@ jobs:
         run: aws s3 sync --delete ./dist/ s3://${{ env.BUCKET }}
         env:
           BUCKET: ${{ steps.getbucketname.outputs.s3_bucket }}
-      - name: Show URL
+      - name: Display URL
         run: tofu output -raw site_url
         working-directory: tf
