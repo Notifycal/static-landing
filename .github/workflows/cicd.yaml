@@ -37,6 +37,7 @@ jobs:
           filters: |
             tf:
               - 'tf/**'
+              - '.github/workflows/*.yaml'
             web:
               - '**'
               - '!tf/**'
@@ -53,6 +54,17 @@ jobs:
       needs.changes.outputs.infra == 'true' || github.event_name != 'pull_request'
     steps:
       - uses: actions/checkout@v4
+
+      # TODO: Extract from here
+      - name: Get GH token from Github App
+        id: gh-app-auth
+        uses: getsentry/action-github-app-token@v3
+        with:
+          app_id: ${{ secrets.NOTIFYCAL_CICD_APP_ID }}
+          private_key: ${{ secrets.NOTIFYCAL_CICD_APP_SECRET }}
+      - name: Hack for github internal repo access :(
+        run: git config --global url."https://foo:${{ steps.gh-app-auth.outputs.token }}@github.com".insteadOf ssh://git@github.com
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -97,7 +109,7 @@ jobs:
         id: lintcheck
         with:
           reporter: github-pr-review
-          eslint_flags: 'src/'
+          eslint_flags: 'src/ --no-error-on-unmatched-pattern'
           fail_on_error: true
         continue-on-error: true
       - uses: EPMatt/reviewdog-action-prettier@v1
@@ -138,6 +150,16 @@ jobs:
     if: github.event_name != 'pull_request'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Get GH token from Github App
+        id: gh-app-auth
+        uses: getsentry/action-github-app-token@v3
+        with:
+          app_id: ${{ secrets.NOTIFYCAL_CICD_APP_ID }}
+          private_key: ${{ secrets.NOTIFYCAL_CICD_APP_SECRET }}
+      - name: Hack for github internal repo access :(
+        run: git config --global url."https://foo:${{ steps.gh-app-auth.outputs.token }}@github.com".insteadOf ssh://git@github.com
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -152,7 +174,7 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: ${{ steps.get_tofu_version.outputs.tofu_version }}
-          tofu_wrapper: false   # https://github.com/jqlang/jq/issues/2287
+          tofu_wrapper: false # https://github.com/jqlang/jq/issues/2287
       - uses: actions/download-artifact@v4
         with:
           name: tf
