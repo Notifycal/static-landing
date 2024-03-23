@@ -13,15 +13,15 @@ jobs:
     steps:
       - name: Fetch Dependabot metadata
         id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@v2
         with:
           alert-lookup: true
           compat-lookup: true
-          github-token: ${{ secrets.DEPENDABOT_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add a label for semver upgrade type
         run: |
-          gh pr edit "${PR_URL}" --add-label "${UPGRADE_TYPE://version-update:/}"
+          gh pr edit "${PR_URL}" --add-label "${UPGRADE_TYPE//version-update:/}"
         env:
           UPGRADE_TYPE: ${{ steps.dependabot-metadata.outputs.update-type }}
           PR_URL: ${{ github.event.pull_request.html_url }}
