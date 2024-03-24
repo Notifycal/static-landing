@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Layout from '../../layouts/Layout.astro';
+
+import background from '../../images/background.svg?raw';
+
+const { GOOGLE_CLIENT_ID } = import.meta.env;
+---
+
+<Layout title="Notifycal">
+  <!-- This can probably go one level above -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <main>
+    <div class="absolute w-full">
+      <Fragment set:html={background} />
+    </div>
+    <header class="relative z-10 flex items-center justify-between px-12 py-6">
+      <div class="flex-grow basis-0 md:hidden">
+        <button>
+          <Icon name="mdi:hamburger-menu" class="text-3xl" />
+        </button>
+      </div>
+      <h1 class="text-2xl md:flex-grow md:basis-0">Notifycal</h1>
+      <nav class="hidden md:inline-flex">
+        <ol class="[&>li>a]:md:px-18 flex [&>li>a]:inline-flex [&>li>a]:px-4 [&>li>a]:py-2">
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ol>
+      </nav>
+      <div></div>
+      <div class="flex flex-grow basis-0 justify-end">
+        <button class="sm:hidden" id="google-login-button-small"></button>
+        <button class="hidden sm:inline-flex" id="google-login-button"></button>
+      </div>
+    </header>
+
+    <h1>Welcome to Astro</h1>
+    <p class="instructions">
+      To get started, open the directory <code>src/pages</code> in your project.<br />
+      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+    </p>
+
+    <section>VS</section>
+    <section>VS</section>
+  </main>
+</Layout>
+
+<style>
+  svg {
+    --color1: #000;
+    --color2: pink;
+    --color3: #f7b801;
+    /* --color2: #3D348B; */
+    --opacity: 0.2;
+  }
+
+  main {
+  }
+</style>
+
+<script>
+  const { GOOGLE_CLIENT_ID } = import.meta.env;
+
+  function handleCredentialResponse(response) {
+    // Do redirect with JS
+    console.log('Encoded JWT ID token: ' + response.credential);
+  }
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: '848746665654-6bro4lcu48pj3d5gprub1kj0pvp63hh0.apps.googleusercontent.com',
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById('google-login-button-small'),
+      { type: 'icon', theme: 'outline', size: 'large' } // customization attributes
+    );
+    google.accounts.id.renderButton(
+      document.getElementById('google-login-button'),
+      { theme: 'outline', size: 'large' } // customization attributes
+    );
+    // google.accounts.id.prompt(); // also display the One Tap dialog
+  };
+</script>
