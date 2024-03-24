@@ -3,6 +3,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-strict',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/stylistic',
     'prettier' // This should be the last
   ],
   env: {

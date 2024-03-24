@@ -10,7 +10,7 @@ const { GOOGLE_CLIENT_ID } = import.meta.env;
 
 <Layout title="Notifycal">
   <!-- This can probably go one level above -->
-  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script is:inline src="https://accounts.google.com/gsi/client" async></script>
   <main>
     <div class="absolute w-full">
       <Fragment set:html={background} />
@@ -62,7 +62,7 @@ const { GOOGLE_CLIENT_ID } = import.meta.env;
 <script>
   const { GOOGLE_CLIENT_ID } = import.meta.env;
 
-  function handleCredentialResponse(response) {
+  function handleCredentialResponse(response: any) {
     // Do redirect with JS
     console.log('Encoded JWT ID token: ' + response.credential);
   }
