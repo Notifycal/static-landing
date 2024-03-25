@@ -1,0 +1,138 @@
+---
+
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  id="animated-bg"
+  style="margin: auto; background: rgb(221, 221, 221); display: block; z-index: 1; position: relative; shape-rendering: auto;"
+  width="1000"
+  height="1000"
+  preserveAspectRatio="xMidYMid"
+  viewBox="0 0 1000 1000"
+>
+  <defs>
+    <linearGradient id="BoxGradient">
+      <stop offset="0%" stop-color="red"></stop>
+      <stop offset="50%" stop-color="black" stop-opacity="0"></stop>
+      <stop offset="100%" stop-color="blue"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+
+<style>
+  :root {
+    /* check browser compatibility */
+    --fill-white: #fff;
+    --fill-color: #5ad529;
+    --fill-opacity: 0.97;
+    --rect-fill: green;
+  }
+</style>
+
+<script>
+  type SvgInHTML = HTMLElement & SVGElement;
+
+  function getRandom(min: number, max: number) {
+    return -Math.random() * (max - min) + min;
+  }
+
+  function animateSquare(squareEl: SVGRectElement) {
+    const animationAttrs = {
+      attributeName: 'fill',
+      repeatCount: 'indefinite',
+      values: 'var(--fill-color);var(--fill-white)',
+      dur: '33.3s',
+      begin: `${getRandom(0, 30)}s`,
+      keytimes: '0;1'
+    };
+    const animationEl = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+
+    Object.keys(animationAttrs).forEach((attribute: string) => {
+      animationEl.setAttribute(attribute, animationAttrs[attribute]);
+    });
+
+    squareEl.appendChild(animationEl);
+  }
+
+  function generateSquares(
+    svgBgEl: SvgInHTML,
+    containerW: number,
+    containerH: number,
+    rectW: number,
+    rectH: number,
+    gapW: number,
+    gapH: number
+  ) {
+    // Set SVG dimensions and viewbox to container dimensions
+    svgBgEl.setAttribute('height', String(containerH));
+    svgBgEl.setAttribute('width', String(containerW));
+    svgBgEl.setAttribute('viewBox', `0 0 ${containerW} ${containerH}`);
+
+    const squaresInX = Math.ceil((containerW + gapW) / (rectW + gapW));
+    const squaresInY = Math.ceil((containerH + gapH) / (rectH + gapH));
+
+    let currentSquareEl: SVGRectElement;
+    const squareAttrs = {
+      width: rectW,
+      height: rectH,
+      rx: 10,
+      ry: 10
+    };
+
+    const remainingWidth = containerW - squaresInX * (rectW + gapW);
+    const initialXOffset = remainingWidth / 2;
+    const initialYOffset = -(rectH / 2);
+
+    // Calculate all rectangles first, then redraw
+    let allChildren = [];
+
+    for (let y = 0; y < squaresInY; y++) {
+      for (let x = 0; x < squaresInX; x++) {
+        currentSquareEl = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+
+        // Add position to existing attributes
+        const allAttrs = {
+          ...squareAttrs,
+          x: initialXOffset + x * (rectW + gapW),
+          y: initialYOffset + y * (rectH + gapH)
+        };
+
+        // Set all attributes in the object
+        Object.keys(allAttrs).forEach((attribute: string) => {
+          currentSquareEl.setAttribute(attribute, allAttrs[attribute]);
+        });
+
+        // Create animation
+        animateSquare(currentSquareEl);
+
+        // Add square to list of rectangles
+        allChildren.push(currentSquareEl);
+      }
+    }
+
+    // Replace all rectangles with list
+    svgBgEl.replaceChildren(...allChildren);
+  }
+
+  function drawIt() {
+    const svgBgEl = document.getElementById('animated-bg') as SvgInHTML;
+    const rectW = 100;
+    const rectH = 100;
+    const gapW = 20;
+    const gapH = 20;
+
+    generateSquares(
+      svgBgEl,
+      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+      window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+      rectW,
+      rectH,
+      gapW,
+      gapH
+    );
+  }
+
+  window.onresize = drawIt;
+  drawIt();
+</script>

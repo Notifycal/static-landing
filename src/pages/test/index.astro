@@ -3,8 +3,9 @@ import { Icon } from 'astro-icon/components';
 
 import Layout from '../../layouts/Layout.astro';
 
-import background from '../../images/background.svg?raw';
+import BackgroundGenerated from '../../components/BackgroundGenerated.astro';
 
+// doesn't work yet
 const { GOOGLE_CLIENT_ID } = import.meta.env;
 ---
 
@@ -12,9 +13,13 @@ const { GOOGLE_CLIENT_ID } = import.meta.env;
   <!-- This can probably go one level above -->
   <script is:inline src="https://accounts.google.com/gsi/client" async></script>
   <main>
-    <div class="absolute w-full">
-      <Fragment set:html={background} />
+    <div class="absolute w-full h-screen overflow-hidden" class="gradient">
+      <div class="absolute w-full h-screen z-10" style={{
+        background: 'radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,1) 100%)'
+      }}/>
+      <BackgroundGenerated />
     </div>
+    
     <header class="relative z-10 flex items-center justify-between px-12 py-6">
       <div class="flex-grow basis-0 md:hidden">
         <button>
@@ -35,29 +40,17 @@ const { GOOGLE_CLIENT_ID } = import.meta.env;
       </div>
     </header>
 
-    <h1>Welcome to Astro</h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
+    <section  class="relative z-10 text-center">
+      <h1 class="text-5xl font-semibold text-gray-900 py-8">Oh my gosh!</h1>
+      <p class="text-2xl">
+        Tell me it's not one of the most beautiful things you've ever seen?
+      </p>
+    </section>
 
     <section>VS</section>
     <section>VS</section>
   </main>
 </Layout>
-
-<style>
-  svg {
-    --color1: #000;
-    --color2: pink;
-    --color3: #f7b801;
-    /* --color2: #3D348B; */
-    --opacity: 0.2;
-  }
-
-  main {
-  }
-</style>
 
 <script>
   const { GOOGLE_CLIENT_ID } = import.meta.env;
