@@ -14,7 +14,7 @@
     "prettier:fix": "$npm_execpath run prettier -- --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
+    "@astrojs/check": "^0.5.10",
     "@astrojs/partytown": "^2.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.5",
