@@ -14,7 +14,7 @@
   <defs>
     <radialGradient id="BoxGradient">
       <stop offset="0%" stop-color="rgba(255,255,255,0)"></stop>
-      <stop offset="20%" stop-color="rgba(255,255,255,0.3)" ></stop>
+      <stop offset="40%" stop-color="rgba(255,255,255,0.25)" ></stop>
       <stop offset="100%" stop-color="rgba(255,255,255,0.9)"></stop>
     </radialGradient>
   </defs>
@@ -45,10 +45,10 @@
     const animationAttrs: Record<string, string> = {
       attributeName: 'fill',
       repeatCount: 'indefinite',
-      values: 'var(--fill-color);var(--fill-white)',
+      values: 'var(--fill-color);rgba(255, 255, 255, 1);rgba(255, 255, 255, 0)',
       dur: '33.3s',
       begin: `${getRandom(0, 30)}s`,
-      keytimes: '0;1'
+      keytimes: '0;0.75;1'
     };
     const animationEl = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
 
@@ -121,7 +121,7 @@
   function drawIt() {
     const svgBgEl = document.getElementById('animated-bg') as SvgInHTML;
     const svgRectGroup = document.getElementById('square-group-bg') as unknown as SVGGElement;
-    const rectW = 100;
+    const rectW = 160;
     const rectH = 100;
     const gapW = 20;
     const gapH = 20;
