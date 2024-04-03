@@ -1,3 +1,3 @@
 aws_region = "eu-west-1"
-project = "notifycal"
-stack = "static-landing"
+project    = "notifycal"
+stack      = "static-landing"
