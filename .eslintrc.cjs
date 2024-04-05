@@ -33,5 +33,5 @@ module.exports = {
       }
     }
   ],
-  ignorePatterns: ['dist/**', '.eslintrc.cjs', 'tf/**']
+  ignorePatterns: ['dist/**', '.eslintrc.cjs', 'tf/**', 'src/env.d.ts']
 };
