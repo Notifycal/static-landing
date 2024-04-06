@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Notifycal/static-landing/compare/v1.0.0...v1.0.1) (2024-04-06)
+
+
+### Bug Fixes
+
+* parametrize bucket name ([#27](https://github.com/Notifycal/static-landing/issues/27)) ([271b280](https://github.com/Notifycal/static-landing/commit/271b280b0c3f1297ee1b0c4da9d693b77bb0c280))
+
 ## 1.0.0 (2024-04-06)
 
 
