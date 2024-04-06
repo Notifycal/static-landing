@@ -6,23 +6,17 @@
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | 3.6.0 |
-
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_static_landing"></a> [static\_landing](#module\_static\_landing) | git@github.com:Notifycal/tofu-module-static-website.git | v0.1.1 |
 
-## Resources
+## Inputs
 
-| Name | Type |
-|------|------|
-| [random_string.resource_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | n/a | `string` | n/a | yes |
 
 ## Outputs
 
