@@ -130,7 +130,7 @@ jobs:
         if: github.event_name == 'pull_request'
         working-directory: tf
 
-      - run: tofu init && tofu validate && rm -rf .terraform/
+      - run: tofu init && tofu validate && rm -rf .terraform/ .terraform.lock.hcl
         working-directory: tf
 
       - name: Render OpenTofu docs
