@@ -166,7 +166,8 @@ jobs:
       - tofu
     # environment: prod
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
       id-token: write
     if: github.event_name != 'pull_request'
     steps:
