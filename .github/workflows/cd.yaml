@@ -74,6 +74,10 @@ jobs:
         id: format
         run: npm run prettier
         continue-on-error: true
+      - name: Tests
+        id: tests
+        run: npm run test
+        continue-on-error: true
       # Testing would go here, but maybe not on PR checks (time and money)
       - run: npm run build
         id: build
