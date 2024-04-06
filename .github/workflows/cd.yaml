@@ -130,7 +130,7 @@ jobs:
         if: github.event_name == 'pull_request'
         working-directory: tf
 
-      - run: tofu init && tofu validate && rm -rf .terraform/ .terraform.lock.hcl
+      - run: tofu init && tofu validate
         working-directory: tf
 
       - name: Render OpenTofu docs
@@ -140,6 +140,10 @@ jobs:
           output-method: inject
           config-file: .terraform-docs.yaml
           working-dir: tf
+
+      - name: tofu clean
+        run: rm -rf .terraform/ .terraform.lock.hcl
+        working-directory: tf
 
       - name: Fix .git owner
         if: github.event_name == 'pull_request'
