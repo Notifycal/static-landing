@@ -95,6 +95,9 @@ jobs:
       contents: read
       id-token: write
     needs: preflight
+    defaults:
+      run:
+        working-directory: tf
     # Runs if there are changes to the infra (PR) or the event isn't PR
     if: |
       needs.preflight.outputs.infra == 'true' || github.event_name != 'pull_request'
@@ -114,7 +117,6 @@ jobs:
       - name: Get tofu version from .opentofu-version
         run: echo "tofu_version=$(cat .opentofu-version)" >> $GITHUB_OUTPUT
         id: get_tofu_version
-        working-directory: tf
 
       - uses: opentofu/setup-opentofu@v1
         with:
@@ -124,7 +126,6 @@ jobs:
         if: github.event_name == 'pull_request'
 
       - run: tofu init && tofu validate
-        working-directory: tf
 
       - name: Render OpenTofu docs
         if: github.event_name == 'pull_request'
