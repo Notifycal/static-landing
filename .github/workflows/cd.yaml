@@ -133,6 +133,7 @@ jobs:
         with:
           output-method: inject
           config-file: .terraform-docs.yaml
+          working-dir: tf
 
       - name: Fix .git owner
         if: github.event_name == 'pull_request'
