@@ -22,5 +22,6 @@ export default defineConfig({
       config: {
         forward: ['dataLayer.push']
       }
-    })]
+    })
+  ]
 });
