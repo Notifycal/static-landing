@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Notifycal/static-landing/compare/v1.0.1...v1.1.0) (2024-04-11)
+
+
+### Features
+
+* i18n ([#20](https://github.com/Notifycal/static-landing/issues/20)) ([cd5c124](https://github.com/Notifycal/static-landing/commit/cd5c124bf7c6f62680c5be8cf69c584e6114198d))
+
 ## [1.0.1](https://github.com/Notifycal/static-landing/compare/v1.0.0...v1.0.1) (2024-04-06)
 
 
