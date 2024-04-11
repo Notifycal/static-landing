@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import Page from '../../components/Page.astro';
+import { defaultLang, hideDefaultLang, languages, ui } from '../../i18n/ui';
+
+// Generate routes and pages for every language except the default language
+// as the default language has its own separate index (to hide the language in the URL).
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang || !hideDefaultLang)
+    .map((lang) => ({
+      params: { lang }
+    }));
+}
+
+const lang = Astro.params.lang as keyof typeof ui;
+---
+
+<Layout title="Welcome to Astro.">
+  <Page lang={lang} />
+</Layout>
