@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<header class="relative z-10 py-3">
+  <!-- <div class="flex-grow basis-0 md:hidden">
+    <button>
+      <Icon name="mdi:hamburger-menu" class="text-3xl" />
+    </button>
+  </div> -->
+  <nav class="container mx-auto flex max-w-5xl items-center justify-between px-8 py-4">
+    <a class="block md:flex-grow md:basis-0" href="#"><h1 class="text-2xl">Notifycal</h1></a>
+    <ol class="[&>li>a]:md:px-18 flex [&>li>a]:inline-flex [&>li>a]:px-4 [&>li>a]:py-2">
+      <li><a class="link-hover link" href="#pricing">Pricing</a></li>
+      <li><a class="link-hover link" href="#">FAQ</a></li>
+    </ol>
+    <div class="flex flex-grow basis-0 justify-end">
+      <button class="sm:hidden" id="google-login-button-small"></button>
+      <button class="hidden sm:inline-flex" id="google-login-button"></button>
+    </div>
+  </nav>
+</header>

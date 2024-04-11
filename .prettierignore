@@ -1,2 +1,5 @@
 **/.terraform/**
 .vscode
+
+tf/README.md
+CHANGELOG.md
