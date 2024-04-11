@@ -5,7 +5,7 @@ module.exports = {
     'plugin:astro/jsx-a11y-strict',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/stylistic',
-    'prettier' // This should be the last
+    'plugin:prettier/recommended' // This should be the last
   ],
   env: {
     browser: true,
@@ -33,5 +33,5 @@ module.exports = {
       }
     }
   ],
-  ignorePatterns: ['dist/**', '.eslintrc.cjs', 'tf/**']
+  ignorePatterns: ['dist/**', '.eslintrc.cjs', 'tf/**', 'src/env.d.ts']
 };
