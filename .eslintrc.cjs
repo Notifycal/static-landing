@@ -31,6 +31,12 @@ module.exports = {
         // override/add rules settings here, such as:
         // "astro/no-set-html-directive": "error"
       }
+    },
+    {
+      files: ['public/config.js'],
+      rules: {
+        "@typescript-eslint/no-unused-vars": "off"
+      }
     }
   ],
   ignorePatterns: ['dist/**', '.eslintrc.cjs', 'tf/**', 'src/env.d.ts']
