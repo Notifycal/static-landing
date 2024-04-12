@@ -35,7 +35,7 @@ module.exports = {
     {
       files: ['public/config.js'],
       rules: {
-        "@typescript-eslint/no-unused-vars": "off"
+        '@typescript-eslint/no-unused-vars': 'off'
       }
     }
   ],
