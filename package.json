@@ -26,6 +26,7 @@
     "typescript": "^5.4.4"
   },
   "devDependencies": {
+    "@types/google.accounts": "^0.0.14",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
     "daisyui": "^4.9.0",
