@@ -31,9 +31,9 @@
     /* check browser compatibility */
     --hero-svg-bg: rgb(221, 221, 221);
 
-    --hero-svg-gradient-color-start: rgba(255,255,255,0);
-    --hero-svg-gradient-color-mid: rgba(255,255,255,0.25);
-    --hero-svg-gradient-color-end: rgba(255,255,255,0.9);
+    --hero-svg-gradient-color-start: rgba(255, 255, 255, 0);
+    --hero-svg-gradient-color-mid: rgba(255, 255, 255, 0.25);
+    --hero-svg-gradient-color-end: rgba(255, 255, 255, 0.9);
 
     --hero-svg-rect-animation-fill-start: currentColor;
     --hero-svg-rect-animation-fill-mid: rgba(255, 255, 255, 1);
@@ -45,14 +45,16 @@
   type SvgInHTML = HTMLElement & SVGElement;
 
   const animationColorVariables = [
-    "--hero-svg-rect-animation-fill-start",
-    "--hero-svg-rect-animation-fill-mid",
-    "--hero-svg-rect-animation-fill-end"
+    '--hero-svg-rect-animation-fill-start',
+    '--hero-svg-rect-animation-fill-mid',
+    '--hero-svg-rect-animation-fill-end'
   ];
 
-  const animationValuesBuilt = animationColorVariables.map((cssColorVar) => {
-    return getComputedStyle(document.body).getPropertyValue(cssColorVar);
-  }).join(';');
+  const animationValuesBuilt = animationColorVariables
+    .map((cssColorVar) => {
+      return getComputedStyle(document.body).getPropertyValue(cssColorVar);
+    })
+    .join(';');
 
   function getRandom(min: number, max: number) {
     return -Math.random() * (max - min) + min;

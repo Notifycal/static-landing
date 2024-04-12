@@ -1,9 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import type { ui } from '../i18n/ui';
-
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getLangFromUrl } from '../i18n/utils';
 import PricingSection from '../sections/PricingSection.astro';
 import BackgroundGenerated from './BackgroundGenerated.astro';
 import Header from './Header.astro';
@@ -11,12 +9,7 @@ import Header from './Header.astro';
 import googleCalLogo from '../images/google-calendar-logo.svg';
 import whatsappLogo from '../images/whatsapp-logo.svg';
 
-interface Props {
-  lang: keyof typeof ui;
-}
-
-const { lang } = Astro.props;
-
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // FIX this
@@ -84,10 +77,7 @@ const listItems = ['1-minute no-code setup', 'Reduce customer support', 'No 0.4%
             ))
           }
         </ul>
-        <a
-          class="group btn btn-primary !btn-wide btn-block"
-          href="#pricing">Get Notifycal</a
-        >
+        <a class="group btn btn-primary !btn-wide btn-block" href="#pricing">Get Notifycal</a>
         <!-- <UsersRating /> -->
       </div>
     </div>
