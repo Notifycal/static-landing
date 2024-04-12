@@ -15,6 +15,7 @@ export const ui = {
   },
   es: {
     hero_0: 'Ola ke ase!',
+    hero_1: 'Ola ke ase!',
     subhero: 'Holisss!'
   }
 } as const;
