@@ -6,8 +6,8 @@ const lang = getLangFromUrl(Astro.url);
 
 <script is:inline src={`https://accounts.google.com/gsi/client?hl=${lang}`} async></script>
 <div class="flex flex-grow basis-0 justify-end">
-  <button class="sm:hidden" id="google-login-button-small"></button>
-  <button class="hidden sm:inline-flex" id="google-login-button"></button>
+  <button class="lg:hidden" id="google-login-button-small"></button>
+  <button class="hidden lg:inline-flex" id="google-login-button"></button>
 </div>
 
 <script is:inline define:vars={{ lang }}>

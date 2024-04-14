@@ -137,18 +137,20 @@
     svgContainerEl.replaceChildren(...allChildren);
   }
 
+  const isDesktopContainerWidth = (containerWidth: number) => containerWidth > 1024;
+
   function drawIt() {
     const svgBgEl = document.getElementById('animated-bg') as SvgInHTML;
     const svgRectGroup = document.getElementById('square-group-bg') as unknown as SVGGElement;
     const containerW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const containerH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-    const numberSquaresX = containerW > 1024 ? 10 : 7;
+    const numberSquaresX = isDesktopContainerWidth(containerW) ? 10 : 7;
+    const gapW = isDesktopContainerWidth(containerW) ? 20 : 10;
+    const gapH = isDesktopContainerWidth(containerW) ? 20 : 10;
 
     const rectW = Math.floor(containerW / numberSquaresX);
     const rectH = Math.floor(rectW / 1.6); // Keep the same aspect ratio
-    const gapW = 20;
-    const gapH = 20;
 
     // Set SVG dimensions and viewbox to container dimensions
     svgBgEl.setAttribute('height', String(containerH));
