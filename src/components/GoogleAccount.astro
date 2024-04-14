@@ -25,7 +25,7 @@ const lang = getLangFromUrl(Astro.url);
     buttonEl &&
       window.google.accounts.id.renderButton(
         buttonEl,
-        { type, theme: 'outline', size: 'large', locale: lang } // customization attributes
+        { type, theme: 'outline', size: 'large', locale: lang, text: 'signin' } // customization attributes
       );
   }
 

@@ -11,6 +11,7 @@ export const ui = {
   en: {
     'nav.pricing': 'Pricing',
     'nav.faq': 'FAQ',
+    'nav.language': 'Language',
     'hero.0': 'Focus on your business,',
     'hero.1': 'not the reminders',
     subhero: 'Let your customers generate, edit, and download Stripe invoices, so you don’t have to.',
@@ -22,6 +23,7 @@ export const ui = {
   es: {
     'nav.pricing': 'Precios',
     'nav.faq': 'Preguntas frecuentes',
+    'nav.language': 'Idioma',
     'hero.0': 'Ola ke ase!',
     'hero.1': 'Ola ke ase!',
     subhero: 'Holisss!',

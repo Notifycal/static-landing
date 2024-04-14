@@ -1,23 +1,100 @@
 ---
+import { Icon } from 'astro-icon/components';
+
+import { defaultLang, hideDefaultLang, languages } from '../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import GoogleAccount from './GoogleAccount.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const currentLangIconName = `i18n/${lang}-flag`;
 ---
 
-<header class="relative z-10 py-3">
-  <!-- <div class="flex-grow basis-0 md:hidden">
-    <button>
-      <Icon name="mdi:hamburger-menu" class="text-3xl" />
-    </button>
-  </div> -->
-  <nav class="container mx-auto flex max-w-5xl items-center justify-between px-8 py-4">
-    <a class="block md:flex-grow md:basis-0" href="#"><h1 class="text-2xl">Notifycal</h1></a>
-    <ol class="[&>li>a]:md:px-18 flex [&>li>a]:inline-flex [&>li>a]:px-4 [&>li>a]:py-2">
-      <li><a class="link-hover link" href="#pricing">{t('nav.pricing')}</a></li>
-      <li><a class="link-hover link" href="#faq">{t('nav.faq')}</a></li>
-    </ol>
-    <GoogleAccount />
-  </nav>
+<header class="relative z-20 py-3">
+  <div class="container navbar mx-auto flex max-w-5xl items-center justify-between px-8 py-4">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost active:!bg-primary md:hidden">
+          <Icon name="mdi:menu" size={26} />
+        </div>
+        <ul
+          class="menu dropdown-content menu-sm z-20 mt-3 w-52 rounded-box bg-base-100 p-2 shadow [&>li>a:active]:!bg-primary"
+        >
+          <li>
+            <a href="#faq">{t('nav.faq')}</a>
+          </li>
+          <li>
+            <a href="#faq">{t('nav.pricing')}</a>
+          </li>
+          <li>
+            <details open>
+              <summary class="active:!bg-primary">{t('nav.language')}</summary>
+              <ul class="p-2 [&>li>a:active]:!bg-primary">
+                {
+                  Object.entries(languages).map(([lang, label]) => (
+                    <li>
+                      <a href={lang == defaultLang && hideDefaultLang ? '/' : `/${lang}`}>
+                        <Icon name={`i18n/${lang}-flag`} size={18} /> {label}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="btn btn-ghost hidden text-xl md:flex">Notifycal</a>
+    </div>
+    <!-- Center menu, hidden for small screens -->
+    <div class="navbar-center hidden md:flex">
+      <ul class="menu menu-horizontal px-1 [&>li>a:active]:!bg-primary">
+        <li>
+          <a href="#faq">{t('nav.faq')}</a>
+        </li>
+        <li>
+          <a href="#faq">{t('nav.pricing')}</a>
+        </li>
+        <li>
+          <details>
+            <summary class="active:!bg-primary"
+              ><Icon
+                name={currentLangIconName}
+                size={18}
+                style={{
+                  height: '1lh'
+                }}
+              /></summary
+            >
+            <ul class="p-2 [&>li>a:active]:!bg-primary">
+              {
+                Object.entries(languages).map(([lang, label]) => (
+                  <li>
+                    <a href={lang == defaultLang && hideDefaultLang ? '/' : `/${lang}`}>
+                      <Icon
+                        name={`i18n/${lang}-flag`}
+                        size={18}
+                        style={{
+                          height: '1lh'
+                        }}
+                      />
+                      {label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+    <!-- Logo in the middle only for small screens -->
+    <div class="navbar-center flex md:hidden">
+      <a href="#" class="btn btn-ghost text-xl">Notifycal</a>
+    </div>
+    <div class="navbar-end">
+      <GoogleAccount />
+    </div>
+  </div>
 </header>
