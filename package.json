@@ -19,16 +19,16 @@
     "@astrojs/partytown": "^2.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "@playform/compress": "^0.0.3",
-    "astro": "^4.5.16",
+    "astro": "^4.6.1",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@iconify-json/ion": "^1.1.16",
     "@iconify-json/mdi": "^1.1.64",
     "@types/google.accounts": "^0.0.14",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "astro-icon": "^1.1.0",
     "daisyui": "^4.9.0",
     "eslint": "^8.57.0",
