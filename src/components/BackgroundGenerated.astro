@@ -160,6 +160,8 @@
     generateSquares(svgRectGroup, containerW, containerH, rectW, rectH, gapW, gapH);
   }
 
-  window.onresize = drawIt;
+  window.onresize = () => {
+    setTimeout(drawIt, 50);
+  };
   setTimeout(drawIt, 50);
 </script>
