@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_s3_object" "dist" {
-  for_each = fileset(local.build_folder, "**")
+  for_each = var.upload_dist_to_s3 ? fileset(local.build_folder, "**") : []
 
   bucket = module.static_landing.bucket_name
   key    = each.key
