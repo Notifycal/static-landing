@@ -1,5 +1,5 @@
 locals {
-  build_folder = "dist"
+  build_folder = "${path.module}/../dist"
 }
 
 resource "aws_s3_object" "dist" {
