@@ -3,6 +3,6 @@ variable "bucket_name" {
 }
 
 variable "upload_dist_to_s3" {
-  type = bool
+  type    = bool
   default = true
 }
