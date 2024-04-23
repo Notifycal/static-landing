@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Notifycal/static-landing/compare/v1.1.0...v1.2.0) (2024-04-23)
+
+
+### Features
+
+* hero section full ([#38](https://github.com/Notifycal/static-landing/issues/38)) ([fa67c9d](https://github.com/Notifycal/static-landing/commit/fa67c9dcdd544f735f2a7bcb870b47937f3b232b))
+
 ## [1.1.0](https://github.com/Notifycal/static-landing/compare/v1.0.1...v1.1.0) (2024-04-11)
 
 
