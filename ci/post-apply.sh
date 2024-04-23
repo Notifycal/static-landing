@@ -10,8 +10,7 @@ _GH_ORG="Notifycal"
 TF_TOOL="${TF_TOOL:-terragrunt}"
 
 STACK_NAME=$1
-STACK_VERSION="v1.1.0"
-# STACK_VERSION=$2
+STACK_VERSION=$2
 
 # current path is working dir unless there is an argument
 RUNNING_PATH="$(pwd)"
