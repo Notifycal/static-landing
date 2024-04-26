@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Notifycal/static-landing/compare/v1.2.0...v1.2.1) (2024-04-26)
+
+
+### Bug Fixes
+
+* use &lt;img&gt; to display language flags to avoid Chrome rendering issues ([#51](https://github.com/Notifycal/static-landing/issues/51)) ([3ddce88](https://github.com/Notifycal/static-landing/commit/3ddce885b60fce6899da4796468ec3bfb33bf842))
+
 ## [1.2.0](https://github.com/Notifycal/static-landing/compare/v1.1.0...v1.2.0) (2024-04-23)
 
 
