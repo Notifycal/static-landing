@@ -50,7 +50,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
                           fetchpriority="high"
                           decoding="async"
                           class="mr-1 inline h-[1lh] w-4 max-w-none"
-                          src={`${flags[lang].src}`}
+                          src={`${flags[lang as keyof typeof languages].src}`}
                         />
                         {label}
                       </a>
@@ -96,7 +96,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
                         fetchpriority="high"
                         decoding="async"
                         class="mr-1 inline h-[1lh] w-4 max-w-none"
-                        src={flags[lang].src}
+                        src={flags[lang as keyof typeof languages].src}
                       />
                       {label}
                     </a>
