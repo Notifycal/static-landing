@@ -32,8 +32,7 @@ pushd $RUNNING_PATH > /dev/null
 
 echo "Retrieving outputs from ${TF_TOOL}..."
 JSON_OUTPUT=$(${TF_TOOL} output -json 2>/dev/null | jq -r '.')
-BUCKET_NAME=$(jq -r '.bucket_name.value' <<< "$JSON_OUTPUT")
-SITE_URL=$(jq -r '.site_url.value' <<< "$JSON_OUTPUT")
+BUCKET_NAME=$(jq -r '.main_bucket_name.value' <<< "$JSON_OUTPUT")
 echo
 
 echo "Retrieving release from Github..."
@@ -48,7 +47,8 @@ aws s3 sync --delete ./dist/ "s3://${BUCKET_NAME}"
 echo
 
 # Display site URL
-echo "Site deployed at: ${SITE_URL}"
+echo "Site deployed at:"
+jq -r '.site_urls.value | to_entries[] | .value'  <<< "$JSON_OUTPUT"
 echo
 
 popd > /dev/null
