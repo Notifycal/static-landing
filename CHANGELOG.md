@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Notifycal/static-landing/compare/v1.2.1...v1.3.0) (2024-05-01)
+
+
+### Features
+
+* add domains and redirects ([#59](https://github.com/Notifycal/static-landing/issues/59)) ([c20e5e6](https://github.com/Notifycal/static-landing/commit/c20e5e6ef14490bab99bca1ca1cbbdadd3201112))
+
 ## [1.2.1](https://github.com/Notifycal/static-landing/compare/v1.2.0...v1.2.1) (2024-04-26)
 
 
