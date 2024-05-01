@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Notifycal/static-landing/compare/v1.3.0...v1.4.0) (2024-05-01)
+
+
+### Features
+
+* setup Cloudflare auth when the site is not public ([#61](https://github.com/Notifycal/static-landing/issues/61)) ([02f2c00](https://github.com/Notifycal/static-landing/commit/02f2c00d486b441c6b9a0ef47ee0a6f04204569b))
+
 ## [1.3.0](https://github.com/Notifycal/static-landing/compare/v1.2.1...v1.3.0) (2024-05-01)
 
 
