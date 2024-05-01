@@ -7,9 +7,5 @@ output "bucket_names" {
 }
 
 output "site_urls" {
-  value = module.static_landing.site_urls
+  value = formatlist("https://%s", concat([local.domain], values(local.redirect_domains)))
 }
-
-# output "cloudflare_ips" {
-#   value = data.cloudflare_ip_ranges.cloudflare.ipv4_cidr_blocks
-# }
