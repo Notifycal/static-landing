@@ -14,15 +14,15 @@ data "cloudflare_access_identity_provider" "github" {
 resource "cloudflare_access_application" "private_app" {
   count = var.is_public ? 0 : 1
 
-  zone_id          = data.cloudflare_zone.main.id
-  name             = "${local.domain} private access"
-  domain           = local.domain
-  type             = "self_hosted"
+  zone_id = data.cloudflare_zone.main.id
+  name    = "${local.domain} private access"
+  domain  = local.domain
+  type    = "self_hosted"
 
   allowed_idps = [
     data.cloudflare_access_identity_provider.github[0].id,
   ]
-  session_duration = "24h"
+  session_duration          = "24h"
   auto_redirect_to_identity = true
 
   # self_hosted_domains = [
@@ -42,7 +42,7 @@ resource "cloudflare_access_policy" "gh_org" {
   include {
     github {
       identity_provider_id = data.cloudflare_access_identity_provider.github[0].id
-      name = "Notifycal"
+      name                 = "Notifycal"
     }
   }
 }

@@ -19,8 +19,8 @@ variable "redirect_base_domains" {
 }
 
 variable "is_public" {
-  type = bool
-  default = true
+  type        = bool
+  default     = true
   description = "When set to false, the site will be behind auth."
 }
 
