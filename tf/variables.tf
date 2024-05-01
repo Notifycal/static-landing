@@ -18,6 +18,12 @@ variable "redirect_base_domains" {
   default = []
 }
 
+variable "is_public" {
+  type = bool
+  default = true
+  description = "When set to false, the site will be behind auth."
+}
+
 locals {
   domain           = var.domain_prefix == "" ? var.base_domain : "${var.domain_prefix}.${var.base_domain}"
   redirect_domains = { for redirect_domain in var.redirect_base_domains : redirect_domain => var.domain_prefix == "" ? redirect_domain : "${var.domain_prefix}.${redirect_domain}" }
