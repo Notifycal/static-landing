@@ -32,9 +32,9 @@ resource "cloudflare_ruleset" "es_main" {
   for_each = data.cloudflare_zone.es_zones
 
   zone_id = each.value.id
-  name = "${local.redirect_domains[each.key]}-es-redirect"
-  kind = "zone"
-  phase = "http_request_dynamic_redirect"
+  name    = "${local.redirect_domains[each.key]}-es-redirect"
+  kind    = "zone"
+  phase   = "http_request_dynamic_redirect"
 
 
   dynamic "rules" {
