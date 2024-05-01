@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/partytown": "^2.0.4",
+    "@astrojs/partytown": "^2.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@playform/compress": "^0.0.3",
     "astro": "^4.6.3",
