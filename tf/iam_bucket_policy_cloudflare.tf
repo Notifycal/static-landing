@@ -24,7 +24,7 @@ data "aws_iam_policy_document" "cloudflare_access" {
   for_each = module.static_landing.bucket_names
 
   statement {
-    sid = "CloudflareAccess"
+    sid    = "CloudflareAccess"
     effect = "Allow"
 
     principals {
