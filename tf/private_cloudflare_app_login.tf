@@ -24,10 +24,6 @@ resource "cloudflare_access_application" "private_app" {
   ]
   session_duration          = "24h"
   auto_redirect_to_identity = true
-
-  # self_hosted_domains = [
-  #   local.domain
-  # ]
 }
 
 resource "cloudflare_access_policy" "gh_org" {
