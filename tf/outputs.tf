@@ -1,7 +1,11 @@
-output "bucket_name" {
-  value = module.static_landing.bucket_name
+output "main_bucket_name" {
+  value = module.static_landing.bucket_names.main
 }
 
-output "site_url" {
-  value = module.static_landing.site_url
+output "bucket_names" {
+  value = module.static_landing.bucket_names
+}
+
+output "site_urls" {
+  value = formatlist("https://%s", concat([local.domain], values(local.redirect_domains)))
 }
