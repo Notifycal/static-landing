@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Notifycal/static-landing/compare/v1.4.0...v1.4.1) (2024-05-02)
+
+
+### Bug Fixes
+
+* use relative path when importing config.js globalConfig ([#63](https://github.com/Notifycal/static-landing/issues/63)) ([83c37e4](https://github.com/Notifycal/static-landing/commit/83c37e44f5c1d2c1fa90af8e6c1fe03cabd686f0))
+
 ## [1.4.0](https://github.com/Notifycal/static-landing/compare/v1.3.0...v1.4.0) (2024-05-01)
 
 
