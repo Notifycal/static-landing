@@ -1,5 +1,4 @@
 // This file is what allows us to build once, deploy many with the same artifact.
-
 var globalConfig = {
-  GOOGLE_CLIENT_ID: '848746665654-6bro4lcu48pj3d5gprub1kj0pvp63hh0.apps.googleusercontent.com'
+  GOOGLE_CLIENT_ID: '658640078137-omuaokg6rcajv50879674moielbpvljl.apps.googleusercontent.com'
 };

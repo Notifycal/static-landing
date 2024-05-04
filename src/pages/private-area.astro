@@ -1,0 +1,11 @@
+---
+---
+<h1>Private area</h1>
+
+<a href="/">Index</a>
+
+<script is:inline type="module">
+  const jwt = window.localStorage.getItem('access-token');
+  if (!jwt)
+    window.location.href = '/not-found';
+</script>

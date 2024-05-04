@@ -10,13 +10,8 @@ const lang = getLangFromUrl(Astro.url);
   <button class="hidden lg:inline-flex" id="google-login-button"></button>
 </div>
 
-<script is:inline define:vars={{ lang }}>
+<script is:inline define:vars={{ lang }} type="module">
   const { GOOGLE_CLIENT_ID } = window.globalConfig;
-
-  function handleCredentialResponse(response) {
-    // Do redirect with JS
-    console.log('Encoded JWT ID token: ' + response.credential);
-  }
 
   function renderLoginButton(elementId) {
     const type = elementId.includes('small') ? 'icon' : 'standard';
@@ -29,6 +24,22 @@ const lang = getLangFromUrl(Astro.url);
       );
   }
 
+  const handleCredentialResponse = (response) => {
+    const request = new Request("http://localhost:8080/api/v1/login", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        'google-id-token': response.credential
+      })
+    })
+    fetch(request).then(response => {
+      const jwt = response.headers.get('Set-Authorization');
+      window.localStorage.setItem('access-token', jwt);
+      window.location.href = '/private-area';
+    });
+  }
   window.onload = function () {
     window.google.accounts.id.initialize({
       client_id: GOOGLE_CLIENT_ID,
