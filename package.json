@@ -28,7 +28,7 @@
     "@iconify-json/mdi": "^1.1.64",
     "@types/google.accounts": "^0.0.14",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "astro-icon": "^1.1.0",
     "daisyui": "^4.11.1",
     "eslint": "^8.57.0",
