@@ -24,7 +24,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@iconify-json/ion": "^1.1.18",
+    "@iconify-json/ion": "^1.1.19",
     "@iconify-json/mdi": "^1.1.67",
     "@types/google.accounts": "^0.0.14",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
