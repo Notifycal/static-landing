@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/Notifycal/static-landing/compare/v1.4.1...v1.4.2) (2024-12-15)
+
+
+### Bug Fixes
+
+* severe security issues across several packages ([56196c0](https://github.com/Notifycal/static-landing/commit/56196c03b9028f0f5b2d8b9399c695ed5f3b9595))
+
 ## [1.4.1](https://github.com/Notifycal/static-landing/compare/v1.4.0...v1.4.1) (2024-05-02)
 
 
