@@ -1,8 +1,8 @@
 import partytown from '@astrojs/partytown';
 import tailwind from '@astrojs/tailwind';
+import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { defaultLang, hideDefaultLang, languages } from './src/i18n/ui';
-import icon from 'astro-icon';
 
 import playformCompress from '@playform/compress';
 
