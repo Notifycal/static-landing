@@ -1,7 +1,7 @@
 {
   "name": "static-landing",
   "type": "module",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "scripts": {
     "dev": "$npm_execpath run dev:config && astro dev",
     "dev:config": "cp config/config.local.js public/config.js",
@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.1",
     "astro-icon": "^1.1.5",
-    "daisyui": "^4.12.23",
+    "daisyui": "^4.12.10",
     "eslint": "9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.4",
