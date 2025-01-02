@@ -42,6 +42,6 @@ export default [
   },
   {
     // Note: there should be no other properties in this object
-    ignores: ['dist/**', 'eslint.config.js', 'tf/**', 'src/env.d.ts']
+    ignores: ['dist/**', 'eslint.config.js', 'tf/**', 'src/env.d.ts', 'config/**']
   }
 ];

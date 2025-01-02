@@ -3,9 +3,11 @@
   "type": "module",
   "version": "1.4.2",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "$npm_execpath run dev:config && astro dev",
+    "dev:config": "cp config/config.local.js public/config.js",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "rm -rf public/config.js && astro check && astro build && $npm_execpath run build:config",
+    "build:config": "cp config/config.skel.js dist/",
     "preview": "astro preview",
     "astro": "astro",
     "test": "echo \"Write some!\"",

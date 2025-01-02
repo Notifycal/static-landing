@@ -76,3 +76,5 @@ Temporary Items
 # Crash log files
 crash.log
 crash.*.log
+
+public/config.js
