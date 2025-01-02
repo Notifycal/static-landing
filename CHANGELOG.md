@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Notifycal/static-landing/compare/v1.4.2...v1.5.0) (2025-01-02)
+
+
+### Features
+
+* improve config handling for prod and dev + post-apply hook for registration ([#219](https://github.com/Notifycal/static-landing/issues/219)) ([ae6796b](https://github.com/Notifycal/static-landing/commit/ae6796b949b295a3fc4764bca2d3f958de036ee2))
+
 ## [1.4.2](https://github.com/Notifycal/static-landing/compare/v1.4.1...v1.4.2) (2024-12-15)
 
 
