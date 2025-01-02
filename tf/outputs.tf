@@ -9,3 +9,7 @@ output "bucket_names" {
 output "site_urls" {
   value = formatlist("https://%s", concat([local.domain], values(local.redirect_domains)))
 }
+
+locals {
+  _service_registration_url = "https://${local.domain}"
+}
