@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/Notifycal/static-landing/compare/v1.5.0...v1.5.1) (2025-01-03)
+
+
+### Bug Fixes
+
+* use proper path on post-apply script ([#222](https://github.com/Notifycal/static-landing/issues/222)) ([bde6b1d](https://github.com/Notifycal/static-landing/commit/bde6b1d7d9f9f5ed457e9b14263883d7bf8e7989))
+
 ## [1.5.0](https://github.com/Notifycal/static-landing/compare/v1.4.2...v1.5.0) (2025-01-02)
 
 
