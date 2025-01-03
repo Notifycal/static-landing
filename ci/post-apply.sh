@@ -15,7 +15,7 @@ ENVIRONMENT=$3
 
 # current path is working dir unless there is an argument
 RUNNING_PATH="$(pwd)"
-if [[ $# -eq 3 ]] ; then
+if [[ $# -eq 4 ]] ; then
   RUNNING_PATH=$4
 fi
 
