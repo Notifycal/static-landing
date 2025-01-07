@@ -1,7 +1,7 @@
 {
   "name": "static-landing",
   "type": "module",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "scripts": {
     "dev": "$npm_execpath run dev:config && astro dev",
     "dev:config": "cp config/config.local.js public/config.js",
