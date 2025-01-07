@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/Notifycal/static-landing/compare/v1.5.1...v1.5.2) (2025-01-07)
+
+
+### Bug Fixes
+
+* define base_domain at stack level as it will not change that often ([#230](https://github.com/Notifycal/static-landing/issues/230)) ([8edc296](https://github.com/Notifycal/static-landing/commit/8edc296ff06190acf9ab99032eed9ac071ef7d2e))
+
 ## [1.5.1](https://github.com/Notifycal/static-landing/compare/v1.5.0...v1.5.1) (2025-01-03)
 
 
