@@ -29,7 +29,7 @@
     "@iconify-json/ion": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
     "@types/google.accounts": "^0.0.15",
-    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.27.0",
     "astro-icon": "^1.1.5",
     "daisyui": "^4.12.23",
