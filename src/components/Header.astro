@@ -19,14 +19,14 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
 ---
 
 <header class="relative z-20 py-3">
-  <div class="container navbar mx-auto flex max-w-5xl items-center justify-between px-8 py-4">
+  <div class="navbar container mx-auto flex max-w-5xl items-center justify-between px-8 py-4">
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost active:!bg-primary md:hidden">
           <Icon name="mdi:menu" size={26} />
         </div>
         <ul
-          class="menu dropdown-content menu-sm z-20 mt-3 w-52 rounded-box bg-base-100 p-2 shadow [&>li>a:active]:!bg-primary"
+          class="menu dropdown-content menu-sm rounded-box bg-base-100 [&>li>a:active]:!bg-primary z-20 mt-3 w-52 p-2 shadow"
         >
           <li>
             <a href="#faq">{t('nav.faq')}</a>
@@ -37,7 +37,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
           <li>
             <details open>
               <summary class="active:!bg-primary">{t('nav.language')}</summary>
-              <ul class="p-2 [&>li>a:active]:!bg-primary">
+              <ul class="[&>li>a:active]:!bg-primary p-2">
                 {
                   Object.entries(languages).map(([lang, label]) => (
                     <li>
@@ -64,7 +64,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
     </div>
     <!-- Center menu, hidden for small screens -->
     <div class="navbar-center hidden md:flex">
-      <ul class="menu menu-horizontal px-1 [&>li>a:active]:!bg-primary">
+      <ul class="menu menu-horizontal [&>li>a:active]:!bg-primary px-1">
         <li>
           <a href="#faq">{t('nav.faq')}</a>
         </li>
@@ -83,7 +83,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
                 src={flags[lang].src}
               />
             </summary>
-            <ul class="p-2 [&>li>a:active]:!bg-primary">
+            <ul class="[&>li>a:active]:!bg-primary p-2">
               {
                 Object.entries(languages).map(([lang, label]) => (
                   <li>

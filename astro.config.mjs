@@ -1,10 +1,10 @@
 import partytown from '@astrojs/partytown';
-import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { defaultLang, hideDefaultLang, languages } from './src/i18n/ui';
 
 import playformCompress from '@playform/compress';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +16,6 @@ export default defineConfig({
     }
   },
   integrations: [
-    tailwind(),
     icon(),
     partytown({
       config: {
@@ -24,5 +23,8 @@ export default defineConfig({
       }
     }),
     playformCompress()
-  ]
+  ],
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
