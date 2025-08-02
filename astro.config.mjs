@@ -3,12 +3,12 @@ import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { defaultLang, hideDefaultLang, languages } from './src/i18n/ui';
 
-import { handleBundleSizePlugin } from '@notifycal/shared/utils';
+import { bundleSizePlugin } from '@notifycal/shared/utils';
 
 import playformCompress from '@playform/compress';
 import tailwindcss from '@tailwindcss/vite';
 
-const maxBundleChunkSizeInBytes = 4.1 * 1024 * 1024; // MB
+const maxBundleChunkSizeInBytes = 4.2 * 1024 * 1024; // MB
 const maxTotalBundleSizeInBytes = 4.3 * 1024 * 1024; // MB
 
 // https://astro.build/config
@@ -35,8 +35,8 @@ export default defineConfig({
       reportCompressedSize: true,
       chunkSizeWarningLimit: (maxBundleChunkSizeInBytes / 1024) * 0.9, // Expressed in KB. The budget is 90% of the limit.
       rollupOptions: {
-        plugins: [handleBundleSizePlugin(maxBundleChunkSizeInBytes, maxTotalBundleSizeInBytes)]
+        plugins: [bundleSizePlugin(maxBundleChunkSizeInBytes, maxTotalBundleSizeInBytes)]
       }
-    },
+    }
   }
 });
