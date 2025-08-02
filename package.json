@@ -28,6 +28,7 @@
     "@iconify-json/ion": "^1.2.4",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.1.11",
+    "@notifycal/shared": "file:../shared/notifycal-shared-6.0.0.tgz",
     "@types/google.accounts": "^0.0.17",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
