@@ -19,8 +19,13 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.0",
+    "@mantine/core": "^8.2.2",
+    "@notifycal/shared": "file:../shared/notifycal-shared-6.0.1.tgz",
     "@playform/compress": "^0.2.0",
     "astro": "^5.12.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   },

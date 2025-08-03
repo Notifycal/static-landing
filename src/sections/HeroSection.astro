@@ -1,4 +1,5 @@
 ---
+import { MantineWrapper } from '../components/MantineWrapper';
 import BackgroundGenerated from '../components/BackgroundGenerated.astro';
 import Header from '../components/Header.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
@@ -73,6 +74,14 @@ const t = useTranslations(lang);
           ))
         }
       </ul>
+
+      <MantineWrapper 
+        title="Test Component from Shared" 
+        onButtonClick={() => console.log('Shared component clicked in Astro!')} 
+        locale={lang}
+        client:load
+      />
+
       <a class="group btn btn-primary !btn-wide btn-block" href="#pricing">{t('hero.cta')}</a>
       <!-- <UsersRating /> -->
     </div>
