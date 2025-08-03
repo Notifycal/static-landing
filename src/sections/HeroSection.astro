@@ -5,6 +5,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 import googleCalLogo from '../images/google-calendar-logo.svg';
 import whatsappLogo from '../images/whatsapp-logo.svg';
+import Pricing2Section from './Pricing2Section.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,7 +13,7 @@ const t = useTranslations(lang);
 
 <section class="relative overflow-hidden md:min-h-[100vh]">
   <div class="absolute inset-0 z-0 block">
-    <BackgroundGenerated />
+    <BackgroundGenerated>
   </div>
   <Header />
   <div
@@ -49,6 +50,7 @@ const t = useTranslations(lang);
         <h1 class="text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
           {t('hero.0')}<br />{t('hero.1')}
         </h1>
+        <Pricing2Section />
       </div><p class="text-base-content-secondary mx-auto max-w-md text-lg leading-relaxed">
         {t('subhero')}
       </p>

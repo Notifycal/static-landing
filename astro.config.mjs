@@ -1,4 +1,5 @@
 import partytown from '@astrojs/partytown';
+import react from '@astrojs/react';
 import icon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { defaultLang, hideDefaultLang, languages } from './src/i18n/ui';
@@ -16,6 +17,7 @@ export default defineConfig({
     }
   },
   integrations: [
+    react(),
     icon(),
     partytown({
       config: {

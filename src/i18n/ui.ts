@@ -1,6 +1,7 @@
 export const languages = {
   en: 'English',
-  es: 'Español'
+  es: 'Español',
+  ca: 'Catalan'
 };
 
 export const defaultLang = 'en';
@@ -30,6 +31,18 @@ export const ui = {
     'hero.cta': 'Saber más',
     'hero.powered': 'Con la potencia de',
     'hero.items': ['Toooo facil niño', 'Recupera tu fokin time!', 'No mas panza!'],
+    and: 'y'
+  },
+  ca: {
+    'nav.pricing': 'CAPrecios',
+    'nav.faq': 'CAPreguntas frecuentes',
+    'nav.language': 'CAIdioma',
+    'hero.0': 'CAOla ke ase!',
+    'hero.1': 'CAOla ke ase!',
+    subhero: 'CAHolisss!',
+    'hero.cta': 'CASaber más',
+    'hero.powered': 'CACon la potencia de',
+    'hero.items': ['CAToooo facil niño', 'CARecupera tu fokin time!', 'CANo mas panza!'],
     and: 'y'
   }
 } as const;
