@@ -10,27 +10,27 @@ interface TierSelection {
 export function TierSelection({ locale }: TierSelection) {
   const tiers: Parameters<typeof orderedTierInfoWithIcons>[0] = {
     good: {
-      name: "Good Plan",
+      name: 'Good Plan',
       credits: 100,
       priceEur: 10,
-      priceId: "good",
-      productId: "good",
+      priceId: 'good',
+      productId: 'good',
       numberOfReminders: 100
     },
     better: {
-      name: "Better Plan",
+      name: 'Better Plan',
       credits: 350,
       priceEur: 25,
-      priceId: "better",
-      productId: "better",
+      priceId: 'better',
+      productId: 'better',
       numberOfReminders: 350
     },
     best: {
-      name: "Best Plan",
+      name: 'Best Plan',
       credits: 1000,
       priceEur: 60,
-      priceId: "best",
-      productId: "best",
+      priceId: 'best',
+      productId: 'best',
       numberOfReminders: 1000
     }
   };
@@ -44,7 +44,7 @@ export function TierSelection({ locale }: TierSelection) {
           lang={locale}
           orderedTierInfoWithIcons={orderedTierInfoWithIcons(tiers, locale)}
           onTierSelection={(tierId) => {
-            console.log(`User clicked on tier ${tierId}`)
+            console.log(`User clicked on tier ${tierId}`);
             window.open('https://privatedev.notifycal.com', '_blank');
             return Promise.resolve();
           }}
