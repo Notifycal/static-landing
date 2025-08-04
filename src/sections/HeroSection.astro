@@ -17,66 +17,66 @@ const t = useTranslations(lang);
   </div>
   <Header />
   <div
-      class="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center gap-16 px-8 py-12 lg:gap-20 lg:py-32"
-    >
-      <div class="relative flex flex-col items-center justify-center gap-10 text-center lg:gap-12">
-        <div class="space-y-2">
-          <div class="flex items-center justify-center text-xs font-medium">
-            {t('hero.powered')}
-            <img
-              alt="Google Calendar"
-              title="Google Calendar"
-              fetchpriority="high"
-              width="70"
-              decoding="async"
-              data-nimg="1"
-              class="mx-1 inline w-6"
-              style="color:transparent"
-              src={googleCalLogo.src}
-            />
-            {t('and')}
-            <img
-              alt="Whatsapp"
-              title="Whatsapp"
-              fetchpriority="high"
-              width="70"
-              decoding="async"
-              data-nimg="1"
-              class="mx-1 inline w-8"
-              style="color:transparent"
-              src={whatsappLogo.src}
-            />
-          </div>
-          <h1 class="text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-            {t('hero.0')}<br />{t('hero.1')}
-          </h1>
-          <Pricing2Section />
-        </div><p class="text-base-content-secondary mx-auto max-w-md text-lg leading-relaxed">
-          {t('subhero')}
-        </p>
-        <ul class="text-base-content-secondary hidden space-y-1 leading-relaxed md:block">
-          {
-            Array.from(t('hero.items')).map((itemText: string) => (
-              <li class="flex items-center justify-center gap-2 lg:justify-start">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="text-primary h-[18px] w-[18px]"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                {itemText}
-              </li>
-            ))
-          }
-        </ul>
-        <a class="group btn btn-primary !btn-wide btn-block" href="#pricing">{t('hero.cta')}</a>
-        <!-- <UsersRating /> -->
-      </div>
+    class="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center gap-16 px-8 py-12 lg:gap-20 lg:py-32"
+  >
+    <div class="relative flex flex-col items-center justify-center gap-10 text-center lg:gap-12">
+      <div class="space-y-2">
+        <div class="flex items-center justify-center text-xs font-medium">
+          {t('hero.powered')}
+          <img
+            alt="Google Calendar"
+            title="Google Calendar"
+            fetchpriority="high"
+            width="70"
+            decoding="async"
+            data-nimg="1"
+            class="mx-1 inline w-6"
+            style="color:transparent"
+            src={googleCalLogo.src}
+          />
+          {t('and')}
+          <img
+            alt="Whatsapp"
+            title="Whatsapp"
+            fetchpriority="high"
+            width="70"
+            decoding="async"
+            data-nimg="1"
+            class="mx-1 inline w-8"
+            style="color:transparent"
+            src={whatsappLogo.src}
+          />
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
+          {t('hero.0')}<br />{t('hero.1')}
+        </h1>
+        <Pricing2Section />
+      </div><p class="text-base-content-secondary mx-auto max-w-md text-lg leading-relaxed">
+        {t('subhero')}
+      </p>
+      <ul class="text-base-content-secondary hidden space-y-1 leading-relaxed md:block">
+        {
+          Array.from(t('hero.items')).map((itemText: string) => (
+            <li class="flex items-center justify-center gap-2 lg:justify-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="text-primary h-[18px] w-[18px]"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              {itemText}
+            </li>
+          ))
+        }
+      </ul>
+      <a class="group btn btn-primary !btn-wide btn-block" href="#pricing">{t('hero.cta')}</a>
+      <!-- <UsersRating /> -->
     </div>
+  </div>
 </section>
