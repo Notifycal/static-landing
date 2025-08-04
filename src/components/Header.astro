@@ -8,13 +8,15 @@ import GoogleAccount from './GoogleAccount.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-import esFlag from '../icons/i18n/es-flag.svg';
-import enFlag from '../icons/i18n/en-flag.svg';
 import type { ImageMetadata } from 'astro';
+import caFlag from '../icons/i18n/ca-flag.png';
+import enFlag from '../icons/i18n/en-flag.svg';
+import esFlag from '../icons/i18n/es-flag.svg';
 
 const flags: Record<keyof typeof languages, ImageMetadata> = {
   en: enFlag,
-  es: esFlag
+  es: esFlag,
+  ca: caFlag
 };
 ---
 
@@ -32,7 +34,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
             <a href="#faq">{t('nav.faq')}</a>
           </li>
           <li>
-            <a href="#faq">{t('nav.pricing')}</a>
+            <a href="#pricing">{t('nav.pricing')}</a>
           </li>
           <li>
             <details open>
@@ -69,7 +71,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
           <a href="#faq">{t('nav.faq')}</a>
         </li>
         <li>
-          <a href="#faq">{t('nav.pricing')}</a>
+          <a href="#pricing">{t('nav.pricing')}</a>
         </li>
         <li>
           <details>

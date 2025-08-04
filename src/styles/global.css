@@ -1,4 +1,14 @@
+@layer theme, base, mantine, components, utilities;
+
 @import 'tailwindcss';
+
+/* @import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities); */
+
+@import '@mantine/core/styles.layer.css';
+
+@source "../../node_modules/@notifycal/shared";
+
 @plugin "daisyui" {
   themes: light --default;
 }
