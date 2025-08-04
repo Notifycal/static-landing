@@ -6,20 +6,20 @@ const { listItems, buttonLink, price, offerPrice, isHighlighted = false, highlig
   {
     isHighlighted && (
       <>
-        <div class="absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
-          <span class="badge whitespace-nowrap border-0 bg-primary text-xs font-medium text-primary-content">
+        <div class="absolute top-0 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+          <span class="badge bg-primary text-primary-content border-0 text-xs font-medium whitespace-nowrap">
             {highlightText}
           </span>
         </div>
-        <div class="absolute -inset-[1px] z-10 rounded-[9px] bg-primary" />
+        <div class="bg-primary absolute -inset-[1px] z-10 rounded-[9px]" />
       </>
     )
   }
-  <div class="relative z-10 flex h-full flex-col gap-5 rounded-lg bg-base-100 p-8 lg:gap-8">
+  <div class="bg-base-100 relative z-10 flex h-full flex-col gap-5 rounded-lg p-8 lg:gap-8">
     <div class="flex flex-wrap gap-2">
       <div class="mb-[4px] flex flex-col justify-end text-lg">
         <p class="relative">
-          <span class="absolute inset-x-0 top-[53%] h-[1.5px] bg-base-content"></span><span class="text-base-content/80"
+          <span class="bg-base-content absolute inset-x-0 top-[53%] h-[1.5px]"></span><span class="text-base-content/80"
             >{price}<!-- -->&euro;</span
           >
         </p>
@@ -27,7 +27,7 @@ const { listItems, buttonLink, price, offerPrice, isHighlighted = false, highlig
       <p class="text-5xl font-extrabold tracking-tight">{offerPrice}<!-- -->&euro;</p><div
         class="mb-[4px] flex flex-col justify-end"
       >
-        <p class="text-xs font-semibold uppercase text-base-content/60">EUR</p>
+        <p class="text-base-content/60 text-xs font-semibold uppercase">EUR</p>
       </div>
     </div>
     <ul class="flex-1 space-y-2.5 text-base leading-relaxed">
