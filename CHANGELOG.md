@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.0](https://github.com/Notifycal/static-landing/compare/v1.5.2...v1.6.0) (2025-08-04)
+
+
+### Features
+
+* react components use one from shared ([#359](https://github.com/Notifycal/static-landing/issues/359)) ([fbb811c](https://github.com/Notifycal/static-landing/commit/fbb811c931a8babe052ee40808e5b38334b104d8))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @astrojs/tailwind to v6 ([#324](https://github.com/Notifycal/static-landing/issues/324)) ([99e12d4](https://github.com/Notifycal/static-landing/commit/99e12d47e0e57d20c3a7b612e3495afbdbf0aa88))
+* **deps:** Update Node.js Dependencies ([#350](https://github.com/Notifycal/static-landing/issues/350)) ([6fcd0b8](https://github.com/Notifycal/static-landing/commit/6fcd0b8a2fe96ec65bb825321f3a89825bba316c))
+* **deps:** Update Terraform aws to v6 ([#353](https://github.com/Notifycal/static-landing/issues/353)) ([e505d61](https://github.com/Notifycal/static-landing/commit/e505d6113ebbd577de472cd2543738f59d22a5e5))
+* upgrade deps ([#361](https://github.com/Notifycal/static-landing/issues/361)) ([db030a0](https://github.com/Notifycal/static-landing/commit/db030a058773db26bb7728d82fec937569fff4bd))
+
 ## [1.5.2](https://github.com/Notifycal/static-landing/compare/v1.5.1...v1.5.2) (2025-01-07)
 
 
