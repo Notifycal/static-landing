@@ -24,6 +24,7 @@
     "@mantine/core": "^8.2.2",
     "@notifycal/shared": "^6.2.0",
     "@playform/compress": "^0.2.0",
+    "@tabler/icons-react": "^3.34.1",
     "astro": "^5.12.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
