@@ -7,7 +7,7 @@ output "bucket_names" {
 }
 
 output "site_urls" {
-  value = formatlist("https://%s", concat([local.domain], values(local.redirect_domains)))
+  value = "https://${local.domain}"
 }
 
 locals {

@@ -29,18 +29,27 @@ echo "PATH: ${RUNNING_PATH}"
 echo "==================================="
 echo
 
-pushd $RUNNING_PATH > /dev/null
+pushd "${RUNNING_PATH}" > /dev/null
 
 
 echo "Retrieving outputs from ${TF_TOOL}..."
 JSON_OUTPUT=$(${TF_TOOL} output -json 2>/dev/null | jq -r '.')
 BUCKET_NAME=$(jq -r '.main_bucket_name.value' <<< "$JSON_OUTPUT")
+echo "Bucket: ${BUCKET_NAME}"
 echo
 
 echo "Retrieving release from Github..."
 TMP_DIR=$(mktemp -d "/tmp/${STACK_NAME}.XXXXX")
 pushd "${TMP_DIR}" > /dev/null
-gh release download "${STACK_VERSION}" --repo "${_GH_ORG}/${STACK_NAME}"
+
+if [[ "${STACK_VERSION}" == "latest" ]]; then
+  latest_release=$(gh release list --repo "${_GH_ORG}/${STACK_NAME}" --json name,isLatest --jq '.[] | select(.isLatest)|.name')
+  echo "Downloading the latest release (${latest_release}) as STACK_VERSION is 'latest'"
+  gh release download "${latest_release}" --repo "${_GH_ORG}/${STACK_NAME}" --dir "${TMP_DIR}"
+else
+  gh release download "${STACK_VERSION}" --repo "${_GH_ORG}/${STACK_NAME}" --dir "${TMP_DIR}"
+fi
+
 unzip dist.zip
 echo
 
@@ -49,13 +58,14 @@ service-discovery --environment "${ENVIRONMENT}" \
   --skel_file dist/config.skel.js > dist/config.js && \
   rm -rf dist/config.skel.js
 
-echo "Uploading to S3 static site bucket..."
-aws s3 sync --delete ./dist/ "s3://${BUCKET_NAME}"
+echo "Uploading to S3 static site bucket... but emptying the bucket first ;)"
+aws s3 rm "s3://${BUCKET_NAME}" --recursive && \
+  aws s3 sync --delete ./dist/ "s3://${BUCKET_NAME}"
 echo
 
 # Display site URL
 echo "Site deployed at:"
-jq -r '.site_urls.value | to_entries[] | .value'  <<< "$JSON_OUTPUT"
+jq -r '.site_url.value' <<< "$JSON_OUTPUT"
 echo
 
 popd > /dev/null
