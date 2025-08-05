@@ -3,7 +3,7 @@ data "cloudflare_zone" "main" {
 }
 
 module "static_landing" {
-  source = "git@github.com:Notifycal/tofu-module-static-website.git?ref=v1.0.1"
+  source = "git@github.com:Notifycal/tofu-module-static-website.git?ref=v2.2.2"
 
   bucket_name = local.domain
 
