@@ -26,11 +26,10 @@ variable "cloudflare_config" {
       # Name of the identity provider set up in Cloudflare
       idp_name = optional(string, "Github")
     }))
-    precedence = number
+    precedence = optional(number, 1)
   })
   default = {
     private_site_auth = null
-    precedence        = 1
   }
   description = "Controls the creation of Cloudflare resources such us DNS records, S3 access from Cloudflare and private app access. If null is provided as a value, none of those resources are created"
 }
