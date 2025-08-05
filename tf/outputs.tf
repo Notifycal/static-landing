@@ -9,7 +9,3 @@ output "bucket_names" {
 output "site_url" {
   value = "https://${local.domain}"
 }
-
-locals {
-  _service_registration_url = "https://${local.domain}"
-}
