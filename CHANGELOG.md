@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/Notifycal/static-landing/compare/v1.6.1...v1.6.2) (2025-08-05)
+
+
+### Bug Fixes
+
+* drop service-registration local value (not needed anymore) ([#370](https://github.com/Notifycal/static-landing/issues/370)) ([7a598d5](https://github.com/Notifycal/static-landing/commit/7a598d57b222c15222c15ffdc07c43fd7fac3292))
+
 ## [1.6.1](https://github.com/Notifycal/static-landing/compare/v1.6.0...v1.6.1) (2025-08-05)
 
 
