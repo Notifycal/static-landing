@@ -6,7 +6,7 @@ output "bucket_names" {
   value = module.static_landing.bucket_names
 }
 
-output "site_urls" {
+output "site_url" {
   value = "https://${local.domain}"
 }
 
