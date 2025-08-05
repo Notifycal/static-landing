@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.1](https://github.com/Notifycal/static-landing/compare/v1.6.0...v1.6.1) (2025-08-05)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.2.3 ([#367](https://github.com/Notifycal/static-landing/issues/367)) ([e807fab](https://github.com/Notifycal/static-landing/commit/e807fab7265caa208703975503b25ffc8f310310))
+* **deps:** Update dependency @notifycal/shared to v6.3.0 ([#364](https://github.com/Notifycal/static-landing/issues/364)) ([8bb2032](https://github.com/Notifycal/static-landing/commit/8bb2032f8ee8943fde9122bb41d94433930218ef))
+* upgrade tofu module static website to v2 ([#368](https://github.com/Notifycal/static-landing/issues/368)) ([e2417c7](https://github.com/Notifycal/static-landing/commit/e2417c7b58a29ab8c8122a0ceab817f23d70ac9b))
+
 ## [1.6.0](https://github.com/Notifycal/static-landing/compare/v1.5.2...v1.6.0) (2025-08-04)
 
 
