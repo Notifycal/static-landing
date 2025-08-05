@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.3](https://github.com/Notifycal/static-landing/compare/v1.6.2...v1.6.3) (2025-08-05)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v6.3.1 ([#369](https://github.com/Notifycal/static-landing/issues/369)) ([0ec18bb](https://github.com/Notifycal/static-landing/commit/0ec18bb64ce6fe9eed4b5907ff46c03e76287df1))
+
 ## [1.6.2](https://github.com/Notifycal/static-landing/compare/v1.6.1...v1.6.2) (2025-08-05)
 
 
