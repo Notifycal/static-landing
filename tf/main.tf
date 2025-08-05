@@ -1,6 +1,5 @@
 module "static_landing" {
-  source = "/Users/dan/dev/personal/notifycal/modules/tofu-module-static-website"
-  # source = "git@github.com:Notifycal/tofu-module-static-website.git?ref=v2.2.2"
+  source = "git@github.com:Notifycal/tofu-module-static-website.git?ref=v2.2.2"
 
   force_destroy_bucket = var.force_destroy_bucket
 
