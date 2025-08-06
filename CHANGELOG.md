@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.4](https://github.com/Notifycal/static-landing/compare/v1.6.3...v1.6.4) (2025-08-06)
+
+
+### Bug Fixes
+
+* Cloudflare provider upgrade 5.8.x ([#374](https://github.com/Notifycal/static-landing/issues/374)) ([d851ca6](https://github.com/Notifycal/static-landing/commit/d851ca6686fe770cb4ed998fcaea0edd6695724a))
+
 ## [1.6.3](https://github.com/Notifycal/static-landing/compare/v1.6.2...v1.6.3) (2025-08-05)
 
 
