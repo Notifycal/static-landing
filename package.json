@@ -22,7 +22,7 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.3.0",
     "@mantine/core": "^8.2.2",
-    "@notifycal/shared": "^6.2.0",
+    "@notifycal/shared": "^7.0.0",
     "@playform/compress": "^0.2.0",
     "@tabler/icons-react": "^3.34.1",
     "astro": "^5.12.8",
