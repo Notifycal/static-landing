@@ -1,7 +1,12 @@
 {
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 120,
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "overrides": [
     {
-      "files": ["*.astro"],
+      "files": "*.astro",
       "options": {
         "parser": "astro"
       }
