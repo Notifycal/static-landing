@@ -13,11 +13,11 @@ input#nav-toggle:checked ~ #nav-menu {
 
 /* form style */
 .form-input {
-  @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary;
+  @apply bg-light text-text-dark placeholder:text-text-light focus:border-primary w-full rounded border-transparent px-6 py-4;
 }
 
 .form-label {
-  @apply mb-4 block font-secondary text-base font-normal text-text-dark;
+  @apply font-secondary text-text-dark mb-4 block text-base font-normal;
 }
 
 .form-inputs * {
@@ -26,9 +26,9 @@ input#nav-toggle:checked ~ #nav-menu {
 
 .form-control,
 .form-select {
-  @apply py-4 w-full !rounded-lg !border-border text-text-dark placeholder:text-[#B0B0B0] focus:border-primary! focus:ring-transparent!;
+  @apply !border-border text-text-dark focus:border-primary! w-full !rounded-lg py-4 placeholder:text-[#B0B0B0] focus:ring-transparent!;
 }
 
 .form-label {
-  @apply mb-2 block font-secondary text-[#555];
+  @apply font-secondary mb-2 block text-[#555];
 }

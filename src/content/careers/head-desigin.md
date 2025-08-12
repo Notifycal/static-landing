@@ -1,11 +1,11 @@
 ---
-title: "Head Design"
-meta_title: ""
-description: ""
+title: 'Head Design'
+meta_title: ''
+description: ''
 excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam lorem amet eget in netus laoreet
-job_nature: "Remote"
+job_nature: 'Remote'
 location: San Francisco
-categories: ["developer"]
+categories: ['developer']
 date: 2021-07-13
 draft: false
 ---

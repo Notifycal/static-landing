@@ -1,6 +1,6 @@
 ---
-import Logo from "@/components/Logo.astro";
-import menu from "@/config/menu.json";
+import Logo from '@/components/Logo.astro';
+import menu from '@/config/menu.json';
 
 export interface ChildNavigationLink {
   name: string;
@@ -26,47 +26,33 @@ const { pathname } = Astro.url;
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      id="show-button"
-      for="nav-toggle"
-      class="order-2 flex cursor-pointer items-center lg:order-1 lg:hidden"
-    >
+    <label id="show-button" for="nav-toggle" class="order-2 flex cursor-pointer items-center lg:order-1 lg:hidden">
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Open</title>
         <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
       </svg>
     </label>
-    <label
-      id="hide-button"
-      for="nav-toggle"
-      class="order-2 hidden cursor-pointer items-center lg:order-1"
-    >
+    <label id="hide-button" for="nav-toggle" class="order-2 hidden cursor-pointer items-center lg:order-1">
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"></polygon>
+        <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"
+        ></polygon>
       </svg>
     </label>
     <!-- /navbar toggler -->
 
-    <ul
-      id="nav-menu"
-      class="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto lg:space-x-2"
-    >
+    <ul id="nav-menu" class="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto lg:space-x-2">
       {
         main.map((menu) => (
           <>
             {menu.hasChildren ? (
-              <li class="nav-item nav-dropdown group relative cursor-pointer dropdown-button">
+              <li class="nav-item nav-dropdown group dropdown-button relative cursor-pointer">
                 <span
                   class={`nav-link inline-flex items-center ${
                     menu.children?.map(({ url }) => url).includes(pathname) ||
-                    menu.children
-                      ?.map(({ url }) => `${url}/`)
-                      .includes(pathname)
-                      ? "active"
-                      : ""
+                    menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                      ? 'active'
+                      : ''
                   }`}
                 >
                   {menu.name}
@@ -83,9 +69,7 @@ const { pathname } = Astro.url;
                       <a
                         href={child.url}
                         class={`nav-dropdown-link block ${
-                          (pathname === `${child.url}/` ||
-                            pathname === child.url) &&
-                          "text-primary"
+                          (pathname === `${child.url}/` || pathname === child.url) && 'text-primary'
                         }`}
                       >
                         {child.name}
@@ -99,8 +83,7 @@ const { pathname } = Astro.url;
                 <a
                   href={menu.url}
                   class={`nav-link inline-block lg:block ${
-                    (pathname === `${menu.url}/` || pathname === menu.url) &&
-                    "active"
+                    (pathname === `${menu.url}/` || pathname === menu.url) && 'active'
                   }`}
                 >
                   {menu.name}
@@ -121,22 +104,22 @@ const { pathname } = Astro.url;
 </header>
 
 <script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    document.querySelectorAll(".dropdown-button").forEach((button) => {
-      button.addEventListener("click", (e) => {
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('.dropdown-button').forEach((button) => {
+      button.addEventListener('click', (e) => {
         const dropdown = e.target.nextElementSibling;
 
-        dropdown.classList.toggle("hidden");
+        dropdown.classList.toggle('hidden');
       });
     });
 
     // Sticky header functionality
-    const header = document.querySelector(".header");
-    window.addEventListener("scroll", () => {
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 0) {
-        header.classList.add("header-sticky");
+        header.classList.add('header-sticky');
       } else {
-        header.classList.remove("header-sticky");
+        header.classList.remove('header-sticky');
       }
     });
   });

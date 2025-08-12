@@ -1,5 +1,5 @@
-import { humanize } from "@/lib/utils/textConverter";
-import * as Icon from "react-feather";
+import { humanize } from '@/lib/utils/textConverter';
+import * as Icon from 'react-feather';
 const CareerBenefits = ({ benefits }) => {
   const { title, description, benefit_list } = benefits;
   return (
@@ -16,13 +16,13 @@ const CareerBenefits = ({ benefits }) => {
             const FeatherIcon = Icon[humanize(item.icon)];
 
             return (
-              <div className="mb-10 sm:col-6 lg:col-4 " key={i}>
+              <div className="mb-10 sm:col-6 lg:col-4" key={i}>
                 <div className="relative">
                   <svg
                     className={`mx-auto h-[90px] w-[100px]`}
                     style={{
                       fill: item.color,
-                      opacity: 0.1,
+                      opacity: 0.1
                     }}
                     viewBox="0 0 200 200"
                     xmlns="http://www.w3.org/2000/svg"
@@ -32,11 +32,11 @@ const CareerBenefits = ({ benefits }) => {
                       transform="translate(100 100)"
                     />
                   </svg>
-                  <span className="benifit-icon absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[28%]">
+                  <span className="benifit-icon absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[28%]">
                     <FeatherIcon color={item.color} size={48} />
                   </span>
                 </div>
-                <h3 className="h4 mb-4 mt-8">{item.title}</h3>
+                <h3 className="h4 mt-8 mb-4">{item.title}</h3>
                 <p>{item.content}</p>
               </div>
             );

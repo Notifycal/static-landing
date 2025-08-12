@@ -1,24 +1,24 @@
 ---
-import Blog from "@/components/Blog.astro";
-import BlogCategories from "@/components/blog/BlogCategories.astro";
-import PageHeader from "@/components/PageHeader.astro";
-import Shape from "@/components/Shape.astro";
-import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import taxonomyFilter from "@/lib/utils/taxonomyFilter";
-import { humanize, slugify } from "@/lib/utils/textConverter";
+import Blog from '@/components/Blog.astro';
+import BlogCategories from '@/components/blog/BlogCategories.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import Shape from '@/components/Shape.astro';
+import Base from '@/layouts/Base.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+import taxonomyFilter from '@/lib/utils/taxonomyFilter';
+import { humanize, slugify } from '@/lib/utils/textConverter';
 
-const categories = await getTaxonomy("blog", "categories");
+const categories = await getTaxonomy('blog', 'categories');
 export async function getStaticPaths() {
-  const categories = await getTaxonomy("blog", "categories");
+  const categories = await getTaxonomy('blog', 'categories');
   return categories.map((item) => {
     const category = slugify(item);
     return {
       params: { category },
       props: {
-        item,
-      },
+        item
+      }
     };
   });
 }
@@ -26,17 +26,17 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const { item } = Astro.props;
 
-const posts = await getSinglePage("blog");
-const filterByTags = taxonomyFilter(posts, "categories", category);
+const posts = await getSinglePage('blog');
+const filterByTags = taxonomyFilter(posts, 'categories', category);
 const page_data = {
-  index_title: "Categories",
-  slug: item,
+  index_title: 'Categories',
+  slug: item
 };
 ---
 
 <Base title={category as string}>
   <Shape />
-  <section class="page-hero pb-8 pt-16">
+  <section class="page-hero pt-16 pb-8">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
         <PageHeader page_data={page_data} />

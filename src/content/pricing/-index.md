@@ -1,9 +1,9 @@
 ---
 title: Pricing
 page_title: Pinwheel Pricing
-meta_title: ""
-description: ""
-image: ""
+meta_title: ''
+description: ''
+image: ''
 pricing_card:
   - title: Basic
     pre_currency: $
@@ -15,17 +15,17 @@ pricing_card:
     buttons:
       buy_now:
         label: Buy Now
-        link: "#"
+        link: '#'
       free_trial:
         label: Start Free trial
-        link: "#"
+        link: '#'
     services:
       title: What's included?
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
+        - 'Track Reward Part Program'
+        - 'Design and prototype powerful'
+        - 'Keep work in unlimited storage'
+        - 'Add people document handoff.'
 
   - title: Enterprise
     pre_currency: $
@@ -37,17 +37,17 @@ pricing_card:
     buttons:
       buy_now:
         label: Buy Now
-        link: "#"
+        link: '#'
       free_trial:
         label: Start Free trial
-        link: "#"
+        link: '#'
     services:
       title: What's included?
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
+        - 'Track Reward Part Program'
+        - 'Design and prototype powerful'
+        - 'Keep work in unlimited storage'
+        - 'Add people document handoff.'
   - title: Pro Lite
     pre_currency: $
     post_currency: usd
@@ -58,17 +58,17 @@ pricing_card:
     buttons:
       buy_now:
         label: Buy Now
-        link: "#"
+        link: '#'
       free_trial:
         label: Start Free trial
-        link: "#"
+        link: '#'
     services:
       title: What's included?
       list:
-        - "Track Reward Part Program"
-        - "Design and prototype powerful"
-        - "Keep work in unlimited storage"
-        - "Add people document handoff."
+        - 'Track Reward Part Program'
+        - 'Design and prototype powerful'
+        - 'Keep work in unlimited storage'
+        - 'Add people document handoff.'
 faq:
   title: Frequently Asked Questions
   description: Vestibulum ante ipsum primis in faucibus orci luctus ultrices posuere cubilia Curae Donec

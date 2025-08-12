@@ -1,17 +1,17 @@
 ---
-import Logo from "@/components/Logo.astro";
-import Social from "@/components/Social.astro";
-import config from "@/config/config.json";
-import menu from "@/config/menu.json";
-import social from "@/config/social.json";
-import { markdownify } from "@/lib/utils/textConverter";
+import Logo from '@/components/Logo.astro';
+import Social from '@/components/Social.astro';
+import config from '@/config/config.json';
+import menu from '@/config/menu.json';
+import social from '@/config/social.json';
+import { markdownify } from '@/lib/utils/textConverter';
 const { footer } = menu;
 const { copyright, location, email, phone, footer_description } = config.params;
 ---
 
 <footer class="footer bg-[#F1F1F1]">
   <div class="container">
-    <div class="gx-5 row pb-10 pt-[52px]">
+    <div class="gx-5 row pt-[52px] pb-10">
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <Logo />
         <p class="mt-6">
@@ -28,8 +28,8 @@ const { copyright, location, email, phone, footer_description } = config.params;
         <ul>
           {
             footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
+              <li class={footer.length - 1 === i ? 'mb-0' : 'mb-4'}>
+                <a class="hover:text-primary hover:underline" href={item.url}>
                   {item.name}
                 </a>
               </li>
@@ -42,23 +42,17 @@ const { copyright, location, email, phone, footer_description } = config.params;
         <ul>
           <li class="mb-2">{location}</li>
           <li class="mb-2">
-            <a class="mb-2 hover:text-primary" href={`mailto:${email}`}
-              >{email}</a
-            >
+            <a class="hover:text-primary mb-2" href={`mailto:${email}`}>{email}</a>
           </li>
           <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone}`}
-              >{phone}</a
-            >
+            <a class="hover:text-primary hover:underline" href={`tel:${phone}`}>{phone}</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
   <div class="container max-w-[1440px]">
-    <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
-    >
+    <div class="footer-copyright border-border mx-auto border-t pt-7 pb-10 text-center">
       <p class="content text-text" set:html={markdownify(copyright)} />
     </div>
   </div>

@@ -1,6 +1,6 @@
-import { humanize } from "@/lib/utils/textConverter";
-import { useState } from "react";
-import * as Icon from "react-feather";
+import { humanize } from '@/lib/utils/textConverter';
+import { useState } from 'react';
+import * as Icon from 'react-feather';
 
 const HomepageTab = ({ homepage_tab }) => {
   const { title, description, tab_list } = homepage_tab;
@@ -8,21 +8,16 @@ const HomepageTab = ({ homepage_tab }) => {
   const [tab, setTab] = useState(0);
   return (
     <div className="tab gx-5 row items-center">
-      <div className="lg:col-7 lg:order-2">
+      <div className="lg:order-2 lg:col-7">
         <div className="tab-content">
           {tab_list.map((item, index) => (
-            <div
-              key={index}
-              className={`tab-content-panel ${
-                tab === index ? "active" : undefined
-              }`}
-            >
+            <div key={index} className={`tab-content-panel ${tab === index ? 'active' : undefined}`}>
               <img className="w-full object-contain" src={item.image} />
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-6 lg:col-5 lg:order-1 lg:mt-0">
+      <div className="mt-6 lg:order-1 lg:col-5 lg:mt-0">
         <div className="text-container">
           <h2 className="lg:text-4xl">{title}</h2>
           <p className="mt-4">{description}</p>
@@ -32,9 +27,7 @@ const HomepageTab = ({ homepage_tab }) => {
               return (
                 <li
                   key={index}
-                  className={`tab-nav-item ${
-                    tab === index ? "active" : undefined
-                  }`}
+                  className={`tab-nav-item ${tab === index ? 'active' : undefined}`}
                   onClick={() => setTab(index)}
                 >
                   <span className="tab-icon mr-3">

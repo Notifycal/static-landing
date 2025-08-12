@@ -1,19 +1,13 @@
 ---
-import FeatureTab from "@/layouts/function-components/FeatureTab";
-import Projects from "@/layouts/function-components/Projects";
-import { markdownify } from "@/lib/utils/textConverter";
-import FeatureService from "./FeatureService.astro";
+import FeatureTab from '@/layouts/function-components/FeatureTab';
+import Projects from '@/layouts/function-components/Projects';
+import { markdownify } from '@/lib/utils/textConverter';
+import FeatureService from './FeatureService.astro';
 
 const {
   features: {
-    project_management: {
-      title,
-      content,
-      management,
-      feature_service,
-      feature_tab,
-    },
-  },
+    project_management: { title, content, management, feature_service, feature_tab }
+  }
 } = Astro.props;
 ---
 

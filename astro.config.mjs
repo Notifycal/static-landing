@@ -1,38 +1,38 @@
-import mdx from "@astrojs/mdx";
+import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import playformCompress from '@playform/compress';
-import tailwindcss from "@tailwindcss/vite";
-import AutoImport from "astro-auto-import";
-import { defineConfig } from "astro/config";
-import remarkCollapse from "remark-collapse";
-import remarkToc from "remark-toc";
-import config from "./src/config/config.json";
+import tailwindcss from '@tailwindcss/vite';
+import AutoImport from 'astro-auto-import';
+import { defineConfig } from 'astro/config';
+import remarkCollapse from 'remark-collapse';
+import remarkToc from 'remark-toc';
+import config from './src/config/config.json';
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  site: config.site.base_url ? config.site.base_url : 'http://examplesite.com',
+  base: config.site.base_path ? config.site.base_path : '/',
+  trailingSlash: config.site.trailing_slash ? 'always' : 'never',
   vite: { plugins: [tailwindcss()] },
   integrations: [
     react(),
     sitemap(),
     AutoImport({
       imports: [
-        "@/shortcodes/Button",
-        "@/shortcodes/Accordion",
-        "@/shortcodes/Notice",
-        "@/shortcodes/Video",
-        "@/shortcodes/Youtube",
-        "@/shortcodes/Blockquote",
-        "@/shortcodes/Badge",
-        "@/shortcodes/ContentBlock",
-        "@/shortcodes/Changelog",
-        "@/shortcodes/Tab",
-        "@/shortcodes/Tabs",
-      ],
+        '@/shortcodes/Button',
+        '@/shortcodes/Accordion',
+        '@/shortcodes/Notice',
+        '@/shortcodes/Video',
+        '@/shortcodes/Youtube',
+        '@/shortcodes/Blockquote',
+        '@/shortcodes/Badge',
+        '@/shortcodes/ContentBlock',
+        '@/shortcodes/Changelog',
+        '@/shortcodes/Tab',
+        '@/shortcodes/Tabs'
+      ]
     }),
     mdx(),
     partytown({
@@ -48,14 +48,14 @@ export default defineConfig({
       [
         remarkCollapse,
         {
-          test: "Table of contents",
-        },
-      ],
+          test: 'Table of contents'
+        }
+      ]
     ],
     shikiConfig: {
-      theme: "one-dark-pro",
-      wrap: true,
+      theme: 'one-dark-pro',
+      wrap: true
     },
-    extendDefaultPlugins: true,
-  },
+    extendDefaultPlugins: true
+  }
 });

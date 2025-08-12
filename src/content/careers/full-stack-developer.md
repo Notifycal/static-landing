@@ -1,11 +1,11 @@
 ---
-title: "Full-Stack Developer"
-meta_title: ""
-description: ""
+title: 'Full-Stack Developer'
+meta_title: ''
+description: ''
 excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam lorem amet eget in netus laoreet
-job_nature: "Full Time"
+job_nature: 'Full Time'
 location: San Francisco
-categories: ["developer"]
+categories: ['developer']
 date: 2021-07-10
 draft: false
 ---

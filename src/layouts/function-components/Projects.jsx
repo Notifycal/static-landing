@@ -1,26 +1,26 @@
-import { humanize } from "@/lib/utils/textConverter";
-import * as Icon from "react-feather";
+import { humanize } from '@/lib/utils/textConverter';
+import * as Icon from 'react-feather';
 
 const Projects = ({ projects }) => {
   return (
-    <div className="col-12 ">
+    <div className="col-12">
       <div className="row">
         {projects.map((item, i) => {
           const FeatherIcon = Icon[humanize(item.icon)];
           return (
             <div className="lg:col-6" key={`item-${i}`}>
               <div
-                className={`flex items-center space-x-4 rounded-lg bg-[#fafafa] px-6 py-8 lg:mt-6  ${
-                  projects.length - 1 === i ? "mb-0" : "mb-6 "
+                className={`flex items-center space-x-4 rounded-lg bg-[#fafafa] px-6 py-8 lg:mt-6 ${
+                  projects.length - 1 === i ? 'mb-0' : 'mb-6'
                 } `}
               >
                 <div className="relative inline-flex h-24 w-24 items-center justify-center p-3">
                   <span className="project-icon text-[#FA7398]">
-                    {" "}
+                    {' '}
                     <FeatherIcon className="font-semibold" />
                   </span>
                   <svg
-                    className="absolute left-0 top-0 h-full w-full"
+                    className="absolute top-0 left-0 h-full w-full"
                     width="90"
                     height="90"
                     viewBox="0 0 90 90"

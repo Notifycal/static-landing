@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { Star } from "react-feather";
-import SwiperCore from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef, useState } from 'react';
+import { Star } from 'react-feather';
+import SwiperCore from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const TestimonialSlider = ({ list }) => {
   SwiperCore.use([Pagination]);
@@ -15,10 +15,10 @@ const TestimonialSlider = ({ list }) => {
     <div className="reviews-carousel relative">
       <Swiper
         pagination={{
-          type: "bullets",
+          type: 'bullets',
           el: paginationRef.current,
           clickable: true,
-          dynamicBullets: true,
+          dynamicBullets: true
         }}
         onSwiper={(swiper) => {
           setSwiper(swiper);
@@ -28,25 +28,23 @@ const TestimonialSlider = ({ list }) => {
         slidesPerView={1}
         breakpoints={{
           992: {
-            slidesPerView: 2,
+            slidesPerView: 2
           },
           1200: {
-            slidesPerView: 3,
-          },
+            slidesPerView: 3
+          }
         }}
       >
         {list.map((item, i) => (
-          <SwiperSlide key={"feature-" + i}>
+          <SwiperSlide key={'feature-' + i}>
             <div className="review">
               <div className="review-author-avatar bg-gradient">
                 <img src={item.avatar} alt="" />
               </div>
               <h4 className="mb-2">{item.author}</h4>
-              <p className="mb-4 text-text-dark/80">{item.organization}</p>
+              <p className="text-text-dark/80 mb-4">{item.organization}</p>
               <p>{item.content}</p>
-              <div
-                className={`review-rating mt-6 flex items-center justify-center space-x-2.5 ${item.rating}`}
-              >
+              <div className={`review-rating mt-6 flex items-center justify-center space-x-2.5 ${item.rating}`}>
                 <Star />
                 <Star />
                 <Star />
@@ -57,11 +55,11 @@ const TestimonialSlider = ({ list }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="relative flex justify-center testimonial-slider-pagination">
+      <div className="testimonial-slider-pagination relative flex justify-center">
         <div
           width="100%"
           className="swiper-pagination reviews-carousel-pagination !bottom-0"
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
           ref={paginationRef}
         ></div>
       </div>

@@ -1,9 +1,9 @@
-import { marked } from "marked";
-import React, { useEffect, useRef, useState } from "react";
+import { marked } from 'marked';
+import { useEffect, useRef, useState } from 'react';
 
 marked.use({
   mangle: false,
-  headerIds: false,
+  headerIds: false
 });
 
 const Tabs = ({ children }) => {
@@ -21,18 +21,16 @@ const Tabs = ({ children }) => {
   }, [active]);
 
   const tabLinks = Array.from(
-    children.props.value.matchAll(
-      /<div\s+data-name="([^"]+)"[^>]*>(.*?)<\/div>/gs,
-    ),
-    (match) => ({ name: match[1], children: match[0] }),
+    children.props.value.matchAll(/<div\s+data-name="([^"]+)"[^>]*>(.*?)<\/div>/gs),
+    (match) => ({ name: match[1], children: match[0] })
   );
 
   const handleKeyDown = (event, index) => {
-    if (event.key === "Enter" || event.key === " ") {
+    if (event.key === 'Enter' || event.key === ' ') {
       setActive(index);
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === 'ArrowRight') {
       setActive((active + 1) % tabLinks.length);
-    } else if (event.key === "ArrowLeft") {
+    } else if (event.key === 'ArrowLeft') {
       setActive((active - 1 + tabLinks.length) % tabLinks.length);
     }
   };
@@ -43,7 +41,7 @@ const Tabs = ({ children }) => {
         {tabLinks.map((item, index) => (
           <li
             key={index}
-            className={`tab-nav-item ${index === active && "active"}`}
+            className={`tab-nav-item ${index === active && 'active'}`}
             role="tab"
             tabIndex={index === active ? 0 : -1}
             onKeyDown={(event) => handleKeyDown(event, index)}
@@ -57,10 +55,10 @@ const Tabs = ({ children }) => {
       </ul>
       {tabLinks.map((item, i) => (
         <div
-          className={active === i ? "tab-content block px-5" : "hidden"}
+          className={active === i ? 'tab-content block px-5' : 'hidden'}
           key={i}
           dangerouslySetInnerHTML={{
-            __html: marked.parse(item.children),
+            __html: marked.parse(item.children)
           }}
         />
       ))}

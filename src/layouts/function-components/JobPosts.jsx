@@ -1,12 +1,10 @@
-import { humanize } from "@/lib/utils/textConverter";
-import { marked } from "marked";
-import { useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { humanize } from '@/lib/utils/textConverter';
+import { marked } from 'marked';
+import { useState } from 'react';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 const JobPosts = ({ posts, categories, career }) => {
-  const [tab, setTab] = useState("");
-  const filterPost = !tab
-    ? posts
-    : posts.filter((post) => post.data.categories.includes(tab));
+  const [tab, setTab] = useState('');
+  const filterPost = !tab ? posts : posts.filter((post) => post.data.categories.includes(tab));
 
   return (
     <section className="section">
@@ -17,17 +15,15 @@ const JobPosts = ({ posts, categories, career }) => {
             <p
               className="mt-4"
               dangerouslySetInnerHTML={{
-                __html: marked.parseInline(career.subtitle),
+                __html: marked.parseInline(career.subtitle)
               }}
             />
 
             <ul className="filter-list mt-8 flex flex-wrap items-center justify-center">
               <li>
                 <span
-                  className={`filter-btn ${
-                    !tab ? "filter-btn-active" : undefined
-                  } btn btn-sm cursor-pointer`}
-                  onClick={() => setTab("")}
+                  className={`filter-btn ${!tab ? 'filter-btn-active' : undefined} btn btn-sm cursor-pointer`}
+                  onClick={() => setTab('')}
                 >
                   All Categories
                 </span>
@@ -36,7 +32,7 @@ const JobPosts = ({ posts, categories, career }) => {
                 <li key={`category-${i}`} onClick={() => setTab(category)}>
                   <span
                     className={`filter-btn ${
-                      tab === category ? "filter-btn-active" : undefined
+                      tab === category ? 'filter-btn-active' : undefined
                     } btn btn-sm cursor-pointer`}
                   >
                     {humanize(category)}
@@ -52,7 +48,7 @@ const JobPosts = ({ posts, categories, career }) => {
               <div className="rounded-xl bg-white p-5 shadow-lg lg:p-10">
                 <h3 className="h4">{post.data.title}</h3>
                 <p className="mt-6">{post.data.excerpt}</p>
-                <ul className="mt-6 flex flex-wrap items-center text-text-dark">
+                <ul className="text-text-dark mt-6 flex flex-wrap items-center">
                   <li className="my-1 mr-8 inline-flex items-center">
                     <svg
                       className="mr-1"
@@ -86,10 +82,7 @@ const JobPosts = ({ posts, categories, career }) => {
                     {post.data.location}
                   </li>
                   <li className="my-1 mr-8">
-                    <a
-                      className="inline-flex items-center font-semibold text-primary"
-                      href={`/careers/${post.id}`}
-                    >
+                    <a className="text-primary inline-flex items-center font-semibold" href={`/careers/${post.id}`}>
                       Read More
                       <AiOutlineArrowRight className="ml-1.5 text-xl font-bold" />
                     </a>

@@ -13,10 +13,10 @@
   li {
     @apply mr-2 inline-block;
     a {
-      @apply inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-center transition-all duration-200 hover:bg-primary;
+      @apply hover:bg-primary inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-center transition-all duration-200;
 
       svg {
-        @apply m-auto h-11 text-xl text-text-dark;
+        @apply text-text-dark m-auto h-11 text-xl;
       }
 
       path {
@@ -32,24 +32,24 @@
 
 /* tab */
 .tab {
-  @apply overflow-hidden rounded-lg border border-border;
+  @apply border-border overflow-hidden rounded-lg border;
 }
 
 .tab-nav {
-  @apply flex border-b border-border bg-light m-0 list-none;
+  @apply border-border bg-light m-0 flex list-none border-b;
   @apply m-0;
   @apply list-none;
 }
 
 .tab-nav-item {
-  @apply cursor-pointer border-b-[3px] border-border py-2 text-lg opacity-80;
+  @apply border-border cursor-pointer border-b-[3px] py-2 text-lg opacity-80;
   @apply my-0;
   @apply text-text-dark;
   @apply px-8;
 }
 
 .tab-nav-item.active {
-  @apply border-b-[3px] border-dark opacity-100;
+  @apply border-dark border-b-[3px] opacity-100;
 }
 
 .tab-content-panel {
@@ -68,7 +68,7 @@
 .notice {
   .notice-body {
     p {
-      @apply my-0 text-text;
+      @apply text-text my-0;
     }
   }
 
@@ -267,7 +267,7 @@ select:invalid {
 }
 .tab-icon {
   svg {
-    @apply h-6 w-4 fill-(--color-primary) text-primary;
+    @apply text-primary h-6 w-4 fill-(--color-primary);
   }
 }
 /* video */
@@ -280,7 +280,7 @@ select:invalid {
 }
 
 .video-play-btn {
-  @apply absolute left-1/2 top-1/2 z-10 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary cursor-pointer;
+  @apply bg-primary absolute top-1/2 left-1/2 z-10 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full;
   animation: shadow-pulse 1.5s infinite;
 }
 
@@ -289,7 +289,7 @@ select:invalid {
 }
 
 .video-play-btn::after {
-  @apply absolute left-0 top-0 h-full w-full rounded-full content-[''];
+  @apply absolute top-0 left-0 h-full w-full rounded-full content-[''];
   animation: shadow-pulse-2 1.4s infinite;
 }
 
@@ -329,31 +329,31 @@ select:invalid {
 .review-rating {
   &.five {
     svg {
-      @apply fill-(--color-secondary) text-secondary;
+      @apply text-secondary fill-(--color-secondary);
     }
   }
 
   &.four {
     svg {
       &:not(:last-child) {
-        @apply fill-(--color-secondary) text-secondary;
+        @apply text-secondary fill-(--color-secondary);
       }
       &:nth-child(5) {
-        @apply fill-(--color-light) text-text-light;
+        @apply text-text-light fill-(--color-light);
       }
     }
   }
 
   &.three {
     svg {
-      @apply fill-(--color-secondary) text-secondary;
+      @apply text-secondary fill-(--color-secondary);
 
       &:last-child {
-        @apply fill-(--color-light) text-text-light;
+        @apply text-text-light fill-(--color-light);
       }
 
       &:nth-child(4) {
-        @apply fill-(--color-light) text-text-light;
+        @apply text-text-light fill-(--color-light);
       }
     }
   }
@@ -361,11 +361,11 @@ select:invalid {
   &.two {
     svg {
       &:first-child {
-        @apply fill-(--color-secondary) text-secondary;
+        @apply text-secondary fill-(--color-secondary);
       }
 
       &:nth-child(2) {
-        @apply fill-(--color-secondary) text-secondary;
+        @apply text-secondary fill-(--color-secondary);
       }
     }
   }
@@ -373,7 +373,7 @@ select:invalid {
   &.one {
     svg {
       &:first-child {
-        @apply fill-(--color-secondary) text-secondary;
+        @apply text-secondary fill-(--color-secondary);
       }
     }
   }
@@ -385,23 +385,23 @@ select:invalid {
 }
 
 .services .tab-nav-item {
-  @apply mb-4 flex rounded text-text-dark opacity-100 py-3.5;
+  @apply text-text-dark mb-4 flex rounded py-3.5 opacity-100;
 }
 
 .services .tab-nav-item.active {
-  @apply border-b-0 bg-primary/40;
+  @apply bg-primary/40 border-b-0;
 }
 
 /* career */
 .benifit-icon {
   svg {
-    @apply h-8 w-24 text-xl text-text-dark;
+    @apply text-text-dark h-8 w-24 text-xl;
   }
 }
 /* footer */
 .footer {
   h6 {
-    @apply mb-4 font-primary font-semibold lg:mb-8;
+    @apply font-primary mb-4 font-semibold lg:mb-8;
   }
 
   p {
@@ -409,14 +409,14 @@ select:invalid {
   }
 
   li > a {
-    @apply text-sm hover:text-primary hover:underline;
+    @apply hover:text-primary text-sm hover:underline;
   }
 }
 
 /* gradient-number */
 .gradient-number {
   span {
-    @apply bg-clip-text font-primary text-4xl font-bold leading-none;
+    @apply font-primary bg-clip-text text-4xl leading-none font-bold;
     -webkit-text-fill-color: transparent;
   }
 }
@@ -431,7 +431,7 @@ select:invalid {
 }
 
 .card-tags {
-  @apply absolute right-10 top-10 z-[1] mb-6;
+  @apply absolute top-10 right-10 z-[1] mb-6;
 }
 
 .card-content {
@@ -443,12 +443,12 @@ select:invalid {
 }
 
 .card-footer {
-  @apply border-t border-border pb-0 pt-6;
+  @apply border-border border-t pt-6 pb-0;
 }
 
 /* tag */
 .tag {
-  @apply inline-block h-8 rounded-3xl border border-primary bg-[#FAEBE1] px-3.5 py-2 text-sm leading-none text-primary transition-all hover:bg-primary hover:text-white;
+  @apply border-primary text-primary hover:bg-primary inline-block h-8 rounded-3xl border bg-[#FAEBE1] px-3.5 py-2 text-sm leading-none transition-all hover:text-white;
 }
 
 /* featured-posts */
@@ -469,7 +469,7 @@ select:invalid {
 }
 
 .featured-posts .card-tags {
-  @apply relative left-0 top-0;
+  @apply relative top-0 left-0;
 }
 
 .featured-posts .card-footer {
@@ -477,12 +477,12 @@ select:invalid {
 }
 
 .filter-btn {
-  @apply m-3 rounded-3xl border border-[#A9A9A9] text-text-dark;
+  @apply text-text-dark m-3 rounded-3xl border border-[#A9A9A9];
 }
 
 .filter-btn-active,
 .filter-btn.active {
-  @apply border-white bg-white text-text-dark shadow-[0px_15px_34px_rgba(0,0,0,0.1)];
+  @apply text-text-dark border-white bg-white shadow-[0px_15px_34px_rgba(0,0,0,0.1)];
 }
 
 /* career-single */
@@ -507,7 +507,7 @@ select:invalid {
 }
 
 .integrations-single .integrations-single-content ul {
-  @apply list-disc pl-6 marker:text-text-dark;
+  @apply marker:text-text-dark list-disc pl-6;
 }
 
 .integrations-single .integrations-single-content ul li {
@@ -516,7 +516,7 @@ select:invalid {
 
 /* faq */
 .panel {
-  @apply relative border-b border-border py-4 pl-7 pr-4;
+  @apply border-border relative border-b py-4 pr-4 pl-7;
 }
 
 .panel .accordion-button {
@@ -528,7 +528,7 @@ select:invalid {
 }
 
 .panel-arrow {
-  @apply absolute left-0 top-8 w-4 -rotate-90;
+  @apply absolute top-8 left-0 w-4 -rotate-90;
 }
 
 .panel-arrow.panel-show {
@@ -545,11 +545,11 @@ select:invalid {
 }
 
 .changelogs .changelogs-content::before {
-  @apply absolute -top-[38px] left-0 h-[18px] w-[18px] rounded-full border-4 border-primary bg-body content-[''] lg:-left-[49px] lg:top-0;
+  @apply border-primary bg-body absolute -top-[38px] left-0 h-[18px] w-[18px] rounded-full border-4 content-[''] lg:top-0 lg:-left-[49px];
 }
 
 .changelogs .changelogs-content ul {
-  @apply list-disc pl-6 marker:text-text-dark;
+  @apply marker:text-text-dark list-disc pl-6;
 }
 
 .changelogs .changelogs-content ul + .changelogs-tag {
@@ -573,7 +573,7 @@ select:invalid {
 }
 
 .blockquote p {
-  @apply text-2xl text-dark;
+  @apply text-dark text-2xl;
 }
 
 .blockquote blockquote {
@@ -586,7 +586,7 @@ select:invalid {
 }
 
 .blockquote blockquote p::before {
-  @apply -left-4 top-0 -translate-x-full;
+  @apply top-0 -left-4 -translate-x-full;
 }
 
 .blockquote blockquote p::after {
@@ -595,15 +595,15 @@ select:invalid {
 
 /* comment form */
 .comment-form {
-  input[type="text"],
+  input[type='text'],
   textarea {
-    @apply w-full rounded-sm border border-border text-text-dark placeholder:text-[#999999] focus:outline-0;
+    @apply border-border text-text-dark w-full rounded-sm border placeholder:text-[#999999] focus:outline-0;
 
     &:focus {
       box-shadow: none;
     }
   }
-  input[type="text"] {
+  input[type='text'] {
     @apply h-12;
   }
 }
@@ -623,11 +623,11 @@ select:invalid {
 /* swiper pagination */
 .testimonial-slider-pagination {
   .swiper-pagination-bullet {
-    @apply h-2.5! w-2.5! bg-light! opacity-100!;
+    @apply bg-light! h-2.5! w-2.5! opacity-100!;
   }
 
   .swiper-pagination-bullet-active {
-    @apply h-3! w-3! bg-primary!;
+    @apply bg-primary! h-3! w-3!;
   }
 }
 
@@ -642,7 +642,7 @@ select:invalid {
     }
 
     .accordion-content {
-      @apply pb-6 pt-1;
+      @apply pt-1 pb-6;
 
       p + p {
         @apply mt-6;

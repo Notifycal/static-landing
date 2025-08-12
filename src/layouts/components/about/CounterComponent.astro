@@ -1,8 +1,8 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
 
 type Props = {
-  counter: CollectionEntry<"about">["data"]["counter"];
+  counter: CollectionEntry<'about'>['data']['counter'];
 };
 const { counter } = Astro.props;
 ---
@@ -11,15 +11,15 @@ const { counter } = Astro.props;
   <div class="row mx-0 rounded-[20px] bg-white px-10 shadow-lg lg:py-10">
     {
       counter.map((item) => (
-        <div class="border-border sm:col-6 lg:col-3 px-10 py-10 text-center lg:border-r lg:py-0 last:lg:border-none">
+        <div class="border-border px-10 py-10 text-center sm:col-6 lg:col-3 lg:border-r lg:py-0 last:lg:border-none">
           <h2>
             <span class="count" aria-valuenow={item.number}>
               0
             </span>
             <span
-              class={"text-primary"}
+              class={'text-primary'}
               style={{
-                color: item.color,
+                color: item.color
               }}
             >
               +
@@ -34,12 +34,12 @@ const { counter } = Astro.props;
 
 <script is:inline>
   // astro:page-load event is fired when the page is loaded
-  document.addEventListener("astro:page-load", () => {
-    const counters = document.querySelectorAll(".count");
+  document.addEventListener('astro:page-load', () => {
+    const counters = document.querySelectorAll('.count');
     const speed = 700;
     counters.forEach((counter) => {
       const animate = () => {
-        const value = +counter.getAttribute("aria-valuenow");
+        const value = +counter.getAttribute('aria-valuenow');
         const data = +counter.innerText;
 
         const time = value / speed;

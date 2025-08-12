@@ -1,5 +1,5 @@
-import { marked } from "marked";
-import { useState } from "react";
+import { marked } from 'marked';
+import { useState } from 'react';
 
 const Faq = ({ data }) => {
   const [isActive, setIsActive] = useState([]);
@@ -23,16 +23,14 @@ const Faq = ({ data }) => {
             <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
               {data.faq.faq_list.map((item, i) => (
                 <div
-                  className={`accordion border-b border-border ${
-                    isActive.includes(i) ? "active" : undefined
-                  }`}
+                  className={`accordion border-border border-b ${isActive.includes(i) ? 'active' : undefined}`}
                   onClick={() => accordionHandler(i)}
                   key={`item-${i}`}
                 >
-                  <div className="accordion-header relative pl-6 text-lg font-semibold text-text-dark">
+                  <div className="accordion-header text-text-dark relative pl-6 text-lg font-semibold">
                     {item.title}
                     <svg
-                      className="accordion-icon absolute left-0 top-[22px]"
+                      className="accordion-icon absolute top-[22px] left-0"
                       x="0px"
                       y="0px"
                       viewBox="0 0 512 512"
@@ -47,7 +45,7 @@ const Faq = ({ data }) => {
                   <div className="accordion-content pl-6">
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: marked.parseInline(item.content),
+                        __html: marked.parseInline(item.content)
                       }}
                     />
                   </div>

@@ -1,7 +1,6 @@
-import { humanize } from "@/lib/utils/textConverter";
-import React from "react";
-import * as Icon from "react-feather";
-import { BsPinAngleFill } from "react-icons/bs";
+import { humanize } from '@/lib/utils/textConverter';
+import * as Icon from 'react-feather';
+import { BsPinAngleFill } from 'react-icons/bs';
 
 const PricingCard = ({ item }) => {
   const FeatherIcon = Icon[humanize(item.icon)];
@@ -9,28 +8,26 @@ const PricingCard = ({ item }) => {
     <div className="mt-8 px-3 md:col-6 lg:col-4 lg:mt-0" key={item.title}>
       <div
         className={`rounded-xl bg-white px-8 py-10 shadow-lg ${
-          item.featured ? "-mt-16 border border-primary " : undefined
+          item.featured ? 'border-primary -mt-16 border' : undefined
         }`}
       >
         <div className="flex items-center justify-between">
           <div>
             <h2 className="h3">{item.title}</h2>
-            <p className="mt-3 text-2xl text-text-dark">
+            <p className="text-text-dark mt-3 text-2xl">
               {item.pre_currency} {item.price}.00 {item.post_currency}
             </p>
           </div>
           <span
             className={`inline-flex h-16 w-16 items-center justify-center rounded-full font-bold ${
-              item.featured
-                ? "bg-gradient text-white"
-                : "bg-light text-text-dark"
+              item.featured ? 'bg-gradient text-white' : 'bg-light text-text-dark'
             }`}
           >
             <FeatherIcon className="font-semibold" />
           </span>
         </div>
         <p className="mt-6">{item.description}</p>
-        <div className="my-6 border-y border-border py-6">
+        <div className="border-border my-6 border-y py-6">
           <h4 className="h6">{item.services.title}</h4>
 
           <ul className="mt-6">
@@ -38,9 +35,7 @@ const PricingCard = ({ item }) => {
               <li className="mb-3 text-sm" key={`service-${i}`}>
                 <span className="mr-2">
                   <BsPinAngleFill
-                    className={`mr-1 inline h-[14px] w-[14px] ${
-                      item.featured ? "text-primary" : undefined
-                    }`}
+                    className={`mr-1 inline h-[14px] w-[14px] ${item.featured ? 'text-primary' : undefined}`}
                   />
                 </span>
                 {service}
@@ -51,16 +46,13 @@ const PricingCard = ({ item }) => {
         <div className="text-center">
           <a
             className={`btn ${
-              item.featured ? "btn-primary" : "btn-outline-white"
+              item.featured ? 'btn-primary' : 'btn-outline-white'
             } block h-[48px] w-full rounded-[50px] leading-[30px]`}
             href={item.buttons.buy_now.link}
           >
             {item.buttons.buy_now.label}
           </a>
-          <a
-            className="mt-6 inline-flex items-center text-text-dark"
-            href={item.buttons.free_trial.link}
-          >
+          <a className="text-text-dark mt-6 inline-flex items-center" href={item.buttons.free_trial.link}>
             {item.buttons.free_trial.label}
             <svg
               className="ml-1.5"

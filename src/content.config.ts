@@ -1,9 +1,9 @@
-import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
 
 // Homepage Collection Schema
 const homepageCollection = defineCollection({
-  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/homepage" }),
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/homepage' }),
   schema: z.object({
     banner: z.object({
       title: z.string(),
@@ -13,9 +13,9 @@ const homepageCollection = defineCollection({
         .object({
           label: z.string(),
           link: z.string(),
-          enable: z.boolean().default(true),
+          enable: z.boolean().default(true)
         })
-        .optional(),
+        .optional()
     }),
     key_features: z.object({
       title: z.string(),
@@ -25,10 +25,10 @@ const homepageCollection = defineCollection({
           z.object({
             icon: z.string(),
             title: z.string(),
-            content: z.string(),
-          }),
+            content: z.string()
+          })
         )
-        .optional(),
+        .optional()
     }),
 
     service: z.object({
@@ -40,10 +40,10 @@ const homepageCollection = defineCollection({
             z.object({
               title: z.string(),
               icon: z.string(),
-              image: z.string(),
-            }),
+              image: z.string()
+            })
           )
-          .optional(),
+          .optional()
       }),
 
       our_service: z.array(
@@ -55,18 +55,18 @@ const homepageCollection = defineCollection({
           video: z
             .object({
               thumbnail: z.string(),
-              video_id: z.string(),
+              video_id: z.string()
             })
             .optional(),
           button: z
             .object({
               label: z.string(),
               link: z.string(),
-              enable: z.boolean().default(true),
+              enable: z.boolean().default(true)
             })
-            .optional(),
-        }),
-      ),
+            .optional()
+        })
+      )
     }),
     testimonial: z.object({
       title: z.string(),
@@ -77,18 +77,18 @@ const homepageCollection = defineCollection({
             author: z.string(),
             avatar: z.string(),
             organization: z.string(),
-            rating: z.enum(["one", "two", "three", "four", "five"]),
-            content: z.string(),
-          }),
+            rating: z.enum(['one', 'two', 'three', 'four', 'five']),
+            content: z.string()
+          })
         )
-        .optional(),
-    }),
-  }),
+        .optional()
+    })
+  })
 });
 
 // About Collection Schema
 const aboutCollection = defineCollection({
-  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/about" }),
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/about' }),
   schema: z.object({
     title: z.string(),
     page_title: z.string(),
@@ -100,8 +100,8 @@ const aboutCollection = defineCollection({
         label: z.string(),
         link: z.string(),
         outline: z.boolean().optional(),
-        enable: z.boolean().default(true),
-      }),
+        enable: z.boolean().default(true)
+      })
     ),
 
     // Counter
@@ -110,14 +110,14 @@ const aboutCollection = defineCollection({
         name: z.string(),
         number: z.union([z.number(), z.string()]), // Support both numeric and string types (e.g., 'M', 'K')
         measurement: z.string(),
-        color: z.string(),
-      }),
+        color: z.string()
+      })
     ),
 
     // Gallery
     gallery: z.object({
       title: z.string(),
-      images: z.array(z.string()),
+      images: z.array(z.string())
     }),
 
     // Our Work
@@ -126,14 +126,14 @@ const aboutCollection = defineCollection({
       button: z.object({
         label: z.string(),
         link: z.string(),
-        enable: z.boolean().default(true),
+        enable: z.boolean().default(true)
       }),
       features_list: z.array(
         z.object({
           title: z.string(),
-          content: z.string(),
-        }),
-      ),
+          content: z.string()
+        })
+      )
     }),
 
     // Team Members
@@ -144,16 +144,16 @@ const aboutCollection = defineCollection({
         z.object({
           name: z.string(),
           field: z.string(),
-          image: z.string(),
-        }),
-      ),
-    }),
-  }),
+          image: z.string()
+        })
+      )
+    })
+  })
 });
 
 // Blog collection schema
 const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/blog" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/blog' }),
   schema: z.object({
     title: z.string(),
     page_title: z.string().optional(),
@@ -163,15 +163,15 @@ const blogCollection = defineCollection({
     date: z.date().optional(),
     image: z.string().optional(),
     author: z.string().optional(),
-    categories: z.array(z.string()).default(["others"]),
+    categories: z.array(z.string()).default(['others']),
     draft: z.boolean().optional(),
-    featured: z.boolean().optional(),
-  }),
+    featured: z.boolean().optional()
+  })
 });
 
 // Features collections schema
 const featuresCollection = defineCollection({
-  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/features" }),
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/features' }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
@@ -185,9 +185,9 @@ const featuresCollection = defineCollection({
         .object({
           label: z.string(),
           link: z.string(),
-          enable: z.boolean().default(true),
+          enable: z.boolean().default(true)
         })
-        .optional(),
+        .optional()
     }),
 
     // Project Management Section
@@ -201,10 +201,10 @@ const featuresCollection = defineCollection({
             z.object({
               title: z.string(),
               content: z.string(),
-              icon: z.string(),
-            }),
+              icon: z.string()
+            })
           )
-          .optional(),
+          .optional()
       }),
 
       // Feature Service Section
@@ -218,9 +218,9 @@ const featuresCollection = defineCollection({
             label: z.string(),
             link: z.string(),
             enable: z.boolean().default(true),
-            outline: z.boolean().optional(),
-          }),
-        ),
+            outline: z.boolean().optional()
+          })
+        )
       }),
 
       // Feature Tab Section
@@ -231,13 +231,13 @@ const featuresCollection = defineCollection({
             z.object({
               title: z.string(),
               content: z.string(),
-              image: z.string(),
-            }),
+              image: z.string()
+            })
           )
-          .optional(),
-      }),
-    }),
-  }),
+          .optional()
+      })
+    })
+  })
 });
 
 // How It Works Collection Schema
@@ -254,8 +254,8 @@ const howItWorksCollection = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
-        image: z.string(),
-      }),
+        image: z.string()
+      })
     ),
 
     // Our Works Section
@@ -263,10 +263,10 @@ const howItWorksCollection = defineCollection({
       z.object({
         title: z.string(),
         image: z.string(),
-        list: z.array(z.string()).optional(),
-      }),
-    ),
-  }),
+        list: z.array(z.string()).optional()
+      })
+    )
+  })
 });
 
 // Contact collection schema
@@ -276,13 +276,13 @@ const contactCollection = defineCollection({
     meta_title: z.string().optional(),
     description: z.string().optional(),
     page_title: z.string(),
-    image: z.string().optional(),
-  }),
+    image: z.string().optional()
+  })
 });
 
 // Careers collection schema
 const careersCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/careers" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/careers' }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
@@ -299,10 +299,10 @@ const careersCollection = defineCollection({
               title: z.string(),
               content: z.string(),
               color: z.string(),
-              icon: z.string(),
+              icon: z.string()
             })
-            .optional(),
-        ),
+            .optional()
+        )
       })
       .optional(),
     sidebar_content: z
@@ -312,28 +312,28 @@ const careersCollection = defineCollection({
         button: z.object({
           label: z.string(),
           link: z.string(),
-          enable: z.boolean().default(true),
+          enable: z.boolean().default(true)
         }),
-        enable: z.boolean().default(true),
+        enable: z.boolean().default(true)
       })
       .optional(),
     career: z
       .object({
         title: z.string(),
-        subtitle: z.string(),
+        subtitle: z.string()
       })
       .optional(),
     excerpt: z.string().optional(),
     job_nature: z.string().optional(),
     location: z.string().optional(),
-    categories: z.array(z.string()).default(["developer"]),
+    categories: z.array(z.string()).default(['developer']),
     date: z.date().optional(),
-    draft: z.boolean().default(false),
-  }),
+    draft: z.boolean().default(false)
+  })
 });
 
 const integrationsCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/integrations" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/integrations' }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
@@ -342,15 +342,15 @@ const integrationsCollection = defineCollection({
     name: z.string().optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
-    categories: z.array(z.string()).default(["social media"]).optional(),
+    categories: z.array(z.string()).default(['social media']).optional(),
     button: z
       .object({
         label: z.string(),
-        link: z.string(),
+        link: z.string()
       })
       .optional(),
-    draft: z.boolean().default(false).optional(),
-  }),
+    draft: z.boolean().default(false).optional()
+  })
 });
 
 const pricingCollection = defineCollection({
@@ -372,18 +372,18 @@ const pricingCollection = defineCollection({
         buttons: z.object({
           buy_now: z.object({
             label: z.string(),
-            link: z.string(),
+            link: z.string()
           }),
           free_trial: z.object({
             label: z.string(),
-            link: z.string(),
-          }),
+            link: z.string()
+          })
         }),
         services: z.object({
           title: z.string(),
-          list: z.array(z.string()),
-        }),
-      }),
+          list: z.array(z.string())
+        })
+      })
     ),
     faq: z.object({
       title: z.string(),
@@ -391,11 +391,11 @@ const pricingCollection = defineCollection({
       faq_list: z.array(
         z.object({
           title: z.string(),
-          content: z.string(),
-        }),
-      ),
-    }),
-  }),
+          content: z.string()
+        })
+      )
+    })
+  })
 });
 
 // Pages collection schema
@@ -407,8 +407,8 @@ const pagesCollection = defineCollection({
     description: z.string().optional(),
     image: z.string().optional(),
     layout: z.string().optional(),
-    draft: z.boolean().optional(),
-  }),
+    draft: z.boolean().optional()
+  })
 });
 
 // Export collections
@@ -417,10 +417,10 @@ export const collections = {
   about: aboutCollection,
   blog: blogCollection,
   features: featuresCollection,
-  "how-it-works": howItWorksCollection,
+  'how-it-works': howItWorksCollection,
   contact: contactCollection,
   careers: careersCollection,
   integrations: integrationsCollection,
   pricing: pricingCollection,
-  pages: pagesCollection,
+  pages: pagesCollection
 };

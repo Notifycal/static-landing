@@ -1,19 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Accordion = ({ title, children, className }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className={`rounded border border-border ${className}`}>
+    <div className={`border-border rounded border ${className}`}>
       <button
-        className="relative block w-full  bg-light px-4 py-3 text-left text-text-dark"
+        className="bg-light text-text-dark relative block w-full px-4 py-3 text-left"
         onClick={() => setShow(!show)}
       >
         {title}
         <svg
-          className={`absolute right-4 top-1/2 m-0 h-4 w-4 -translate-y-1/2 ${
-            show && "rotate-180"
-          }`}
+          className={`absolute top-1/2 right-4 m-0 h-4 w-4 -translate-y-1/2 ${show && 'rotate-180'}`}
           x="0px"
           y="0px"
           viewBox="0 0 512.011 512.011"
@@ -25,7 +23,7 @@ const Accordion = ({ title, children, className }) => {
           />
         </svg>
       </button>
-      <div className={`px-4 py-3 ${!show && "hidden"}`}>{children}</div>
+      <div className={`px-4 py-3 ${!show && 'hidden'}`}>{children}</div>
     </div>
   );
 };

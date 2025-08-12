@@ -23,7 +23,7 @@ export default [
   ...typescriptEslint.configs.recommended,
   ...typescriptEslint.configs.stylistic,
   // eslintPluginPrettierRecommended,   // This should be last, TODO: enable after fixing the other stuff
-   {
+  {
     files: ['public/config.js'],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off'

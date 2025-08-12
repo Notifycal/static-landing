@@ -2,11 +2,11 @@
 name: youtube
 title: Youtube Integrations
 excerpt: We are looking for a personal financial planning pro Certified Financial Planner preferred who will lead our client advising efforts. You will be a fiduciary who works
-image: "/images/integrations/youtube.png"
-categories: ["streaming"]
+image: '/images/integrations/youtube.png'
+categories: ['streaming']
 button:
   label: integrate
-  link: "#"
+  link: '#'
 draft: false
 ---
 
