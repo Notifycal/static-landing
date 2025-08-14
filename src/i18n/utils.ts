@@ -7,7 +7,9 @@ export function getLangFromUrl(url: URL): LanguageCode {
   return defaultLang;
 }
 
-export function useTranslations(lang: keyof typeof ui): ((key: keyof typeof ui['en']) => string | ReadonlyArray<string>) {
+export function useTranslations(
+  lang: keyof typeof ui
+): (key: keyof (typeof ui)['en']) => string | ReadonlyArray<string> {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
   };

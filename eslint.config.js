@@ -188,7 +188,16 @@ const eslintConfig = typescriptEslint.config(
   unicornConfig,
   {
     // Note: there should be no other properties in this object
-    ignores: ['dist/**', 'eslint.config.js', 'tf/**', 'src/env.d.ts', 'config/**', 'public/**', '.astro/**', 'src/tailwind-plugin/**']
+    ignores: [
+      'dist/**',
+      'eslint.config.js',
+      'tf/**',
+      'src/env.d.ts',
+      'config/**',
+      'public/**',
+      '.astro/**',
+      'src/tailwind-plugin/**'
+    ]
   }
 );
 
