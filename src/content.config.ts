@@ -1,7 +1,6 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
-// Homepage Collection Schema
 const homepageCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/homepage' }),
   schema: z.object({
@@ -86,18 +85,6 @@ const homepageCollection = defineCollection({
   })
 });
 
-// Contact collection schema
-const contactCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    metaTitle: z.string().optional(),
-    description: z.string().optional(),
-    pageTitle: z.string(),
-    image: z.string().optional()
-  })
-});
-
-// Pages collection schema
 const pagesCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
@@ -113,6 +100,5 @@ const pagesCollection = defineCollection({
 // Export collections
 export const collections = {
   homepage: homepageCollection,
-  contact: contactCollection,
   pages: pagesCollection
 };
