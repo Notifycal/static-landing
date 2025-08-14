@@ -539,35 +539,6 @@ select:invalid {
   @apply border-b-0;
 }
 
-/* changelogs */
-.changelogs .changelogs-content {
-  @apply relative;
-}
-
-.changelogs .changelogs-content::before {
-  @apply border-primary bg-body absolute -top-[38px] left-0 h-[18px] w-[18px] rounded-full border-4 content-[''] lg:top-0 lg:-left-[49px];
-}
-
-.changelogs .changelogs-content ul {
-  @apply marker:text-text-dark list-disc pl-6;
-}
-
-.changelogs .changelogs-content ul + .changelogs-tag {
-  @apply mt-6;
-}
-
-.changelogs .changelogs-content ul > li {
-  @apply mb-3;
-}
-
-.changelogs .changelogs-content ul > li span {
-  @apply text-primary;
-}
-
-.changelogs .changelogs-tag {
-  @apply mb-5 inline-block h-5 rounded px-1 py-0.5 text-xs text-white;
-}
-
 .text-container {
   @apply mx-auto lg:max-w-[412px];
 }
