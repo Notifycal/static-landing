@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.6.5](https://github.com/Notifycal/static-landing/compare/v1.6.4...v1.6.5) (2025-08-14)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.2.4 ([#377](https://github.com/Notifycal/static-landing/issues/377)) ([4df9694](https://github.com/Notifycal/static-landing/commit/4df969479364e93ff9fa08f41e8548b1c1feb518))
+* **deps:** Update dependency @notifycal/shared to v7 ([#379](https://github.com/Notifycal/static-landing/issues/379)) ([7b0c8ae](https://github.com/Notifycal/static-landing/commit/7b0c8aee2b1ef92dc5a605b389065ba5d62f2bf7))
+* **deps:** Update dependency astro to v5.12.9 ([#380](https://github.com/Notifycal/static-landing/issues/380)) ([2edb8f8](https://github.com/Notifycal/static-landing/commit/2edb8f88c75218e6114a22782a45723a30386dbd))
+* **deps:** Update dependency astro to v5.13.0 ([#387](https://github.com/Notifycal/static-landing/issues/387)) ([266c126](https://github.com/Notifycal/static-landing/commit/266c126257c43d651483238bf73188f1ca11ee3f))
+* **deps:** Update dependency tailwindcss to v4.1.12 ([#390](https://github.com/Notifycal/static-landing/issues/390)) ([68399a2](https://github.com/Notifycal/static-landing/commit/68399a249192dd2d8958420d405d047fa6844b50))
+
 ## [1.6.4](https://github.com/Notifycal/static-landing/compare/v1.6.3...v1.6.4) (2025-08-06)
 
 
