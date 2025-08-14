@@ -1,11 +1,11 @@
 ---
 title: 'Laravel Developer'
-meta_title: ''
+metaTitle: ''
 description: ''
 excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam lorem amet eget in netus laoreet
 location: San Francisco
 categories: ['developer']
-job_nature: 'Full Time'
+jobNature: 'Full Time'
 date: 2021-07-14
 draft: false
 ---

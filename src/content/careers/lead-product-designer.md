@@ -1,9 +1,9 @@
 ---
 title: 'Lead Product Designer'
-meta_title: ''
+metaTitle: ''
 description: ''
 excerpt: Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam lorem amet eget in netus laoreet
-job_nature: 'Full Time'
+jobNature: 'Full Time'
 location: San Francisco
 categories: ['designer']
 date: 2021-07-09

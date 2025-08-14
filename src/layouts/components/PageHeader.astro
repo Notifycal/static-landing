@@ -1,7 +1,7 @@
 ---
 import { humanize, markdownify, slugify } from '@/lib/utils/textConverter';
-const { page_data } = Astro.props || {};
-const { title, index_title, page_title, slug, content } = page_data || {};
+const { pageData } = Astro.props || {};
+const { title, indexTitle, pageTitle, slug, content } = pageData || {};
 ---
 
 <div class="text-center">
@@ -18,13 +18,13 @@ const { title, index_title, page_title, slug, content } = page_data || {};
     </li>
     <li class="text-text-dark leading-none">
       {
-        index_title ? (
+        indexTitle ? (
           <span class="text-sm leading-none">
             /{' '}
-            <a href={`/${slugify(index_title)}`} class="text-primary">
-              {index_title}
+            <a href={`/${slugify(indexTitle)}`} class="text-primary">
+              {indexTitle}
             </a>{' '}
-            / {page_title ? page_title : humanize(slug.replace('page /', ''))}
+            / {pageTitle ? pageTitle : humanize(slug.replace('page /', ''))}
           </span>
         ) : (
           <span class="text-sm leading-none">/ {title}</span>
@@ -32,13 +32,13 @@ const { title, index_title, page_title, slug, content } = page_data || {};
       }
     </li>
   </ul>
-  <h1 class="mt-8 mb-5" set:html={markdownify(page_data?.page_title ? page_data?.page_title : page_data?.title)} />
+  <h1 class="mt-8 mb-5" set:html={markdownify(pageData?.pageTitle ? pageData?.pageTitle : pageData?.title)} />
   <p set:html={markdownify(content)} />
 
   {
-    page_data.buttons && (
+    pageData.buttons && (
       <div class="mt-11 justify-center sm:flex">
-        {page_data.buttons.map(
+        {pageData.buttons.map(
           (button: any) =>
             button?.enable && (
               <a

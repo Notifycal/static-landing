@@ -4,19 +4,19 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 
 type Props = {
   posts: CollectionEntry<'careers'>[];
-  sidebar_content: CollectionEntry<'careers'>['data']['sidebar_content'];
+  sidebarContent: CollectionEntry<'careers'>['data']['sidebarContent'];
 };
-const { posts, sidebar_content } = Astro.props;
+const { posts, sidebarContent } = Astro.props;
 ---
 
 <div class="career-single-sidebar mt-8 lg:col-4 lg:mt-0">
   {
-    sidebar_content && sidebar_content.enable && (
+    sidebarContent && sidebarContent.enable && (
       <div class="mb-8 rounded-xl bg-white px-7 py-10 shadow-lg">
-        <h5 class="h5">{sidebar_content.title}</h5>
-        <p class="mt-4">{sidebar_content.content}</p>
-        <a class="btn btn-primary mt-6 block w-full" href={sidebar_content.button.link}>
-          {sidebar_content.button.label}
+        <h5 class="h5">{sidebarContent.title}</h5>
+        <p class="mt-4">{sidebarContent.content}</p>
+        <a class="btn btn-primary mt-6 block w-full" href={sidebarContent.button.link}>
+          {sidebarContent.button.label}
         </a>
       </div>
     )
@@ -34,7 +34,7 @@ const { posts, sidebar_content } = Astro.props;
                 fill="currentColor"
               />
             </svg>
-            {item.data.job_nature}
+            {item.data.jobNature}
           </li>
           <li class="my-1 mr-8 inline-flex items-center">
             <svg class="mr-1" width="16" height="20" viewBox="0 0 23 33" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -11,10 +11,9 @@ import Cta from '@/layouts/partials/Cta.astro';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import { getTaxonomy } from '@/lib/taxonomyParser.astro';
 import { sortByDate } from '@/lib/utils/sortFunctions';
-import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 
-const blogIndex = (await getEntry('blog', '-index')) as CollectionEntry<'blog'>;
+const blogIndex = await getEntry('blog', '-index');
 const posts = await getSinglePage('blog');
 const categories = await getTaxonomy('blog', 'categories');
 const sortedPosts = sortByDate(posts);
@@ -25,15 +24,15 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
 ---
 
 <Base
-  title={blogIndex.data.title}
-  meta_title={blogIndex.data.meta_title}
-  description={blogIndex.data.description}
-  image={blogIndex.data.image}
+  title={blogIndex?.data.title}
+  metaTitle={blogIndex?.data.metaTitle}
+  description={blogIndex?.data.description}
+  image={blogIndex?.data.image}
 >
   <Shape />
   <section class="page-hero pt-16">
     <div class="container">
-      <PageHeader page_data={blogIndex.data} />
+      <PageHeader pageData={blogIndex?.data} />
     </div>
   </section>
   <section class="section">

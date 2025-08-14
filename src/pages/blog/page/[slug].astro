@@ -35,22 +35,22 @@ const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastPost = currentPage * config.settings.pagination;
 const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
 const currentPosts = recentPost.slice(indexOfFirstPost, indexOfLastPost);
-const page_data = {
-  index_title: blogIndex.data.title,
+const pageData = {
+  indexTitle: blogIndex.data.title,
   slug: `page / ${slug}`
 };
 ---
 
 <Base
   title={blogIndex.data.title}
-  meta_title={blogIndex.data.meta_title}
+  metaTitle={blogIndex.data.metaTitle}
   description={blogIndex.data.description}
   image={blogIndex.data.image}
 >
   <Shape />
   <section class="page-hero pt-16">
     <div class="container">
-      <PageHeader page_data={page_data} />
+      <PageHeader pageData={pageData} />
     </div>
   </section>
   <section class="section">

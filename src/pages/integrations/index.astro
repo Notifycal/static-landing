@@ -11,7 +11,7 @@ import { getEntry } from 'astro:content';
 const integrationsIndex = (await getEntry('integrations', '-index')) as CollectionEntry<'integrations'>;
 const categories = await getTaxonomy('integrations', 'categories');
 const integrations = await getSinglePage('integrations');
-const page_data = {
+const pageData = {
   ...integrationsIndex.data,
   content: integrationsIndex.body
 };
@@ -19,14 +19,14 @@ const page_data = {
 
 <Base
   title={integrationsIndex.data.title}
-  meta_title={integrationsIndex.data.meta_title}
+  metaTitle={integrationsIndex.data.metaTitle}
   description={integrationsIndex.data.description}
   image={integrationsIndex.data.image}
 >
   <Shape />
   <section class="page-hero pt-16 pb-14">
     <div class="container">
-      <PageHeader page_data={page_data} />
+      <PageHeader pageData={pageData} />
     </div>
   </section>
   <IntegrateMedia client:load integrations={integrations} categories={categories} />

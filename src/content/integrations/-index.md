@@ -1,7 +1,7 @@
 ---
 title: Integrations
-page_title: How To Integrate <br/> With Pinwheel
-meta_title: ''
+pageTitle: How To Integrate <br/> With Pinwheel
+metaTitle: ''
 description: ''
 image: ''
 ---

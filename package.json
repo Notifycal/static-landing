@@ -6,16 +6,16 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "$npm_execpath run clean && astro check && astro build && $npm_execpath run build:config",
-    "build:config": "cp config/config.skel.js dist/ && rm -rf dist/config.local.js",
+    "build:config": "",
     "preview": "$npm_execpath run build && astro preview",
     "dev": "$npm_execpath run dev:config && astro dev",
-    "dev:config": "cp config/config.local.js public/config.js",
+    "dev:config": "",
     "lint": "eslint '**/*.{js,ts,jsx,tsx,cjs,mjs}' --no-error-on-unmatched-pattern",
     "lint:fix": "$npm_execpath run lint -- --fix",
     "prettier": "prettier . --check",
     "prettier:fix": "$npm_execpath run prettier -- --write",
-    "check": "astro check && $npm_execpath run types && $npm_execpath run lint && $npm_execpath run prettier && $npm_execpath run test && echo 'Everything ready to go upstream' || echo 'CAUTION: Have another look'",
-    "types": "tsc",
+    "check": "$npm_execpath run types && $npm_execpath run lint && $npm_execpath run prettier && $npm_execpath run test && echo 'Everything ready to go upstream' || echo 'CAUTION: Have another look'",
+    "types": "tsc && astro check",
     "test": "echo \"Write some!\""
   },
   "dependencies": {
@@ -47,6 +47,7 @@
     "vite": "^7.0.6"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.3.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
@@ -56,9 +57,14 @@
     "@typescript-eslint/parser": "^8.39.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-unicorn": "^60.0.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",

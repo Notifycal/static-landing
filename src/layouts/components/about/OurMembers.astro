@@ -7,7 +7,7 @@ type Props = {
 };
 
 const {
-  members: { title, description, member_list }
+  members: { title, description, memberList }
 } = Astro.props;
 ---
 
@@ -25,7 +25,7 @@ const {
       <div class="lg:col-10">
         <div class="row">
           {
-            member_list.map((item) => (
+            memberList.map((item) => (
               <div class="mb-6 flex flex-col px-6 text-center sm:col-6 sm:items-center lg:col-4">
                 <div class="member-avatar inline-flex justify-center">
                   <Image height={112} width={112} class="rouded-full h-28 w-28" src={item.image} alt="" />

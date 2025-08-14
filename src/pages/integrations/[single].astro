@@ -22,16 +22,16 @@ export async function getStaticPaths() {
 const { integration } = Astro.props;
 
 const { Content } = await render(integration);
-const page_data = {
+const pageData = {
   ...integration.data,
-  index_title: integrationsIndex.data.title,
+  indexTitle: integrationsIndex.data.title,
   slug: integration.id
 };
 ---
 
 <Base
   title={integration.data.title}
-  meta_title={integration.data.meta_title}
+  metaTitle={integration.data.metaTitle}
   description={integration.data.description}
   image={integration.data.image}
 >
@@ -39,7 +39,7 @@ const page_data = {
   <section class="page-hero pt-16 pb-8">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={page_data} />
+        <PageHeader pageData={pageData} />
       </div>
     </div>
   </section>

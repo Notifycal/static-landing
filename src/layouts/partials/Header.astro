@@ -107,9 +107,11 @@ const { pathname } = Astro.url;
   document.addEventListener('astro:page-load', () => {
     document.querySelectorAll('.dropdown-button').forEach((button) => {
       button.addEventListener('click', (e) => {
-        const dropdown = e.target.nextElementSibling;
+        const dropdown = e.currentTarget.querySelector('.nav-dropdown-list');
 
-        dropdown.classList.toggle('hidden');
+        if (dropdown) {
+          dropdown.classList.toggle('hidden');
+        }
       });
     });
 

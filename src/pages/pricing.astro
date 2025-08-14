@@ -8,7 +8,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 
 const pricing = (await getEntry('pricing', '-index')) as CollectionEntry<'pricing'>;
-const page_data = {
+const pageData = {
   ...pricing.data,
   content: pricing.body
 };
@@ -16,21 +16,21 @@ const page_data = {
 
 <Base
   title={pricing.data.title}
-  meta_title={pricing.data.meta_title}
+  metaTitle={pricing.data.metaTitle}
   description={pricing.data.description}
   image={pricing.data.image}
 >
   <Shape />
   <section class="page-hero pt-16 pb-14">
     <div class="container">
-      <PageHeader page_data={page_data} />
+      <PageHeader pageData={pageData} />
     </div>
   </section>
   <!-- pricing -->
   <section class="section mt-12 pt-0">
     <div class="container">
       <div class="row lg:px-10">
-        {pricing.data.pricing_card.map((item) => <PricingCard item={item} client:load />)}
+        {pricing.data.pricingCard.map((item) => <PricingCard item={item} client:load />)}
       </div>
     </div>
   </section>

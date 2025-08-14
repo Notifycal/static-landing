@@ -1,16 +1,32 @@
 import { humanize } from '@/lib/utils/textConverter';
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import * as Icon from 'react-feather';
 
-const HomepageTab = ({ homepage_tab }) => {
-  const { title, description, tab_list } = homepage_tab;
+interface TabItem {
+  icon: string;
+  title: string;
+  image: string;
+}
 
-  const [tab, setTab] = useState(0);
+interface HomepageTabData {
+  title: string;
+  description: string;
+  tabList?: Array<TabItem>;
+}
+
+interface HomepageTabProps {
+  homepageTab: HomepageTabData;
+}
+
+const HomepageTab = ({ homepageTab }: HomepageTabProps): JSX.Element => {
+  const { title, description, tabList } = homepageTab;
+
+  const [tab, setTab] = useState<number>(0);
   return (
     <div className="tab gx-5 row items-center">
       <div className="lg:order-2 lg:col-7">
         <div className="tab-content">
-          {tab_list.map((item, index) => (
+          {tabList?.map((item, index) => (
             <div key={index} className={`tab-content-panel ${tab === index ? 'active' : undefined}`}>
               <img alt="" className="w-full object-contain" src={item.image} />
             </div>
@@ -22,13 +38,15 @@ const HomepageTab = ({ homepage_tab }) => {
           <h2 className="lg:text-4xl">{title}</h2>
           <p className="mt-4">{description}</p>
           <ul className="tab-nav mt-8! border-b-0">
-            {tab_list.map((item, index) => {
-              const FeatherIcon = Icon[humanize(item.icon)];
+            {tabList?.map((item, index) => {
+              const FeatherIcon = Icon[humanize(item.icon) as keyof typeof Icon];
               return (
                 <li
                   key={index}
                   className={`tab-nav-item ${tab === index ? 'active' : undefined}`}
-                  onClick={() => setTab(index)}
+                  onClick={() => {
+                    setTab(index);
+                  }}
                 >
                   <span className="tab-icon mr-3">
                     <FeatherIcon />

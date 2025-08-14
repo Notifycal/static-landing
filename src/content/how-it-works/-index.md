@@ -1,7 +1,7 @@
 ---
 title: How It Works
-page_title: our structured approach helps you navigate uncertainties
-meta_title: ''
+pageTitle: our structured approach helps you navigate uncertainties
+metaTitle: ''
 description: ''
 image: ''
 
@@ -17,7 +17,7 @@ performance:
     description: Encourage frequent & timely recognition integrating with communication tools
     image: '/images/how-it-work/awards.webp'
 # works
-our_works:
+ourWorks:
   - title: We'll do the legwork so you don't have to.
     image: '/images/how-it-work/image-1.webp'
     list:

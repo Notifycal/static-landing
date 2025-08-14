@@ -1,18 +1,17 @@
-// content reading
-const readingTime = (content: string) => {
+const readingTime = (content: string): string => {
   const WPS = 275 / 60;
 
   let images = 0;
   const regex = /\w/;
 
-  let words = content.split(' ').filter((word) => {
+  const words = content.split(' ').filter((word) => {
     if (word.includes('<img')) {
       images += 1;
     }
     return regex.test(word);
   }).length;
 
-  let imageAdjust = images * 4;
+  const imageAdjust = images * 4;
   let imageSecs = 0;
   let imageFactor = 12;
 

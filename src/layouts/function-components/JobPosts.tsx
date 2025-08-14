@@ -1,9 +1,23 @@
 import { humanize } from '@/lib/utils/textConverter';
 import { marked } from 'marked';
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-const JobPosts = ({ posts, categories, career }) => {
-  const [tab, setTab] = useState('');
+
+import type { CollectionEntry } from 'astro:content';
+
+interface Career {
+  title: string;
+  subtitle: string;
+}
+
+interface JobPostsProps {
+  posts: Array<CollectionEntry<'careers'>>;
+  categories: Array<string>;
+  career?: Career;
+}
+
+const JobPosts = ({ posts, categories, career }: JobPostsProps): JSX.Element => {
+  const [tab, setTab] = useState<string>('');
   const filterPost = !tab ? posts : posts.filter((post) => post.data.categories.includes(tab));
 
   return (
@@ -11,25 +25,32 @@ const JobPosts = ({ posts, categories, career }) => {
       <div className="container">
         <div className="row">
           <div className="mx-auto text-center lg:col-8">
-            <h2>{career.title}</h2>
+            <h2>{career?.title}</h2>
             <p
-              className="mt-4"
               dangerouslySetInnerHTML={{
-                __html: marked.parseInline(career.subtitle)
+                __html: marked.parseInline(career?.subtitle || '')
               }}
+              className="mt-4"
             />
 
             <ul className="filter-list mt-8 flex flex-wrap items-center justify-center">
               <li>
                 <span
                   className={`filter-btn ${!tab ? 'filter-btn-active' : undefined} btn btn-sm cursor-pointer`}
-                  onClick={() => setTab('')}
+                  onClick={() => {
+                    setTab('');
+                  }}
                 >
                   All Categories
                 </span>
               </li>
-              {categories.map((category, i) => (
-                <li key={`category-${i}`} onClick={() => setTab(category)}>
+              {categories.map((category, index) => (
+                <li
+                  key={`category-${index}`}
+                  onClick={() => {
+                    setTab(category);
+                  }}
+                >
                   <span
                     className={`filter-btn ${
                       tab === category ? 'filter-btn-active' : undefined
@@ -43,8 +64,8 @@ const JobPosts = ({ posts, categories, career }) => {
           </div>
         </div>
         <div className="row mt-12">
-          {filterPost.map((post, i) => (
-            <div className="mb-8 md:col-6" key={`post-${i}`}>
+          {filterPost.map((post, index) => (
+            <div key={`post-${index}`} className="mb-8 md:col-6">
               <div className="rounded-xl bg-white p-5 shadow-lg lg:p-10">
                 <h3 className="h4">{post.data.title}</h3>
                 <p className="mt-6">{post.data.excerpt}</p>
@@ -52,10 +73,10 @@ const JobPosts = ({ posts, categories, career }) => {
                   <li className="my-1 mr-8 inline-flex items-center">
                     <svg
                       className="mr-1"
-                      width="16"
+                      fill="none"
                       height="16"
                       viewBox="0 0 16 16"
-                      fill="none"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -63,15 +84,15 @@ const JobPosts = ({ posts, categories, career }) => {
                         fill="currentColor"
                       />
                     </svg>
-                    {post.data.job_nature}
+                    {post.data.jobNature}
                   </li>
                   <li className="my-1 mr-8 inline-flex items-center">
                     <svg
                       className="mr-1"
-                      width="16"
+                      fill="none"
                       height="20"
                       viewBox="0 0 23 33"
-                      fill="none"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path

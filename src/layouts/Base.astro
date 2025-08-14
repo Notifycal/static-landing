@@ -6,32 +6,32 @@ import { plainify } from '@/lib/utils/textConverter';
 import Footer from '@/partials/Footer.astro';
 import Header from '@/partials/Header.astro';
 import '@/styles/main.css';
+import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from 'astro:transitions';
-import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 
 // font families
-const pf = theme.fonts.font_family.primary;
-const sf = theme.fonts.font_family.secondary;
+const pf = theme.fonts.fontFamily.primary;
+const sf = theme.fonts.fontFamily.secondary;
 
 let fontPrimary, fontSecondary;
-if (theme.fonts.font_family.primary) {
-  fontPrimary = theme.fonts.font_family.primary.replace(/\+/g, ' ').replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
+if (theme.fonts.fontFamily.primary) {
+  fontPrimary = theme.fonts.fontFamily.primary.replace(/\+/g, ' ').replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
 }
-if (theme.fonts.font_family.secondary) {
-  fontSecondary = theme.fonts.font_family.secondary
+if (theme.fonts.fontFamily.secondary) {
+  fontSecondary = theme.fonts.fontFamily.secondary
     .replace(/\+/g, ' ')
     .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
 }
 
-const { title, meta_title, description, image, noindex, canonical } = Astro.props;
+const { title, metaTitle, description, image, noindex, canonical } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <!-- google tag manager -->
-    {config.google_tag_manager.enable && <GoogleTagmanager id={config.google_tag_manager.gtm_id} />}
+    {config.googleTagManager.enable && <GoogleTagmanager id={config.googleTagManager.gtmId} />}
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
@@ -71,7 +71,7 @@ const { title, meta_title, description, image, noindex, canonical } = Astro.prop
 
     <!-- title -->
     <title>
-      {plainify(meta_title ? meta_title : title ? title : config.site.title)}
+      {plainify(metaTitle ? metaTitle : title ? title : config.site.title)}
     </title>
 
     <!-- canonical url -->
@@ -81,37 +81,37 @@ const { title, meta_title, description, image, noindex, canonical } = Astro.prop
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
     <!-- meta-description -->
-    <meta name="description" content={plainify(description ? description : config.metadata.meta_description)} />
+    <meta name="description" content={plainify(description ? description : config.metadata.metaDescription)} />
 
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta name="author" content={config.metadata.meta_author} />
+    <meta name="author" content={config.metadata.metaAuthor} />
 
     <!-- og-title -->
-    <meta property="og:title" content={plainify(meta_title ? meta_title : title ? title : config.site.title)} />
+    <meta property="og:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
 
     <!-- og-description -->
-    <meta property="og:description" content={plainify(description ? description : config.metadata.meta_description)} />
+    <meta property="og:description" content={plainify(description ? description : config.metadata.metaDescription)} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} />
+    <meta property="og:url" content={`${config.site.baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
 
     <!-- twitter-title -->
-    <meta name="twitter:title" content={plainify(meta_title ? meta_title : title ? title : config.site.title)} />
+    <meta name="twitter:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
 
     <!-- twitter-description -->
-    <meta name="twitter:description" content={plainify(description ? description : config.metadata.meta_description)} />
+    <meta name="twitter:description" content={plainify(description ? description : config.metadata.metaDescription)} />
 
     <!-- og-image -->
-    <meta property="og:image" content={`${config.site.base_url}${image ? image : config.metadata.meta_image}`} />
+    <meta property="og:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
 
     <!-- twitter-image -->
-    <meta name="twitter:image" content={`${config.site.base_url}${image ? image : config.metadata.meta_image}`} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
+    <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>
     {/* google tag manager noscript */}
-    {config.google_tag_manager.enable && <GoogleTagmanagerNoscript id={config.google_tag_manager.gtm_id} />}
+    {config.googleTagManager.enable && <GoogleTagmanagerNoscript id={config.googleTagManager.gtmId} />}
     <TwSizeIndicator />
     <Header />
     <main id="main-content">

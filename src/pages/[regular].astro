@@ -18,18 +18,18 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const { title, meta_title, description, image } = page.data;
-const page_data = {
+const { title, metaTitle, description, image } = page.data;
+const pageData = {
   ...page.data
 };
 ---
 
-<Base title={title} meta_title={meta_title} description={description} image={image}>
+<Base title={title} metaTitle={metaTitle} description={description} image={image}>
   <Shape />
   <section class="page-hero pt-16 pb-14">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={page_data} />
+        <PageHeader pageData={pageData} />
       </div>
     </div>
   </section>

@@ -1,7 +1,7 @@
 ---
 title: 'About'
-page_title: 'About our company'
-meta_title: ''
+pageTitle: 'About our company'
+metaTitle: ''
 description: ''
 image: ''
 buttons:
@@ -47,7 +47,7 @@ features:
     label: Download The Theme
     link: 'https://themefisher.com/astro-themes/pinwheel-astro'
     enable: true
-  features_list:
+  featuresList:
     - title: Accessibility
       content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
     - title: Empowerement
@@ -65,7 +65,7 @@ features:
 members:
   title: This is who we are
   description: Donec sollicitudin molestie malesda. Donec sollitudin mol estie ultricies ligula sed magna dictum
-  member_list:
+  memberList:
     - name: Eleanor Pena
       field: Co-founder & COO
       image: '/images/users/user-1.webp'

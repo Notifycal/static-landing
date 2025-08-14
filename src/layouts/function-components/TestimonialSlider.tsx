@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, type JSX } from 'react';
 import { Star } from 'react-feather';
 import SwiperCore from 'swiper';
 import 'swiper/css';
@@ -6,26 +6,32 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const TestimonialSlider = ({ list }) => {
+interface TestimonialItem {
+  avatar: string;
+  author: string;
+  organization: string;
+  content: string;
+  rating: string;
+}
+
+interface TestimonialSliderProps {
+  list: Array<TestimonialItem>;
+}
+
+const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
   SwiperCore.use([Pagination]);
-  const [swiper, setSwiper] = useState(null);
-  const paginationRef = useRef(null);
+  const paginationRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="reviews-carousel relative">
       <Swiper
-        pagination={{
-          type: 'bullets',
-          el: paginationRef.current,
-          clickable: true,
-          dynamicBullets: true
-        }}
-        onSwiper={(swiper) => {
-          setSwiper(swiper);
-        }}
-        // loop={true}
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }}
         breakpoints={{
           992: {
             slidesPerView: 2
@@ -34,12 +40,18 @@ const TestimonialSlider = ({ list }) => {
             slidesPerView: 3
           }
         }}
+        pagination={{
+          type: 'bullets',
+          el: paginationRef.current,
+          clickable: true,
+          dynamicBullets: true
+        }}
       >
-        {list.map((item, i) => (
-          <SwiperSlide key={'feature-' + i}>
+        {list.map((item, index) => (
+          <SwiperSlide key={'feature-' + index}>
             <div className="review">
               <div className="review-author-avatar bg-gradient">
-                <img src={item.avatar} alt="" />
+                <img alt={item.author} src={item.avatar} />
               </div>
               <h4 className="mb-2">{item.author}</h4>
               <p className="text-text-dark/80 mb-4">{item.organization}</p>
@@ -57,10 +69,9 @@ const TestimonialSlider = ({ list }) => {
       </Swiper>
       <div className="testimonial-slider-pagination relative flex justify-center">
         <div
-          width="100%"
+          ref={paginationRef}
           className="swiper-pagination reviews-carousel-pagination !bottom-0"
           style={{ width: '100%' }}
-          ref={paginationRef}
         ></div>
       </div>
     </div>

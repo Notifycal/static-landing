@@ -7,18 +7,18 @@ import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 
 const entry = (await getEntry('contact', '-index')) as CollectionEntry<'contact'>;
-const { contact_form_action } = config.params;
+const { contactFormAction } = config.params;
 const contact = entry.data;
-const page_data = {
+const pageData = {
   ...contact,
   content: entry.body
 };
 ---
 
-<Base title={contact.title} meta_title={contact.meta_title} description={contact.description} image={contact.image}>
+<Base title={contact.title} metaTitle={contact.metaTitle} description={contact.description} image={contact.image}>
   <section class="page-hero pt-16 pb-6">
     <div class="container">
-      <PageHeader page_data={page_data} />
+      <PageHeader pageData={pageData} />
     </div>
   </section>
 
@@ -38,7 +38,7 @@ const page_data = {
           </div>
         </div>
         <div class="md:order-1 md:col-6">
-          <form class="lg:max-w-[484px]" action={contact_form_action} method="POST">
+          <form class="lg:max-w-[484px]" action={contactFormAction} method="POST">
             <div class="form-group mb-5">
               <label class="form-label" for="name">Full Name</label>
               <input class="form-control" type="text" id="name" placeholder="Your Full Name" />

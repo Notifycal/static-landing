@@ -1,9 +1,9 @@
 ---
+import HomapageFeature from '@/layouts/function-components/HomapageFeature';
 import { markdownify } from '@/lib/utils/textConverter';
 import { Image } from 'astro:assets';
-import HomapageFeature from '@/layouts/function-components/HomapageFeature';
-const { key_features } = Astro.props;
-const { title, description, feature_list } = key_features;
+const { keyFeatures } = Astro.props;
+const { title, description, featureList } = keyFeatures;
 ---
 
 <section class="section key-feature relative">
@@ -23,6 +23,6 @@ const { title, description, feature_list } = key_features;
         <p set:html={markdownify(description)} />
       </div>
     </div>
-    <HomapageFeature feature_list={feature_list} client:load />
+    <HomapageFeature featureList={featureList} client:load />
   </div>
 </section>

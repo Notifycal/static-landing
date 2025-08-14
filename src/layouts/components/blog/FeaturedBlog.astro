@@ -5,7 +5,7 @@ import readingTime from '@/lib/utils/readingTime';
 import { humanize, plainify, slugify } from '@/lib/utils/textConverter';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-const { summary_length } = config.settings;
+const { summaryLength } = config.settings;
 
 type Props = {
   posts: CollectionEntry<'blog'>[];
@@ -31,7 +31,7 @@ const { posts } = Astro.props;
             <h3 class="h4 card-title">
               <a href={`/blog/${post.id}`}>{post.data.title}</a>
             </h3>
-            {post.body && <p class="text-text mb-4">{plainify(post.body?.slice(0, Number(summary_length)))}...</p>}
+            {post.body && <p class="text-text mb-4">{plainify(post.body?.slice(0, Number(summaryLength)))}...</p>}
 
             <div class="card-footer mt-6 flex space-x-4">
               <span class="inline-flex items-center text-xs text-[#666]">

@@ -1,13 +1,30 @@
 import { marked } from 'marked';
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 
-const Faq = ({ data }) => {
-  const [isActive, setIsActive] = useState([]);
-  const accordionHandler = (index) => {
+interface FaqItem {
+  title: string;
+  content: string;
+}
+
+interface FaqData {
+  title: string;
+  description: string;
+  faqList: Array<FaqItem>;
+}
+
+interface FaqProps {
+  data: {
+    faq: FaqData;
+  };
+}
+
+const Faq = ({ data }: FaqProps): JSX.Element => {
+  const [isActive, setIsActive] = useState<Array<number>>([]);
+  const accordionHandler = (index: number): void => {
     if (isActive.includes(index)) {
       setIsActive(isActive.filter((item) => item !== index));
     } else {
-      setIsActive((prev) => [...prev, index]);
+      setIsActive((previous) => [...previous, index]);
     }
   };
 
@@ -21,24 +38,26 @@ const Faq = ({ data }) => {
           </div>
           <div className="mt-8 lg:col-8 lg:mt-0">
             <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
-              {data.faq.faq_list.map((item, i) => (
+              {data.faq.faqList.map((item, index) => (
                 <div
-                  className={`accordion border-border border-b ${isActive.includes(i) ? 'active' : undefined}`}
-                  onClick={() => accordionHandler(i)}
-                  key={`item-${i}`}
+                  key={`item-${index}`}
+                  className={`accordion border-border border-b ${isActive.includes(index) ? 'active' : undefined}`}
+                  onClick={() => {
+                    accordionHandler(index);
+                  }}
                 >
                   <div className="accordion-header text-text-dark relative pl-6 text-lg font-semibold">
                     {item.title}
                     <svg
                       className="accordion-icon absolute top-[22px] left-0"
-                      x="0px"
-                      y="0px"
                       viewBox="0 0 512 512"
+                      x="0px"
                       xmlSpace="preserve"
+                      y="0px"
                     >
                       <path
-                        fill="currentColor"
                         d="M505.755,123.592c-8.341-8.341-21.824-8.341-30.165,0L256.005,343.176L36.421,123.592c-8.341-8.341-21.824-8.341-30.165,0 s-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251l234.667-234.667 C514.096,145.416,514.096,131.933,505.755,123.592z"
+                        fill="currentColor"
                       ></path>
                     </svg>
                   </div>

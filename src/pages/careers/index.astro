@@ -16,16 +16,16 @@ const careerIndex = (await getEntry('careers', '-index')) as CollectionEntry<'ca
 const { benefits, career, image } = careerIndex.data;
 const categories = await getTaxonomy('careers', 'categories');
 const jobPosts = await getSinglePage('careers');
-const page_data = {
+const pageData = {
   title: careerIndex.data.title,
-  page_title: careerIndex.data.page_title,
+  pageTitle: careerIndex.data.pageTitle,
   content: careerIndex.body
 };
 ---
 
 <Base
   title={careerIndex.data.title}
-  meta_title={careerIndex.data.meta_title}
+  metaTitle={careerIndex.data.metaTitle}
   description={careerIndex.data.description}
   image={careerIndex.data.image}
 >
@@ -33,7 +33,7 @@ const page_data = {
 
   <section class="page-hero pt-16 pb-14">
     <div class="container">
-      <PageHeader page_data={page_data} />
+      <PageHeader pageData={pageData} />
       <div class="col-12 mt-14">
         <div class="relative">
           <Image src={image!} alt="" height={532} width={1044} class="w-full rounded" />

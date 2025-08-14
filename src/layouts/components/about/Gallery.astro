@@ -47,7 +47,7 @@ const { title, images } = gallery;
       const sizer = element.querySelector('.js-shuffle-sizer') as HTMLElement | null;
 
       if (sizer) {
-        const shuffleInstance = new Shuffle(element, {
+        new Shuffle(element, {
           itemSelector: '.picture-item',
           sizer: sizer,
           columnWidth: 1
@@ -55,10 +55,13 @@ const { title, images } = gallery;
       } else {
         console.error('Sizer element not found');
       }
-    } else {
-      console.error('Photo gallery element not found');
     }
   }
 
-  document.addEventListener('astro:page-load', shuffle);
+  document.addEventListener('astro:page-load', () => {
+    const element = document.getElementById('photo-gallery');
+    if (element) {
+      shuffle();
+    }
+  });
 </script>

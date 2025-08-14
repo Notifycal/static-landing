@@ -17,10 +17,10 @@ const homepageCollection = defineCollection({
         })
         .optional()
     }),
-    key_features: z.object({
+    keyFeatures: z.object({
       title: z.string(),
       description: z.string(),
-      feature_list: z
+      featureList: z
         .array(
           z.object({
             icon: z.string(),
@@ -32,10 +32,10 @@ const homepageCollection = defineCollection({
     }),
 
     service: z.object({
-      homepage_tab: z.object({
+      homepageTab: z.object({
         title: z.string(),
         description: z.string(),
-        tab_list: z
+        tabList: z
           .array(
             z.object({
               title: z.string(),
@@ -46,7 +46,7 @@ const homepageCollection = defineCollection({
           .optional()
       }),
 
-      our_service: z.array(
+      ourService: z.array(
         z.object({
           title: z.string(),
           description: z.string().optional(),
@@ -55,7 +55,7 @@ const homepageCollection = defineCollection({
           video: z
             .object({
               thumbnail: z.string(),
-              video_id: z.string()
+              videoId: z.string()
             })
             .optional(),
           button: z
@@ -71,7 +71,7 @@ const homepageCollection = defineCollection({
     testimonial: z.object({
       title: z.string(),
       description: z.string(),
-      testimonial_list: z
+      testimonialList: z
         .array(
           z.object({
             author: z.string(),
@@ -91,9 +91,9 @@ const aboutCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/about' }),
   schema: z.object({
     title: z.string(),
-    page_title: z.string(),
+    pageTitle: z.string(),
     description: z.string().optional(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     image: z.string().optional(),
     buttons: z.array(
       z.object({
@@ -128,7 +128,7 @@ const aboutCollection = defineCollection({
         link: z.string(),
         enable: z.boolean().default(true)
       }),
-      features_list: z.array(
+      featuresList: z.array(
         z.object({
           title: z.string(),
           content: z.string()
@@ -140,7 +140,7 @@ const aboutCollection = defineCollection({
     members: z.object({
       title: z.string(),
       description: z.string(),
-      member_list: z.array(
+      memberList: z.array(
         z.object({
           name: z.string(),
           field: z.string(),
@@ -156,9 +156,9 @@ const blogCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/blog' }),
   schema: z.object({
     title: z.string(),
-    page_title: z.string().optional(),
+    pageTitle: z.string().optional(),
     subtitle: z.string().optional(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
     date: z.date().optional(),
     image: z.string().optional(),
@@ -174,7 +174,7 @@ const featuresCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/features' }),
   schema: z.object({
     title: z.string(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
     banner: z.object({
@@ -191,7 +191,7 @@ const featuresCollection = defineCollection({
     }),
 
     // Project Management Section
-    project_management: z.object({
+    projectManagement: z.object({
       title: z.string(),
       content: z.string(),
       management: z.object({
@@ -208,7 +208,7 @@ const featuresCollection = defineCollection({
       }),
 
       // Feature Service Section
-      feature_service: z.object({
+      featureService: z.object({
         title: z.string(),
         description: z.string(),
         image: z.string(),
@@ -224,7 +224,7 @@ const featuresCollection = defineCollection({
       }),
 
       // Feature Tab Section
-      feature_tab: z.object({
+      featureTab: z.object({
         title: z.string(),
         list: z
           .array(
@@ -244,8 +244,8 @@ const featuresCollection = defineCollection({
 const howItWorksCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    page_title: z.string(),
-    meta_title: z.string().optional(),
+    pageTitle: z.string(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
 
@@ -259,7 +259,7 @@ const howItWorksCollection = defineCollection({
     ),
 
     // Our Works Section
-    our_works: z.array(
+    ourWorks: z.array(
       z.object({
         title: z.string(),
         image: z.string(),
@@ -273,9 +273,9 @@ const howItWorksCollection = defineCollection({
 const contactCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
-    page_title: z.string(),
+    pageTitle: z.string(),
     image: z.string().optional()
   })
 });
@@ -285,15 +285,15 @@ const careersCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/careers' }),
   schema: z.object({
     title: z.string(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
-    page_title: z.string().optional(),
+    pageTitle: z.string().optional(),
     image: z.string().optional(),
     benefits: z
       .object({
         title: z.string(),
         description: z.string(),
-        benefit_list: z.array(
+        benefitList: z.array(
           z
             .object({
               title: z.string(),
@@ -305,7 +305,7 @@ const careersCollection = defineCollection({
         )
       })
       .optional(),
-    sidebar_content: z
+    sidebarContent: z
       .object({
         title: z.string(),
         content: z.string(),
@@ -324,7 +324,7 @@ const careersCollection = defineCollection({
       })
       .optional(),
     excerpt: z.string().optional(),
-    job_nature: z.string().optional(),
+    jobNature: z.string().optional(),
     location: z.string().optional(),
     categories: z.array(z.string()).default(['developer']),
     date: z.date().optional(),
@@ -336,9 +336,9 @@ const integrationsCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'src/content/integrations' }),
   schema: z.object({
     title: z.string(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
-    page_title: z.string().optional(),
+    pageTitle: z.string().optional(),
     name: z.string().optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
@@ -356,25 +356,25 @@ const integrationsCollection = defineCollection({
 const pricingCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    page_title: z.string(),
-    meta_title: z.string().optional(),
+    pageTitle: z.string(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
-    pricing_card: z.array(
+    pricingCard: z.array(
       z.object({
         title: z.string(),
-        pre_currency: z.string(),
-        post_currency: z.string(),
+        preCurrency: z.string(),
+        postCurrency: z.string(),
         price: z.number(),
         icon: z.string(),
         description: z.string(),
         featured: z.boolean().default(false),
         buttons: z.object({
-          buy_now: z.object({
+          buyNow: z.object({
             label: z.string(),
             link: z.string()
           }),
-          free_trial: z.object({
+          freeTrial: z.object({
             label: z.string(),
             link: z.string()
           })
@@ -388,7 +388,7 @@ const pricingCollection = defineCollection({
     faq: z.object({
       title: z.string(),
       description: z.string(),
-      faq_list: z.array(
+      faqList: z.array(
         z.object({
           title: z.string(),
           content: z.string()
@@ -403,7 +403,7 @@ const pagesCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
     title: z.string(),
-    meta_title: z.string().optional(),
+    metaTitle: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
     layout: z.string().optional(),

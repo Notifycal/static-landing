@@ -8,25 +8,25 @@ import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
-const how_it_works = (await getEntry('how-it-works', '-index')) as CollectionEntry<'how-it-works'>;
-const { performance, our_works } = how_it_works.data;
-const page_data = {
-  ...how_it_works.data,
-  content: how_it_works.body
+const howItWorks = (await getEntry('how-it-works', '-index')) as CollectionEntry<'how-it-works'>;
+const { performance, ourWorks } = howItWorks.data;
+const pageData = {
+  ...howItWorks.data,
+  content: howItWorks.body
 };
 ---
 
 <Base
-  title={how_it_works.data.title}
-  meta_title={how_it_works.data.meta_title}
-  description={how_it_works.data.description}
-  image={how_it_works.data.image}
+  title={howItWorks.data.title}
+  metaTitle={howItWorks.data.metaTitle}
+  description={howItWorks.data.description}
+  image={howItWorks.data.image}
 >
   <Shape />
   <section class="page-hero pt-16 pb-14">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={page_data} />
+        <PageHeader pageData={pageData} />
       </div>
 
       <div class="row mt-14">
@@ -54,7 +54,7 @@ const page_data = {
   <section>
     <div class="container">
       {
-        our_works.map((item, index) => (
+        ourWorks.map((item, index) => (
           <div class="gx-5 row mt-16 items-center first:mt-12">
             <div class={`lg:col-7 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-0'}`}>
               <div class="relative">

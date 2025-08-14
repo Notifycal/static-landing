@@ -1,22 +1,22 @@
 ---
 title: Pricing
-page_title: Pinwheel Pricing
-meta_title: ''
+pageTitle: Pinwheel Pricing
+metaTitle: ''
 description: ''
 image: ''
-pricing_card:
+pricingCard:
   - title: Basic
-    pre_currency: $
-    post_currency: usd
+    preCurrency: $
+    postCurrency: usd
     price: 29
     icon: box #icon package react-feather-icon
     description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
     featured: false
     buttons:
-      buy_now:
+      buyNow:
         label: Buy Now
         link: '#'
-      free_trial:
+      freeTrial:
         label: Start Free trial
         link: '#'
     services:
@@ -28,17 +28,17 @@ pricing_card:
         - 'Add people document handoff.'
 
   - title: Enterprise
-    pre_currency: $
-    post_currency: usd
+    preCurrency: $
+    postCurrency: usd
     price: 59
     icon: table #icon package react-feather-icon
     description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
     featured: true
     buttons:
-      buy_now:
+      buyNow:
         label: Buy Now
         link: '#'
-      free_trial:
+      freeTrial:
         label: Start Free trial
         link: '#'
     services:
@@ -49,17 +49,17 @@ pricing_card:
         - 'Keep work in unlimited storage'
         - 'Add people document handoff.'
   - title: Pro Lite
-    pre_currency: $
-    post_currency: usd
+    preCurrency: $
+    postCurrency: usd
     price: 99
     icon: briefcase #icon package react-feather-icon
     description: Lorem ipsum dolor sit amet, secteturi adipiscing elit at sem ipsum.
     featured: false
     buttons:
-      buy_now:
+      buyNow:
         label: Buy Now
         link: '#'
-      free_trial:
+      freeTrial:
         label: Start Free trial
         link: '#'
     services:
@@ -72,7 +72,7 @@ pricing_card:
 faq:
   title: Frequently Asked Questions
   description: Vestibulum ante ipsum primis in faucibus orci luctus ultrices posuere cubilia Curae Donec
-  faq_list:
+  faqList:
     - title: How can I integrate Avocode to my current tool stack?
       content: The Service is provided for free during this pilot project, and is provided "as is" with is not committed to any level of service or availability of the Service.
     - title: How can I integrate Avocode to my current tool stack?

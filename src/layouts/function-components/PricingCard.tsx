@@ -1,11 +1,43 @@
 import { humanize } from '@/lib/utils/textConverter';
+import type { JSX } from 'react';
 import * as Icon from 'react-feather';
 import { BsPinAngleFill } from 'react-icons/bs';
 
-const PricingCard = ({ item }) => {
-  const FeatherIcon = Icon[humanize(item.icon)];
+interface Button {
+  label: string;
+  link: string;
+}
+
+interface Services {
+  title: string;
+  list: Array<string>;
+}
+
+interface PricingItem {
+  title: string;
+  icon: string;
+  preCurrency: string;
+  price: number;
+  postCurrency: string;
+  featured?: boolean;
+  description: string;
+  services: Services;
+  buttons: {
+    buyNow: Button;
+    freeTrial: Button;
+  };
+}
+
+interface PricingCardProps {
+  item: PricingItem;
+}
+
+const PricingCard = ({ item }: PricingCardProps): JSX.Element => {
+  const FeatherIcon = Icon[humanize(item.icon) as keyof typeof Icon] as React.ComponentType<{
+    className?: string;
+  }>;
   return (
-    <div className="mt-8 px-3 md:col-6 lg:col-4 lg:mt-0" key={item.title}>
+    <div key={item.title} className="mt-8 px-3 md:col-6 lg:col-4 lg:mt-0">
       <div
         className={`rounded-xl bg-white px-8 py-10 shadow-lg ${
           item.featured ? 'border-primary -mt-16 border' : undefined
@@ -15,7 +47,7 @@ const PricingCard = ({ item }) => {
           <div>
             <h2 className="h3">{item.title}</h2>
             <p className="text-text-dark mt-3 text-2xl">
-              {item.pre_currency} {item.price}.00 {item.post_currency}
+              {item.preCurrency} {item.price}.00 {item.postCurrency}
             </p>
           </div>
           <span
@@ -31,8 +63,8 @@ const PricingCard = ({ item }) => {
           <h4 className="h6">{item.services.title}</h4>
 
           <ul className="mt-6">
-            {item.services.list.map((service, i) => (
-              <li className="mb-3 text-sm" key={`service-${i}`}>
+            {item.services.list.map((service, index) => (
+              <li key={`service-${index}`} className="mb-3 text-sm">
                 <span className="mr-2">
                   <BsPinAngleFill
                     className={`mr-1 inline h-[14px] w-[14px] ${item.featured ? 'text-primary' : undefined}`}
@@ -45,21 +77,21 @@ const PricingCard = ({ item }) => {
         </div>
         <div className="text-center">
           <a
+            href={item.buttons.buyNow.link}
             className={`btn ${
               item.featured ? 'btn-primary' : 'btn-outline-white'
             } block h-[48px] w-full rounded-[50px] leading-[30px]`}
-            href={item.buttons.buy_now.link}
           >
-            {item.buttons.buy_now.label}
+            {item.buttons.buyNow.label}
           </a>
-          <a className="text-text-dark mt-6 inline-flex items-center" href={item.buttons.free_trial.link}>
-            {item.buttons.free_trial.label}
+          <a className="text-text-dark mt-6 inline-flex items-center" href={item.buttons.freeTrial.link}>
+            {item.buttons.freeTrial.label}
             <svg
               className="ml-1.5"
-              width="13"
+              fill="none"
               height="16"
               viewBox="0 0 13 16"
-              fill="none"
+              width="13"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

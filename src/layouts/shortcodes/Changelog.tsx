@@ -1,4 +1,11 @@
-const Changelog = ({ children, date }) => {
+import type { JSX, ReactNode } from 'react';
+
+interface ChangelogProps {
+  children: ReactNode;
+  date: string;
+}
+
+const Changelog = ({ children, date }: ChangelogProps): JSX.Element => {
   return (
     <section className="section changelogs pt-0">
       <div className="container">

@@ -9,14 +9,14 @@ type Props = {
   service: CollectionEntry<'homepage'>['data']['service'];
 };
 const { service } = Astro.props;
-const { homepage_tab, our_service } = service;
+const { homepageTab, ourService } = service;
 ---
 
 <section class="section services">
   <div class="container">
-    <HomepageTab client:load homepage_tab={homepage_tab} />
+    <HomepageTab client:load homepageTab={homepageTab} />
     {
-      our_service.map((item, index) => (
+      ourService.map((item, index) => (
         <div class="gx-5 row mt-12 items-center lg:mt-0">
           <div class={`lg:col-7 ${index % 2 === 0 ? 'order-0' : 'order-1'}`}>
             {item.image && (
@@ -38,9 +38,9 @@ const { homepage_tab, our_service } = service;
                 height={370}
                 width={700}
                 title={item.title}
-                video_id={item.video.video_id}
-                video_width="w-[700px]"
-                video_height="h-[370px]"
+                videoId={item.video.videoId}
+                videoWidth="w-[700px]"
+                videoHeight="h-[370px]"
               />
             )}
           </div>

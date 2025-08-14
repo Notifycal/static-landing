@@ -1,6 +1,6 @@
 ---
 title: Features
-meta_title: ''
+metaTitle: ''
 description: ''
 image: ''
 banner:
@@ -11,7 +11,7 @@ banner:
     label: Download The Theme
     link: 'https://themefisher.com/astro-themes/pinwheel-astro'
     enable: true
-project_management:
+projectManagement:
   title: Build collaborative workspaces <br /> for your team
   content: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. <br /> Mauris pellentesque nec, egestas non nisi. Cras ultricies .
 
@@ -36,7 +36,7 @@ project_management:
       - title: Reduce friction
         content: Encourage frequent & timely recognition integrating with communication tools
         icon: tool #icon package react-feather-icon
-  feature_service:
+  featureService:
     title: Accept payments from devices any country in this universe
     description: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
     image: '/images/features/feature-img-1.webp'
@@ -52,7 +52,7 @@ project_management:
         link: '#'
         outline: true
         enable: true
-  feature_tab:
+  featureTab:
     title: Payment gateway for every stage <br /> of your business growth
     list:
       - title: Transaction from Anyone with <br /> a world to Anywhere

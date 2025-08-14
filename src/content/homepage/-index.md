@@ -9,10 +9,10 @@ banner:
     link: 'https://themefisher.com/astro-themes/pinwheel-astro'
 
 ##key features
-key_features:
+keyFeatures:
   title: 'The Highlighting Part Of Our Solution'
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-  feature_list:
+  featureList:
     - icon: 'map' #icon package react-feather-icon
       title: Live Caption
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -46,10 +46,10 @@ key_features:
 
 #service
 service:
-  homepage_tab:
+  homepageTab:
     title: Prevent failure from to impacting your reputation
     description: Our platform helps you build secure onboarding authentication experiences that retain and engage your users. We build the infrastructure, you can.
-    tab_list:
+    tabList:
       - title: Habit building essential choose habit
         icon: 'lock' #icon package react-feather-icon
         image: '/images/sells-by-country.webp'
@@ -60,7 +60,7 @@ service:
         icon: 'bell' #icon package react-feather-icon
         image: '/images/sells-by-country.webp'
 
-  our_service:
+  ourService:
     - title: Accept payments any country in this whole universe
       desctiption: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
       image: '/images/collaboration.webp'
@@ -72,7 +72,7 @@ service:
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
       video:
         thumbnail: '/images/intro-thumbnail.webp'
-        video_id: 'g3-VxLQO7do'
+        videoId: 'g3-VxLQO7do'
       button:
         enable: true
         label: Know About Us
@@ -82,7 +82,7 @@ service:
 testimonial:
   title: Our customers have nice things to say about us
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-  testimonial_list:
+  testimonialList:
     - author: David Cameron
       avatar: '/images/users/user-5.webp'
       organization: meta limited

@@ -27,19 +27,19 @@ const { category } = Astro.params;
 const { item } = Astro.props;
 
 const posts = await getSinglePage('blog');
-const filterByTags = taxonomyFilter(posts, 'categories', category);
-const page_data = {
-  index_title: 'Categories',
+const filterByTags = taxonomyFilter(posts, 'categories', category!);
+const pageData = {
+  indexTitle: 'Categories',
   slug: item
 };
 ---
 
-<Base title={category as string}>
+<Base title={category!}>
   <Shape />
   <section class="page-hero pt-16 pb-8">
     <div class="container">
       <div class="page-hero-content mx-auto max-w-[883px] text-center">
-        <PageHeader page_data={page_data} />
+        <PageHeader pageData={pageData} />
         <h1 class="h2 mb-14 text-center">
           Showing posts from <span class="text-primary">{humanize(item)}</span> category
         </h1>

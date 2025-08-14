@@ -5,27 +5,27 @@ import themeConfig from '../config/theme.json';
 const findFont = (fontStr) => fontStr.replace(/\+/g, ' ').replace(/:[^:]+/g, '');
 
 // Set font families dynamically, filtering out 'type' keys
-const fontFamilies = Object.entries(themeConfig.fonts.font_family)
+const fontFamilies = Object.entries(themeConfig.fonts.fontFamily)
   .filter(([key]) => !key.includes('type'))
   .reduce((acc, [key, font]) => {
-    acc[key] = `${findFont(font)}, ${themeConfig.fonts.font_family[`${key}_type`] || 'sans-serif'}`;
+    acc[key] = `${findFont(font)}, ${themeConfig.fonts.fontFamily[`${key}_type`] || 'sans-serif'}`;
     return acc;
   }, {});
 
 const defaultColorGroups = [
-  { colors: themeConfig.colors.default.theme_color, prefix: '' },
-  { colors: themeConfig.colors.default.text_color, prefix: '' }
+  { colors: themeConfig.colors.default.themeColor, prefix: '' },
+  { colors: themeConfig.colors.default.textColor, prefix: '' }
 ];
 const darkColorGroups = [];
-if (themeConfig.colors.darkmode?.theme_color) {
+if (themeConfig.colors.darkmode?.themeColor) {
   darkColorGroups.push({
-    colors: themeConfig.colors.darkmode.theme_color,
+    colors: themeConfig.colors.darkmode.themeColor,
     prefix: 'darkmode-'
   });
 }
-if (themeConfig.colors.darkmode?.text_color) {
+if (themeConfig.colors.darkmode?.textColor) {
   darkColorGroups.push({
-    colors: themeConfig.colors.darkmode.text_color,
+    colors: themeConfig.colors.darkmode.textColor,
     prefix: 'darkmode-'
   });
 }
@@ -44,8 +44,8 @@ const getVars = (groups) => {
 const defaultVars = getVars(defaultColorGroups);
 const darkVars = getVars(darkColorGroups);
 
-const baseSize = Number(themeConfig.fonts.font_size.base);
-const scale = Number(themeConfig.fonts.font_size.scale);
+const baseSize = Number(themeConfig.fonts.fontSize.base);
+const scale = Number(themeConfig.fonts.fontSize.scale);
 const calculateFontSizes = (base, scale) => {
   const sizes = {};
   let currentSize = scale;

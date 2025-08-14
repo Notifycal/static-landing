@@ -1,24 +1,26 @@
-// similer products
-const similerItems = (currentItem: any, allItems: any, slug: string) => {
-  let categories: [] = [];
+import type { CollectionEntry } from 'astro:content';
 
-  // set categories
-  if (currentItem.data.categories.length > 0) {
+const similarItems = (
+  currentItem: CollectionEntry<'careers'>,
+  allItems: Array<CollectionEntry<'careers'>>,
+  slug: string
+): Array<CollectionEntry<'careers'>> => {
+  let categories: Array<string> = [];
+
+  if (currentItem.data.categories && currentItem.data.categories.length > 0) {
     categories = currentItem.data.categories;
   }
 
-  // filter by categories
-  const filterByCategories = allItems.filter((item: { data: { categories: string } }) =>
-    categories.find((category) => item.data.categories.includes(category))
+  const filterByCategories = allItems.filter(
+    (item: CollectionEntry<'careers'>) =>
+      item.data.categories && categories.some((category) => item.data.categories.includes(category))
   );
 
-  // merged after filter
-  const mergedItems = [...new Set([filterByCategories])];
+  const mergedItems = [...new Set(filterByCategories)];
 
-  // filter by slug
-  const filterBySlug = mergedItems.filter((product) => product.slug !== slug);
+  const filterById = mergedItems.filter((product) => product.id !== slug);
 
-  return filterBySlug;
+  return filterById;
 };
 
-export default similerItems;
+export default similarItems;

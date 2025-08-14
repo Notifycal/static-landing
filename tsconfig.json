@@ -11,7 +11,8 @@
     "noEmit": true,
     "outDir": "dist",
     "strict": true,
-    "target": "es6",
+    "strictNullChecks": true,
+    "target": "es2018",
     "paths": {
       "@/components/*": ["./src/layouts/components/*"],
       "@/shortcodes/*": ["./src/layouts/shortcodes/*"],
