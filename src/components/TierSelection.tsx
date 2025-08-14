@@ -2,12 +2,13 @@ import { Container, MantineProvider } from '@mantine/core';
 import { TierSelection as TierSelectionReact } from '@notifycal/shared/components';
 import { orderedTierInfoWithIcons } from '@notifycal/shared/pricing';
 import type { LanguageCode } from '@notifycal/shared/types';
+import type { JSX } from 'react';
 
 interface TierSelection {
   locale: LanguageCode;
 }
 
-export function TierSelection({ locale }: TierSelection) {
+export function TierSelection({ locale }: TierSelection): JSX.Element {
   const tiers: Parameters<typeof orderedTierInfoWithIcons>[0] = {
     good: {
       name: 'Good Plan',

@@ -1,0 +1,23 @@
+@layer theme, base, mantine, components, utilities;
+
+@import 'tailwindcss';
+@plugin "../tailwind-plugin/tw-theme";
+@plugin "../tailwind-plugin/tw-bs-grid";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@import '@mantine/core/styles.layer.css';
+@source "../../node_modules/@notifycal/shared";
+
+@import './safe.css';
+@import './utilities.css';
+
+@layer base {
+  @import './base.css';
+}
+
+@layer components {
+  @import './components.css';
+  @import './navigation.css';
+  @import './buttons.css';
+}

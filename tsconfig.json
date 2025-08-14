@@ -1,9 +1,26 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": ["src", "*.d.ts", ".astro/types.d.ts"],
   "compilerOptions": {
-    "outDir": "dist",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    "jsxImportSource": "react",
+    "noEmit": true,
+    "outDir": "dist",
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ES2024",
+    "paths": {
+      "@/components/*": ["./src/layouts/components/*"],
+      "@/shortcodes/*": ["./src/layouts/shortcodes/*"],
+      "@/helpers/*": ["./src/layouts/helpers/*"],
+      "@/partials/*": ["./src/layouts/partials/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["*.d.ts", ".astro/types.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
+  "exclude": ["node_modules", "dist"]
 }

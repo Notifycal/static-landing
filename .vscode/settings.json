@@ -21,6 +21,7 @@
     "strings": true
   },
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.mdx": "markdown"
   }
 }
