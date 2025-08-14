@@ -1,3 +1,7 @@
+# original ignores
+.output/
+.json/
+
 # build output
 dist/
 

@@ -1,0 +1,87 @@
+---
+import PageHeader from '@/components/PageHeader.astro';
+import Shape from '@/components/Shape.astro';
+import Base from '@/layouts/Base.astro';
+import Cta from '@/layouts/partials/Cta.astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+import { AiFillCheckCircle } from 'react-icons/ai';
+
+const howItWorks = (await getEntry('how-it-works', '-index')) as CollectionEntry<'how-it-works'>;
+const { performance, ourWorks } = howItWorks.data;
+const pageData = {
+  ...howItWorks.data,
+  content: howItWorks.body
+};
+---
+
+<Base
+  title={howItWorks.data.title}
+  metaTitle={howItWorks.data.metaTitle}
+  description={howItWorks.data.description}
+  image={howItWorks.data.image}
+>
+  <Shape />
+  <section class="page-hero pt-16 pb-14">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[883px] text-center">
+        <PageHeader pageData={pageData} />
+      </div>
+
+      <div class="row mt-14">
+        {
+          performance.map((item, i) => (
+            <div class="mt-10 text-center sm:col-6 md:col-4 md:mb-0">
+              <div
+                class={`relative mx-auto mb-8 flex h-[184px] w-[184px] items-center justify-center rounded-xl bg-white p-4 shadow-lg ${
+                  performance.length - 1 !== i
+                    ? "after:border-primary/50 after:absolute after:-right-4 after:-z-[1] after:hidden after:w-full after:translate-x-full after:border-b-2 after:border-dashed after:content-[''] md:after:block"
+                    : undefined
+                }`}
+              >
+                <Image height={122} width={144} src={item.image} alt="" />
+              </div>
+              <h2 class="h5">{item.title}</h2>
+              <p class="mt-4">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      {
+        ourWorks.map((item, index) => (
+          <div class="gx-5 row mt-16 items-center first:mt-12">
+            <div class={`lg:col-7 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-0'}`}>
+              <div class="relative">
+                <Image class="w-full object-contain" alt="service" width={473} height={286} src={item.image} />
+              </div>
+            </div>
+            <div class={`mt-6 lg:col-5 lg:mt-0 ${index % 2 === 0 ? 'lg:order-0' : 'lg:order-1'}`}>
+              <div class="text-container">
+                <h2 class="lg:text-4xl">{item.title}</h2>
+
+                {item.list && (
+                  <ul class="text-text-dark mt-6 lg:-ml-4">
+                    {item.list.map((list) => (
+                      <li class="mb-2 flex items-center rounded px-4">
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        {list}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <Cta />
+</Base>

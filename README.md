@@ -1,77 +1,126 @@
-# Astro Starter Kit: Basics
+<h1 align=center>Pinwheel Astro</h1>
+<p align=center>Pinwheel is a free multipurpose SaaS theme built with Astro, TailwindCSS, and TypeScript with 17+ pre-designed pages.</p>
+<h2 align="center"><a target="_blank" href="https://pinwheel-astro.vercel.app/" rel="nofollow"> 👀 Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/analysis/https-pinwheel-astro-vercel-app/kmaxqwa7rx?form_factor=desktop"> Page Speed (95+) 🚀 </a>
+</h2>
+<p align=center>
+  <a href="https://github.com/withastro/astro/releases/tag/astro%405.12.8" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=ASTRO&message=5.12&color=000&logo=astro" />
+  </a>
 
-```sh
-npm create astro@latest -- --template basics
+  <a href="https://github.com/themefisher/pinwheel-astro/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/themefisher/pinwheel-astro" alt="license"></a>
+
+  <img src="https://img.shields.io/github/languages/code-size/themefisher/pinwheel-astro" alt="code size">
+
+  <a href="https://github.com/themefisher/pinwheel-astro/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/themefisher/bigspring-light-astro" alt="contributors"></a>
+</p>
+
+![pinwheel](https://demo.themefisher.com/thumbnails/pinwheel.png)
+
+<!-- small description -->
+
+<!-- key features -->
+
+## 📌 Key Features
+
+- 📄 17+ Pre-designed pages
+- 🎨 Highly customizable (Color, Font, Menu, Social Links, SEO Meta Tags, etc.)
+- 🗃️ Taxonomy support
+- ⚡ Fast by default (95+ Google PageSpeed Score)
+- 🔧 Netlify setting pre-configured
+- 📝 Contact form support
+- 🖼️ Support OG image
+- 📝 Write and update content in Markdown / MDX
+- 💻 MDX components auto import
+- 📝 Includes draft pages and posts
+- 🎨 Built with Tailwind CSS framework
+- 📱 Fully responsive on desktops, tablets, and smartphones
+- 🔍 SEO Friendly
+
+## 📄 17+ Pre-Designed Pages
+
+- 🏠 Home
+- 🛠️ How it works
+- 🌟 Features
+- 📝 Blog
+- 📝 Blog Single
+- 🗂️ Categories
+- 🗂️ Category Single
+- 👤 About
+- 📞 Contact
+- 💼 Career
+- 💼 Career Single
+- 💰 Pricing
+- 📜 Changelog
+- 🔑 Sign In
+- 🔑 Sign Up
+- 🔗 Integrations
+- 🔗 Integration Single
+- 📜 Terms and Conditions
+- 💡 Elements
+
+<!-- installation -->
+
+## 🛠️ Installation
+
+After downloading the template, you need to install some prerequisites. Then you can run it on your localhost. You can view the package.json file to see which scripts are included.
+
+### Install prerequisites (once for a machine)
+
+- **Node Installation:** [Install node js](https://nodejs.org/en/download/) [Recommended LTS version]
+
+### 👨🏻‍💻 Local setup
+
+After successfully installing those dependencies, open this template with any IDE [[VS Code](https://code.visualstudio.com/) recommended], and then open the internal terminal of IDM [vs code shortcut <code>ctrl/cmd+\`</code>]
+
+- 👉 Install dependencies
+
+```
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+- 👉 Run locally
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+After that, it will open up a preview of the template in your default browser, watch for changes to source files, and live-reload the browser when changes are saved.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🏗️ Production Build
 
-Any static assets, like images, can be placed in the `public/` directory.
+After finishing all the customization, you can create a production build by running this command.
 
-## 🧞 Commands
+```
+npm run build
+```
 
-All commands are run from the root of the project, from a terminal:
+<!-- reporting issue -->
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run lint`            | Lint project files                               |
-| `npm run lint:fix`        | Lint and fix project files                       |
-| `npm run prettier`        | Check formatting                                 |
-| `npm run prettier:fix`    | Fix formatting                                   |
+## 🐞 Reporting Issues
 
-## 👀 Want to learn more?
+We use GitHub Issues as the official bug tracker for this Template. Please search [existing issues](https://github.com/themefisher/pinwheel-astro/issues). It’s possible someone has already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/pinwheel-astro/issues).
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<!-- licence -->
 
-## Addons
+## 📝 License
 
-- `@astrojs/tailwind`: CSS Framework - https://docs.astro.build/en/guides/integrations-guide/tailwind/
-- Linting and formatting (includes VS Code config and ci)
-  - `eslint`
-  - `eslint-config-prettier`
-  - `eslint-formatter-table`
-  - `eslint-plugin-astro`
-  - `eslint-plugin-jsx-a11y`
-  - `prettier`
-  - `prettier-plugin-astro`
-  - `prettier-plugin-tailwindcss`
-  - `@typescript-eslint/parser`
-- CI/CD pipeline
-- Dependabot
-  - Github Actions
-  - Node
-  - Terraform
+Copyright (c) 2023 - Present, Designed & Developed by [Themefisher](https://themefisher.com)
+
+**Code License:** Released under the [MIT](https://github.com/themefisher/pinwheel-astro/blob/main/LICENSE) license.
+
+**Image license:** The images are only for demonstration purposes. They have their license, and we don't have permission to share those images.
+
+## 💻 Need Custom Development Services?
+
+Besides developing beautifully designed and blazing-fast themes, we help businesses create fast, performance-focused, scalable & secure websites based on NextJS, Hugo, Astro, etc.
+
+If you need custom theme development, theme customization, or complete website development services from scratch, you can [Hire Us](https://themefisher.com/contact).
+
+## 🔥 More Astro Themes By Themefisher
+
+| [![Bigpsring](https://demo.gethugothemes.com/thumbnails/bigspring.png)](https://themefisher.com/products/bigspring-light-astro) | [![Andromeda](https://demo.gethugothemes.com/thumbnails/andromeda.png)](https://themefisher.com/products/andromeda-astro) | [![Bookwrom](https://demo.gethugothemes.com/thumbnails/bookworm.png)](https://themefisher.com/products/bookworm-astro) |
+| :-----------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+|                                                       **Bigpsring Light**                                                       |                                                       **Andromeda**                                                       |                                                   **Bookwom Light**                                                    |

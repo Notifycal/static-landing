@@ -1,0 +1,61 @@
+---
+import PageHeader from '@/components/PageHeader.astro';
+import Shape from '@/components/Shape.astro';
+import Base from '@/layouts/Base.astro';
+import CareerBenefits from '@/layouts/function-components/CareerBenefits';
+import JobPosts from '@/layouts/function-components/JobPosts';
+import Cta from '@/layouts/partials/Cta.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+const careerIndex = (await getEntry('careers', '-index')) as CollectionEntry<'careers'>;
+
+const { benefits, career, image } = careerIndex.data;
+const categories = await getTaxonomy('careers', 'categories');
+const jobPosts = await getSinglePage('careers');
+const pageData = {
+  title: careerIndex.data.title,
+  pageTitle: careerIndex.data.pageTitle,
+  content: careerIndex.body
+};
+---
+
+<Base
+  title={careerIndex.data.title}
+  metaTitle={careerIndex.data.metaTitle}
+  description={careerIndex.data.description}
+  image={careerIndex.data.image}
+>
+  <Shape />
+
+  <section class="page-hero pt-16 pb-14">
+    <div class="container">
+      <PageHeader pageData={pageData} />
+      <div class="col-12 mt-14">
+        <div class="relative">
+          <Image src={image!} alt="" height={532} width={1044} class="w-full rounded" />
+          <Image
+            class="absolute bottom-[12%] -left-[8%] z-[-1] h-20 w-20 -rotate-90 lg:bottom-4 lg:-left-8 lg:h-[150px] lg:w-[150px]"
+            src="/images/shape.webp"
+            height={130}
+            width={130}
+            alt=""
+          />
+          <Image
+            class="absolute -right-4 -bottom-4 z-[-1] h-16 w-16 -rotate-90"
+            src="/images/shape.webp"
+            alt=""
+            height={64}
+            width={64}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <CareerBenefits benefits={benefits} client:load />
+  <JobPosts client:load categories={categories} career={career} posts={jobPosts} />
+  <Cta />
+</Base>
