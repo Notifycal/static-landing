@@ -49,7 +49,7 @@ const typescriptConfig = {
     globals: {
       ...globals.builtin,
       ...globals.browser,
-      ...globals.es2025
+      ...globals.es2024
     }
   },
   linterOptions: {
