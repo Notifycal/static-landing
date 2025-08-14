@@ -42,9 +42,10 @@ const typescriptConfig = {
   languageOptions: {
     parser: tsParser,
     parserOptions: {
-      ecmaFeatures: { modules: true },
-      ecmaVersion: 'latest',
-      project: './tsconfig.json'
+      ecmaVersion: 'es2024',
+      sourceType: 'module',
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname
     },
     globals: {
       ...globals.builtin,
@@ -187,7 +188,7 @@ const eslintConfig = typescriptEslint.config(
   unicornConfig,
   {
     // Note: there should be no other properties in this object
-    ignores: ['dist/**', 'src/env.d.ts', 'public/**', '.astro/**', 'src/tailwind-plugin/**']
+    ignores: ['dist/**', 'eslint.config.js', 'tf/**', 'src/env.d.ts', 'config/**', 'public/**', '.astro/**', 'src/tailwind-plugin/**']
   }
 );
 
