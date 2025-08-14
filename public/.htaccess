@@ -17,6 +17,7 @@
   ExpiresByType image/jp2 "now plus 1 month"
   ExpiresByType image/pipeg "now plus 1 month"
   ExpiresByType image/png "now plus 1 month"
+  ExpiresByType image/webp "now plus 1 month"
   ExpiresByType image/svg+xml "now plus 1 month"
   ExpiresByType image/tiff "now plus 1 month"
   ExpiresByType image/x-icon "now plus 1 month"

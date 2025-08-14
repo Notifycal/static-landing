@@ -12,7 +12,7 @@ const HomepageTab = ({ homepage_tab }) => {
         <div className="tab-content">
           {tab_list.map((item, index) => (
             <div key={index} className={`tab-content-panel ${tab === index ? 'active' : undefined}`}>
-              <img className="w-full object-contain" src={item.image} />
+              <img alt="" className="w-full object-contain" src={item.image} />
             </div>
           ))}
         </div>

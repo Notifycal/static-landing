@@ -2,7 +2,7 @@
 name: webflow
 title: Webflow Integrations
 excerpt: We are looking for a personal financial planning pro Certified Financial Planner preferred who will lead our client advising efforts. You will be a fiduciary who works
-image: '/images/integrations/webflow.png'
+image: '/images/integrations/webflow.webp'
 categories: ['productivity']
 button:
   label: integrate

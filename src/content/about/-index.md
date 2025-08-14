@@ -36,9 +36,9 @@ counter:
 gallery:
   title: We started with one single goal Empower entrepreneurs
   images:
-    - '/images/about/gallery-img-1.png'
-    - '/images/about/gallery-img-3.png'
-    - '/images/about/gallery-img-2.png'
+    - '/images/about/gallery-img-1.webp'
+    - '/images/about/gallery-img-3.webp'
+    - '/images/about/gallery-img-2.webp'
 
 ## our works
 features:
@@ -68,22 +68,22 @@ members:
   member_list:
     - name: Eleanor Pena
       field: Co-founder & COO
-      image: '/images/users/user-1.png'
+      image: '/images/users/user-1.webp'
     - name: Bukiakta Bansalo
       field: Product Manager
-      image: '/images/users/user-2.png'
+      image: '/images/users/user-2.webp'
     - name: Ortrin Okaster
       field: Software Engineer
-      image: '/images/users/user-3.png'
+      image: '/images/users/user-3.webp'
     - name: Eleanor Pena
       field: Co-founder & COO
-      image: '/images/users/user-1.png'
+      image: '/images/users/user-1.webp'
     - name: Bukiakta Bansalo
       field: Product Manager
-      image: '/images/users/user-2.png'
+      image: '/images/users/user-2.webp'
     - name: Ortrin Okaster
       field: Software Engineer
-      image: '/images/users/user-3.png'
+      image: '/images/users/user-3.webp'
 ---
 
 Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Lorem

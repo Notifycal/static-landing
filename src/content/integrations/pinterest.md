@@ -2,7 +2,7 @@
 name: pinterest
 title: Pinterest Integrations
 excerpt: We are looking for a personal financial planning pro Certified Financial Planner preferred who will lead our client advising efforts. You will be a fiduciary who works
-image: '/images/integrations/pinterest.png'
+image: '/images/integrations/pinterest.webp'
 categories: ['social media']
 button:
   label: integrate

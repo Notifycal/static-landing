@@ -15,7 +15,7 @@ const VideoComponent = ({ height, width, src, title, video_id, video_height, vid
     <>
       {!play ? (
         <div className="relative text-center">
-          <button className="video-play-btn" onClick={() => setPlay(true)}>
+          <button aria-label="play" className="video-play-btn" onClick={() => setPlay(true)}>
             <Play />
           </button>
           <img width={width} height={height} src={src} alt={title} className="inline h-auto max-w-full rounded-2xl" />

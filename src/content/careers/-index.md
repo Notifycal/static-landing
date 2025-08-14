@@ -3,7 +3,7 @@ title: Careers
 meta_title: ""
 description: ""
 page_title: "Careers In Pinwheel"
-image: "/images/career/career-hero-image.png"
+image: "/images/career/career-hero-image.webp"
 benefits:
   title: Competitive salary
   description: Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque

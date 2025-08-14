@@ -1,7 +1,7 @@
 ---
 title: 6 Product Launch Email Examples You’ll Want to Steal
 subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-image: '/images/posts/post-2.png'
+image: '/images/posts/post-2.webp'
 author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
 categories: ['email marketing']

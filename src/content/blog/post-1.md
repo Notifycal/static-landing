@@ -1,7 +1,7 @@
 ---
 title: How Video Analytics Can Help Understand and Increase
 subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-image: '/images/posts/post-5.png'
+image: '/images/posts/post-5.webp'
 author: Abdullah Al Shifat
 date: 2022-04-04T05:00:00Z
 categories: ['development', 'design']
