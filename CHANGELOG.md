@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/Notifycal/static-landing/compare/v1.6.5...v1.7.0) (2025-08-14)
+
+
+### Features
+
+* apply template ([#388](https://github.com/Notifycal/static-landing/issues/388)) ([d3c3dc4](https://github.com/Notifycal/static-landing/commit/d3c3dc4464fa4709e239b1f41b9714042e3fe04f))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency astro to v5.13.0 ([#392](https://github.com/Notifycal/static-landing/issues/392)) ([22df891](https://github.com/Notifycal/static-landing/commit/22df891d0e0c9f4dc86a837536ddba5b20aac179))
+
 ## [1.6.5](https://github.com/Notifycal/static-landing/compare/v1.6.4...v1.6.5) (2025-08-14)
 
 
