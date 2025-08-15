@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/Notifycal/static-landing/compare/v1.7.0...v1.8.0) (2025-08-15)
+
+
+### Features
+
+* apply agreed structure ([#394](https://github.com/Notifycal/static-landing/issues/394)) ([ea69535](https://github.com/Notifycal/static-landing/commit/ea69535b81cd327d4410e55676a1194978a97af7))
+
+
+### Bug Fixes
+
+* **deps:** Update Node.js Dependencies ([#395](https://github.com/Notifycal/static-landing/issues/395)) ([2cc1b1a](https://github.com/Notifycal/static-landing/commit/2cc1b1ad05930e03dbfc7f4576a947e7d99440a8))
+* remove (testing) purple background ([#397](https://github.com/Notifycal/static-landing/issues/397)) ([01d0cd2](https://github.com/Notifycal/static-landing/commit/01d0cd2b5f12345eeee7d1ad1b2f0264a7d6bb61))
+
 ## [1.7.0](https://github.com/Notifycal/static-landing/compare/v1.6.5...v1.7.0) (2025-08-14)
 
 
