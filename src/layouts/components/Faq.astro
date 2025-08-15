@@ -1,0 +1,16 @@
+---
+import FaqComponent from '@/layouts/function-components/Faq';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  faq: CollectionEntry<'homepage'>['data']['faq'];
+};
+
+const { faq } = Astro.props;
+---
+
+<section class="section faqs">
+  <div class="container max-w-[1230px]">
+    <FaqComponent client:load faqData={faq} />
+  </div>
+</section>

@@ -1,11 +1,12 @@
 ---
+import Faq from '@/components/Faq.astro';
 import Features from '@/components/Features.astro';
 import Pricing from '@/components/Pricing.astro';
 import Base from '@/layouts/Base.astro';
 import Banner from '@/layouts/components/Banner.astro';
 import Testimonial from '@/layouts/components/Testimonial.astro';
-import Faq from '@/layouts/function-components/Faq';
 import Cta from '@/layouts/partials/Cta.astro';
+
 import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 
@@ -17,7 +18,7 @@ const { banner, features, testimonial, faq, pricing } = homepage.data;
   <Banner banner={banner} />
   <Features features={features} />
   <Pricing pricing={pricing} />
-  <Faq client:load faqData={faq} />
+  <Faq faq={faq} />
   <Testimonial testimonial={testimonial} />
   <Cta />
 </Base>

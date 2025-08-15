@@ -27,52 +27,48 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
   };
 
   return (
-    <section className="faqs section">
-      <div className="container max-w-[1230px]">
-        <div className="row">
-          <div className="text-center lg:col-4 lg:text-start">
-            <h2>{faqData.title}</h2>
-            <p className="mt-6 lg:max-w-[404px]">{faqData.description}</p>
-          </div>
-          <div className="mt-8 lg:col-8 lg:mt-0">
-            <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
-              {faqData.faqList.map((item, index) => (
-                <div
-                  key={`item-${index}`}
-                  className={`accordion border-border border-b ${isActive.includes(index) ? 'active' : undefined}`}
-                  onClick={() => {
-                    accordionHandler(index);
-                  }}
+    <div className="row">
+      <div className="text-center lg:col-4 lg:text-start">
+        <h2>{faqData.title}</h2>
+        <p className="mt-6 lg:max-w-[404px]">{faqData.description}</p>
+      </div>
+      <div className="mt-8 lg:col-8 lg:mt-0">
+        <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
+          {faqData.faqList.map((item, index) => (
+            <div
+              key={`item-${index}`}
+              className={`accordion border-border border-b ${isActive.includes(index) ? 'active' : undefined}`}
+              onClick={() => {
+                accordionHandler(index);
+              }}
+            >
+              <div className="accordion-header text-text-dark relative pl-6 text-lg font-semibold">
+                {item.title}
+                <svg
+                  className="accordion-icon absolute top-[22px] left-0"
+                  viewBox="0 0 512 512"
+                  x="0px"
+                  xmlSpace="preserve"
+                  y="0px"
                 >
-                  <div className="accordion-header text-text-dark relative pl-6 text-lg font-semibold">
-                    {item.title}
-                    <svg
-                      className="accordion-icon absolute top-[22px] left-0"
-                      viewBox="0 0 512 512"
-                      x="0px"
-                      xmlSpace="preserve"
-                      y="0px"
-                    >
-                      <path
-                        d="M505.755,123.592c-8.341-8.341-21.824-8.341-30.165,0L256.005,343.176L36.421,123.592c-8.341-8.341-21.824-8.341-30.165,0 s-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251l234.667-234.667 C514.096,145.416,514.096,131.933,505.755,123.592z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="accordion-content pl-6">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: marked.parseInline(item.content)
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
+                  <path
+                    d="M505.755,123.592c-8.341-8.341-21.824-8.341-30.165,0L256.005,343.176L36.421,123.592c-8.341-8.341-21.824-8.341-30.165,0 s-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251l234.667-234.667 C514.096,145.416,514.096,131.933,505.755,123.592z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <div className="accordion-content pl-6">
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: marked.parseInline(item.content)
+                  }}
+                />
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
