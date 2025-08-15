@@ -1,4 +1,4 @@
-@layer theme, base, mantine, components, utilities;
+@layer theme, base, ourBase, mantine, components, ourComponents, utilities;
 
 @import 'tailwindcss';
 @plugin "../tailwind-plugin/tw-theme";
@@ -12,7 +12,12 @@
 @import './safe.css';
 @import './utilities.css';
 
-@import './base.css';
-@import './components.css';
-@import './navigation.css';
-@import './buttons.css';
+@layer ourBase {
+  @import './base.css';
+}
+
+@layer ourComponents {
+  @import './components.css';
+  @import './navigation.css';
+  @import './buttons.css';
+}
