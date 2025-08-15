@@ -4,18 +4,20 @@ import Banner from '@/layouts/components/Banner.astro';
 import KeyFeatures from '@/layouts/components/KeyFeatures.astro';
 import Service from '@/layouts/components/Service.astro';
 import Testimonial from '@/layouts/components/Testimonial.astro';
+import Faq from '@/layouts/function-components/Faq';
 import Cta from '@/layouts/partials/Cta.astro';
 import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 
 const homepage = (await getEntry('homepage', '-index')) as CollectionEntry<'homepage'>;
-const { banner, keyFeatures, service, testimonial } = homepage.data;
+const { banner, keyFeatures, service, testimonial, faq } = homepage.data;
 ---
 
 <Base>
   <Banner banner={banner} />
   <KeyFeatures keyFeatures={keyFeatures} />
   <Service service={service} />
+  <Faq client:load faqData={faq} />
   <Testimonial testimonial={testimonial} />
   <Cta />
 </Base>

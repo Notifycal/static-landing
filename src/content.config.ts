@@ -67,6 +67,16 @@ const homepageCollection = defineCollection({
         })
       )
     }),
+    faq: z.object({
+      title: z.string(),
+      description: z.string(),
+      faqList: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string()
+        })
+      )
+    }),
     testimonial: z.object({
       title: z.string(),
       description: z.string(),

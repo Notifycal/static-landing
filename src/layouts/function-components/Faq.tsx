@@ -13,12 +13,10 @@ interface FaqData {
 }
 
 interface FaqProps {
-  data: {
-    faq: FaqData;
-  };
+  faqData: FaqData;
 }
 
-const Faq = ({ data }: FaqProps): JSX.Element => {
+const Faq = ({ faqData }: FaqProps): JSX.Element => {
   const [isActive, setIsActive] = useState<Array<number>>([]);
   const accordionHandler = (index: number): void => {
     if (isActive.includes(index)) {
@@ -33,12 +31,12 @@ const Faq = ({ data }: FaqProps): JSX.Element => {
       <div className="container max-w-[1230px]">
         <div className="row">
           <div className="text-center lg:col-4 lg:text-start">
-            <h2>{data.faq.title}</h2>
-            <p className="mt-6 lg:max-w-[404px]">{data.faq.description}</p>
+            <h2>{faqData.title}</h2>
+            <p className="mt-6 lg:max-w-[404px]">{faqData.description}</p>
           </div>
           <div className="mt-8 lg:col-8 lg:mt-0">
             <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
-              {data.faq.faqList.map((item, index) => (
+              {faqData.faqList.map((item, index) => (
                 <div
                   key={`item-${index}`}
                   className={`accordion border-border border-b ${isActive.includes(index) ? 'active' : undefined}`}

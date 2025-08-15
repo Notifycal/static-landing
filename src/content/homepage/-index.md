@@ -78,6 +78,21 @@ service:
         label: Know About Us
         link: '#'
 
+faq:
+  title: Preguntas frecuentes
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  faqList:
+    - title: Que pasa si me quedo sin creditos?
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    - title: Que pasa si me quedo sin creditos?
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    - title: Que pasa si me quedo sin creditos?
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    - title: Que pasa si me quedo sin creditos?
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    - title: Que pasa si me quedo sin creditos?
+      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+
 #testimonial
 testimonial:
   title: Our customers have nice things to say about us
