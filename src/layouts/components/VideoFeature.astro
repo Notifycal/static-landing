@@ -10,7 +10,7 @@ type Props = {
 const { videoFeature, index } = Astro.props;
 ---
 
-<div class="gx-5 row mt-12 items-center lg:mt-0">
+<div class="gx-5 row items-center">
   <div class={`lg:col-7 ${index % 2 === 0 ? 'order-0' : 'order-1'}`}>
     <VideoComponent
       client:load
@@ -24,12 +24,12 @@ const { videoFeature, index } = Astro.props;
     />
   </div>
   <div class={`mt-6 lg:col-5 lg:mt-0 ${index % 2 === 0 ? 'order-1' : 'order-0'}`}>
-    <div class="text-container">
+    <div class="text-container flex flex-col">
       <h2 class="lg:text-4xl">{videoFeature.title}</h2>
       <p class="mt-4">{videoFeature.description}</p>
       {
         videoFeature.button.enable && (
-          <a class="btn btn-white mt-6" href={videoFeature.button.link}>
+          <a class="btn btn-primary mt-8 self-center" href={videoFeature.button.link}>
             {videoFeature.button.label}
           </a>
         )
