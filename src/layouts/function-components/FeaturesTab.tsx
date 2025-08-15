@@ -8,18 +8,18 @@ interface TabItem {
   image: string;
 }
 
-interface HomepageTabData {
+interface FeaturesTabData {
   title: string;
   description: string;
   tabList?: Array<TabItem>;
 }
 
-interface HomepageTabProps {
-  homepageTab: HomepageTabData;
+interface FeaturesTabProps {
+  featuresTab: FeaturesTabData;
 }
 
-const HomepageTab = ({ homepageTab }: HomepageTabProps): JSX.Element => {
-  const { title, description, tabList } = homepageTab;
+const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
+  const { title, description, tabList } = featuresTab;
 
   const [tab, setTab] = useState<number>(0);
   return (
@@ -62,4 +62,4 @@ const HomepageTab = ({ homepageTab }: HomepageTabProps): JSX.Element => {
   );
 };
 
-export default HomepageTab;
+export default FeaturesTab;

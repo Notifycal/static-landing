@@ -16,22 +16,8 @@ const homepageCollection = defineCollection({
         })
         .optional()
     }),
-    keyFeatures: z.object({
-      title: z.string(),
-      description: z.string(),
-      featureList: z
-        .array(
-          z.object({
-            icon: z.string(),
-            title: z.string(),
-            content: z.string()
-          })
-        )
-        .optional()
-    }),
-
-    service: z.object({
-      homepageTab: z.object({
+    features: z.object({
+      featuresTab: z.object({
         title: z.string(),
         description: z.string(),
         tabList: z
@@ -45,25 +31,39 @@ const homepageCollection = defineCollection({
           .optional()
       }),
 
-      ourService: z.array(
+      ourFeatures: z.array(
         z.object({
           title: z.string(),
-          description: z.string().optional(),
-          image: z.string().optional(),
-          list: z.array(z.string()).optional(),
-          video: z
-            .object({
-              thumbnail: z.string(),
-              videoId: z.string()
-            })
-            .optional(),
-          button: z
-            .object({
-              label: z.string(),
-              link: z.string(),
-              enable: z.boolean().default(true)
-            })
-            .optional()
+          description: z.string(),
+          image: z.string(),
+          list: z.array(z.string())
+        })
+      ),
+      featuresVideo: z.object({
+        title: z.string(),
+        description: z.string(),
+        video: z.object({
+          thumbnail: z.string(),
+          videoId: z.string()
+        }),
+        button: z.object({
+          label: z.string(),
+          link: z.string(),
+          enable: z.boolean().default(true)
+        })
+      })
+    }),
+    pricing: z.object({
+      title: z.string(),
+      description: z.string()
+    }),
+    faq: z.object({
+      title: z.string(),
+      description: z.string(),
+      faqList: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string()
         })
       )
     }),

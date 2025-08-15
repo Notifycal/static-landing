@@ -1,0 +1,22 @@
+---
+import { TierSelection } from '../function-components/TierSelection';
+
+const { pricing } = Astro.props;
+---
+
+<section class="section pricing">
+  <div class="container">
+    <div class="row justify-between">
+      <div class="lg:col-6">
+        <h2>{pricing.title}</h2>
+      </div>
+      <div class="lg:col-4">
+        <p>
+          {pricing.description}
+        </p>
+      </div>
+    </div>
+    <!-- TODO: i18n -->
+    <TierSelection client:visible locale="es" />
+  </div>
+</section>
