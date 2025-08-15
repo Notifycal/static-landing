@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply bg-body font-primary text-text bg-[url('/images/body-bg.svg')] bg-repeat leading-relaxed font-normal;
+  @apply bg-body font-primary overflow-x-hidden text-text bg-[url('/images/body-bg.svg')] bg-repeat leading-relaxed font-normal;
 }
 
 h1,

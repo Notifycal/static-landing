@@ -114,7 +114,7 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     {config.googleTagManager.enable && <GoogleTagmanagerNoscript id={config.googleTagManager.gtmId} />}
     <Header />
     <TwSizeIndicator />
-    <main id="main-content" class="overflow-x-hidden">
+    <main id="main-content">
       <slot />
     </main>
     <Footer />
