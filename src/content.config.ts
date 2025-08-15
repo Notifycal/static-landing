@@ -67,6 +67,10 @@ const homepageCollection = defineCollection({
         })
       )
     }),
+    pricing: z.object({
+      title: z.string(),
+      description: z.string()
+    }),
     faq: z.object({
       title: z.string(),
       description: z.string(),

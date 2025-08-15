@@ -8,7 +8,6 @@ banner:
     label: Download The Theme
     link: 'https://themefisher.com/astro-themes/pinwheel-astro'
 
-##key features
 keyFeatures:
   title: 'The Highlighting Part Of Our Solution'
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
@@ -44,7 +43,6 @@ keyFeatures:
       title: Live Caption
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-#service
 service:
   homepageTab:
     title: Prevent failure from to impacting your reputation
@@ -78,6 +76,10 @@ service:
         label: Know About Us
         link: '#'
 
+pricing:
+  title: Precios
+  description: Para cualquier tamaño de empresa
+
 faq:
   title: Preguntas frecuentes
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -93,7 +95,6 @@ faq:
     - title: Que pasa si me quedo sin creditos?
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
 
-#testimonial
 testimonial:
   title: Our customers have nice things to say about us
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
