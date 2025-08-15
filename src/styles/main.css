@@ -12,12 +12,7 @@
 @import './safe.css';
 @import './utilities.css';
 
-@layer base {
-  @import './base.css';
-}
-
-@layer components {
-  @import './components.css';
-  @import './navigation.css';
-  @import './buttons.css';
-}
+@import './base.css';
+@import './components.css';
+@import './navigation.css';
+@import './buttons.css';

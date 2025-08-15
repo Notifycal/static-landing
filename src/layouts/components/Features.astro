@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FeaturesTab from '../function-components/FeaturesTab';
+import SingleFeature from './SingleFeature.astro';
+import VideoFeature from './VideoFeature.astro';
+
+type Props = {
+  features: CollectionEntry<'homepage'>['data']['features'];
+};
+const { features } = Astro.props;
+const { featuresTab, ourFeatures, featuresVideo } = features;
+
+const featuresLength = ourFeatures.length;
+---
+
+<section class="section services">
+  <div class="container">
+    {ourFeatures.map((item, index) => <SingleFeature feature={item} index={index} />)}
+    <FeaturesTab client:load featuresTab={featuresTab} />
+    <VideoFeature videoFeature={featuresVideo} index={featuresLength - 1} />
+  </div>
+</section>

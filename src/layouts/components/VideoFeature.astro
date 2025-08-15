@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import VideoComponent from '../function-components/VideoComponent';
+
+type Props = {
+  videoFeature: CollectionEntry<'homepage'>['data']['features']['featuresVideo'];
+  index: number;
+};
+
+const { videoFeature, index } = Astro.props;
+---
+
+<div class="gx-5 row mt-12 items-center lg:mt-0">
+  <div class={`lg:col-7 ${index % 2 === 0 ? 'order-0' : 'order-1'}`}>
+    <VideoComponent
+      client:load
+      src={videoFeature.video.thumbnail}
+      height={370}
+      width={700}
+      title={videoFeature.title}
+      videoId={videoFeature.video.videoId}
+      videoWidth="w-[700px]"
+      videoHeight="h-[370px]"
+    />
+  </div>
+  <div class={`mt-6 lg:col-5 lg:mt-0 ${index % 2 === 0 ? 'order-1' : 'order-0'}`}>
+    <div class="text-container">
+      <h2 class="lg:text-4xl">{videoFeature.title}</h2>
+      <p class="mt-4">{videoFeature.description}</p>
+      {
+        videoFeature.button.enable && (
+          <a class="btn btn-white mt-6" href={videoFeature.button.link}>
+            {videoFeature.button.label}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
