@@ -76,8 +76,12 @@ const homepageCollection = defineCollection({
             author: z.string(),
             avatar: z.string(),
             organization: z.string(),
-            rating: z.enum(['one', 'two', 'three', 'four', 'five']),
-            content: z.string()
+            badge: z.object({
+              type: z.enum(['clientSince', 'businessType', 'volume', 'improvement', 'feature']),
+              value: z.string()
+            }),
+            content: z.string(),
+            reference: z.string().optional()
           })
         )
         .optional()

@@ -1,5 +1,4 @@
 import { useRef, type JSX } from 'react';
-import { Star } from 'react-feather';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,7 +10,11 @@ interface TestimonialItem {
   author: string;
   organization: string;
   content: string;
-  rating: string;
+  badge: {
+    type: 'clientSince' | 'businessType' | 'volume' | 'improvement' | 'feature';
+    value: string;
+  };
+  reference?: string;
 }
 
 interface TestimonialSliderProps {
@@ -53,15 +56,28 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
               <div className="review-author-avatar bg-gradient">
                 <img alt={item.author} src={item.avatar} />
               </div>
-              <h4 className="mb-2">{item.author}</h4>
-              <p className="text-text-dark/80 mb-4">{item.organization}</p>
-              <p>{item.content}</p>
-              <div className={`review-rating mt-6 flex items-center justify-center space-x-2.5 ${item.rating}`}>
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
+              <div className="review-content">
+                <div>
+                  <h4 className="mb-2">{item.author}</h4>
+                  <p className="text-text-dark/80 mb-4">{item.organization}</p>
+                  {item.reference && (
+                    <p className="text-xs text-text-dark/60 mb-3">
+                      {item.reference.startsWith('http') ? (
+                        <a className="hover:text-primary" href={item.reference} rel="noopener noreferrer" target="_blank">
+                          🌐 {item.reference.replace(/^https?:\/\/(www\.)?/, '')}
+                        </a>
+                      ) : (
+                        <span>📍 {item.reference}</span>
+                      )}
+                    </p>
+                  )}
+                  <p className="mb-4">{item.content}</p>
+                </div>
+                <div className="review-badge flex items-center justify-center pb-4">
+                  <span className={`badge badge-${item.badge.type} px-3 py-1 rounded-full text-sm font-medium`}>
+                    {item.badge.value}
+                  </span>
+                </div>
               </div>
             </div>
           </SwiperSlide>
