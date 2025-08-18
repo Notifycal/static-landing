@@ -20,7 +20,7 @@ declare global {
 
 function waitForGlobalConfig(callback: () => void, maxAttempts = 50): void {
   let attempts = 0;
-  
+
   function check(): void {
     attempts++;
     if (window.globalConfig) {
@@ -31,7 +31,7 @@ function waitForGlobalConfig(callback: () => void, maxAttempts = 50): void {
       console.error('Timeout waiting for window.globalConfig');
     }
   }
-  
+
   check();
 }
 
@@ -39,8 +39,10 @@ waitForGlobalConfig(() => {
   loadServiceConfig();
   window.serviceConfig = getServiceConfig();
   console.log('Service config processed:', window.serviceConfig);
-  
-  window.dispatchEvent(new CustomEvent('serviceConfigReady', { 
-    detail: window.serviceConfig
-  }));
+
+  window.dispatchEvent(
+    new CustomEvent('serviceConfigReady', {
+      detail: window.serviceConfig
+    })
+  );
 });

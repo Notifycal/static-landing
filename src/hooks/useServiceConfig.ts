@@ -21,9 +21,3 @@ export function useServiceConfig(): ServiceConfig | null {
   }, []);
   return config;
 }
-
-declare global {
-  interface Window {
-    serviceConfig: ServiceConfig;
-  }
-}

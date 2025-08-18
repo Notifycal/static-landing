@@ -27,7 +27,7 @@
     "@astrojs/sitemap": "^3.4.2",
     "@justinribeiro/lite-youtube": "^1.8.2",
     "@mantine/core": "^8.2.4",
-    "@notifycal/shared": "file:../shared/notifycal-shared-7.2.1.tgz",
+    "@notifycal/shared": "7.3.0",
     "@playform/compress": "^0.2.0",
     "@tabler/icons-react": "^3.34.1",
     "astro": "5.13.2",
