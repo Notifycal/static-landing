@@ -345,53 +345,11 @@ select:invalid {
 }
 
 .review-badge {
+  @apply flex items-center justify-center pb-4;
+
   .badge {
-    @apply border-2 text-xs font-medium;
-    border-radius: 12px;
-    padding: 6px 12px;
-    position: relative;
-    transform: rotate(-1deg);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    &.badge-clientSince {
-      @apply border-blue-200 bg-blue-50 text-blue-700;
-
-      &::before {
-        content: '📅 ';
-      }
-    }
-
-    &.badge-businessType {
-      @apply border-purple-200 bg-purple-50 text-purple-700;
-
-      &::before {
-        content: '🏢 ';
-      }
-    }
-
-    &.badge-volume {
-      @apply border-emerald-200 bg-emerald-50 text-emerald-700;
-
-      &::before {
-        content: '📊 ';
-      }
-    }
-
-    &.badge-improvement {
-      @apply border-amber-200 bg-amber-50 text-amber-700;
-
-      &::before {
-        content: '📈 ';
-      }
-    }
-
-    &.badge-feature {
-      @apply border-rose-200 bg-rose-50 text-rose-700;
-
-      &::before {
-        content: '✨ ';
-      }
-    }
+    @apply rounded-full border-2 px-6 py-1 text-sm font-medium shadow-sm;
+    @apply border-primary-200 bg-primary-50 text-primary-700;
   }
 }
 

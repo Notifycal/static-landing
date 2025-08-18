@@ -81,7 +81,12 @@ const homepageCollection = defineCollection({
               value: z.string()
             }),
             content: z.string(),
-            reference: z.string().optional()
+            reference: z
+              .object({
+                displayName: z.string(),
+                link: z.string().optional()
+              })
+              .optional()
           })
         )
         .optional()

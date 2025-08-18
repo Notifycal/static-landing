@@ -1,4 +1,4 @@
-import { useRef, useState, type JSX } from 'react';
+import { useRef, useState, type FC } from 'react';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -15,14 +15,46 @@ interface TestimonialItem {
     type: 'clientSince' | 'businessType' | 'volume' | 'improvement' | 'feature';
     value: string;
   };
-  reference?: string;
+  reference?: {
+    displayName: string;
+    link?: string;
+  };
 }
 
 interface TestimonialSliderProps {
   list: Array<TestimonialItem>;
 }
 
-const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
+const TestimonialCard: FC<TestimonialItem> = (item) => (
+  <div className="review">
+    <div className="review-author-avatar bg-gradient">
+      <img alt={item.author} className="rounded-full" src={item.avatar} />
+    </div>
+    <div className="review-content">
+      <div>
+        <h4 className="mb-2">{item.author}</h4>
+        <p className="text-text-dark/80 mb-4">{item.organization}</p>
+        {item.reference && (
+          <p className="text-text-dark/60 mb-3 text-xs">
+            {item.reference && item.reference.link ? (
+              <a className="hover:text-primary" href={item.reference.link} rel="noopener noreferrer" target="_blank">
+                🌐 {item.reference.displayName}
+              </a>
+            ) : (
+              <span>📍 {item.reference.displayName}</span>
+            )}
+          </p>
+        )}
+        <p className="mb-4">{item.content}</p>
+      </div>
+      <div className="review-badge">
+        <span className="badge">{item.badge.value}</span>
+      </div>
+    </div>
+  </div>
+);
+
+const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
   SwiperCore.use([Autoplay, Pagination]);
   const [, setSwiper] = useState<SwiperCore | null>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
@@ -57,39 +89,7 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
       >
         {list.map((item, index) => (
           <SwiperSlide key={'feature-' + index}>
-            <div className="review">
-              <div className="review-author-avatar bg-gradient">
-                <img alt={item.author} className="rounded-full" src={item.avatar} />
-              </div>
-              <div className="review-content">
-                <div>
-                  <h4 className="mb-2">{item.author}</h4>
-                  <p className="text-text-dark/80 mb-4">{item.organization}</p>
-                  {item.reference && (
-                    <p className="text-text-dark/60 mb-3 text-xs">
-                      {item.reference.startsWith('http') ? (
-                        <a
-                          className="hover:text-primary"
-                          href={item.reference}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          🌐 {item.reference.replace(/^https?:\/\/(www\.)?/, '')}
-                        </a>
-                      ) : (
-                        <span>📍 {item.reference}</span>
-                      )}
-                    </p>
-                  )}
-                  <p className="mb-4">{item.content}</p>
-                </div>
-                <div className="review-badge flex items-center justify-center pb-4">
-                  <span className={`badge badge-${item.badge.type} rounded-full px-3 py-1 text-sm font-medium`}>
-                    {item.badge.value}
-                  </span>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard {...item} />
           </SwiperSlide>
         ))}
       </Swiper>

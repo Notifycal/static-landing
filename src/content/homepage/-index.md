@@ -87,7 +87,8 @@ testimonial:
         type: volume
         value: '120+ citas/semana'
       content: Desde que usamos Notifycal, las faltas se han reducido un 80%. Nuestros pacientes agradecen los recordatorios y nosotros optimizamos mejor la agenda.
-      reference: 'Madrid'
+      reference:
+        displayName: 'Madrid'
     - author: Carlos Jiménez
       avatar: '/images/users/physiotherapist-1.webp'
       organization: Centro de Fisioterapia Vital
@@ -95,7 +96,8 @@ testimonial:
         type: improvement
         value: 'Reduce faltas 75%'
       content: Los recordatorios automáticos han transformado nuestra gestión. Ya no perdemos tiempo llamando y los pacientes llegan puntuales.
-      reference: 'Valencia'
+      reference:
+        displayName: 'Valencia'
     - author: Taller IMG Sport
       avatar: '/images/users/imgsport-logo.webp'
       organization: Especialistas en SEAT, Audi, VW
@@ -103,7 +105,9 @@ testimonial:
         type: clientSince
         value: 'Cliente desde 2022'
       content: Perfecto para nuestro taller. Los clientes reciben recordatorios de sus revisiones y citas de reparación. Muy profesional.
-      reference: 'https://www.tallerimgsport.es'
+      reference:
+        displayName: 'tallerimgsport.es'
+        link: 'https://www.tallerimgsport.es'
     - author: Dr. Miguel Ruiz
       avatar: '/images/users/veterinarian-natural.webp'
       organization: Clínica Veterinaria Mascota Feliz
@@ -111,7 +115,8 @@ testimonial:
         type: volume
         value: '80+ consultas/día'
       content: Imprescindible para una clínica veterinaria. Los recordatorios de vacunas y revisiones mantienen a nuestros pacientes al día.
-      reference: 'Sevilla'
+      reference:
+        displayName: 'Sevilla'
     - author: Beauty Center Elite
       avatar: '/images/users/beauty-logo.webp'
       organization: Centro de Estética y Belleza
@@ -119,7 +124,8 @@ testimonial:
         type: feature
         value: 'Recordatorios personalizados'
       content: Nuestras clientas nunca olvidan sus citas de tratamientos. El sistema es muy fácil de usar y muy profesional.
-      reference: 'Barcelona'
+      reference:
+        displayName: 'Barcelona'
     - author: Dra. Xènia García
       avatar: '/images/users/xenia-logo.webp'
       organization: Xènia García Ortodoncia
@@ -127,7 +133,9 @@ testimonial:
         type: improvement
         value: 'Mejora puntualidad 85%'
       content: Mis pacientes de ortodoncia necesitan citas regulares de seguimiento. Con Notifycal, las faltas han disminuido drásticamente y mantengo una agenda mucho más organizada.
-      reference: 'https://www.xeniagarciaortodoncia.com'
+      reference:
+        displayName: 'https://www.xeniagarciaortodoncia.com'
+        link: 'https://www.xeniagarciaortodoncia.com'
     - author: Clínica Dental Premium
       avatar: '/images/users/dental-logo.webp'
       organization: Odontología Avanzada
@@ -142,7 +150,9 @@ testimonial:
         type: clientSince
         value: 'Cliente desde 2023'
       content: Trabajamos con más de 40 clínicas dentales. Notifycal nos ayuda a coordinar entregas y seguimientos de tratamientos de forma impecable.
-      reference: 'https://flexortholab.com'
+      reference:
+        displayName: 'flexortholab.com'
+        link: 'https://flexortholab.com'
     - author: Centro Médico Salud+
       avatar: '/images/users/medical-logo.webp'
       organization: Medicina General y Especialidades
@@ -150,5 +160,6 @@ testimonial:
         type: volume
         value: '200+ pacientes/día'
       content: Con el volumen de pacientes que manejamos, Notifycal es indispensable. Reducimos las faltas y optimizamos la agenda perfectamente.
-      reference: 'Bilbao'
+      reference:
+        displayName: 'Bilbao'
 ---
