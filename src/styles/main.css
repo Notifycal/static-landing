@@ -1,10 +1,25 @@
-/* @theme has to be imported before tailwind */
-@import '@notifycal/shared/styles';
-
 @layer theme, base, ourBase, mantine, components, ourComponents, utilities;
 
 @import 'tailwindcss';
-@plugin "../tailwind-plugin/tw-theme";
+@import '@notifycal/shared/styles';
+
+@theme {
+  --leading-tight: 1.25;
+  --radius-sm: 0.25rem;
+  --font-weight-normal: 400;
+
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-body: #fafafa;
+  --color-border: #ebebeb;
+  --color-light: #e5e5e5;
+  --color-dark: #1a202c;
+  --color-text: #888888;
+  --color-text-dark: #222;
+  --color-text-light: #ceced0;
+  --color-transparent: transparent;
+}
+
 @plugin "../tailwind-plugin/tw-bs-grid";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
