@@ -54,7 +54,7 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
           <SwiperSlide key={'feature-' + index}>
             <div className="review">
               <div className="review-author-avatar bg-gradient">
-                <img alt={item.author} src={item.avatar} />
+                <img alt={item.author} className="rounded-full" src={item.avatar} />
               </div>
               <div className="review-content">
                 <div>
