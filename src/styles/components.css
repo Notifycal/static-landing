@@ -346,50 +346,50 @@ select:invalid {
 
 .review-badge {
   .badge {
-    @apply font-medium text-xs border-2;
+    @apply border-2 text-xs font-medium;
     border-radius: 12px;
     padding: 6px 12px;
     position: relative;
     transform: rotate(-1deg);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
     &.badge-clientSince {
-      @apply bg-blue-50 border-blue-200 text-blue-700;
-      
+      @apply border-blue-200 bg-blue-50 text-blue-700;
+
       &::before {
-        content: "📅 ";
+        content: '📅 ';
       }
     }
-    
+
     &.badge-businessType {
-      @apply bg-purple-50 border-purple-200 text-purple-700;
-      
+      @apply border-purple-200 bg-purple-50 text-purple-700;
+
       &::before {
-        content: "🏢 ";
+        content: '🏢 ';
       }
     }
-    
+
     &.badge-volume {
-      @apply bg-emerald-50 border-emerald-200 text-emerald-700;
-      
+      @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+
       &::before {
-        content: "📊 ";
+        content: '📊 ';
       }
     }
-    
+
     &.badge-improvement {
-      @apply bg-amber-50 border-amber-200 text-amber-700;
-      
+      @apply border-amber-200 bg-amber-50 text-amber-700;
+
       &::before {
-        content: "📈 ";
+        content: '📈 ';
       }
     }
-    
+
     &.badge-feature {
-      @apply bg-rose-50 border-rose-200 text-rose-700;
-      
+      @apply border-rose-200 bg-rose-50 text-rose-700;
+
       &::before {
-        content: "✨ ";
+        content: '✨ ';
       }
     }
   }

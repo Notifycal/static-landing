@@ -1,6 +1,7 @@
-import { useRef, type JSX } from 'react';
+import { useRef, useState, type JSX } from 'react';
 import SwiperCore from 'swiper';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,7 +23,8 @@ interface TestimonialSliderProps {
 }
 
 const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
-  SwiperCore.use([Pagination]);
+  SwiperCore.use([Autoplay, Pagination]);
+  const [, setSwiper] = useState<SwiperCore | null>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -49,6 +51,9 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
           clickable: true,
           dynamicBullets: true
         }}
+        onBeforeInit={(swiper) => {
+          setSwiper(swiper);
+        }}
       >
         {list.map((item, index) => (
           <SwiperSlide key={'feature-' + index}>
@@ -61,9 +66,14 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
                   <h4 className="mb-2">{item.author}</h4>
                   <p className="text-text-dark/80 mb-4">{item.organization}</p>
                   {item.reference && (
-                    <p className="text-xs text-text-dark/60 mb-3">
+                    <p className="text-text-dark/60 mb-3 text-xs">
                       {item.reference.startsWith('http') ? (
-                        <a className="hover:text-primary" href={item.reference} rel="noopener noreferrer" target="_blank">
+                        <a
+                          className="hover:text-primary"
+                          href={item.reference}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
                           🌐 {item.reference.replace(/^https?:\/\/(www\.)?/, '')}
                         </a>
                       ) : (
@@ -74,7 +84,7 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
                   <p className="mb-4">{item.content}</p>
                 </div>
                 <div className="review-badge flex items-center justify-center pb-4">
-                  <span className={`badge badge-${item.badge.type} px-3 py-1 rounded-full text-sm font-medium`}>
+                  <span className={`badge badge-${item.badge.type} rounded-full px-3 py-1 text-sm font-medium`}>
                     {item.badge.value}
                   </span>
                 </div>
