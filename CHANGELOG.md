@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.0](https://github.com/Notifycal/static-landing/compare/v1.8.0...v1.9.0) (2025-08-18)
+
+
+### Features
+
+* use style-dictionary from shared ([#398](https://github.com/Notifycal/static-landing/issues/398)) ([f2a5723](https://github.com/Notifycal/static-landing/commit/f2a57239fe6165082d00f4e18c01a533ff6b23c8))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.2.5 ([#400](https://github.com/Notifycal/static-landing/issues/400)) ([43485c9](https://github.com/Notifycal/static-landing/commit/43485c9e047eb76dec626a3e249539bc342970e1))
+* **deps:** Update dependency marked to v16.2.0 ([#402](https://github.com/Notifycal/static-landing/issues/402)) ([47297e6](https://github.com/Notifycal/static-landing/commit/47297e697ccc4cbdf4f03e71c2ca653ac754ba84))
+
 ## [1.8.0](https://github.com/Notifycal/static-landing/compare/v1.7.0...v1.8.0) (2025-08-15)
 
 
