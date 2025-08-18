@@ -1,5 +1,5 @@
 /* @theme has to be imported before tailwind */
-@import '@notifycal/shared/styles/_generated-color-shades.css';
+@import '@notifycal/shared/styles';
 
 @layer theme, base, ourBase, mantine, components, ourComponents, utilities;
 
