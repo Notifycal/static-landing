@@ -338,7 +338,7 @@ select:invalid {
 }
 
 .review-badge {
-  @apply flex items-center justify-center pb-4;
+  @apply flex items-center justify-center pb-6;
 
   .badge {
     @apply rounded-full border-2 px-6 py-1 text-sm font-medium shadow-sm;
