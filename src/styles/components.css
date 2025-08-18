@@ -567,6 +567,8 @@ select:invalid {
 
 /* swiper pagination */
 .testimonial-slider-pagination {
+  @apply relative flex justify-center;
+
   .swiper-pagination-bullet {
     @apply bg-light! h-2.5! w-2.5! opacity-100!;
   }

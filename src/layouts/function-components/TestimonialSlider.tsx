@@ -60,7 +60,7 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
   const paginationRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="reviews-carousel relative">
+    <>
       <Swiper
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
@@ -93,14 +93,14 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="testimonial-slider-pagination relative flex justify-center">
+      <div className="testimonial-slider-pagination">
         <div
           ref={paginationRef}
-          className="swiper-pagination reviews-carousel-pagination !bottom-0"
+          className="swiper-pagination !bottom-0"
           style={{ width: '100%' }}
         ></div>
       </div>
-    </div>
+    </>
   );
 };
 
