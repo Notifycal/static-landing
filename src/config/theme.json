@@ -1,0 +1,10 @@
+{
+  "fonts": {
+    "fontFamily": {
+      "primary": "Poppins:wght@400;500;600;700",
+      "primaryType": "sans-serif",
+      "secondary": "Merriweather:wght@700;900",
+      "secondaryType": "sans-serif"
+    }
+  }
+}
