@@ -6,9 +6,9 @@ import { plainify } from '@/lib/utils/textConverter';
 import Footer from '@/partials/Footer.astro';
 import Header from '@/partials/Header.astro';
 import '@/styles/main.css';
-import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from 'astro:transitions';
+
 
 // font families
 const pf = theme.fonts.fontFamily.primary;
@@ -24,14 +24,50 @@ if (theme.fonts.fontFamily.secondary) {
     .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
 }
 
+
 const { title, metaTitle, description, image, noindex, canonical } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- google tag manager -->
-    {config.googleTagManager.enable && <GoogleTagmanager id={config.googleTagManager.gtmId} />}
+    <script type="text/javascript" src="/config.js" is:inline>
+      import { productsInfoSchema } from '@notifycal/shared/pricing';
+import { serviceConfigFactory } from '@notifycal/shared/utils';
+import { z } from 'zod';
+      
+      // Recreate the schema in the browser context
+      const serviceConfigSchema = z.object({
+        TIER_INFO: productsInfoSchema,
+        STATIC_LANDING_URL: z.url('STATIC_LANDING_URL must be a valid URL').default('https://notifycal.com'),
+        GOOGLE_TAG_MANAGER_ID: z.string().optional(),
+      });
+      
+      // Wait for config.js to load and DOM to be ready
+      document.addEventListener('DOMContentLoaded', () => {
+        const { loadServiceConfig, getServiceConfig } = serviceConfigFactory(serviceConfigSchema);
+        
+        loadServiceConfig();
+        const config = getServiceConfig();
+        
+        console.log('config loaded via serviceConfigFactory:', config);
+        (window as any).serviceConfig = config;
+      });
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-XX0SVDERMZ"
+    ></script>
+    <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-XX0SVDERMZ');
+    </script>
+
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
@@ -110,8 +146,6 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>
-    {/* google tag manager noscript */}
-    {config.googleTagManager.enable && <GoogleTagmanagerNoscript id={config.googleTagManager.gtmId} />}
     <Header />
     <TwSizeIndicator />
     <main id="main-content">
