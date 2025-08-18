@@ -9,7 +9,6 @@ import '@/styles/main.css';
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from 'astro:transitions';
 
-
 // font families
 const pf = theme.fonts.fontFamily.primary;
 const sf = theme.fonts.fontFamily.secondary;
@@ -24,7 +23,6 @@ if (theme.fonts.fontFamily.secondary) {
     .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, '');
 }
 
-
 const { title, metaTitle, description, image, noindex, canonical } = Astro.props;
 ---
 
@@ -32,17 +30,43 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
 <html lang="en">
   <head>
     <script type="text/javascript" src="/config.js"></script>
-    <script src="/src/scripts/load-config.ts"></script>
+    <script src="/src/scripts/config-processor.ts"></script>
+    <script is:inline>
+      function onServiceConfigReady(callback) {
+        window.addEventListener('serviceConfigReady', function (event) {
+          const config = event.detail;
+          if (config && config.GOOGLE_TAG_MANAGER_ID) {
+            callback(config.GOOGLE_TAG_MANAGER_ID, config);
+          }
+        });
+      }
 
-    <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${window.serviceConfig.GOOGLE_TAG_MANAGER_ID}`}></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag() {
-        dataLayer.push(arguments);
-      };
-      gtag('js', new Date());
+      onServiceConfigReady((tagManagerId) => {
+        const script = document.createElement('script');
+        script.type = 'text/partytown';
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
+        script.async = true;
+        document.head.appendChild(script);
+      });
+    </script>
+    <script type="text/partytown" is:inline>
+      function onServiceConfigReady(callback) {
+        window.addEventListener('serviceConfigReady', function (event) {
+          const config = event.detail;
+          if (config && config.GOOGLE_TAG_MANAGER_ID) {
+            callback(config.GOOGLE_TAG_MANAGER_ID, config);
+          }
+        });
+      }
 
-      gtag('config', window.serviceConfig.GOOGLE_TAG_MANAGER_ID);
+      onServiceConfigReady((tagManagerId) => {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          dataLayer.push(arguments);
+        };
+        gtag('js', new Date());
+        gtag('config', tagManagerId);
+      });
     </script>
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
