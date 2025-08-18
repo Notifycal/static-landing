@@ -1,4 +1,4 @@
-import type { ServiceConfig } from '@/utils/config';
+import type { ServiceConfig } from '@/scripts/config-processor';
 import { useEffect, useState } from 'react';
 
 export function useServiceConfig(): ServiceConfig | null {
