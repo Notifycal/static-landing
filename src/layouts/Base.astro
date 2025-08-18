@@ -29,7 +29,7 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
 <!doctype html>
 <html lang="en">
   <head>
-    <script type="text/javascript" src="/config.js"></script>
+    <script type="text/javascript" src="/config.js" is:inline></script>
     <script src="/src/scripts/config-processor.ts"></script>
     <script is:inline>
       function onServiceConfigReady(callback) {
