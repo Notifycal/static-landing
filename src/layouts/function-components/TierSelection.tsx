@@ -4,6 +4,8 @@ import { orderedTierInfoWithIcons } from '@notifycal/shared/pricing';
 import type { LanguageCode } from '@notifycal/shared/types';
 import type { JSX } from 'react';
 
+import { colors } from '@notifycal/shared/theme';
+
 interface TierSelection {
   locale: LanguageCode;
 }
@@ -37,7 +39,12 @@ export function TierSelection({ locale }: TierSelection): JSX.Element {
   };
 
   return (
-    <MantineProvider>
+    <MantineProvider
+      theme={{
+        primaryColor: 'primary',
+        colors: colors
+      }}
+    >
       <Container>
         <TierSelectionReact
           isCardButtonDisabled={() => false}
