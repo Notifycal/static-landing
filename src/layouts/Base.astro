@@ -31,24 +31,6 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
   <head>
     <script type="text/javascript" src="/config.js" is:inline></script>
     <script src="/src/scripts/config-processor.ts"></script>
-    <script is:inline>
-      function onServiceConfigReady(callback) {
-        window.addEventListener('serviceConfigReady', function (event) {
-          const config = event.detail;
-          if (config && config.GOOGLE_TAG_MANAGER_ID) {
-            callback(config.GOOGLE_TAG_MANAGER_ID, config);
-          }
-        });
-      }
-
-      onServiceConfigReady((tagManagerId) => {
-        const script = document.createElement('script');
-        script.type = 'text/partytown';
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
-        script.async = true;
-        document.head.appendChild(script);
-      });
-    </script>
     <script type="text/partytown" is:inline>
       function onServiceConfigReady(callback) {
         window.addEventListener('serviceConfigReady', function (event) {
@@ -58,7 +40,13 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
           }
         });
       }
-
+      onServiceConfigReady((tagManagerId) => {
+        const script = document.createElement('script');
+        script.type = 'text/partytown';
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
+        script.async = true;
+        document.head.appendChild(script);
+      });
       onServiceConfigReady((tagManagerId) => {
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() {
