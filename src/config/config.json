@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Pinwheel Astro",
-    "baseUrl": "https://pinwheel-astro.vercel.app",
+    "title": "Notifycal",
+    "baseUrl": "https://notifycal.com",
     "basePath": "/",
     "trailingSlash": false,
     "favicon": "/images/favicon.webp",
     "logo": "/images/logo.webp",
     "logoWidth": "147",
     "logoHeight": "31",
-    "logoText": "Pinwheel"
+    "logoText": "Notifycal"
   },
 
   "settings": {
@@ -20,23 +20,23 @@
     "title": "Helping teams in the world with focus",
     "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
     "button": {
-      "label": "Download The Theme",
-      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+      "label": "Get Notifycal",
+      "link": "https://private.notifycal.com"
     }
   },
 
   "params": {
-    "footerDescription": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "email": "info@andromeda.io",
-    "location": "2118 Thornridge Cir. Syracuse, Connecticut 35624",
-    "phone": "+704-555-0127",
+    "footerDescription": "Focus on your business, we will take care of the rest.",
+    "email": "info@notifycal.com",
+    "location": "Madrid, Spain",
+    "phone": "",
     "contactFormAction": "#",
-    "copyright": "Copyright © 2025 a theme by [Themefisher](https://themefisher.com)"
+    "copyright": "© 2025 Notifycal. Todos los derechos reservados."
   },
 
   "metadata": {
-    "metaAuthor": "Themefisher",
+    "metaAuthor": "Notifycal",
     "metaImage": "/images/og-image.webp",
-    "metaDescription": "pinwheel astro"
+    "metaDescription": "Reminders and notifications for your clients, and yourself."
   }
 }
