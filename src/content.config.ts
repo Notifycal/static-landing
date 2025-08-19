@@ -94,6 +94,45 @@ const homepageCollection = defineCollection({
   })
 });
 
+const aboutCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/about' }),
+  schema: z.object({
+    title: z.string(),
+    pageTitle: z.string(),
+    metaTitle: z.string(),
+    description: z.string(),
+    image: z.string(),
+    mission: z.object({
+      title: z.string(),
+      content: z.string()
+    }),
+    members: z.object({
+      title: z.string(),
+      description: z.string(),
+      memberList: z.array(
+        z.object({
+          name: z.string(),
+          field: z.string(),
+          image: z.string(),
+          bio: z.string(),
+          linkedin: z.string(),
+          github: z.string()
+        })
+      )
+    }),
+    values: z.object({
+      title: z.string(),
+      description: z.string(),
+      valuesList: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string()
+        })
+      )
+    })
+  })
+});
+
 const pagesCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
@@ -109,5 +148,6 @@ const pagesCollection = defineCollection({
 // Export collections
 export const collections = {
   homepage: homepageCollection,
+  about: aboutCollection,
   pages: pagesCollection
 };
