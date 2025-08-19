@@ -1,60 +1,60 @@
 ---
 banner:
-  title: 'Scale design & dev operations with Avocode Enterprise'
-  content: 'A fully integrated suite of authentication & authoriz products, Stytch’s platform removes the headache of.'
+  title: '¿Pierdes tiempo enviando recordatorios manualmente?'
+  content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.'
   image: /images/banner-img.webp
   button:
     enable: true
-    label: Download The Theme
-    link: 'https://themefisher.com/astro-themes/pinwheel-astro'
+    label: Empezar Gratis
+    link: 'https://private.notifycal.com'
 
 features:
   featuresTab:
-    title: Prevent failure from to impacting your reputation
-    description: Our platform helps you build secure onboarding authentication experiences that retain and engage your users. We build the infrastructure, you can.
+    title: Conecta con tus herramientas sin cambiar tu flujo de trabajo
+    description: Notifycal actúa como proxy inteligente entre tus aplicaciones existentes y tus clientes, sin almacenar ni duplicar información.
     tabList:
-      - title: Habit building essential choose habit
-        icon: 'lock' #icon package react-feather-icon
-        image: '/images/sells-by-country.webp'
-      - title: Get an overview of Habit Calendars.
-        icon: 'clock' #icon package react-feather-icon
+      - title: Conexión directa con calendarios
+        icon: 'calendar' #icon package react-feather-icon
         image: '/images/collaboration.webp'
-      - title: Start building with Habitify platform
-        icon: 'bell' #icon package react-feather-icon
+      - title: Acceso en tiempo real a contactos
+        icon: 'users' #icon package react-feather-icon
         image: '/images/sells-by-country.webp'
+      - title: Envío automático por múltiples canales
+        icon: 'mail' #icon package react-feather-icon
+        image: '/images/collaboration.webp'
 
   ourFeatures:
-    - title: Accept payments any country in this whole universe
-      description: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
+    - title: Integración nativa con Google Calendar
+      description: Sincroniza automáticamente todas tus citas desde Google Calendar. Los recordatorios se envían basándose en tu agenda real, sin configuración manual.
       image: '/images/collaboration.webp'
       list:
-        - Supporting more than 119 country world
-        - Open transaction with more than currencies
-        - Customer Service with 79 languages
-    - title: Accept payments any country in this whole universe
-      description: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
+        - Sincronización bidireccional en tiempo real
+        - Compatible con múltiples calendarios
+        - Configuración de recordatorios personalizables
+    - title: Acceso directo a Google Contacts
+      description: Conecta con Google Contacts en tiempo real para acceder a la información de tus clientes cuando sea necesario, sin almacenar ni duplicar datos.
       image: '/images/collaboration.webp'
       list:
-        - Supporting more than 119 country world
-        - Open transaction with more than currencies
-        - Customer Service with 79 languages
-    - title: Accept payments any country in this whole universe
-      description: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
+        - Acceso en vivo a contactos
+        - Sin almacenamiento local de datos
+        - Privacidad y seguridad garantizada
+    - title: Canales múltiples de comunicación
+      description: Envía recordatorios por SMS y email a través de nuestros proveedores optimizados para máxima entrega y confiabilidad.
       image: '/images/collaboration.webp'
       list:
-        - Supporting more than 119 country world
-        - Open transaction with more than currencies
-        - Customer Service with 79 languages
+        - SMS con entrega garantizada
+        - Emails profesionales personalizables
+        - Estadísticas de apertura y entrega
 
   featuresVideo:
-    title: Accountability that works for you
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    title: Configuración simple y efectiva
+    description: Conecta Google Calendar, importa tus contactos de Google y configura tus recordatorios automáticos en menos de 5 minutos. Sin instalaciones complicadas.
     video:
       thumbnail: '/images/intro-thumbnail.webp'
       videoId: 'g3-VxLQO7do'
     button:
       enable: true
-      label: Know About Us
+      label: Ver Demo
       link: '#'
 
 pricing:
@@ -63,18 +63,18 @@ pricing:
 
 faq:
   title: Preguntas frecuentes
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  description: Resuelve las dudas más comunes sobre nuestro servicio de recordatorios automáticos.
   faqList:
-    - title: Que pasa si me quedo sin creditos?
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    - title: Que pasa si me quedo sin creditos?
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    - title: Que pasa si me quedo sin creditos?
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    - title: Que pasa si me quedo sin creditos?
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-    - title: Que pasa si me quedo sin creditos?
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+    - title: ¿Cómo funciona la facturación por créditos?
+      content: Cada SMS cuesta 1 crédito y cada email 0.1 créditos. Solo pagas por lo que usas. Si se agotan, el servicio se pausa hasta que recargues. Puedes activar recarga automática o comprar paquetes con descuento.
+    - title: ¿Cuánto tiempo lleva configurar Notifycal?
+      content: Menos de 5 minutos. Conectas tu Google Calendar, eliges qué calendarios sincronizar, personalizas tus plantillas de mensajes y ya está. Los recordatorios comienzan automáticamente.
+    - title: ¿Puedo usar mis propios textos y horarios?
+      content: Completamente personalizable. Define cuándo enviar recordatorios (24h, 2h antes, etc.), crea plantillas por tipo de servicio, y personaliza el contenido con variables como nombre, fecha y notas especiales.
+    - title: ¿Qué pasa si cancelo una cita en mi calendario?
+      content: Los recordatorios se cancelan automáticamente. La sincronización es bidireccional y en tiempo real, por lo que cualquier cambio en tu calendario se refleja inmediatamente en Notifycal.
+    - title: ¿Funciona con otros calendarios además de Google?
+      content: Actualmente nos enfocamos en Google Calendar por su amplia adopción y robusta API. Si usas otro calendario, muchos permiten sincronización con Google Calendar como solución intermedia.
 
 testimonial:
   title: Nuestros clientes ya están disfrutando de los beneficios
