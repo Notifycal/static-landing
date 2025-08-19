@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.10.0](https://github.com/Notifycal/static-landing/compare/v1.9.0...v1.10.0) (2025-08-19)
+
+
+### Features
+
+* read service config ([#406](https://github.com/Notifycal/static-landing/issues/406)) ([5631a77](https://github.com/Notifycal/static-landing/commit/5631a779cfcf780f3d1a0aa71cea204330bc5b86))
+* testimonials ([#399](https://github.com/Notifycal/static-landing/issues/399)) ([640b695](https://github.com/Notifycal/static-landing/commit/640b695e0aba4af90270d34792a684d7999d33ec))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.2.1 ([#403](https://github.com/Notifycal/static-landing/issues/403)) ([29cbd94](https://github.com/Notifycal/static-landing/commit/29cbd945f3676174c0f789b813ee32104161a43c))
+* **deps:** Update dependency @notifycal/shared to v7.3.0 ([#407](https://github.com/Notifycal/static-landing/issues/407)) ([3f8efb8](https://github.com/Notifycal/static-landing/commit/3f8efb8418dc78e006ee6a9c4d1260d7d8094f50))
+* **deps:** Update dependency @notifycal/shared to v7.4.0 ([#410](https://github.com/Notifycal/static-landing/issues/410)) ([d09654f](https://github.com/Notifycal/static-landing/commit/d09654f587c8feb2d276f2bfec2258471a917cae))
+* **deps:** Update dependency vite to v7.1.3 ([#409](https://github.com/Notifycal/static-landing/issues/409)) ([78d4f54](https://github.com/Notifycal/static-landing/commit/78d4f54cc0da3f717eff7c1b9b8cf908a45e34d3))
+
 ## [1.9.0](https://github.com/Notifycal/static-landing/compare/v1.8.0...v1.9.0) (2025-08-18)
 
 
