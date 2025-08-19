@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/Notifycal/static-landing/compare/v1.10.0...v1.10.1) (2025-08-19)
+
+
+### Bug Fixes
+
+* google tag manager ([#411](https://github.com/Notifycal/static-landing/issues/411)) ([a0fbd23](https://github.com/Notifycal/static-landing/commit/a0fbd2388b4e5c741bdb6b625891faf59c051fd6))
+
 ## [1.10.0](https://github.com/Notifycal/static-landing/compare/v1.9.0...v1.10.0) (2025-08-19)
 
 
