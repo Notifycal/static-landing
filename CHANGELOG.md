@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.2](https://github.com/Notifycal/static-landing/compare/v1.10.1...v1.10.2) (2025-08-19)
+
+
+### Bug Fixes
+
+* almost drop theme in favour of shared ([#408](https://github.com/Notifycal/static-landing/issues/408)) ([7c9d034](https://github.com/Notifycal/static-landing/commit/7c9d03414ab319919b473f1cb1642c77572d3d62))
+
 ## [1.10.1](https://github.com/Notifycal/static-landing/compare/v1.10.0...v1.10.1) (2025-08-19)
 
 
