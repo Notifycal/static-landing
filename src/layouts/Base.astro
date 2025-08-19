@@ -6,7 +6,6 @@ import { plainify } from '@/lib/utils/textConverter';
 import Footer from '@/partials/Footer.astro';
 import Header from '@/partials/Header.astro';
 import '@/styles/main.css';
-import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from 'astro:transitions';
 
@@ -30,8 +29,33 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- google tag manager -->
-    {config.googleTagManager.enable && <GoogleTagmanager id={config.googleTagManager.gtmId} />}
+    <script type="text/javascript" src="/config.js" is:inline></script>
+    <script src="/src/scripts/config-processor.ts"></script>
+    <script type="text/partytown" is:inline>
+      function onServiceConfigReady(callback) {
+        window.addEventListener('serviceConfigReady', function (event) {
+          const config = event.detail;
+          if (config && config.GOOGLE_TAG_MANAGER_ID) {
+            callback(config.GOOGLE_TAG_MANAGER_ID, config);
+          }
+        });
+      }
+      onServiceConfigReady((tagManagerId) => {
+        const script = document.createElement('script');
+        script.type = 'text/partytown';
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
+        script.async = true;
+        document.head.appendChild(script);
+      });
+      onServiceConfigReady((tagManagerId) => {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          dataLayer.push(arguments);
+        };
+        gtag('js', new Date());
+        gtag('config', tagManagerId);
+      });
+    </script>
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
@@ -110,8 +134,6 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>
-    {/* google tag manager noscript */}
-    {config.googleTagManager.enable && <GoogleTagmanagerNoscript id={config.googleTagManager.gtmId} />}
     <Header />
     <TwSizeIndicator />
     <main id="main-content">
