@@ -1,5 +1,5 @@
 window.globalConfig = {
-  GOOGLE_CLIENT_ID: ${googleClientId},
   FRONTEND_URL: ${frontendUrl},
-  TIER_INFO: ${tierInfo}
+  TIER_INFO: ${tierInfo},
+  GOOGLE_TAG_MANAGER_ID: ${googleTagManagerId}
 };

@@ -4,6 +4,7 @@ import { orderedTierInfoWithIcons } from '@notifycal/shared/pricing';
 import type { LanguageCode } from '@notifycal/shared/types';
 import type { JSX } from 'react';
 
+import { useServiceConfig } from '@/hooks/useServiceConfig';
 import { colors } from '@notifycal/shared/theme';
 
 interface TierSelection {
@@ -11,32 +12,11 @@ interface TierSelection {
 }
 
 export function TierSelection({ locale }: TierSelection): JSX.Element {
-  const tiers: Parameters<typeof orderedTierInfoWithIcons>[0] = {
-    good: {
-      name: 'Good Plan',
-      credits: 100,
-      priceEur: 10,
-      priceId: 'good',
-      productId: 'good',
-      numberOfReminders: 100
-    },
-    better: {
-      name: 'Better Plan',
-      credits: 350,
-      priceEur: 25,
-      priceId: 'better',
-      productId: 'better',
-      numberOfReminders: 350
-    },
-    best: {
-      name: 'Best Plan',
-      credits: 1000,
-      priceEur: 60,
-      priceId: 'best',
-      productId: 'best',
-      numberOfReminders: 1000
-    }
-  };
+  const serviceConfig = useServiceConfig();
+  if (!serviceConfig) {
+    return <div>Loading...</div>;
+  }
+  const tiers = serviceConfig.TIER_INFO.tiers;
 
   return (
     <MantineProvider
