@@ -8,6 +8,7 @@ import Header from '@/partials/Header.astro';
 import '@/styles/main.css';
 import { AstroFont } from 'astro-font';
 import { ClientRouter } from 'astro:transitions';
+import CookieConsent from './components/CookieConsent/CookieConsent.astro';
 
 // font families
 const pf = theme.fonts.fontFamily.primary;
@@ -146,6 +147,7 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     <TwSizeIndicator />
     <main id="main-content">
       <slot />
+      <CookieConsent />
     </main>
     <Footer />
   </body>
