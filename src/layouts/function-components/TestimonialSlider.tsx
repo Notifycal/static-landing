@@ -1,7 +1,7 @@
-import { useRef, type JSX } from 'react';
-import { Star } from 'react-feather';
+import { useRef, useState, type FC } from 'react';
 import SwiperCore from 'swiper';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,20 +11,57 @@ interface TestimonialItem {
   author: string;
   organization: string;
   content: string;
-  rating: string;
+  badge: {
+    type: 'clientSince' | 'businessType' | 'volume' | 'improvement' | 'feature';
+    value: string;
+  };
+  reference?: {
+    displayName: string;
+    link?: string;
+  };
 }
 
 interface TestimonialSliderProps {
   list: Array<TestimonialItem>;
 }
 
-const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
-  SwiperCore.use([Pagination]);
+const TestimonialCard: FC<TestimonialItem> = (item) => (
+  <div className="review">
+    <div className="review-author-avatar bg-gradient">
+      <img alt={item.author} className="rounded-full" src={item.avatar} />
+    </div>
+    <div className="flex flex-col">
+      <h4 className="mb-2">{item.author}</h4>
+      <p className="text-text-dark/80 mb-4">{item.organization}</p>
+      {item.reference && (
+        <p className="text-text-dark/60 mb-3 text-xs">
+          {item.reference && item.reference.link ? (
+            <a className="hover:text-primary-800" href={item.reference.link} rel="noopener noreferrer" target="_blank">
+              🌐 {item.reference.displayName}
+            </a>
+          ) : (
+            <span>📍 {item.reference.displayName}</span>
+          )}
+        </p>
+      )}
+      <p className="mb-4">{item.content}</p>
+
+      <div className="review-badge">
+        <span className="badge">{item.badge.value}</span>
+      </div>
+    </div>
+  </div>
+);
+
+const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
+  SwiperCore.use([Autoplay, Pagination]);
+  const [, setSwiper] = useState<SwiperCore | null>(null);
   const paginationRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="reviews-carousel relative">
+    <div className="testimonial-slider">
       <Swiper
+        loop
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         autoplay={{
@@ -46,33 +83,18 @@ const TestimonialSlider = ({ list }: TestimonialSliderProps): JSX.Element => {
           clickable: true,
           dynamicBullets: true
         }}
+        onBeforeInit={(swiper) => {
+          setSwiper(swiper);
+        }}
       >
         {list.map((item, index) => (
-          <SwiperSlide key={'feature-' + index}>
-            <div className="review">
-              <div className="review-author-avatar bg-gradient">
-                <img alt={item.author} src={item.avatar} />
-              </div>
-              <h4 className="mb-2">{item.author}</h4>
-              <p className="text-text-dark/80 mb-4">{item.organization}</p>
-              <p>{item.content}</p>
-              <div className={`review-rating mt-6 flex items-center justify-center space-x-2.5 ${item.rating}`}>
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-            </div>
+          <SwiperSlide key={'testimonial-' + index}>
+            <TestimonialCard {...item} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="testimonial-slider-pagination relative flex justify-center">
-        <div
-          ref={paginationRef}
-          className="swiper-pagination reviews-carousel-pagination !bottom-0"
-          style={{ width: '100%' }}
-        ></div>
+      <div className="testimonial-slider-pagination">
+        <div ref={paginationRef} className="swiper-pagination !bottom-0" style={{ width: '100%' }}></div>
       </div>
     </div>
   );
