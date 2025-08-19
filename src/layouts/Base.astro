@@ -41,6 +41,14 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
         });
       }
       onServiceConfigReady((tagManagerId) => {
+        if (!document.querySelector('noscript[data-gtm]')) {
+          const noscript = document.createElement('noscript');
+          noscript.setAttribute('data-gtm', 'true');
+          noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${tagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+          document.body.insertBefore(noscript, document.body.firstChild);
+        }
+      });
+      onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
         script.type = 'text/partytown';
         script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
