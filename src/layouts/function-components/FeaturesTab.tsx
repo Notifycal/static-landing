@@ -1,4 +1,5 @@
 import { humanize } from '@/lib/utils/textConverter';
+import clsx from 'clsx';
 import { useState, type JSX } from 'react';
 import * as Icon from 'react-feather';
 
@@ -37,7 +38,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
         <div className="text-container">
           <h2 className="lg:text-4xl">{title}</h2>
           <p className="mt-4">{description}</p>
-          <ul className="tab-nav mt-8! border-b-0">
+          <ul className="tab-nav">
             {tabList?.map((item, index) => {
               const FeatherIcon = Icon[humanize(item.icon) as keyof typeof Icon];
               return (
@@ -48,7 +49,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
                     setTab(index);
                   }}
                 >
-                  <span className="tab-icon mr-3">
+                  <span className="tab-icon mr-3 inline-flex items-center justify-center">
                     <FeatherIcon />
                   </span>
                   {item.title}
