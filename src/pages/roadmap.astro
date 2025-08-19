@@ -1,0 +1,25 @@
+---
+import Base from '@/layouts/Base.astro';
+import RoadmapHero from '@/layouts/components/roadmap/RoadmapHero.astro';
+import RoadmapTimeline from '@/layouts/components/roadmap/RoadmapTimeline.astro';
+import VotingCallToAction from '@/layouts/components/roadmap/VotingCallToAction.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+const roadmap = (await getEntry('roadmap', '-index')) as CollectionEntry<'roadmap'>;
+const { intro, confirmedFeatures, potentialFeatures, votingCTA } = roadmap.data;
+---
+
+<Base
+  title={roadmap.data.title}
+  metaTitle={roadmap.data.metaTitle}
+  description={roadmap.data.description}
+  image={roadmap.data.image}
+>
+  <RoadmapHero intro={intro} />
+  <RoadmapTimeline 
+    confirmedFeatures={confirmedFeatures} 
+    potentialFeatures={potentialFeatures} 
+  />
+  <VotingCallToAction votingCTA={votingCTA} />
+</Base>

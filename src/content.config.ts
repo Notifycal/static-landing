@@ -133,6 +133,41 @@ const aboutCollection = defineCollection({
   })
 });
 
+const roadmapCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/roadmap' }),
+  schema: z.object({
+    title: z.string(),
+    metaTitle: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    intro: z.object({
+      title: z.string(),
+      description: z.string()
+    }),
+    confirmedFeatures: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string(),
+        status: z.enum(['confirmed', 'in-development', 'planning'])
+      })
+    ),
+    potentialFeatures: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string()
+      })
+    ),
+    votingCTA: z.object({
+      title: z.string(),
+      description: z.string(),
+      buttonText: z.string(),
+      buttonUrl: z.string()
+    })
+  })
+});
+
 const pagesCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
@@ -149,5 +184,6 @@ const pagesCollection = defineCollection({
 export const collections = {
   homepage: homepageCollection,
   about: aboutCollection,
+  roadmap: roadmapCollection,
   pages: pagesCollection
 };

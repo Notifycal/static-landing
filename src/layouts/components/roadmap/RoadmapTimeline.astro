@@ -1,0 +1,72 @@
+---
+import FeatureCard from './FeatureCard.astro';
+
+export interface Props {
+  confirmedFeatures: Array<{
+    title: string;
+    description: string;
+    icon: string;
+    status: 'confirmed' | 'in-development' | 'planning';
+  }>;
+  potentialFeatures: Array<{
+    title: string;
+    description: string;
+    icon: string;
+  }>;
+}
+
+const { confirmedFeatures, potentialFeatures } = Astro.props;
+---
+
+<section class="section bg-gradient-to-b from-gray-50 to-white">
+  <div class="container">
+    <!-- Confirmed Features Timeline -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-h2 mb-4">Confirmed upcoming stops</h2>
+        <p class="text-lg text-text">These features are on our roadmap and will arrive soon</p>
+      </div>
+      
+      <div class="relative">
+        <!-- Metro Line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full z-0"></div>
+        
+        <!-- Timeline Items -->
+        <div class="space-y-12">
+          {confirmedFeatures.map((feature, index) => (
+            <div class={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <!-- Content -->
+              <div class="w-full md:w-5/12">
+                <FeatureCard feature={feature} isConfirmed={true} />
+              </div>
+              
+              <!-- Station Circle -->
+              <div class="hidden md:flex w-2/12 justify-center relative z-10">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  {index + 1}
+                </div>
+              </div>
+              
+              <!-- Empty space for alternating layout -->
+              <div class="hidden md:block w-5/12"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Potential Features -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-h2 mb-4">Possible future destinations</h2>
+        <p class="text-lg text-text">Ideas we're considering based on our users' needs</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {potentialFeatures.map((feature) => (
+          <FeatureCard feature={feature} isConfirmed={false} />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
