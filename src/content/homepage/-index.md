@@ -80,7 +80,37 @@ testimonial:
   title: Nuestros clientes ya están disfrutando de los beneficios
   description: Profesionales de toda España confían en nosotros para gestionar sus citas y reducir las faltas de sus pacientes.
   testimonialList:
-    - author: Dra. Carmen López
+    - author: Dra. Xènia García Juez
+      avatar: '/images/users/xenia-logo.webp'
+      organization: Xènia García Ortodoncia
+      badge:
+        type: improvement
+        value: 'Mejora puntualidad 85%'
+      content: Mis pacientes de ortodoncia necesitan citas regulares de seguimiento. Con Notifycal, las faltas han disminuido drásticamente y mantengo una agenda mucho más organizada.
+      reference:
+        displayName: 'xeniagarciaortodoncia.com'
+        link: 'https://www.xeniagarciaortodoncia.com'
+    - author: Taller IMG Sport
+      avatar: '/images/users/imgsport-logo.webp'
+      organization: Taller multimarca. Preparación vehiculos de competición
+      badge:
+        type: clientSince
+        value: 'Cliente desde 2022'
+      content: Perfecto para nuestro taller. Los clientes reciben recordatorios de sus revisiones y citas de reparación. Muy profesional.
+      reference:
+        displayName: 'tallerimgsport.es'
+        link: 'https://www.tallerimgsport.es'
+    - author: FlexOrtholab
+      avatar: '/images/users/flexortholab-logo.webp'
+      organization: Laboratorio Digital de Ortodoncia
+      badge:
+        type: clientSince
+        value: 'Cliente desde 2023'
+      content: Trabajamos con más de 40 clínicas dentales. Notifycal nos ayuda a coordinar entregas y seguimientos de tratamientos de forma impecable.
+      reference:
+        displayName: 'flexortholab.com'
+        link: 'https://flexortholab.com'
+    - author: Dra. Carmen López Fernández
       avatar: '/images/users/dentist-natural.webp'
       organization: Clínica Dental Sonrisa
       badge:
@@ -89,7 +119,7 @@ testimonial:
       content: Desde que usamos Notifycal, las faltas se han reducido un 80%. Nuestros pacientes agradecen los recordatorios y nosotros optimizamos mejor la agenda.
       reference:
         displayName: 'Madrid'
-    - author: Carlos Jiménez
+    - author: Carlos Jiménez Pablos
       avatar: '/images/users/physiotherapist-1.webp'
       organization: Centro de Fisioterapia Vital
       badge:
@@ -98,18 +128,8 @@ testimonial:
       content: Los recordatorios automáticos han transformado nuestra gestión. Ya no perdemos tiempo llamando y los pacientes llegan puntuales.
       reference:
         displayName: 'Valencia'
-    - author: Taller IMG Sport
-      avatar: '/images/users/imgsport-logo.webp'
-      organization: Especialistas en SEAT, Audi, VW
-      badge:
-        type: clientSince
-        value: 'Cliente desde 2022'
-      content: Perfecto para nuestro taller. Los clientes reciben recordatorios de sus revisiones y citas de reparación. Muy profesional.
-      reference:
-        displayName: 'tallerimgsport.es'
-        link: 'https://www.tallerimgsport.es'
-    - author: Dr. Miguel Ruiz
-      avatar: '/images/users/veterinarian-natural.webp'
+    - author: Dr. Miguel Ruiz Palacios
+      avatar: '/images/users/veterinarian-1.webp'
       organization: Clínica Veterinaria Mascota Feliz
       badge:
         type: volume
@@ -126,33 +146,13 @@ testimonial:
       content: Nuestras clientas nunca olvidan sus citas de tratamientos. El sistema es muy fácil de usar y muy profesional.
       reference:
         displayName: 'Barcelona'
-    - author: Dra. Xènia García
-      avatar: '/images/users/xenia-logo.webp'
-      organization: Xènia García Ortodoncia
-      badge:
-        type: improvement
-        value: 'Mejora puntualidad 85%'
-      content: Mis pacientes de ortodoncia necesitan citas regulares de seguimiento. Con Notifycal, las faltas han disminuido drásticamente y mantengo una agenda mucho más organizada.
-      reference:
-        displayName: 'https://www.xeniagarciaortodoncia.com'
-        link: 'https://www.xeniagarciaortodoncia.com'
-    - author: Clínica Dental Premium
-      avatar: '/images/users/dental-logo.webp'
+    - author: Clínica Dental Tuboca
+      avatar: '/images/users/woman-doctor.webp'
       organization: Odontología Avanzada
       badge:
         type: clientSince
         value: 'Cliente desde 2021'
       content: Llevamos años con Notifycal y estamos encantados. Ha mejorado significativamente la puntualidad de nuestros pacientes.
-    - author: FlexOrtholab
-      avatar: '/images/users/flexortholab-logo.webp'
-      organization: Laboratorio Digital de Ortodoncia
-      badge:
-        type: clientSince
-        value: 'Cliente desde 2023'
-      content: Trabajamos con más de 40 clínicas dentales. Notifycal nos ayuda a coordinar entregas y seguimientos de tratamientos de forma impecable.
-      reference:
-        displayName: 'flexortholab.com'
-        link: 'https://flexortholab.com'
     - author: Centro Médico Salud+
       avatar: '/images/users/medical-logo.webp'
       organization: Medicina General y Especialidades
