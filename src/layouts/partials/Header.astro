@@ -1,6 +1,7 @@
 ---
 import Logo from '@/components/Logo.astro';
 import menu from '@/config/menu.json';
+import clsx from 'clsx';
 
 export interface ChildNavigationLink {
   name: string;
@@ -48,12 +49,12 @@ const { pathname } = Astro.url;
             {menu.hasChildren ? (
               <li class="nav-item nav-dropdown group dropdown-button relative cursor-pointer">
                 <span
-                  class={`nav-link inline-flex items-center ${
-                    menu.children?.map(({ url }) => url).includes(pathname) ||
-                    menu.children?.map(({ url }) => `${url}/`).includes(pathname)
-                      ? 'active'
-                      : ''
-                  }`}
+                  class={`${clsx({
+                    'nav-link inline-flex items-center': true,
+                    active:
+                      menu.children?.map(({ url }) => url).includes(pathname) ||
+                      menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                  })}`}
                 >
                   {menu.name}
                   <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">

@@ -27,7 +27,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
       <div className="lg:order-2 lg:col-7">
         <div className="tab-content">
           {tabList?.map((item, index) => (
-            <div key={index} className={`tab-content-panel ${tab === index ? 'active' : undefined}`}>
+            <div key={index} className={`${clsx({ 'tab-content-panel': true, active: tab === index })}`}>
               <img alt="" className="w-full object-contain" src={item.image} />
             </div>
           ))}
@@ -43,7 +43,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
               return (
                 <li
                   key={index}
-                  className={`tab-nav-item ${tab === index ? 'active' : undefined}`}
+                  className={`${clsx({ 'tab-nav-item': true, active: tab === index })}`}
                   onClick={() => {
                     setTab(index);
                   }}
