@@ -117,12 +117,20 @@ const { pathname } = Astro.url;
 
     // Sticky header functionality
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        header.classList.add('header-sticky');
-      } else {
-        header.classList.remove('header-sticky');
-      }
-    });
+
+    if (header) {
+      const toggle = () => {
+        if (window.scrollY > 0) {
+          header.classList.add('header-sticky');
+        } else {
+          header.classList.remove('header-sticky');
+        }
+      };
+
+      toggle();
+      window.addEventListener('scroll', toggle);
+      window.addEventListener('pageshow', toggle);
+      // window.addEventListener('scroll', toggle, { passive: true });
+    }
   });
 </script>
