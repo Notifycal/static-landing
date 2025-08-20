@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/Notifycal/static-landing/compare/v1.11.0...v1.12.0) (2025-08-20)
+
+
+### Features
+
+* content structure. Break the blank page syndrome. ([#415](https://github.com/Notifycal/static-landing/issues/415)) ([16ff6bd](https://github.com/Notifycal/static-landing/commit/16ff6bd03381ab894612c6595c84620960c1e3ec))
+
 ## [1.11.0](https://github.com/Notifycal/static-landing/compare/v1.10.2...v1.11.0) (2025-08-20)
 
 
