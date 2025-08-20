@@ -1,0 +1,22 @@
+---
+import Base from '@/layouts/Base.astro';
+import MissionSection from '@/layouts/components/about/MissionSection.astro';
+import TeamSection from '@/layouts/components/about/TeamSection.astro';
+import ValuesSection from '@/layouts/components/about/ValuesSection.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+
+const about = (await getEntry('about', '-index')) as CollectionEntry<'about'>;
+const { mission, members, values } = about.data;
+---
+
+<Base
+  title={about.data.title}
+  metaTitle={about.data.metaTitle}
+  description={about.data.description}
+  image={about.data.image}
+>
+  <MissionSection mission={mission} />
+  <TeamSection members={members} />
+  <ValuesSection values={values} />
+</Base>
