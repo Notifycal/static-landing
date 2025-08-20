@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { marked } from 'marked';
 import { useState, type JSX } from 'react';
 
@@ -37,7 +38,7 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
           {faqData.faqList.map((item, index) => (
             <div
               key={`item-${index}`}
-              className={`accordion border-border border-b ${isActive.includes(index) ? 'active' : undefined}`}
+              className={`${clsx({ 'accordion border-border border-b': true, active: isActive.includes(index) })}`}
               onClick={() => {
                 accordionHandler(index);
               }}

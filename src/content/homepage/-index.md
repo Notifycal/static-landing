@@ -80,53 +80,7 @@ testimonial:
   title: Nuestros clientes ya están disfrutando de los beneficios
   description: Profesionales de toda España confían en nosotros para gestionar sus citas y reducir las faltas de sus pacientes.
   testimonialList:
-    - author: Dra. Carmen López
-      avatar: '/images/users/dentist-natural.webp'
-      organization: Clínica Dental Sonrisa
-      badge:
-        type: volume
-        value: '120+ citas/semana'
-      content: Desde que usamos Notifycal, las faltas se han reducido un 80%. Nuestros pacientes agradecen los recordatorios y nosotros optimizamos mejor la agenda.
-      reference:
-        displayName: 'Madrid'
-    - author: Carlos Jiménez
-      avatar: '/images/users/physiotherapist-1.webp'
-      organization: Centro de Fisioterapia Vital
-      badge:
-        type: improvement
-        value: 'Reduce faltas 75%'
-      content: Los recordatorios automáticos han transformado nuestra gestión. Ya no perdemos tiempo llamando y los pacientes llegan puntuales.
-      reference:
-        displayName: 'Valencia'
-    - author: Taller IMG Sport
-      avatar: '/images/users/imgsport-logo.webp'
-      organization: Especialistas en SEAT, Audi, VW
-      badge:
-        type: clientSince
-        value: 'Cliente desde 2022'
-      content: Perfecto para nuestro taller. Los clientes reciben recordatorios de sus revisiones y citas de reparación. Muy profesional.
-      reference:
-        displayName: 'tallerimgsport.es'
-        link: 'https://www.tallerimgsport.es'
-    - author: Dr. Miguel Ruiz
-      avatar: '/images/users/veterinarian-natural.webp'
-      organization: Clínica Veterinaria Mascota Feliz
-      badge:
-        type: volume
-        value: '80+ consultas/día'
-      content: Imprescindible para una clínica veterinaria. Los recordatorios de vacunas y revisiones mantienen a nuestros pacientes al día.
-      reference:
-        displayName: 'Sevilla'
-    - author: Beauty Center Elite
-      avatar: '/images/users/beauty-logo.webp'
-      organization: Centro de Estética y Belleza
-      badge:
-        type: feature
-        value: 'Recordatorios personalizados'
-      content: Nuestras clientas nunca olvidan sus citas de tratamientos. El sistema es muy fácil de usar y muy profesional.
-      reference:
-        displayName: 'Barcelona'
-    - author: Dra. Xènia García
+    - author: Dra. Xènia García Juez
       avatar: '/images/users/xenia-logo.webp'
       organization: Xènia García Ortodoncia
       badge:
@@ -134,15 +88,18 @@ testimonial:
         value: 'Mejora puntualidad 85%'
       content: Mis pacientes de ortodoncia necesitan citas regulares de seguimiento. Con Notifycal, las faltas han disminuido drásticamente y mantengo una agenda mucho más organizada.
       reference:
-        displayName: 'https://www.xeniagarciaortodoncia.com'
+        displayName: 'xeniagarciaortodoncia.com'
         link: 'https://www.xeniagarciaortodoncia.com'
-    - author: Clínica Dental Premium
-      avatar: '/images/users/dental-logo.webp'
-      organization: Odontología Avanzada
+    - author: Taller IMG Sport
+      avatar: '/images/users/imgsport-logo.webp'
+      organization: Taller multimarca. Preparación vehiculos de competición
       badge:
         type: clientSince
-        value: 'Cliente desde 2021'
-      content: Llevamos años con Notifycal y estamos encantados. Ha mejorado significativamente la puntualidad de nuestros pacientes.
+        value: 'Cliente desde 2022'
+      content: Perfecto para nuestro taller. Los clientes reciben recordatorios de sus revisiones y citas de reparación. Muy profesional.
+      reference:
+        displayName: 'tallerimgsport.es'
+        link: 'https://www.tallerimgsport.es'
     - author: FlexOrtholab
       avatar: '/images/users/flexortholab-logo.webp'
       organization: Laboratorio Digital de Ortodoncia
@@ -153,6 +110,51 @@ testimonial:
       reference:
         displayName: 'flexortholab.com'
         link: 'https://flexortholab.com'
+    - author: Dra. Carmen López Fernández
+      avatar: '/images/users/dentist-natural.webp'
+      organization: Clínica Dental Sonrisa
+      badge:
+        type: volume
+        value: '120+ citas/semana'
+      content: Desde que usamos Notifycal, las faltas se han reducido un 80%. Nuestros pacientes agradecen los recordatorios y nosotros optimizamos mejor la agenda.
+      reference:
+        displayName: 'Madrid'
+    - author: Clínica Dental Tuboca
+      avatar: '/images/users/roberto-martin.webp'
+      organization: Odontología Avanzada
+      badge:
+        type: clientSince
+        value: 'Cliente desde 2021'
+      content: Llevamos años con Notifycal y estamos encantados. Ha mejorado significativamente la puntualidad de nuestros pacientes.
+      reference:
+        displayName: 'Fuerteventura'
+    - author: Carlos Jiménez Pablos
+      avatar: '/images/users/physiotherapist-1.webp'
+      organization: Centro de Fisioterapia Vital
+      badge:
+        type: improvement
+        value: 'Reduce faltas 75%'
+      content: Los recordatorios automáticos han transformado nuestra gestión. Ya no perdemos tiempo llamando y los pacientes llegan puntuales.
+      reference:
+        displayName: 'Valencia'
+    - author: Beauty Center Elite
+      avatar: '/images/users/beauty-logo.webp'
+      organization: Centro de Estética y Belleza
+      badge:
+        type: feature
+        value: 'Recordatorios personalizados'
+      content: Nuestras clientas nunca olvidan sus citas de tratamientos. El sistema es muy fácil de usar y muy profesional.
+      reference:
+        displayName: 'Barcelona'
+    - author: Dr. Miguel Ruiz Palacios
+      avatar: '/images/users/veterinarian-1.webp'
+      organization: Clínica Veterinaria Mascota Feliz
+      badge:
+        type: volume
+        value: '80+ consultas/día'
+      content: Imprescindible para una clínica veterinaria. Los recordatorios de vacunas y revisiones mantienen a nuestros pacientes al día.
+      reference:
+        displayName: 'Sevilla'
     - author: Centro Médico Salud+
       avatar: '/images/users/medical-logo.webp'
       organization: Medicina General y Especialidades

@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.11.0](https://github.com/Notifycal/static-landing/compare/v1.10.2...v1.11.0) (2025-08-20)
+
+
+### Features
+
+* cookie consent ([#413](https://github.com/Notifycal/static-landing/issues/413)) ([b70b33c](https://github.com/Notifycal/static-landing/commit/b70b33c3a953decbca23f7963c575b98b4405157))
+
+
+### Bug Fixes
+
+* more on testimonials content ([#414](https://github.com/Notifycal/static-landing/issues/414)) ([f19675c](https://github.com/Notifycal/static-landing/commit/f19675cbce48c5e87a4180a1228fd91c529cecf2))
+* navigation transparent on refresh ([#418](https://github.com/Notifycal/static-landing/issues/418)) ([38a3900](https://github.com/Notifycal/static-landing/commit/38a3900e2ea1c9c32e992484ad7dbebefdeaf744))
+* style tab list features ([#417](https://github.com/Notifycal/static-landing/issues/417)) ([11f94d7](https://github.com/Notifycal/static-landing/commit/11f94d763fdc0972fecb1b38a96b28fb303b3546))
+
+## [1.10.2](https://github.com/Notifycal/static-landing/compare/v1.10.1...v1.10.2) (2025-08-19)
+
+
+### Bug Fixes
+
+* almost drop theme in favour of shared ([#408](https://github.com/Notifycal/static-landing/issues/408)) ([7c9d034](https://github.com/Notifycal/static-landing/commit/7c9d03414ab319919b473f1cb1642c77572d3d62))
+
 ## [1.10.1](https://github.com/Notifycal/static-landing/compare/v1.10.0...v1.10.1) (2025-08-19)
 
 

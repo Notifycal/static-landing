@@ -18,6 +18,10 @@
     {
       "name": "About",
       "url": "/about"
+    },
+    {
+      "name": "Cookie Settings",
+      "url": "#cookie-settings"
     }
   ]
 }
