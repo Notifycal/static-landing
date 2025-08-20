@@ -1,0 +1,25 @@
+---
+import { markdownify } from '@/lib/utils/textConverter';
+
+interface Props {
+  mission: {
+    title: string;
+    content: string;
+  };
+}
+
+const { mission } = Astro.props;
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-8">
+        <div class="mb-16 text-center">
+          <h2 class="mb-6">{mission.title}</h2>
+          <p class="text-text text-lg" set:html={markdownify(mission.content)} />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
