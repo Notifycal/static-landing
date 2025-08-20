@@ -315,11 +315,11 @@ select:invalid {
 
 /* features */
 .features .tab-nav {
-  @apply border-primary-400 bg-primary-50 divide-primary-400 mt-8 inline-block divide-y overflow-hidden rounded-lg border-1;
+  @apply border-primary-400 bg-primary-50 divide-primary-400 mt-8 inline-block divide-y rounded-lg border-1 shadow-md;
 }
 
 .features .tab-nav-item {
-  @apply text-text-dark flex py-3.5 pr-8 pl-6 opacity-100;
+  @apply text-text-dark flex py-3.5 pr-8 pl-6 opacity-100 first:rounded-t-lg last:rounded-b-lg hover:shadow-md [&:only-child]:rounded-lg;
 }
 
 .features .tab-nav-item.active {
