@@ -80,6 +80,10 @@
     {
       "name": "Changelog",
       "url": "/changelog"
+    },
+    {
+      "name": "Cookie Settings",
+      "url": "#cookie-settings"
     }
   ]
 }
