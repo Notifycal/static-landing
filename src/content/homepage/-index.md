@@ -119,6 +119,15 @@ testimonial:
       content: Desde que usamos Notifycal, las faltas se han reducido un 80%. Nuestros pacientes agradecen los recordatorios y nosotros optimizamos mejor la agenda.
       reference:
         displayName: 'Madrid'
+    - author: Clínica Dental Tuboca
+      avatar: '/images/users/roberto-martin.webp'
+      organization: Odontología Avanzada
+      badge:
+        type: clientSince
+        value: 'Cliente desde 2021'
+      content: Llevamos años con Notifycal y estamos encantados. Ha mejorado significativamente la puntualidad de nuestros pacientes.
+      reference:
+        displayName: 'Fuerteventura'
     - author: Carlos Jiménez Pablos
       avatar: '/images/users/physiotherapist-1.webp'
       organization: Centro de Fisioterapia Vital
@@ -128,15 +137,6 @@ testimonial:
       content: Los recordatorios automáticos han transformado nuestra gestión. Ya no perdemos tiempo llamando y los pacientes llegan puntuales.
       reference:
         displayName: 'Valencia'
-    - author: Dr. Miguel Ruiz Palacios
-      avatar: '/images/users/veterinarian-1.webp'
-      organization: Clínica Veterinaria Mascota Feliz
-      badge:
-        type: volume
-        value: '80+ consultas/día'
-      content: Imprescindible para una clínica veterinaria. Los recordatorios de vacunas y revisiones mantienen a nuestros pacientes al día.
-      reference:
-        displayName: 'Sevilla'
     - author: Beauty Center Elite
       avatar: '/images/users/beauty-logo.webp'
       organization: Centro de Estética y Belleza
@@ -146,13 +146,15 @@ testimonial:
       content: Nuestras clientas nunca olvidan sus citas de tratamientos. El sistema es muy fácil de usar y muy profesional.
       reference:
         displayName: 'Barcelona'
-    - author: Clínica Dental Tuboca
-      avatar: '/images/users/woman-doctor.webp'
-      organization: Odontología Avanzada
+    - author: Dr. Miguel Ruiz Palacios
+      avatar: '/images/users/veterinarian-1.webp'
+      organization: Clínica Veterinaria Mascota Feliz
       badge:
-        type: clientSince
-        value: 'Cliente desde 2021'
-      content: Llevamos años con Notifycal y estamos encantados. Ha mejorado significativamente la puntualidad de nuestros pacientes.
+        type: volume
+        value: '80+ consultas/día'
+      content: Imprescindible para una clínica veterinaria. Los recordatorios de vacunas y revisiones mantienen a nuestros pacientes al día.
+      reference:
+        displayName: 'Sevilla'
     - author: Centro Médico Salud+
       avatar: '/images/users/medical-logo.webp'
       organization: Medicina General y Especialidades
