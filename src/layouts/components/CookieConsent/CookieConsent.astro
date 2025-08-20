@@ -1,0 +1,17 @@
+---
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import './style.css';
+const { buttonSettingsText } = Astro.props;
+---
+
+<a data-cc="show-preferencesModal">
+  {buttonSettingsText}
+</a>
+
+<script>
+  import { run } from 'vanilla-cookieconsent';
+  import { config } from './CookieConsentConfig';
+
+  document.body.classList.add('cc--theme');
+  run(config());
+</script>

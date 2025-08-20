@@ -3,7 +3,7 @@
 }
 
 .header-sticky {
-  @apply bg-white shadow;
+  @apply bg-white shadow-md;
 }
 
 /* navbar items */
