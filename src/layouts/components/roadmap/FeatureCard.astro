@@ -29,26 +29,28 @@ const getStatusBadge = (status?: string) => {
 const statusBadge = getStatusBadge(feature.status);
 ---
 
-<div class={`rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${isConfirmed ? 'bg-white border-2 border-primary' : 'bg-gray-50 border border-gray-200'}`}>
+<div
+  class={`rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${isConfirmed ? 'bg-white border-2 border-primary' : 'bg-gray-50 border border-gray-200'}`}
+>
   <div class="flex items-start gap-4">
     <div class="flex-shrink-0">
       <span class="text-4xl">{feature.icon}</span>
     </div>
     <div class="flex-1">
-      <div class="flex items-start justify-between mb-3">
-        <h3 class="text-xl font-semibold text-dark" set:html={markdownify(feature.title)} />
-        {statusBadge && (
-          <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${statusBadge.class}`}>
-            {statusBadge.text}
-          </span>
-        )}
+      <div class="mb-3 flex items-start justify-between">
+        <h3 class="text-dark text-xl font-semibold" set:html={markdownify(feature.title)} />
+        {
+          statusBadge && (
+            <span
+              class={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${statusBadge.class}`}
+            >
+              {statusBadge.text}
+            </span>
+          )
+        }
       </div>
       <p class="text-text leading-relaxed" set:html={markdownify(feature.description)} />
-      {!isConfirmed && (
-        <div class="mt-4 text-sm text-gray-500 italic">
-          Feature under consideration
-        </div>
-      )}
+      {!isConfirmed && <div class="mt-4 text-sm text-gray-500 italic">Feature under consideration</div>}
     </div>
   </div>
 </div>

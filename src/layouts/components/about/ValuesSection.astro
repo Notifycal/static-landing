@@ -26,9 +26,7 @@ const { values } = Astro.props;
     </div>
 
     <div class="row">
-      {values.valuesList.map((value) => (
-        <ValueCard value={value} />
-      ))}
+      {values.valuesList.map((value) => <ValueCard value={value} />)}
     </div>
   </div>
 </section>

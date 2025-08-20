@@ -30,9 +30,7 @@ const { members } = Astro.props;
     </div>
 
     <div class="row justify-center">
-      {members.memberList.map((member) => (
-        <TeamMemberCard member={member} />
-      ))}
+      {members.memberList.map((member) => <TeamMemberCard member={member} />)}
     </div>
   </div>
 </section>

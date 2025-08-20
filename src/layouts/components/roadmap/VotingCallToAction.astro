@@ -16,16 +16,16 @@ const { votingCTA } = Astro.props;
 <section class="section bg-primary">
   <div class="container">
     <div class="row justify-center">
-      <div class="lg:col-8 text-center">
-        <h2 set:html={markdownify(votingCTA.title)} class="mb-6 text-h2 text-white" />
-        <p set:html={markdownify(votingCTA.description)} class="mb-8 text-lg text-white/90 leading-relaxed" />
-        <a 
+      <div class="text-center lg:col-8">
+        <h2 set:html={markdownify(votingCTA.title)} class="text-h2 mb-6 text-white" />
+        <p set:html={markdownify(votingCTA.description)} class="mb-8 text-lg leading-relaxed text-white/90" />
+        <a
           href={votingCTA.buttonUrl}
-          class="btn btn-white inline-flex items-center px-8 py-4 bg-white text-primary font-semibold rounded-lg shadow-lg hover:bg-gray-50 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1"
+          class="btn btn-white text-primary inline-flex transform items-center rounded-lg bg-white px-8 py-4 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-xl"
         >
           {votingCTA.buttonText}
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
       </div>

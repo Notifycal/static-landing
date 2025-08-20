@@ -14,9 +14,9 @@ const { intro } = Astro.props;
 <section class="section">
   <div class="container">
     <div class="row justify-center">
-      <div class="lg:col-8 text-center">
-        <h1 set:html={markdownify(intro.title)} class="mb-6 text-h1" />
-        <p set:html={markdownify(intro.description)} class="mb-8 text-lg text-text" />
+      <div class="text-center lg:col-8">
+        <h1 set:html={markdownify(intro.title)} class="text-h1 mb-6" />
+        <p set:html={markdownify(intro.description)} class="text-text mb-8 text-lg" />
       </div>
     </div>
   </div>
