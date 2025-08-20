@@ -4,6 +4,7 @@ import Social from '@/components/Social.astro';
 import config from '@/config/config.json';
 import menu from '@/config/menu.json';
 import social from '@/config/social.json';
+import CookieConsent from '@/layouts/components/CookieConsent/CookieConsent.astro';
 import { markdownify } from '@/lib/utils/textConverter';
 const { footer } = menu;
 const { copyright, location, email, phone, footerDescription } = config.params;
@@ -29,9 +30,11 @@ const { copyright, location, email, phone, footerDescription } = config.params;
           {
             footer.map((item, i) => (
               <li class={footer.length - 1 === i ? 'mb-0' : 'mb-4'}>
-                <a class="hover:text-primary hover:underline" href={item.url}>
-                  {item.name}
-                </a>
+                {item.url === '#cookie-settings' ? (
+                  <CookieConsent buttonSettingsText={item.name} />
+                ) : (
+                  <a href={item.url}>{item.name}</a>
+                )}
               </li>
             ))
           }
