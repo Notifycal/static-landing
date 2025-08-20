@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4000"
+   height="1000.0001"
+   viewBox="0 0 1058.3333 264.58335"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <rect
+       style="opacity:0.5;fill:currentColor;fill-opacity:1;stroke-width:3.09562;stroke-linecap:square;stroke-linejoin:round"
+       id="rect10"
+       width="26.458332"
+       height="26.45833"
+       x="0"
+       y="0"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <rect
+       style="opacity:0.5;fill:currentColor;fill-opacity:1;stroke-width:3.09562;stroke-linecap:square;stroke-linejoin:round"
+       id="rect10-6"
+       width="26.458332"
+       height="26.45833"
+       x="234.43845"
+       y="-1.0169209e-06"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <rect
+       style="opacity:0.5;fill:currentColor;fill-opacity:1;stroke-width:3.09562;stroke-linecap:square;stroke-linejoin:round"
+       id="rect10-6-9"
+       width="26.458332"
+       height="26.45833"
+       x="260.89679"
+       y="2.6325879e-06"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <rect
+       style="opacity:0.5;fill:currentColor;fill-opacity:1;stroke-width:3.09562;stroke-linecap:square;stroke-linejoin:round"
+       id="rect10-9"
+       width="26.458332"
+       height="26.45833"
+       x="1031.875"
+       y="238.125"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:168.637px;line-height:1.1;font-family:Outfit;-inkscape-font-specification:'Outfit Bold';text-align:center;text-decoration-color:#000000;letter-spacing:-6.61458px;word-spacing:5.32342px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;opacity:1;fill:currentColor;fill-opacity:1;stroke-width:10.2763;stroke-linecap:square;stroke-linejoin:round"
+       x="627.00763"
+       y="177.90784"
+       id="text1"><tspan
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:168.637px;font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold';letter-spacing:-6.61458px;word-spacing:5.32342px;fill:currentColor;fill-opacity:1;stroke-width:10.2763"
+         x="623.70032"
+         y="177.90784">notifycal</tspan></text>
+    <path
+       id="path228-6"
+       style="fill:currentColor;fill-opacity:1;stroke-width:9.47916"
+       d="m 80.763462,26.456033 c -5.236115,-8.25e-4 -9.480093,4.289167 -9.479699,9.583489 v 0.01076 9.368521 h -9.476005 c -10.521829,0 -18.959397,8.435667 -18.959397,18.957532 V 197.0847 c 0,10.42707 8.437568,18.9557 18.959397,18.95566 l 24.087527,0.0965 c 21.431845,-0.0287 4.316531,24.91967 17.452655,21.98587 12.73017,-2.84317 19.26241,-18.82961 31.82507,-22.08224 h 18.04573 v 0.0556 l 9.50193,-0.0287 c 27.95522,-0.0864 50.77335,-22.9756 50.77335,-50.9309 v -9.5038 h -0.0215 V 64.377123 c 0,-10.4704 -8.48896,-18.957568 -18.9594,-18.957568 h -9.47596 v -9.375909 c 3.9e-4,-5.294286 -4.24359,-9.586142 -9.4797,-9.585318 -5.23612,-8.24e-4 -9.48193,4.291032 -9.48157,9.585318 v 0.01076 9.364791 H 90.245707 v -9.374044 c 3.94e-4,-5.294321 -4.245413,-9.588043 -9.481528,-9.587218 z M 61.807758,92.810194 H 194.51239 v 62.819896 h -0.0251 v 9.5038 c 0,17.70395 -14.11925,31.86671 -31.82324,31.92147 l -7.60413,0.0251 H 61.806754 Z" />
+    <g
+       style="fill:currentColor;fill-opacity:1;stroke:none"
+       id="g233-3-2-3"
+       transform="matrix(6.1719364,0,0,6.1719364,56.136544,63.321544)">
+      <path
+         style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:currentColor;fill-opacity:1;stroke:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+         d="M 17.824219,7.1152344 9.1660156,15.775391 5.7753906,12.384766 a 1.25,1.25 0 0 0 -1.7675781,0 1.25,1.25 0 0 0 0,1.767578 L 8.28125,18.425781 a 1.250125,1.250125 0 0 0 1.767578,0 l 9.542969,-9.5410154 a 1.25,1.25 0 0 0 0,-1.7695312 1.25,1.25 0 0 0 -1.767578,0 z"
+         id="path1-7-9-9" />
+    </g>
+  </g>
+</svg>
