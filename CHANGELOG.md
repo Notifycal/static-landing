@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.1](https://github.com/Notifycal/static-landing/compare/v1.13.0...v1.13.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* hydration console errors ([#427](https://github.com/Notifycal/static-landing/issues/427)) ([48f5c40](https://github.com/Notifycal/static-landing/commit/48f5c4008f85b5299f9807a8cc835cc03886a887))
+
 ## [1.13.0](https://github.com/Notifycal/static-landing/compare/v1.12.0...v1.13.0) (2025-08-21)
 
 
