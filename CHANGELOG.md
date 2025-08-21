@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.13.0](https://github.com/Notifycal/static-landing/compare/v1.12.0...v1.13.0) (2025-08-21)
+
+
+### Features
+
+* apply unplugin google fonts from shared ([#426](https://github.com/Notifycal/static-landing/issues/426)) ([9cd9b08](https://github.com/Notifycal/static-landing/commit/9cd9b08118b9435eef71a316dd8fa2d3dda8dc99))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.5.0 ([#424](https://github.com/Notifycal/static-landing/issues/424)) ([da35718](https://github.com/Notifycal/static-landing/commit/da357185eb117c6d388579576ff0034740d726f5))
+* force including a chore to make sure cookie stuff works properly ([830dac6](https://github.com/Notifycal/static-landing/commit/830dac653f388c255f8ba028b9082132da9eb16c))
+
 ## [1.12.0](https://github.com/Notifycal/static-landing/compare/v1.11.0...v1.12.0) (2025-08-20)
 
 
