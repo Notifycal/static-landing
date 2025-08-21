@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.2](https://github.com/Notifycal/static-landing/compare/v1.13.1...v1.13.2) (2025-08-21)
+
+
+### Bug Fixes
+
+* charset declaration too late ([#429](https://github.com/Notifycal/static-landing/issues/429)) ([35bde1a](https://github.com/Notifycal/static-landing/commit/35bde1aeb1f3e3359cd90e2e4f19d75d7dda7920))
+
 ## [1.13.1](https://github.com/Notifycal/static-landing/compare/v1.13.0...v1.13.1) (2025-08-21)
 
 
