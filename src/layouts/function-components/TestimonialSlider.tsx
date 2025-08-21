@@ -74,7 +74,7 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         autoplay={{
-          delay: 3000000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
