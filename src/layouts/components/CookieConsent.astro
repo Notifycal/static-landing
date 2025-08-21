@@ -1,6 +1,6 @@
 ---
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
-import './style.css';
+import '@notifycal/shared/styles/cookie-consent-theme.css';
 const { buttonSettingsText } = Astro.props;
 ---
 
@@ -9,9 +9,9 @@ const { buttonSettingsText } = Astro.props;
 </a>
 
 <script>
+  import { cookieConsentConfig } from '@notifycal/shared/utils';
   import { run } from 'vanilla-cookieconsent';
-  import { config } from './CookieConsentConfig';
 
   document.body.classList.add('cc--theme');
-  run(config());
+  run(cookieConsentConfig('es'));
 </script>
