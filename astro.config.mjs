@@ -52,7 +52,11 @@ export default defineConfig({
         forward: ['dataLayer.push']
       }
     }),
-    playformCompress()
+    playformCompress({
+      HTML: {
+        'html-minifier-terser': { sortClassName: false, removeComments: false }
+      }
+    })
   ],
   markdown: {
     remarkPlugins: [
