@@ -36,7 +36,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
       </div>
       <div className="mt-6 lg:order-1 lg:col-5 lg:mt-0">
         <div className="text-container">
-          <h2 className="lg:text-4xl">{title}</h2>
+          <h2>{title}</h2>
           <p className="mt-4">{description}</p>
           <ul className="tab-nav">
             {tabList?.map((item, index) => {

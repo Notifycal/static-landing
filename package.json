@@ -1,7 +1,7 @@
 {
   "name": "static-landing",
   "type": "module",
-  "version": "1.11.0",
+  "version": "1.13.0",
   "author": "Notifycal",
   "scripts": {
     "clean": "rm -rf dist",
@@ -27,12 +27,11 @@
     "@astrojs/sitemap": "^3.4.2",
     "@justinribeiro/lite-youtube": "^1.8.2",
     "@mantine/core": "^8.2.4",
-    "@notifycal/shared": "^7.4.0",
+    "@notifycal/shared": "^7.6.0",
     "@playform/compress": "^0.2.0",
     "@tabler/icons-react": "^3.34.1",
     "astro": "5.13.2",
     "astro-auto-import": "^0.4.4",
-    "astro-font": "^1.1.0",
     "date-fns": "^4.1.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
@@ -77,6 +76,7 @@
     "sharp": "0.34.3",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.1"
+    "typescript-eslint": "^8.39.1",
+    "unplugin-fonts": "^1.4.0"
   }
 }
