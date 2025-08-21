@@ -6,6 +6,9 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { MdLocationPin } from 'react-icons/md';
+import { TbExternalLink } from 'react-icons/tb';
+
 interface TestimonialItem {
   avatar: string;
   author: string;
@@ -37,10 +40,16 @@ const TestimonialCard: FC<TestimonialItem> = (item) => (
         <p className="text-text-dark/60 mb-3 text-xs">
           {item.reference && item.reference.link ? (
             <a className="hover:text-primary-800" href={item.reference.link} rel="noopener noreferrer" target="_blank">
-              🌐 {item.reference.displayName}
+              <span className="flex items-center justify-center gap-1">
+                <TbExternalLink className="text-base text-blue-400" />
+                {item.reference.displayName}
+              </span>
             </a>
           ) : (
-            <span>📍 {item.reference.displayName}</span>
+            <span className="flex items-center justify-center gap-1">
+              <MdLocationPin className="text-base text-red-400" />
+              {item.reference.displayName}
+            </span>
           )}
         </p>
       )}
@@ -65,7 +74,7 @@ const TestimonialSlider: FC<TestimonialSliderProps> = ({ list }) => {
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         autoplay={{
-          delay: 3000,
+          delay: 3000000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
