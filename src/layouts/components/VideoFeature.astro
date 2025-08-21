@@ -25,7 +25,7 @@ const { videoFeature, index } = Astro.props;
   </div>
   <div class={`mt-6 lg:col-5 lg:mt-0 ${index % 2 === 0 ? 'order-1' : 'order-0'}`}>
     <div class="text-container flex flex-col">
-      <h2 class="lg:text-4xl">{videoFeature.title}</h2>
+      <h2>{videoFeature.title}</h2>
       <p class="mt-4">{videoFeature.description}</p>
       {
         videoFeature.button.enable && (
