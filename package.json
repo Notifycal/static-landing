@@ -1,7 +1,7 @@
 {
   "name": "static-landing",
   "type": "module",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "author": "Notifycal",
   "scripts": {
     "clean": "rm -rf dist",
