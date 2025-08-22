@@ -4,7 +4,7 @@
 @import '@notifycal/shared/styles';
 
 @theme {
-  --leading-tight: 1.25;
+  --leading-tight: 1;
   --radius-sm: 0.25rem;
   --font-weight-normal: 400;
 

@@ -46,3 +46,7 @@ strong {
 code {
   @apply after:border-none;
 }
+
+a {
+  @apply cursor-pointer hover:underline;
+}
