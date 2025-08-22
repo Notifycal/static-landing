@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.5](https://github.com/Notifycal/static-landing/compare/v1.13.4...v1.13.5) (2025-08-22)
+
+
+### Bug Fixes
+
+* make cookies obey cookie consent ([#437](https://github.com/Notifycal/static-landing/issues/437)) ([5922a57](https://github.com/Notifycal/static-landing/commit/5922a57acbdf7bc8369c534959103eab6c01ade9))
+
 ## [1.13.4](https://github.com/Notifycal/static-landing/compare/v1.13.3...v1.13.4) (2025-08-22)
 
 
