@@ -30,7 +30,7 @@
     "@notifycal/shared": "7.6.3",
     "@playform/compress": "^0.2.0",
     "@tabler/icons-react": "^3.34.1",
-    "astro": "5.13.2",
+    "astro": "5.13.3",
     "astro-auto-import": "^0.4.4",
     "date-fns": "^4.1.0",
     "github-slugger": "^2.0.0",
