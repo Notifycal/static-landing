@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.4](https://github.com/Notifycal/static-landing/compare/v1.13.3...v1.13.4) (2025-08-22)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.2.7 ([#435](https://github.com/Notifycal/static-landing/issues/435)) ([bb42016](https://github.com/Notifycal/static-landing/commit/bb4201613577a4ee80aaac7ea026d5b1918eba63))
+* gtag timing ([#434](https://github.com/Notifycal/static-landing/issues/434)) ([887dce9](https://github.com/Notifycal/static-landing/commit/887dce969716a71e990a141ddd5457e172d8dc4d))
+
 ## [1.13.3](https://github.com/Notifycal/static-landing/compare/v1.13.2...v1.13.3) (2025-08-22)
 
 
