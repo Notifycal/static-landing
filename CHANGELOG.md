@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.3](https://github.com/Notifycal/static-landing/compare/v1.13.2...v1.13.3) (2025-08-22)
+
+
+### Bug Fixes
+
+* shared import so compatible with backend ([#431](https://github.com/Notifycal/static-landing/issues/431)) ([830dc62](https://github.com/Notifycal/static-landing/commit/830dc62226a31c43f8a5cc57a97ccc77a4f97d93))
+
 ## [1.13.2](https://github.com/Notifycal/static-landing/compare/v1.13.1...v1.13.2) (2025-08-21)
 
 
