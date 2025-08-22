@@ -17,9 +17,7 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- google font css -->
     <Unfont />
-    <script type="text/javascript" src="/config.js" is:inline></script>
-    <script src="/src/scripts/config-processor.ts"></script>
-    <script type="text/partytown" is:inline>
+    <script is:inline>
       function onServiceConfigReady(callback) {
         window.addEventListener('serviceConfigReady', function (event) {
           const config = event.detail;
@@ -44,14 +42,20 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
         document.head.appendChild(script);
       });
       onServiceConfigReady((tagManagerId) => {
+        const script = document.createElement('script');
+        script.type = 'text/partytown';
+        script.innerHTML = `
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() {
           dataLayer.push(arguments);
         };
         gtag('js', new Date());
-        gtag('config', tagManagerId);
+        gtag('config', ${tagManagerId});`;
+        document.head.appendChild(script);
       });
     </script>
+    <script type="text/javascript" src="/config.js" is:inline></script>
+    <script src="/src/scripts/config-processor.ts"></script>
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
 
