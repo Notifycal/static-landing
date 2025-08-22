@@ -49,7 +49,7 @@ export default defineConfig({
     mdx(),
     partytown({
       config: {
-        forward: ['dataLayer.push']
+        forward: [['gtag', { preserveBehavior: true }], ['dataLayer.push']]
       }
     }),
     playformCompress({
