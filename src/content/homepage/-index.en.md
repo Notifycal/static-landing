@@ -110,4 +110,58 @@ testimonial:
       reference:
         displayName: 'flexortholab.com'
         link: 'https://flexortholab.com'
+    - author: Dr. Carmen López Fernández
+      avatar: '/images/users/dentist-natural.webp'
+      organization: Sonrisa Dental Clinic
+      badge:
+        type: volume
+        value: '120+ appointments/week'
+      content: Since we use Notifycal, no-shows have been reduced by 80%. Our patients appreciate the reminders and we optimize our schedule better.
+      reference:
+        displayName: 'Madrid'
+    - author: Tuboca Dental Clinic
+      avatar: '/images/users/roberto-martin.webp'
+      organization: Advanced Dentistry
+      badge:
+        type: clientSince
+        value: 'Client since 2021'
+      content: We have been with Notifycal for years and we are delighted. It has significantly improved the punctuality of our patients.
+      reference:
+        displayName: 'Fuerteventura'
+    - author: Carlos Jiménez Pablos
+      avatar: '/images/users/physiotherapist-1.webp'
+      organization: Vital Physiotherapy Center
+      badge:
+        type: improvement
+        value: 'Reduces no-shows 75%'
+      content: Automatic reminders have transformed our management. We no longer waste time calling and patients arrive on time.
+      reference:
+        displayName: 'Valencia'
+    - author: Beauty Center Elite
+      avatar: '/images/users/beauty-logo.webp'
+      organization: Aesthetics and Beauty Center
+      badge:
+        type: feature
+        value: 'Personalized reminders'
+      content: Our clients never forget their treatment appointments. The system is very easy to use and very professional.
+      reference:
+        displayName: 'Barcelona'
+    - author: Dr. Miguel Ruiz Palacios
+      avatar: '/images/users/veterinarian-1.webp'
+      organization: Happy Pet Veterinary Clinic
+      badge:
+        type: volume
+        value: '80+ consultations/day'
+      content: Essential for a veterinary clinic. Vaccination and check-up reminders keep our patients up to date.
+      reference:
+        displayName: 'Seville'
+    - author: Health+ Medical Center
+      avatar: '/images/users/medical-logo.webp'
+      organization: General Medicine and Specialties
+      badge:
+        type: volume
+        value: '200+ patients/day'
+      content: With the volume of patients we handle, Notifycal is indispensable. We reduce no-shows and optimize our schedule perfectly.
+      reference:
+        displayName: 'Bilbao'
 ---

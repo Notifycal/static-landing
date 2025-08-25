@@ -29,6 +29,9 @@ potentialFeatures:
   - title: 'Més integracions'
     description: 'Connectors addicionals amb altres plataformes i serveis que uses al teu negoci.'
     icon: '🔗'
+  - title: 'Notificacions millorades'
+    description: 'Nous canals i opcions de personalització per a les teves comunicacions.'
+    icon: '🔔'
 votingCTA:
   title: 'La teva opinió importa'
   description: "Ajuda'ns a prioritzar les funcionalitats que més necessites. Només els nostres clients poden votar per assegurar que desenvolupem el que realment utilitzaràs."

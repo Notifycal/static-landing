@@ -7,7 +7,7 @@ image: '/images/about.webp'
 
 mission:
   title: 'La Nostra Missió'
-  content: "Creiem profundament en el poder transformador de la tecnologia com a eina de productivitat. La nostra missió és impulsar els negocis col·locant els sistemes d'informació al centre de la seva estratègia d'èxit."
+  content: "Creiem profundament en el poder transformador de la tecnologia com a eina de productivitat. La nostra missió és impulsar els negocis col·locant els sistemes d'informació al centre de la seva estratègia d'èxit. Desenvolupem solucions que no només optimitzen processos, sinó que alliberen el potencial humà, permetent a les organitzacions centrar-se en el que realment importa: crear valor, innovar i construir relacions significatives."
 
 members:
   title: 'El Nostre Equip'
@@ -34,4 +34,6 @@ values:
       content: 'Creiem que les millors solucions són les més simples. Dissenyem productes intuïtius que resolen problemes complexos sense afegir complicacions innecessàries.'
     - title: 'Privacitat Primer'
       content: 'Respectem i protegim la privacitat dels nostres usuaris. No emmagatzemem dades innecessàries i assegurem que tota la informació es maneja amb màxima seguretat.'
+    - title: 'Èxit del Client'
+      content: "El nostre èxit es mesura per l'èxit dels nostres clients. Cada característica que desenvolupem està dissenyada per proporcionar valor real i mesurable als negocis."
 ---
