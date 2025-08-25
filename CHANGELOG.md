@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.6](https://github.com/Notifycal/static-landing/compare/v1.13.5...v1.13.6) (2025-08-25)
+
+
+### Bug Fixes
+
+* cookie consent after navigation. And some Gtag thingy ([#443](https://github.com/Notifycal/static-landing/issues/443)) ([3d60342](https://github.com/Notifycal/static-landing/commit/3d60342a9dd020e43a58d1791360247c5c612fc8))
+* **deps:** Update Node.js Dependencies ([#439](https://github.com/Notifycal/static-landing/issues/439)) ([e3a1809](https://github.com/Notifycal/static-landing/commit/e3a18090d878358bfcc261dd791deae77b0d0e4a))
+
 ## [1.13.5](https://github.com/Notifycal/static-landing/compare/v1.13.4...v1.13.5) (2025-08-22)
 
 
