@@ -10,9 +10,29 @@ const { buttonSettingsText } = Astro.props;
 
 <script>
   import { denyAllGtag, gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
-  import { run } from 'vanilla-cookieconsent';
+  import { reset, run } from 'vanilla-cookieconsent';
 
-  document.body.classList.add('cc--theme');
-  denyAllGtag();
-  run(gtagConsentConfig('es', updateAllGtagConsent));
+  window.initializeCookieConsent = function () {
+    document.body.classList.add('cc--theme');
+    denyAllGtag();
+    run(gtagConsentConfig('es', updateAllGtagConsent));
+  };
+
+  window.reinitializeCookieConsent = function () {
+    if (typeof reset === 'function') {
+      reset();
+    }
+    window.initializeCookieConsent();
+  };
+
+  window.initializeCookieConsent();
+</script>
+
+<script is:inline>
+  // Handle Astro View Transitions navigation
+  document.addEventListener('astro:page-load', function () {
+    if (window.reinitializeCookieConsent) {
+      window.reinitializeCookieConsent();
+    }
+  });
 </script>
