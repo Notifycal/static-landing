@@ -5,8 +5,8 @@
     "basePath": "/",
     "trailingSlash": false,
     "favicon": "/images/favicon.webp",
-    "logoWidth": "180px",
-    "logoHeight": "50px",
+    "logoWidth": "auto",
+    "logoHeight": "55px",
     "logoText": "Notifycal"
   },
 

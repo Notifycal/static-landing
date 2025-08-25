@@ -1,23 +1,18 @@
 ---
-import Logo from '@/assets/logos/isologo-1-comfortaa.svg';
+import NotifycalIsologo from '@/assets/logos/notifycal-isologo-nosquares.svg';
 import config from '@/config/config.json';
 
-const { src } = Astro.props;
 const {
-  logo,
   logoWidth,
   logoHeight,
-  logoText,
   title
 }: {
-  logo: string;
   logoWidth: any;
   logoHeight: any;
-  logoText: string;
   title: string;
 } = config.site;
 ---
 
 <a href="/" class="navbar-brand block">
-  <Logo style={{ width: logoWidth, height: logoHeight }} className="text-primary-500 drop-shadow-2xl" aria-label={title} />
+  <NotifycalIsologo style={{ width: logoWidth, height: logoHeight }} class="text-primary-500 drop-shadow-2xl" aria-label={title} />
 </a>
