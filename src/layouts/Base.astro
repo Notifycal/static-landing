@@ -50,7 +50,7 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
           dataLayer.push(arguments);
         };
         gtag('js', new Date());
-        gtag('config', ${tagManagerId});`;
+        gtag('config', '${tagManagerId}');`;
         document.head.appendChild(script);
       });
     </script>
