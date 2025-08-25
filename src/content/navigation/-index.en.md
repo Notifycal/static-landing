@@ -1,0 +1,15 @@
+---
+main:
+  - name: 'Home'
+    url: '/'
+  - name: 'About'
+    url: '/about'
+  - name: 'Roadmap'
+    url: '/roadmap'
+
+footer:
+  - name: 'About'
+    url: '/about'
+  - name: 'Cookie Settings'
+    url: '#cookie-settings'
+---

@@ -6,11 +6,10 @@ import Base from '@/layouts/Base.astro';
 import Banner from '@/layouts/components/Banner.astro';
 import Testimonial from '@/layouts/components/Testimonial.astro';
 import Cta from '@/layouts/partials/Cta.astro';
+import { getLangFromUrl, getCollectionEntryByLang } from '@/lib/i18n';
 
-import type { CollectionEntry } from 'astro:content';
-import { getEntry } from 'astro:content';
-
-const homepage = (await getEntry('homepage', '-index')) as CollectionEntry<'homepage'>;
+const lang = getLangFromUrl(Astro.url);
+const homepage = await getCollectionEntryByLang('homepage', lang);
 const { banner, features, testimonial, faq, pricing } = homepage.data;
 ---
 

@@ -2,11 +2,15 @@
 import Logo from '@/components/Logo.astro';
 import Social from '@/components/Social.astro';
 import config from '@/config/config.json';
-import menu from '@/config/menu.json';
 import social from '@/config/social.json';
 import CookieConsent from '@/layouts/components/CookieConsent.astro';
+import { getCollectionEntryByLang, getLangFromUrl } from '@/lib/i18n';
 import { markdownify } from '@/lib/utils/textConverter';
-const { footer } = menu;
+
+const lang = getLangFromUrl(Astro.url);
+const footerStrings = await getCollectionEntryByLang('footer', lang);
+const navigation = await getCollectionEntryByLang('navigation', lang);
+
 const { copyright, location, email, phone, footerDescription } = config.params;
 ---
 
@@ -20,16 +24,16 @@ const { copyright, location, email, phone, footerDescription } = config.params;
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Socials</h6>
+        <h6>{footerStrings.data.socials}</h6>
 
         <Social source={social} className="social-icons mt-4 lg:mt-6" />
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Quick Links</h6>
+        <h6>{footerStrings.data.quickLinks}</h6>
         <ul>
           {
-            footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? 'mb-0' : 'mb-4'}>
+            navigation.data.footer.map((item, i) => (
+              <li class={navigation.data.footer.length - 1 === i ? 'mb-0' : 'mb-4'}>
                 {item.url === '#cookie-settings' ? (
                   <CookieConsent buttonSettingsText={item.name} />
                 ) : (
@@ -41,7 +45,7 @@ const { copyright, location, email, phone, footerDescription } = config.params;
         </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Location & Contact</h6>
+        <h6>{footerStrings.data.locationContact}</h6>
         <ul>
           <li class="mb-2">{location}</li>
           <li class="mb-2">

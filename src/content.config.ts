@@ -180,10 +180,47 @@ const pagesCollection = defineCollection({
   })
 });
 
+const footerCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/footer' }),
+  schema: z.object({
+    socials: z.string(),
+    quickLinks: z.string(),
+    locationContact: z.string()
+  })
+});
+
+const headerCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/header' }),
+  schema: z.object({
+    signIn: z.string()
+  })
+});
+
+const navigationCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/navigation' }),
+  schema: z.object({
+    main: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string()
+      })
+    ),
+    footer: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string()
+      })
+    )
+  })
+});
+
 // Export collections
 export const collections = {
   homepage: homepageCollection,
   about: aboutCollection,
   roadmap: roadmapCollection,
-  pages: pagesCollection
+  pages: pagesCollection,
+  footer: footerCollection,
+  header: headerCollection,
+  navigation: navigationCollection
 };

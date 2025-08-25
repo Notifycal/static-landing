@@ -3,10 +3,10 @@ import Base from '@/layouts/Base.astro';
 import RoadmapHero from '@/layouts/components/roadmap/RoadmapHero.astro';
 import RoadmapTimeline from '@/layouts/components/roadmap/RoadmapTimeline.astro';
 import VotingCallToAction from '@/layouts/components/roadmap/VotingCallToAction.astro';
-import type { CollectionEntry } from 'astro:content';
-import { getEntry } from 'astro:content';
+import { getCollectionEntryByLang, getLangFromUrl } from '@/lib/i18n';
 
-const roadmap = (await getEntry('roadmap', '-index')) as CollectionEntry<'roadmap'>;
+const lang = getLangFromUrl(Astro.url);
+const roadmap = await getCollectionEntryByLang('roadmap', lang);
 const { intro, confirmedFeatures, potentialFeatures, votingCTA } = roadmap.data;
 ---
 
