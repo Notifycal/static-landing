@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/Notifycal/static-landing/compare/v1.13.7...v1.14.0) (2025-08-25)
+
+
+### Features
+
+* logos ([#423](https://github.com/Notifycal/static-landing/issues/423)) ([c35301d](https://github.com/Notifycal/static-landing/commit/c35301d50127e29f32980bd80ebe63fedd7e143d))
+
 ## [1.13.7](https://github.com/Notifycal/static-landing/compare/v1.13.6...v1.13.7) (2025-08-25)
 
 
