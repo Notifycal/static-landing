@@ -14,9 +14,10 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
 <!doctype html>
 <html lang="en">
   <head>
-    <script type="text/javascript" src="/config.js" is:inline></script>
-    <script src="/src/scripts/config-processor.ts"></script>
-    <script type="text/partytown" is:inline>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- google font css -->
+    <Unfont />
+    <script is:inline>
       function onServiceConfigReady(callback) {
         window.addEventListener('serviceConfigReady', function (event) {
           const config = event.detail;
@@ -35,32 +36,26 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
       });
       onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
-        script.type = 'text/partytown';
         script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
         script.async = true;
         document.head.appendChild(script);
       });
       onServiceConfigReady((tagManagerId) => {
+        const script = document.createElement('script');
+        script.innerHTML = `
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() {
           dataLayer.push(arguments);
         };
         gtag('js', new Date());
-        gtag('config', tagManagerId);
+        gtag('config', '${tagManagerId}');`;
+        document.head.appendChild(script);
       });
     </script>
+    <script type="text/javascript" src="/config.js" is:inline></script>
+    <script src="/src/scripts/config-processor.ts"></script>
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
-    <!-- theme meta -->
-    <meta name="theme-name" content="pinwheel-astro" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-    <meta name="generator" content={Astro.generator} />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <!-- google font css -->
-    <Unfont />
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

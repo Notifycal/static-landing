@@ -1,5 +1,56 @@
 # Changelog
 
+## [1.13.7](https://github.com/Notifycal/static-landing/compare/v1.13.6...v1.13.7) (2025-08-25)
+
+
+### Bug Fixes
+
+* remove party town(thingy to delegate the analytics sending to a service worker) due to a persistent console error ([#444](https://github.com/Notifycal/static-landing/issues/444)) ([af55d88](https://github.com/Notifycal/static-landing/commit/af55d8867b40edd2688e34ac14c8724f82a4b480))
+
+## [1.13.6](https://github.com/Notifycal/static-landing/compare/v1.13.5...v1.13.6) (2025-08-25)
+
+
+### Bug Fixes
+
+* cookie consent after navigation. And some Gtag thingy ([#443](https://github.com/Notifycal/static-landing/issues/443)) ([3d60342](https://github.com/Notifycal/static-landing/commit/3d60342a9dd020e43a58d1791360247c5c612fc8))
+* **deps:** Update Node.js Dependencies ([#439](https://github.com/Notifycal/static-landing/issues/439)) ([e3a1809](https://github.com/Notifycal/static-landing/commit/e3a18090d878358bfcc261dd791deae77b0d0e4a))
+
+## [1.13.5](https://github.com/Notifycal/static-landing/compare/v1.13.4...v1.13.5) (2025-08-22)
+
+
+### Bug Fixes
+
+* make cookies obey cookie consent ([#437](https://github.com/Notifycal/static-landing/issues/437)) ([5922a57](https://github.com/Notifycal/static-landing/commit/5922a57acbdf7bc8369c534959103eab6c01ade9))
+
+## [1.13.4](https://github.com/Notifycal/static-landing/compare/v1.13.3...v1.13.4) (2025-08-22)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.2.7 ([#435](https://github.com/Notifycal/static-landing/issues/435)) ([bb42016](https://github.com/Notifycal/static-landing/commit/bb4201613577a4ee80aaac7ea026d5b1918eba63))
+* gtag timing ([#434](https://github.com/Notifycal/static-landing/issues/434)) ([887dce9](https://github.com/Notifycal/static-landing/commit/887dce969716a71e990a141ddd5457e172d8dc4d))
+
+## [1.13.3](https://github.com/Notifycal/static-landing/compare/v1.13.2...v1.13.3) (2025-08-22)
+
+
+### Bug Fixes
+
+* shared import so compatible with backend ([#431](https://github.com/Notifycal/static-landing/issues/431)) ([830dc62](https://github.com/Notifycal/static-landing/commit/830dc62226a31c43f8a5cc57a97ccc77a4f97d93))
+
+## [1.13.2](https://github.com/Notifycal/static-landing/compare/v1.13.1...v1.13.2) (2025-08-21)
+
+
+### Bug Fixes
+
+* charset declaration too late ([#429](https://github.com/Notifycal/static-landing/issues/429)) ([35bde1a](https://github.com/Notifycal/static-landing/commit/35bde1aeb1f3e3359cd90e2e4f19d75d7dda7920))
+
+## [1.13.1](https://github.com/Notifycal/static-landing/compare/v1.13.0...v1.13.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* hydration console errors ([#427](https://github.com/Notifycal/static-landing/issues/427)) ([48f5c40](https://github.com/Notifycal/static-landing/commit/48f5c4008f85b5299f9807a8cc835cc03886a887))
+
 ## [1.13.0](https://github.com/Notifycal/static-landing/compare/v1.12.0...v1.13.0) (2025-08-21)
 
 
