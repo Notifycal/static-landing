@@ -4,7 +4,7 @@
     "baseUrl": "https://notifycal.com",
     "basePath": "/",
     "trailingSlash": false,
-    "favicon": "/images/favicon.webp",
+    "favicon": "/images/favicon.svg",
     "logoWidth": "auto",
     "logoHeight": "55px",
     "logoText": "Notifycal"
