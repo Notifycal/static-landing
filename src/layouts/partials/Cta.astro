@@ -26,19 +26,16 @@ const {
     </div>
   </div>
   <script is:inline>
-    function onServiceConfigReady(callback) {
-      window.addEventListener('serviceConfigReady', function (event) {
-        const config = event.detail;
-        if (config && config.FRONTEND_URL) {
-          callback(config.FRONTEND_URL, config);
+    function setupCtaButton() {
+      window.onServiceConfigReady((frontendUrl) => {
+        const ctaButton = document.getElementById('cta-button');
+        if (ctaButton && frontendUrl) {
+          ctaButton.href = frontendUrl;
         }
-      });
+      }, 'FRONTEND_URL');
     }
-    onServiceConfigReady((frontendUrl) => {
-      const ctaButton = document.getElementById('cta-button');
-      if (ctaButton && frontendUrl) {
-        ctaButton.href = frontendUrl;
-      }
-    });
+    
+    document.addEventListener('astro:page-load', setupCtaButton);
+    setupCtaButton();
   </script>
 </section>

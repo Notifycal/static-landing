@@ -162,8 +162,7 @@ const roadmapCollection = defineCollection({
     votingCTA: z.object({
       title: z.string(),
       description: z.string(),
-      buttonText: z.string(),
-      buttonUrl: z.string()
+      buttonText: z.string()
     }),
     confirmed: z.string(),
     inDevelopment: z.string(),

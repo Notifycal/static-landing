@@ -109,7 +109,21 @@ const { pathname } = Astro.url;
 </header>
 
 <script is:inline>
+  function setupSignInButtons() {
+    window.onServiceConfigReady((frontendUrl) => {
+      const viewportSizes = ['md', 'lg'];
+      viewportSizes.forEach((size) => {
+        const signInButton = document.getElementById(`signin-button-${size}`);
+        if (signInButton && frontendUrl) {
+          signInButton.href = frontendUrl;
+        }
+      });
+    }, 'FRONTEND_URL');
+  }
+  setupSignInButtons();
+
   document.addEventListener('astro:page-load', () => {
+    setupSignInButtons();
     document.querySelectorAll('.dropdown-button').forEach((button) => {
       button.addEventListener('click', (e) => {
         const dropdown = e.currentTarget.querySelector('.nav-dropdown-list');
@@ -136,24 +150,5 @@ const { pathname } = Astro.url;
       window.addEventListener('scroll', toggle);
       window.addEventListener('pageshow', toggle);
     }
-  });
-</script>
-<script is:inline>
-  function onServiceConfigReady(callback) {
-    window.addEventListener('serviceConfigReady', function (event) {
-      const config = event.detail;
-      if (config && config.FRONTEND_URL) {
-        callback(config.FRONTEND_URL, config);
-      }
-    });
-  }
-  onServiceConfigReady((frontendUrl) => {
-    const viewportSizes = ['md', 'lg'];
-    viewportSizes.forEach((size) => {
-      const signInButton = document.getElementById(`signin-button-${size}`);
-      if (signInButton && frontendUrl) {
-        signInButton.href = frontendUrl;
-      }
-    }); 
   });
 </script>

@@ -36,7 +36,6 @@ votingCTA:
   title: 'La teva opinió importa'
   description: "Ajuda'ns a prioritzar les funcionalitats que més necessites. Només els nostres clients poden votar per assegurar que desenvolupem el que realment utilitzaràs."
   buttonText: 'Col·labora amb nosaltres'
-  buttonUrl: 'https://app.notifycal.com/roadmap-voting'
 confirmed: "Confirmat"
 inDevelopment: "En desenvolupament"
 planning: "Planificant"
