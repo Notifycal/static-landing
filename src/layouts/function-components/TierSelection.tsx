@@ -17,6 +17,7 @@ export function TierSelection({ locale }: TierSelection): JSX.Element {
     return <div>Loading...</div>;
   }
   const tiers = serviceConfig.TIER_INFO.tiers;
+  const frontendUrl = serviceConfig.FRONTEND_URL;
 
   return (
     <MantineProvider
@@ -31,9 +32,8 @@ export function TierSelection({ locale }: TierSelection): JSX.Element {
           isCardButtonLoading={() => false}
           lang={locale}
           orderedTierInfoWithIcons={orderedTierInfoWithIcons(tiers, locale)}
-          onTierSelection={(tierId) => {
-            console.log(`User clicked on tier ${tierId}`);
-            window.open('https://privatedev.notifycal.com', '_blank');
+          onTierSelection={() => {
+            window.open(frontendUrl, '_blank');
             return Promise.resolve();
           }}
         />
