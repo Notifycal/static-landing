@@ -8,10 +8,10 @@ import { getCollectionEntryByLang, getLangFromUrl } from '@/lib/i18n';
 import { markdownify } from '@/lib/utils/textConverter';
 
 const lang = getLangFromUrl(Astro.url);
-const footerStrings = await getCollectionEntryByLang('footer', lang);
+const { data: { socials, quickLinks, locationContact }} = await getCollectionEntryByLang('footer', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
-
-const { copyright, location, email, phone, footerDescription } = config.params;
+const { data: { footerDescription, copyright } } = await getCollectionEntryByLang('site', lang);
+const { location, email, phone } = config.params;
 ---
 
 <footer class="footer bg-[#F1F1F1]">
@@ -24,12 +24,12 @@ const { copyright, location, email, phone, footerDescription } = config.params;
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{footerStrings.data.socials}</h6>
+        <h6>{socials}</h6>
 
         <Social source={social} className="social-icons mt-4 lg:mt-6" />
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{footerStrings.data.quickLinks}</h6>
+        <h6>{quickLinks}</h6>
         <ul>
           {
             navigation.data.footer.map((item, i) => (
@@ -45,7 +45,7 @@ const { copyright, location, email, phone, footerDescription } = config.params;
         </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{footerStrings.data.locationContact}</h6>
+        <h6>{locationContact}</h6>
         <ul>
           <li class="mb-2">{location}</li>
           <li class="mb-2">

@@ -7,8 +7,12 @@ import Header from '@/partials/Header.astro';
 import '@/styles/main.css';
 import { ClientRouter } from 'astro:transitions';
 import Unfont from 'unplugin-fonts/astro/component.astro';
+import { getLangFromUrl, getCollectionEntryByLang } from '@/lib/i18n';
 
-const { title, metaTitle, description, image, noindex, canonical } = Astro.props;
+const { titleProp, metaTitleProp, descriptionProp, imageProp, noindexProp, canonicalProp } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const { data: { metaDescription }} = await getCollectionEntryByLang('site', lang);
+const { site: { favicon, metaImage, metaAuthor, title, baseUrl }} = config
 ---
 
 <!doctype html>
@@ -55,49 +59,49 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
     <script type="text/javascript" src="/config.js" is:inline></script>
     <script src="/src/scripts/config-processor.ts"></script>
     <!-- favicon -->
-    <link rel="shortcut icon" href={config.site.favicon} />
+    <link rel="shortcut icon" href={favicon} />
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
     <!-- title -->
     <title>
-      {plainify(metaTitle ? metaTitle : title ? title : config.site.title)}
+      {plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)}
     </title>
 
     <!-- canonical url -->
-    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    {canonicalProp && <link rel="canonical" href={canonicalProp} item-prop="url" />}
 
     <!-- noindex robots -->
-    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    {noindexProp && <meta name="robots" content="noindex,nofollow" />}
 
     <!-- meta-description -->
-    <meta name="description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta name="description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
 
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta name="author" content={config.metadata.metaAuthor} />
+    <meta name="author" content={metaAuthor} />
 
     <!-- og-title -->
-    <meta property="og:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
+    <meta property="og:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- og-description -->
-    <meta property="og:description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta property="og:description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${config.site.baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
+    <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
 
     <!-- twitter-title -->
-    <meta name="twitter:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
+    <meta name="twitter:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- twitter-description -->
-    <meta name="twitter:description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta name="twitter:description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
 
     <!-- og-image -->
-    <meta property="og:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
+    <meta property="og:image" content={`${baseUrl}${imageProp ? imageProp : metaImage}`} />
 
     <!-- twitter-image -->
-    <meta name="twitter:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
+    <meta name="twitter:image" content={`${baseUrl}${imageProp ? imageProp : metaImage}`} />
     <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>

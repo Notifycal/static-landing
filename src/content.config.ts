@@ -164,7 +164,11 @@ const roadmapCollection = defineCollection({
       description: z.string(),
       buttonText: z.string(),
       buttonUrl: z.string()
-    })
+    }),
+    confirmed: z.string(),
+    inDevelopment: z.string(),
+    planning: z.string(),
+    featureUnderConsideration: z.string()
   })
 });
 
@@ -196,6 +200,25 @@ const headerCollection = defineCollection({
   })
 });
 
+const breadcrumbsCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/breadcrumbs' }),
+  schema: z.object({
+    home: z.string()
+  })
+});
+
+const siteCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/site' }),
+  schema: z.object({
+    ctaTitle: z.string(),
+    ctaDescription: z.string(),
+    ctaButtonLabel: z.string(),
+    footerDescription: z.string(),
+    copyright: z.string(),
+    metaDescription: z.string()
+  })
+});
+
 const navigationCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/navigation' }),
   schema: z.object({
@@ -222,5 +245,7 @@ export const collections = {
   pages: pagesCollection,
   footer: footerCollection,
   header: headerCollection,
+  breadcrumbs: breadcrumbsCollection,
+  site: siteCollection,
   navigation: navigationCollection
 };

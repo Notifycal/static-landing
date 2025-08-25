@@ -1,12 +1,12 @@
+import type { LanguageCode } from '@notifycal/shared/types';
 import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:content';
 
-export const languages = {
+export const languages: Record<LanguageCode, string> = {
   en: 'English',
   es: 'Español',
   ca: 'Català'
 } as const;
 
-export type LanguageCode = keyof typeof languages;
 export const defaultLang: LanguageCode = 'es';
 
 export function getLangFromUrl(url: URL): LanguageCode {

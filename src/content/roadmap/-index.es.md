@@ -37,4 +37,8 @@ votingCTA:
   description: "Help us prioritise the features you need most. Only our customers can vote to ensure we develop what you'll actually use."
   buttonText: 'Collaborate with us'
   buttonUrl: 'https://app.notifycal.com/roadmap-voting'
+confirmed: "Confirmado"
+inDevelopment: "En desarrollo"
+planning: "Planeando"
+featureUnderConsideration: "Funcionalidad en consideración"
 ---
