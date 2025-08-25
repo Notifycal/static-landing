@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.7](https://github.com/Notifycal/static-landing/compare/v1.13.6...v1.13.7) (2025-08-25)
+
+
+### Bug Fixes
+
+* remove party town(thingy to delegate the analytics sending to a service worker) due to a persistent console error ([#444](https://github.com/Notifycal/static-landing/issues/444)) ([af55d88](https://github.com/Notifycal/static-landing/commit/af55d8867b40edd2688e34ac14c8724f82a4b480))
+
 ## [1.13.6](https://github.com/Notifycal/static-landing/compare/v1.13.5...v1.13.6) (2025-08-25)
 
 
