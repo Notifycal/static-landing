@@ -36,14 +36,12 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
       });
       onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
-        script.type = 'text/partytown';
         script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
         script.async = true;
         document.head.appendChild(script);
       });
       onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
-        script.type = 'text/partytown';
         script.innerHTML = `
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() {

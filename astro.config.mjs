@@ -1,5 +1,4 @@
 import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { unpluginFonts } from '@notifycal/shared/theme';
@@ -47,11 +46,6 @@ export default defineConfig({
       ]
     }),
     mdx(),
-    partytown({
-      config: {
-        forward: [['gtag', { preserveBehavior: true }], ['dataLayer.push']]
-      }
-    }),
     playformCompress({
       HTML: {
         'html-minifier-terser': { sortClassName: false, removeComments: false }
