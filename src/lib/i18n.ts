@@ -1,5 +1,5 @@
 import type { LanguageCode } from '@notifycal/shared/types';
-import { getCollection, type CollectionEntry, type DataEntry } from 'astro:content';
+import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:content';
 import { defaultLang, languages, showDefaultLang } from './i18n-const';
 
 export function useTranslatedPath(lang: LanguageCode) {
@@ -21,7 +21,7 @@ function noLanguageRejection(collection: string, lang: LanguageCode, error?: unk
   return Promise.reject(new Error(`'${collection}' page content not found for language: ${lang}`, { cause: error }));
 }
 
-function getCollectionByLang<T extends keyof DataEntry>(
+async function getCollectionByLang<T extends keyof DataEntryMap>(
   collection: T,
   lang: LanguageCode
 ): Promise<Array<CollectionEntry<T>>> {
@@ -35,7 +35,7 @@ function getCollectionByLang<T extends keyof DataEntry>(
   return collectionPromise.catch((error: unknown) => noLanguageRejection(collection, lang, error));
 }
 
-export function getCollectionEntryByLang<T extends keyof DataEntry>(
+export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
   collection: T,
   lang: LanguageCode
 ): Promise<CollectionEntry<T>> {

@@ -51,7 +51,7 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
         const href = currentPath === '/' ? langPath || '/' : `${langPath}${currentPath}`;
         return (
           <li class="nav-dropdown-item">
-            <a href={href} class="nav-dropdown-link block">
+            <a href={href} class="nav-dropdown-link block text-center">
               <img
                 alt={label}
                 title={label}
