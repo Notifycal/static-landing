@@ -5,7 +5,7 @@ import SingleFeature from './SingleFeature.astro';
 import VideoFeature from './VideoFeature.astro';
 
 interface Props {
-  features: CollectionEntry<'homepage'>['data']['features'];
+  features: CollectionEntry<'home'>['data']['features'];
 };
 const { features } = Astro.props;
 const { featuresTab, ourFeatures, featuresVideo } = features;

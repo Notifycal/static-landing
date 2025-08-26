@@ -10,7 +10,7 @@ import { getCollectionEntryByLang } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
 
 const lang = getLangFromUrl(Astro.url);
-const homepage = await getCollectionEntryByLang('homepage', lang);
+const homepage = await getCollectionEntryByLang('home', lang);
 const { banner, features, testimonial, faq, pricing } = homepage.data;
 const { data } = await getCollectionEntryByLang('site', lang);
 ---

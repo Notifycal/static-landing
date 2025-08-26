@@ -1,8 +1,8 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
-const homepageCollection = defineCollection({
-  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/homepage' }),
+const homeCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/home' }),
   schema: z.object({
     banner: z.object({
       title: z.string(),
@@ -229,9 +229,8 @@ const navigationCollection = defineCollection({
   })
 });
 
-// Export collections
 export const collections = {
-  homepage: homepageCollection,
+  home: homeCollection,
   about: aboutCollection,
   roadmap: roadmapCollection,
   pages: pagesCollection,
