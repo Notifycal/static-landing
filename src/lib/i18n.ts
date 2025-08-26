@@ -26,7 +26,6 @@ async function getCollectionByLang<T extends keyof DataEntryMap>(
   lang: LanguageCode
 ): Promise<Array<CollectionEntry<T>>> {
   const collectionPromise = getCollection(collection, (entry: CollectionEntry<T>) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     const entryLang = getLangFromEntryId(entry.id);
     const matches = entryLang === lang;
     return matches;
@@ -42,12 +41,10 @@ export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
   return getCollectionByLang(collection, lang).then(
     (entries: Array<CollectionEntry<T>>) => {
       if (entries.length > 0) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return entries[0];
       } else if (lang !== defaultLang) {
         return getCollectionByLang(collection, defaultLang).then((fallbackEntries: Array<CollectionEntry<T>>) => {
           if (fallbackEntries.length > 0) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return fallbackEntries[0];
           } else {
             return noLanguageRejection(collection, lang);
