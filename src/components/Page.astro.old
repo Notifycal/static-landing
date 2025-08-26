@@ -1,7 +1,0 @@
----
-import HeroSection from '../sections/HeroSection.astro';
----
-
-<main class="min-h-screen">
-  <HeroSection />
-</main>
