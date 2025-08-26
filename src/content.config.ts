@@ -169,6 +169,12 @@ const roadmapCollection = defineCollection({
       description: z.string(),
       buttonText: z.string()
     }),
+    timeline: z.object({
+      confirmedTitle: z.string(),
+      confirmedDescription: z.string(),
+      potentialTitle: z.string(),
+      potentialDescription: z.string()
+    }),
     confirmed: z.string(),
     inDevelopment: z.string(),
     planning: z.string(),

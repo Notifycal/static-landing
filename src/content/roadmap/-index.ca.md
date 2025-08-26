@@ -40,4 +40,9 @@ confirmed: 'Confirmat'
 inDevelopment: 'En desenvolupament'
 planning: 'Planificant'
 featureUnderConsideration: 'Funcionalitat en consideració'
+timeline:
+  confirmedTitle: 'Pròximes parades confirmades'
+  confirmedDescription: 'Aquestes funcionalitats estan en el nostre full de ruta i arribaran aviat'
+  potentialTitle: 'Possibles destinacions futures'
+  potentialDescription: 'Idees que estem considerant basant-nos en les necessitats dels nostres usuaris'
 ---

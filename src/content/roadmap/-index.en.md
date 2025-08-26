@@ -40,4 +40,9 @@ confirmed: 'Confirmed'
 inDevelopment: 'In development'
 planning: 'Planning'
 featureUnderConsideration: 'Feature under consideration'
+timeline:
+  confirmedTitle: 'Confirmed upcoming stops'
+  confirmedDescription: 'These features are on our roadmap and will arrive soon'
+  potentialTitle: 'Possible future destinations'
+  potentialDescription: "Ideas we're considering based on our users' needs"
 ---
