@@ -1,8 +1,0 @@
----
-import { getLangFromUrl } from '../i18n/utils';
-import { TierSelection } from '../layouts/function-components/TierSelection';
-
-const lang = getLangFromUrl(Astro.url);
----
-
-<TierSelection client:load locale={lang} />

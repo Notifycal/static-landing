@@ -74,6 +74,10 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
+      - name: Typescript types
+        id: types
+        run: npm run types
+        continue-on-error: true
       - name: Lint files
         id: lint
         run: npm run lint

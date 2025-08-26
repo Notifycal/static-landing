@@ -2,45 +2,64 @@
 import TwSizeIndicator from '@/components/TwSizeIndicator.astro';
 import config from '@/config/config.json';
 import { plainify } from '@/lib/utils/textConverter';
-import Footer from '@/partials/Footer.astro';
-import Header from '@/partials/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
 import '@/styles/main.css';
 import { ClientRouter } from 'astro:transitions';
 import Unfont from 'unplugin-fonts/astro/component.astro';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 
-const { title, metaTitle, description, image, noindex, canonical } = Astro.props;
+const { titleProp, metaTitleProp, descriptionProp, imageProp, noindexProp, canonicalProp } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const {
+  data: { description }
+} = await getCollectionEntryByLang('site', lang);
+const {
+  site: { favicon, image, author, title, baseUrl }
+} = config;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- google font css -->
     <Unfont />
     <script is:inline>
-      function onServiceConfigReady(callback) {
-        window.addEventListener('serviceConfigReady', function (event) {
-          const config = event.detail;
-          if (config && config.GOOGLE_TAG_MANAGER_ID) {
-            callback(config.GOOGLE_TAG_MANAGER_ID, config);
+      window.onServiceConfigReady = function (callback, configKey) {
+        function executeCallback() {
+          if (window.serviceConfig) {
+            const configValue = window.serviceConfig[configKey];
+            if (configValue) {
+              callback(configValue, window.serviceConfig);
+            }
           }
-        });
-      }
-      onServiceConfigReady((tagManagerId) => {
+        }
+
+        if (window.serviceConfig) {
+          executeCallback();
+        } else {
+          window.addEventListener('serviceConfigReady', function () {
+            executeCallback();
+          });
+        }
+      };
+      window.onServiceConfigReady((tagManagerId) => {
         if (!document.querySelector('noscript[data-gtm]')) {
           const noscript = document.createElement('noscript');
           noscript.setAttribute('data-gtm', 'true');
           noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${tagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
           document.body.insertBefore(noscript, document.body.firstChild);
         }
-      });
-      onServiceConfigReady((tagManagerId) => {
+      }, 'GOOGLE_TAG_MANAGER_ID');
+      window.onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
         script.src = `https://www.googletagmanager.com/gtag/js?id=${tagManagerId}`;
         script.async = true;
         document.head.appendChild(script);
-      });
-      onServiceConfigReady((tagManagerId) => {
+      }, 'GOOGLE_TAG_MANAGER_ID');
+      window.onServiceConfigReady((tagManagerId) => {
         const script = document.createElement('script');
         script.innerHTML = `
         window.dataLayer = window.dataLayer || [];
@@ -50,54 +69,54 @@ const { title, metaTitle, description, image, noindex, canonical } = Astro.props
         gtag('js', new Date());
         gtag('config', '${tagManagerId}');`;
         document.head.appendChild(script);
-      });
+      }, 'GOOGLE_TAG_MANAGER_ID');
     </script>
     <script type="text/javascript" src="/config.js" is:inline></script>
     <script src="/src/scripts/config-processor.ts"></script>
     <!-- favicon -->
-    <link rel="shortcut icon" href={config.site.favicon} />
+    <link rel="shortcut icon" href={favicon} />
 
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
     <!-- title -->
     <title>
-      {plainify(metaTitle ? metaTitle : title ? title : config.site.title)}
+      {plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)}
     </title>
 
     <!-- canonical url -->
-    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    {canonicalProp && <link rel="canonical" href={canonicalProp} item-prop="url" />}
 
     <!-- noindex robots -->
-    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    {noindexProp && <meta name="robots" content="noindex,nofollow" />}
 
     <!-- meta-description -->
-    <meta name="description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta name="description" content={plainify(descriptionProp ? descriptionProp : description)} />
 
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta name="author" content={config.metadata.metaAuthor} />
+    <meta name="author" content={author} />
 
     <!-- og-title -->
-    <meta property="og:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
+    <meta property="og:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- og-description -->
-    <meta property="og:description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta property="og:description" content={plainify(descriptionProp ? descriptionProp : description)} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${config.site.baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
+    <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
 
     <!-- twitter-title -->
-    <meta name="twitter:title" content={plainify(metaTitle ? metaTitle : title ? title : config.site.title)} />
+    <meta name="twitter:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- twitter-description -->
-    <meta name="twitter:description" content={plainify(description ? description : config.metadata.metaDescription)} />
+    <meta name="twitter:description" content={plainify(descriptionProp ? descriptionProp : description)} />
 
     <!-- og-image -->
-    <meta property="og:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
+    <meta property="og:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
 
     <!-- twitter-image -->
-    <meta name="twitter:image" content={`${config.site.baseUrl}${image ? image : config.metadata.metaImage}`} />
+    <meta name="twitter:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
     <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>

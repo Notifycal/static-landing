@@ -1,24 +1,5 @@
 ---
-import Faq from '@/components/Faq.astro';
-import Features from '@/components/Features.astro';
-import Pricing from '@/components/Pricing.astro';
-import Base from '@/layouts/Base.astro';
-import Banner from '@/layouts/components/Banner.astro';
-import Testimonial from '@/layouts/components/Testimonial.astro';
-import Cta from '@/layouts/partials/Cta.astro';
-
-import type { CollectionEntry } from 'astro:content';
-import { getEntry } from 'astro:content';
-
-const homepage = (await getEntry('homepage', '-index')) as CollectionEntry<'homepage'>;
-const { banner, features, testimonial, faq, pricing } = homepage.data;
+import HomePage from '@/layouts/pages/HomePage.astro';
 ---
 
-<Base>
-  <Banner banner={banner} />
-  <Features features={features} />
-  <Pricing pricing={pricing} />
-  <Faq faq={faq} />
-  <Testimonial testimonial={testimonial} />
-  <Cta />
-</Base>
+<HomePage />

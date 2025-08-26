@@ -1,0 +1,8 @@
+---
+import HomePage from '@/layouts/pages/HomePage.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+
+export const getStaticPaths = getLanguageStaticPaths;
+---
+
+<HomePage />

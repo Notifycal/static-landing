@@ -7,35 +7,18 @@
     "favicon": "/images/favicon.svg",
     "logoWidth": "auto",
     "logoHeight": "55px",
-    "logoText": "Notifycal"
+    "logoText": "Notifycal",
+    "author": "Notifycal",
+    "image": "/images/og-image.webp"
   },
-
   "settings": {
     "pagination": 6,
     "summaryLength": 100
   },
-
-  "callToAction": {
-    "title": "¿Listo para automatizar tus recordatorios?",
-    "description": "Únete a cientos de profesionales que ya han eliminado las faltas de sus clientes. Comienza gratis y mejora la eficiencia de tu negocio hoy mismo.",
-    "button": {
-      "label": "Probar Gratis",
-      "link": "https://private.notifycal.com"
-    }
-  },
-
   "params": {
-    "footerDescription": "Focus on your business, we will take care of the rest.",
     "email": "info@notifycal.com",
     "location": "Madrid, Spain",
     "phone": "",
-    "contactFormAction": "#",
-    "copyright": "© 2025 Notifycal. Todos los derechos reservados."
-  },
-
-  "metadata": {
-    "metaAuthor": "Notifycal",
-    "metaImage": "/images/og-image.webp",
-    "metaDescription": "Reminders and notifications for your clients, and yourself."
+    "contactFormAction": "#"
   }
 }

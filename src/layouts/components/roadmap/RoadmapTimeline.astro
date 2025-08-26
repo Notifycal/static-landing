@@ -13,9 +13,15 @@ export interface Props {
     description: string;
     icon: string;
   }>;
+  timeline: {
+    confirmedTitle: string;
+    confirmedDescription: string;
+    potentialTitle: string;
+    potentialDescription: string;
+  };
 }
 
-const { confirmedFeatures, potentialFeatures } = Astro.props;
+const { confirmedFeatures, potentialFeatures, timeline } = Astro.props;
 ---
 
 <section class="section bg-gradient-to-b from-gray-50 to-white">
@@ -23,8 +29,8 @@ const { confirmedFeatures, potentialFeatures } = Astro.props;
     <!-- Confirmed Features Timeline -->
     <div class="mb-16">
       <div class="mb-12 text-center">
-        <h2 class="text-h2 mb-4">Confirmed upcoming stops</h2>
-        <p class="text-text text-lg">These features are on our roadmap and will arrive soon</p>
+        <h2 class="text-h2 mb-4">{timeline.confirmedTitle}</h2>
+        <p class="text-text text-lg">{timeline.confirmedDescription}</p>
       </div>
 
       <div class="relative">
@@ -57,8 +63,8 @@ const { confirmedFeatures, potentialFeatures } = Astro.props;
     <!-- Potential Features -->
     <div class="mb-16">
       <div class="mb-12 text-center">
-        <h2 class="text-h2 mb-4">Possible future destinations</h2>
-        <p class="text-text text-lg">Ideas we're considering based on our users' needs</p>
+        <h2 class="text-h2 mb-4">{timeline.potentialTitle}</h2>
+        <p class="text-text text-lg">{timeline.potentialDescription}</p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2">

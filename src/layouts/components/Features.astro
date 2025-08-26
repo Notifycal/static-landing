@@ -1,12 +1,12 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import FeaturesTab from '../function-components/FeaturesTab';
+import FeaturesTab from '../react/FeaturesTab';
 import SingleFeature from './SingleFeature.astro';
 import VideoFeature from './VideoFeature.astro';
 
-type Props = {
-  features: CollectionEntry<'homepage'>['data']['features'];
-};
+interface Props {
+  features: CollectionEntry<'home'>['data']['features'];
+}
 const { features } = Astro.props;
 const { featuresTab, ourFeatures, featuresVideo } = features;
 

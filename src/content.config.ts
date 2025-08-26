@@ -1,8 +1,8 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
-const homepageCollection = defineCollection({
-  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/homepage' }),
+const homeCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/home' }),
   schema: z.object({
     banner: z.object({
       title: z.string(),
@@ -90,6 +90,11 @@ const homepageCollection = defineCollection({
           })
         )
         .optional()
+    }),
+    cta: z.object({
+      title: z.string(),
+      description: z.string(),
+      buttonLabel: z.string()
     })
   })
 });
@@ -162,9 +167,18 @@ const roadmapCollection = defineCollection({
     votingCTA: z.object({
       title: z.string(),
       description: z.string(),
-      buttonText: z.string(),
-      buttonUrl: z.string()
-    })
+      buttonText: z.string()
+    }),
+    timeline: z.object({
+      confirmedTitle: z.string(),
+      confirmedDescription: z.string(),
+      potentialTitle: z.string(),
+      potentialDescription: z.string()
+    }),
+    confirmed: z.string(),
+    inDevelopment: z.string(),
+    planning: z.string(),
+    featureUnderConsideration: z.string()
   })
 });
 
@@ -180,10 +194,57 @@ const pagesCollection = defineCollection({
   })
 });
 
-// Export collections
+const footerCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/footer' }),
+  schema: z.object({
+    description: z.string(),
+    copyright: z.string(),
+    socials: z.string(),
+    quickLinks: z.string(),
+    locationContact: z.string()
+  })
+});
+
+const headerCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/header' }),
+  schema: z.object({
+    signIn: z.string(),
+    languageMobileLabel: z.string()
+  })
+});
+
+const siteCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/site' }),
+  schema: z.object({
+    description: z.string()
+  })
+});
+
+const navigationCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/navigation' }),
+  schema: z.object({
+    main: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string()
+      })
+    ),
+    footer: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string()
+      })
+    )
+  })
+});
+
 export const collections = {
-  homepage: homepageCollection,
+  home: homeCollection,
   about: aboutCollection,
   roadmap: roadmapCollection,
-  pages: pagesCollection
+  pages: pagesCollection,
+  footer: footerCollection,
+  header: headerCollection,
+  site: siteCollection,
+  navigation: navigationCollection
 };
