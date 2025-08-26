@@ -2,19 +2,9 @@
 import Logo from '@/components/Logo.astro';
 import { getCollectionEntryByLang, useTranslatedPath } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
-import { languages, defaultLang, showDefaultLang } from '@/lib/i18n-const';
 import clsx from 'clsx';
-
-import type { ImageMetadata } from 'astro';
-import caFlag from '@notifycal/shared/assets/icons/lang/ca.svg';
-import enFlag from '@notifycal/shared/assets/icons/lang/gb.svg';
-import esFlag from '@notifycal/shared/assets/icons/lang/es.svg';
-
-const flags: Record<keyof typeof languages, ImageMetadata> = {
-  en: enFlag,
-  es: esFlag,
-  ca: caFlag
-};
+import LanguagePickerMobile from './LanguagePickerMobile.astro';
+import LanguagePickerDesktop from './LanguagePickerDesktop.astro';
 
 export interface ChildNavigationLink {
   name: string;
@@ -29,7 +19,7 @@ export interface NavigationLink {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const header = await getCollectionEntryByLang('header', lang);
+const { data: { signIn, languageMobileLabel } } = await getCollectionEntryByLang('header', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
 const translatePath = useTranslatedPath(lang);
 
@@ -112,73 +102,14 @@ const { pathname } = Astro.url;
           </>
         ))
       }
-      <li class="nav-item nav-dropdown group dropdown-button relative cursor-pointer mt-2 lg:hidden">
-        <span class="nav-link inline-flex items-center">
-          Idioma
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-          </svg>
-        </span>
-        <ul class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 bg-white border border-border rounded-lg shadow-lg">
-          {
-            Object.entries(languages).map(([lang, label]) => (
-              <li class="nav-dropdown-item">
-                <a href={lang == defaultLang && !showDefaultLang ? '/' : `/${lang}`} class="nav-dropdown-link block">
-                  <img
-                    alt={label}
-                    title={label}
-                    fetchpriority="high"
-                    decoding="async"
-                    class="mr-1 inline h-[1lh] w-4 max-w-none"
-                    src={flags[lang as keyof typeof languages].src}
-                  />
-                  {label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </li>
+      <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
       <li class="nav-item mt-2 lg:hidden">
-        <a id="signin-button-md" class="btn btn-white btn-sm border-border">{header.data.signIn}</a>
+        <a id="signin-button-md" class="btn btn-white btn-sm border-border">{signIn}</a>
       </li>
     </ul>
     <div class="order-1 ml-auto flex items-center space-x-3 md:order-2 md:ml-0">
-      <div class="nav-item nav-dropdown group dropdown-button relative cursor-pointer hidden lg:block">
-        <span class="nav-link inline-flex items-center">
-          <img
-            alt={languages[lang]}
-            title={languages[lang]}
-            fetchpriority="high"
-            decoding="async"
-            class="mr-1 inline h-[1lh] w-4 max-w-none"
-            src={flags[lang].src}
-          />
-          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-          </svg>
-        </span>
-        <ul class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 bg-white border border-border rounded-lg shadow-lg">
-          {
-            Object.entries(languages).map(([lang, label]) => (
-              <li class="nav-dropdown-item">
-                <a href={lang == defaultLang && !showDefaultLang ? '/' : `/${lang}`} class="nav-dropdown-link block">
-                  <img
-                    alt={label}
-                    title={label}
-                    fetchpriority="high"
-                    decoding="async"
-                    class="mr-1 inline h-[1lh] w-4 max-w-none"
-                    src={flags[lang as keyof typeof languages].src}
-                  />
-                  {label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <a id="signin-button-lg" class="btn btn-white btn-sm hidden lg:block">{header.data.signIn}</a>
+      <LanguagePickerDesktop />
+      <a id="signin-button-lg" class="btn btn-white btn-sm hidden lg:block">{signIn}</a>
     </div>
   </nav>
 </header>

@@ -202,7 +202,8 @@ const footerCollection = defineCollection({
 const headerCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/header' }),
   schema: z.object({
-    signIn: z.string()
+    signIn: z.string(),
+    languageMobileLabel: z.string()
   })
 });
 

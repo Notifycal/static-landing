@@ -1,0 +1,60 @@
+---
+import { defaultLang, languages, showDefaultLang } from '@/lib/i18n-const';
+import caFlag from '@notifycal/shared/assets/icons/lang/ca.svg';
+import esFlag from '@notifycal/shared/assets/icons/lang/es.svg';
+import enFlag from '@notifycal/shared/assets/icons/lang/gb.svg';
+import type { ImageMetadata } from 'astro';
+
+const flags: Record<keyof typeof languages, ImageMetadata> = {
+  en: enFlag,
+  es: esFlag,
+  ca: caFlag
+};
+
+export interface Props {
+  variant: 'mobile' | 'desktop';
+  languageMobileLabel?: string
+  currentLang?: keyof typeof languages;
+  className?: string;
+}
+
+const { variant, languageMobileLabel, currentLang, className = '' } = Astro.props;
+---
+
+<div class={`nav-item nav-dropdown group dropdown-button relative cursor-pointer ${className}`}>
+  <span class="nav-link inline-flex items-center">
+    {variant === 'desktop' && currentLang && (
+      <img
+        alt={languages[currentLang]}
+        title={languages[currentLang]}
+        fetchpriority="high"
+        decoding="async"
+        class="mr-1 inline h-[1lh] w-4 max-w-none"
+        src={flags[currentLang].src}
+      />
+    )}
+    {variant === 'mobile' && languageMobileLabel}
+    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+    </svg>
+  </span>
+  <ul class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 bg-white border border-border rounded-lg shadow-lg">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <li class="nav-dropdown-item">
+          <a href={lang == defaultLang && !showDefaultLang ? '/' : `/${lang}`} class="nav-dropdown-link block">
+            <img
+              alt={label}
+              title={label}
+              fetchpriority="high"
+              decoding="async"
+              class="mr-1 inline h-[1lh] w-4 max-w-none"
+              src={flags[lang as keyof typeof languages].src}
+            />
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

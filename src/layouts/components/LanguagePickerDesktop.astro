@@ -1,0 +1,9 @@
+---
+import { getLangFromUrl } from '@/lib/i18n-const';
+import LanguagePicker from './LanguagePicker.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const { languageMobileLabel } = Astro.props;
+---
+
+<LanguagePicker variant="desktop" languageMobileLabel={languageMobileLabel} currentLang={lang} className="hidden lg:block" />

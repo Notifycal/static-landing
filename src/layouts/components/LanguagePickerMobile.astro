@@ -1,0 +1,8 @@
+---
+import LanguagePicker from './LanguagePicker.astro';
+
+
+const { languageMobileLabel } = Astro.props;
+---
+
+<LanguagePicker variant="mobile" languageMobileLabel={languageMobileLabel} className="mt-2 lg:hidden" />
