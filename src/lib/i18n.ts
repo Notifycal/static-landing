@@ -1,5 +1,5 @@
 import type { LanguageCode } from '@notifycal/shared/types';
-import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:content';
+import { getCollection, type CollectionEntry, type DataEntry } from 'astro:content';
 import { defaultLang, languages, showDefaultLang } from './i18n-const';
 
 export function useTranslatedPath(lang: LanguageCode) {
@@ -21,35 +21,34 @@ function noLanguageRejection(collection: string, lang: LanguageCode, error?: unk
   return Promise.reject(new Error(`'${collection}' page content not found for language: ${lang}`, { cause: error }));
 }
 
-async function getCollectionByLang<T extends keyof DataEntryMap>(
+function getCollectionByLang<T extends keyof DataEntry>(
   collection: T,
   lang: LanguageCode
 ): Promise<Array<CollectionEntry<T>>> {
-  return getCollection(collection, (entry) => {
+  const collectionPromise = getCollection(collection, (entry: CollectionEntry<T>) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     const entryLang = getLangFromEntryId(entry.id);
     const matches = entryLang === lang;
     return matches;
-  })
-    .then((entries) => {
-      return entries;
-    })
-    .catch((error) => noLanguageRejection(collection, lang, error));
+  }) as Promise<Array<CollectionEntry<T>>>;
+
+  return collectionPromise.catch((error: unknown) => noLanguageRejection(collection, lang, error));
 }
 
-export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
+export function getCollectionEntryByLang<T extends keyof DataEntry>(
   collection: T,
   lang: LanguageCode
 ): Promise<CollectionEntry<T>> {
   return getCollectionByLang(collection, lang).then(
-    (entries) => {
+    (entries: Array<CollectionEntry<T>>) => {
       if (entries.length > 0) {
-        const selectedEntry = entries[0];
-        return selectedEntry;
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+        return entries[0];
       } else if (lang !== defaultLang) {
-        return getCollectionByLang(collection, defaultLang).then((fallbackEntries) => {
+        return getCollectionByLang(collection, defaultLang).then((fallbackEntries: Array<CollectionEntry<T>>) => {
           if (fallbackEntries.length > 0) {
-            const selectedFallback = fallbackEntries[0];
-            return selectedFallback;
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            return fallbackEntries[0];
           } else {
             return noLanguageRejection(collection, lang);
           }
@@ -58,7 +57,7 @@ export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
         return noLanguageRejection(collection, lang);
       }
     },
-    (error) => {
+    (error: unknown) => {
       return noLanguageRejection(collection, lang, error);
     }
   );
