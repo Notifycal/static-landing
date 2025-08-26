@@ -164,4 +164,9 @@ testimonial:
       content: With the volume of patients we handle, Notifycal is indispensable. We reduce no-shows and optimize our schedule perfectly.
       reference:
         displayName: 'Bilbao'
+
+cta:
+  title: "Ready to automate your reminders?"
+  description: "Join hundreds of professionals who have already eliminated client no-shows. Start free and improve your business efficiency today."
+  buttonLabel: "Try Free"
 ---

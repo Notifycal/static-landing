@@ -4,15 +4,14 @@ import Features from '@/components/Features.astro';
 import Pricing from '@/components/Pricing.astro';
 import Base from '@/layouts/Base.astro';
 import Banner from '@/layouts/components/Banner.astro';
-import Testimonial from '@/layouts/components/Testimonial.astro';
 import Cta from '@/layouts/components/Cta.astro';
+import Testimonial from '@/layouts/components/Testimonial.astro';
 import { getCollectionEntryByLang } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
 
 const lang = getLangFromUrl(Astro.url);
 const homepage = await getCollectionEntryByLang('home', lang);
-const { banner, features, testimonial, faq, pricing } = homepage.data;
-const { data } = await getCollectionEntryByLang('site', lang);
+const { banner, features, testimonial, faq, pricing, cta } = homepage.data;
 ---
 
 <Base>
@@ -21,5 +20,5 @@ const { data } = await getCollectionEntryByLang('site', lang);
   <Pricing pricing={pricing} />
   <Faq faq={faq} />
   <Testimonial testimonial={testimonial} />
-  <Cta data={data} />
+  <Cta cta={cta} />
 </Base>

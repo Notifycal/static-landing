@@ -90,6 +90,11 @@ const homeCollection = defineCollection({
           })
         )
         .optional()
+    }),
+    cta: z.object({
+      title: z.string(),
+      description: z.string(),
+      buttonLabel: z.string()
     })
   })
 });
@@ -186,6 +191,8 @@ const pagesCollection = defineCollection({
 const footerCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/footer' }),
   schema: z.object({
+    description: z.string(),
+    copyright: z.string(),
     socials: z.string(),
     quickLinks: z.string(),
     locationContact: z.string()
@@ -202,12 +209,7 @@ const headerCollection = defineCollection({
 const siteCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/site' }),
   schema: z.object({
-    ctaTitle: z.string(),
-    ctaDescription: z.string(),
-    ctaButtonLabel: z.string(),
-    footerDescription: z.string(),
-    copyright: z.string(),
-    metaDescription: z.string()
+    description: z.string()
   })
 });
 

@@ -9,9 +9,8 @@ import { getLangFromUrl } from '@/lib/i18n-const';
 import { markdownify } from '@/lib/utils/textConverter';
 
 const lang = getLangFromUrl(Astro.url);
-const { data: { socials, quickLinks, locationContact }} = await getCollectionEntryByLang('footer', lang);
+const { data: { description, copyright, socials, quickLinks, locationContact }} = await getCollectionEntryByLang('footer', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
-const { data: { footerDescription, copyright } } = await getCollectionEntryByLang('site', lang);
 const { location, email, phone } = config.params;
 ---
 
@@ -21,7 +20,7 @@ const { location, email, phone } = config.params;
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <Logo />
         <p class="mt-6">
-          {footerDescription}
+          {description}
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">

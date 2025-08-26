@@ -164,4 +164,9 @@ testimonial:
       content: Con el volumen de pacientes que manejamos, Notifycal es indispensable. Reducimos las faltas y optimizamos la agenda perfectamente.
       reference:
         displayName: 'Bilbao'
+
+cta:
+  title: "¿Listo para automatizar tus recordatorios?"
+  description: "Únete a cientos de profesionales que ya han eliminado las faltas de sus clientes. Comienza gratis y mejora la eficiencia de tu negocio hoy mismo."
+  buttonLabel: "Probar Gratis"
 ---

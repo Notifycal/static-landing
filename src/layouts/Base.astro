@@ -12,8 +12,8 @@ import { getLangFromUrl } from '@/lib/i18n-const';
 
 const { titleProp, metaTitleProp, descriptionProp, imageProp, noindexProp, canonicalProp } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const { data: { metaDescription }} = await getCollectionEntryByLang('site', lang);
-const { site: { favicon, metaImage, metaAuthor, title, baseUrl }} = config
+const { data: { description }} = await getCollectionEntryByLang('site', lang);
+const { site: { favicon, image, author, title, baseUrl }} = config
 ---
 
 <!doctype html>
@@ -87,18 +87,18 @@ const { site: { favicon, metaImage, metaAuthor, title, baseUrl }} = config
     {noindexProp && <meta name="robots" content="noindex,nofollow" />}
 
     <!-- meta-description -->
-    <meta name="description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
+    <meta name="description" content={plainify(descriptionProp ? descriptionProp : description)} />
 
     <ClientRouter />
 
     <!-- author from config.json -->
-    <meta name="author" content={metaAuthor} />
+    <meta name="author" content={author} />
 
     <!-- og-title -->
     <meta property="og:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- og-description -->
-    <meta property="og:description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
+    <meta property="og:description" content={plainify(descriptionProp ? descriptionProp : description)} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
 
@@ -106,13 +106,13 @@ const { site: { favicon, metaImage, metaAuthor, title, baseUrl }} = config
     <meta name="twitter:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
 
     <!-- twitter-description -->
-    <meta name="twitter:description" content={plainify(descriptionProp ? descriptionProp : metaDescription)} />
+    <meta name="twitter:description" content={plainify(descriptionProp ? descriptionProp : description)} />
 
     <!-- og-image -->
-    <meta property="og:image" content={`${baseUrl}${imageProp ? imageProp : metaImage}`} />
+    <meta property="og:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
 
     <!-- twitter-image -->
-    <meta name="twitter:image" content={`${baseUrl}${imageProp ? imageProp : metaImage}`} />
+    <meta name="twitter:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
     <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>
