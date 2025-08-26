@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/Notifycal/static-landing/compare/v1.14.2...v1.15.0) (2025-08-26)
+
+
+### Features
+
+* i18n after applying the template. ([#446](https://github.com/Notifycal/static-landing/issues/446)) ([9c36612](https://github.com/Notifycal/static-landing/commit/9c36612a6513d3cff90016691c6118f456c3dcc3))
+
 ## [1.14.2](https://github.com/Notifycal/static-landing/compare/v1.14.1...v1.14.2) (2025-08-26)
 
 
