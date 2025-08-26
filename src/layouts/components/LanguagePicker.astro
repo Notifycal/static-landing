@@ -32,13 +32,13 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
           title={languages[currentLang]}
           fetchpriority="high"
           decoding="async"
-          class="mr-1 inline h-[1lh] w-4 max-w-none"
+          class="mr-1 inline aspect-square h-6 w-6 max-w-none"
           src={flags[currentLang].src}
         />
       )
     }
     {variant === 'mobile' && languageMobileLabel}
-    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+    <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
     </svg>
   </span>
@@ -57,7 +57,7 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
                 title={label}
                 fetchpriority="high"
                 decoding="async"
-                class="mr-1 inline h-[1lh] w-4 max-w-none"
+                class="mr-1 inline aspect-square h-4 w-4 max-w-none"
                 src={flags[lang as keyof typeof languages].src}
               />
               {label}
