@@ -63,3 +63,11 @@ export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
     }
   );
 }
+
+export function getLanguageStaticPaths(): Array<{ params: { lang: string } }> {
+  return Object.keys(languages)
+    .filter((lang) => lang !== defaultLang || showDefaultLang)
+    .map((lang) => ({
+      params: { lang }
+    }));
+}
