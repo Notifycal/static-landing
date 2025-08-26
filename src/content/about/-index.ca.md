@@ -14,13 +14,13 @@ members:
   description: 'Som dos professionals apassionats per crear solucions que marquin una diferència real en les operacions diàries dels negocis.'
   memberList:
     - name: 'Daniel Sigüero García'
-      field: 'Co-fundador'
+      field: 'Cofundador'
       image: '/images/users/team-maria.webp'
       bio: "DevSecOps amb 12 anys d'experiència en desenvolupament de productes SaaS. Prèviament va treballar en projectes del govern del Regne Unit"
       linkedin: 'https://linkedin.com/in/dsiguero'
       github: 'https://github.com/dsiguero'
     - name: 'Sergio Martín Sánchez'
-      field: 'Co-fundador'
+      field: 'Cofundador'
       image: '/images/users/team-carlos.webp'
       bio: 'Especialista en DevOps en arquitectures escalables i APIs. Experiència construint sistemes distribuïts i treballant amb equips àgils.'
       linkedin: 'https://linkedin.com/in/sergio-martin-sanchez'
@@ -30,10 +30,12 @@ values:
   title: 'Els Nostres Valors'
   description: 'Els principis que guien cada decisió i desenvolupament a NotifyCal.'
   valuesList:
-    - title: 'Simplicitat'
-      content: 'Creiem que les millors solucions són les més simples. Dissenyem productes intuïtius que resolen problemes complexos sense afegir complicacions innecessàries.'
-    - title: 'Privacitat Primer'
-      content: 'Respectem i protegim la privacitat dels nostres usuaris. No emmagatzemem dades innecessàries i assegurem que tota la informació es maneja amb màxima seguretat.'
-    - title: 'Èxit del Client'
-      content: "El nostre èxit es mesura per l'èxit dels nostres clients. Cada característica que desenvolupem està dissenyada per proporcionar valor real i mesurable als negocis."
+    - title: 'Transparència'
+      content: 'Creiem en la comunicació honesta i directa. Sense lletra petita, sense sorpreses. La transparència és la base de la confiança, i la confiança és el fonament de tota relació duradora i reeixida.'
+    - title: 'Excel·lència'
+      content: 'Preferim fer les coses correctament abans que ràpidament. L’esforç conscient i la dedicació a cada detall no són només part del nostre treball, sinó una manera de contribuir a un món on la qualitat prevalgui sobre la mediocritat.'
+    - title: 'Aprenentatge Continu'
+      content: 'El món evoluciona constantment, i nosaltres també. La millora contínua no és només sobre tecnologia, és una filosofia de vida. Cada projecte, cada desafiament, cada error és una oportunitat per créixer i contribuir amb més valor a l’ecosistema que ens envolta.'
+    - title: 'Equilibri'
+      content: 'El treball és important, però la vida és més que treball. Creiem que l’equilibri entre treball i vida no és un luxe, sinó una necessitat per a la creativitat, la sostenibilitat i, en última instància, per fer d’aquest món un lloc millor per a tothom.'
 ---

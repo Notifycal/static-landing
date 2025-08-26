@@ -30,10 +30,12 @@ values:
   title: 'Our Values'
   description: 'The principles that guide every decision and development at NotifyCal.'
   valuesList:
-    - title: 'Simplicity'
-      content: 'We believe the best solutions are the simplest ones. We design intuitive products that solve complex problems without adding unnecessary complications.'
-    - title: 'Privacy First'
-      content: "We respect and protect our users' privacy. We do not store unnecessary data and ensure all information is handled with maximum security."
-    - title: 'Customer Success'
-      content: "Our success is measured by our customers' success. Every feature we develop is designed to provide real, measurable value to businesses."
+    - title: 'Transparency'
+      content: 'We believe in honest and direct communication. No small print, no surprises. Transparency is the foundation of trust, and trust is the bedrock of every lasting and successful relationship.'
+    - title: 'Excellence'
+      content: 'We prefer to do things properly rather than quickly. Conscious effort and dedication to every detail are not just part of our work, but a way of contributing to a world where quality prevails over mediocrity.'
+    - title: 'Continuous Learning'
+      content: 'The world evolves constantly, and so do we. Continuous improvement is not just about technology, it is a philosophy of life. Every project, every challenge, every mistake is an opportunity to grow and contribute more value to the ecosystem around us.'
+    - title: 'Balance'
+      content: 'Work is important, but life is more than work. We believe that work-life balance is not a luxury, but a necessity for creativity, sustainability, and ultimately, for making this world a better place for everyone.'
 ---
