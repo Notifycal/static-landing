@@ -10,7 +10,7 @@
     "preview": "$npm_execpath run build && astro preview",
     "dev": "$npm_execpath run dev:config && astro dev",
     "dev:config": "cp config/config.local.js public/config.js",
-    "lint": "eslint --env-info && eslint -c eslint.config.js",
+    "lint": "eslint -c eslint.config.js --debug",
     "lint:fix": "$npm_execpath run lint -- --fix",
     "prettier": "prettier . --check",
     "prettier:fix": "$npm_execpath run prettier -- --write",
