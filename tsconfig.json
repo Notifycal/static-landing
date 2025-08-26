@@ -15,9 +15,6 @@
     "target": "ES2024",
     "paths": {
       "@/components/*": ["./src/layouts/components/*"],
-      "@/shortcodes/*": ["src/layouts/react/shortcodes/*"],
-      "@/helpers/*": ["./src/layouts/helpers/*"],
-      "@/partials/*": ["./src/layouts/partials/*"],
       "@/*": ["./src/*"]
     }
   },
