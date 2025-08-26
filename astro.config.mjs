@@ -5,7 +5,6 @@ import { unpluginFonts } from '@notifycal/shared/theme';
 import { ourServiceConfigPlugin } from '@notifycal/shared/utils';
 import playformCompress from '@playform/compress';
 import tailwindcss from '@tailwindcss/vite';
-import AutoImport from 'astro-auto-import';
 import { defineConfig } from 'astro/config';
 import path from 'path';
 import remarkCollapse from 'remark-collapse';
@@ -38,21 +37,6 @@ export default defineConfig({
     }),
     react(),
     sitemap(),
-    AutoImport({
-      imports: [
-        '@/shortcodes/Button',
-        '@/shortcodes/Accordion',
-        '@/shortcodes/Notice',
-        '@/shortcodes/Video',
-        '@/shortcodes/Youtube',
-        '@/shortcodes/Blockquote',
-        '@/shortcodes/Badge',
-        '@/shortcodes/ContentBlock',
-        '@/shortcodes/Changelog',
-        '@/shortcodes/Tab',
-        '@/shortcodes/Tabs'
-      ]
-    }),
     mdx(),
     playformCompress({
       HTML: {
