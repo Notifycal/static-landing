@@ -1,22 +1,5 @@
 ---
-import Base from '@/layouts/Base.astro';
-import RoadmapHero from '@/layouts/components/roadmap/RoadmapHero.astro';
-import RoadmapTimeline from '@/layouts/components/roadmap/RoadmapTimeline.astro';
-import VotingCallToAction from '@/layouts/components/roadmap/VotingCallToAction.astro';
-import { getCollectionEntryByLang, getLangFromUrl } from '@/lib/i18n';
-
-const lang = getLangFromUrl(Astro.url);
-const roadmap = await getCollectionEntryByLang('roadmap', lang);
-const { intro, confirmedFeatures, potentialFeatures, votingCTA } = roadmap.data;
+import RoadmapPage from '@/layouts/pages/RoadmapPage.astro';
 ---
 
-<Base
-  title={roadmap.data.title}
-  metaTitle={roadmap.data.metaTitle}
-  description={roadmap.data.description}
-  image={roadmap.data.image}
->
-  <RoadmapHero intro={intro} />
-  <RoadmapTimeline confirmedFeatures={confirmedFeatures} potentialFeatures={potentialFeatures} />
-  <VotingCallToAction votingCTA={votingCTA} />
-</Base>
+<RoadmapPage />

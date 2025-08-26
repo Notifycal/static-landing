@@ -199,13 +199,6 @@ const headerCollection = defineCollection({
   })
 });
 
-const breadcrumbsCollection = defineCollection({
-  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/breadcrumbs' }),
-  schema: z.object({
-    home: z.string()
-  })
-});
-
 const siteCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/site' }),
   schema: z.object({
@@ -244,7 +237,6 @@ export const collections = {
   pages: pagesCollection,
   footer: footerCollection,
   header: headerCollection,
-  breadcrumbs: breadcrumbsCollection,
   site: siteCollection,
   navigation: navigationCollection
 };

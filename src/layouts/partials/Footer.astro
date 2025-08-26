@@ -4,7 +4,8 @@ import Social from '@/components/Social.astro';
 import config from '@/config/config.json';
 import social from '@/config/social.json';
 import CookieConsent from '@/layouts/components/CookieConsent.astro';
-import { getCollectionEntryByLang, getLangFromUrl } from '@/lib/i18n';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { markdownify } from '@/lib/utils/textConverter';
 
 const lang = getLangFromUrl(Astro.url);

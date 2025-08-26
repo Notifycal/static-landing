@@ -1,23 +1,5 @@
 ---
-import Faq from '@/components/Faq.astro';
-import Features from '@/components/Features.astro';
-import Pricing from '@/components/Pricing.astro';
-import Base from '@/layouts/Base.astro';
-import Banner from '@/layouts/components/Banner.astro';
-import Testimonial from '@/layouts/components/Testimonial.astro';
-import Cta from '@/layouts/partials/Cta.astro';
-import { getLangFromUrl, getCollectionEntryByLang } from '@/lib/i18n';
-
-const lang = getLangFromUrl(Astro.url);
-const homepage = await getCollectionEntryByLang('homepage', lang);
-const { banner, features, testimonial, faq, pricing } = homepage.data;
+import HomePage from '@/layouts/pages/HomePage.astro';
 ---
 
-<Base>
-  <Banner banner={banner} />
-  <Features features={features} />
-  <Pricing pricing={pricing} />
-  <Faq faq={faq} />
-  <Testimonial testimonial={testimonial} />
-  <Cta />
-</Base>
+<HomePage />

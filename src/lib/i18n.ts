@@ -1,26 +1,18 @@
 import type { LanguageCode } from '@notifycal/shared/types';
 import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:content';
+import { defaultLang, languages, showDefaultLang } from './i18n-const';
 
-export const languages: Record<LanguageCode, string> = {
-  en: 'English',
-  es: 'Español',
-  ca: 'Català'
-} as const;
-
-export const defaultLang: LanguageCode = 'es';
-
-export function getLangFromUrl(url: URL): LanguageCode {
-  const [, lang] = url.pathname.split('/');
-  if (lang in languages) {
-    return lang as LanguageCode;
-  }
-  return defaultLang;
+export function useTranslatedPath(lang: LanguageCode) {
+  return function translatePath(path: string, l: LanguageCode = lang): string {
+    return !showDefaultLang && l === defaultLang ? path : `/${l}${path === '/' ? '' : path}`;
+  };
 }
 
 function getLangFromEntryId(entryId: string): LanguageCode {
-  const match = entryId.match(/\.([a-z]{2})\.md$/);
+  const match = entryId.match(/-index([a-z]{2})$/);
   if (match && match[1] in languages) {
-    return match[1] as LanguageCode;
+    const detectedLang = match[1] as LanguageCode;
+    return detectedLang;
   }
   return defaultLang;
 }
@@ -29,18 +21,19 @@ function noLanguageRejection(collection: string, lang: LanguageCode, error?: unk
   return Promise.reject(new Error(`'${collection}' page content not found for language: ${lang}`, { cause: error }));
 }
 
-function getCollectionByLang<T extends keyof DataEntryMap>(
+async function getCollectionByLang<T extends keyof DataEntryMap>(
   collection: T,
   lang: LanguageCode
 ): Promise<Array<CollectionEntry<T>>> {
-  return getCollection(collection).then(
-    (entries) =>
-      entries.filter((entry) => {
-        const entryLang = getLangFromEntryId(entry.id);
-        return entryLang === lang;
-      }),
-    (error) => noLanguageRejection(collection, lang, error)
-  );
+  return getCollection(collection, (entry) => {
+    const entryLang = getLangFromEntryId(entry.id);
+    const matches = entryLang === lang;
+    return matches;
+  })
+    .then((entries) => {
+      return entries;
+    })
+    .catch((error) => noLanguageRejection(collection, lang, error));
 }
 
 export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
@@ -50,11 +43,13 @@ export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
   return getCollectionByLang(collection, lang).then(
     (entries) => {
       if (entries.length > 0) {
-        return entries[0];
+        const selectedEntry = entries[0];
+        return selectedEntry;
       } else if (lang !== defaultLang) {
         return getCollectionByLang(collection, defaultLang).then((fallbackEntries) => {
           if (fallbackEntries.length > 0) {
-            return fallbackEntries[0];
+            const selectedFallback = fallbackEntries[0];
+            return selectedFallback;
           } else {
             return noLanguageRejection(collection, lang);
           }
@@ -63,6 +58,8 @@ export function getCollectionEntryByLang<T extends keyof DataEntryMap>(
         return noLanguageRejection(collection, lang);
       }
     },
-    (error) => noLanguageRejection(collection, lang, error)
+    (error) => {
+      return noLanguageRejection(collection, lang, error);
+    }
   );
 }

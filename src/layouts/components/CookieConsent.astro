@@ -9,13 +9,15 @@ const { buttonSettingsText } = Astro.props;
 </a>
 
 <script>
-  import { denyAllGtag, gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
-  import { reset, run } from 'vanilla-cookieconsent';
+import { getLangFromUrl } from '@/lib/i18n-const';
+import { denyAllGtag, gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
+import { reset, run } from 'vanilla-cookieconsent';
 
   window.initializeCookieConsent = function () {
+    const lang = getLangFromUrl(new URL(window.location.href));
     document.body.classList.add('cc--theme');
     denyAllGtag();
-    run(gtagConsentConfig('es', updateAllGtagConsent));
+    run(gtagConsentConfig(lang, updateAllGtagConsent));
   };
 
   window.reinitializeCookieConsent = function () {

@@ -2,7 +2,7 @@
 main:
   - name: 'Inicio'
     url: '/'
-  - name: 'Acerca de'
+  - name: 'Sobre nosotros'
     url: '/about'
   - name: 'Roadmap'
     url: '/roadmap'
@@ -10,7 +10,7 @@ main:
 footer:
   - name: 'Inicio'
     url: '/'
-  - name: 'Acerca de'
+  - name: 'Sobre nosotros'
     url: '/about'
   - name: 'Roadmap'
     url: '/roadmap'

@@ -13,6 +13,7 @@ import remarkToc from 'remark-toc';
 import Unfonts from 'unplugin-fonts/astro';
 import { fileURLToPath } from 'url';
 import config from './src/config/config.json';
+import { defaultLang, languages, showDefaultLang } from './src/lib/i18n-const';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,6 +23,13 @@ export default defineConfig({
   base: config.site.basePath ? config.site.basePath : '/',
   trailingSlash: config.site.trailingSlash ? 'always' : 'never',
   vite: { plugins: [tailwindcss(), ourServiceConfigPlugin(dirname)] },
+  i18n: {
+    defaultLocale: defaultLang,
+    locales: Object.keys(languages),
+    routing: {
+      prefixDefaultLocale: showDefaultLang
+    }
+  },
   integrations: [
     Unfonts({
       google: {
