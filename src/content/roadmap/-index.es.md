@@ -36,8 +36,8 @@ votingCTA:
   title: 'Tu opinión importa'
   description: 'Ayúdanos a priorizar las características que más necesitas. Solo nuestros clientes pueden votar para asegurar que desarrollamos lo que realmente usarás.'
   buttonText: 'Colabora con nosotros'
-confirmed: "Confirmado"
-inDevelopment: "En desarrollo"
-planning: "Planeando"
-featureUnderConsideration: "Funcionalidad en consideración"
+confirmed: 'Confirmado'
+inDevelopment: 'En desarrollo'
+planning: 'Planeando'
+featureUnderConsideration: 'Funcionalidad en consideración'
 ---

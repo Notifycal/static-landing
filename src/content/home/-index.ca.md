@@ -165,8 +165,8 @@ testimonial:
       reference:
         displayName: 'Bilbao'
 
-cta: 
-  title: "Llest per automatitzar els teus recordatoris?"
+cta:
+  title: 'Llest per automatitzar els teus recordatoris?'
   description: "Uneix-te a centenars de professionals que ja han eliminat les faltes dels seus clients. Comença gratis i millora l'eficiència del teu negoci avui mateix."
-  buttonLabel: "Provar Gratis"
+  buttonLabel: 'Provar Gratis'
 ---

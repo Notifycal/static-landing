@@ -30,7 +30,7 @@ const { votingCTA } = Astro.props;
       </div>
     </div>
   </div>
-   <script is:inline>
+  <script is:inline>
     function setupVotingCtaButton() {
       window.onServiceConfigReady((frontendUrl) => {
         const ctaButton = document.getElementById('voting-cta-button');
@@ -39,7 +39,7 @@ const { votingCTA } = Astro.props;
         }
       }, 'FRONTEND_URL');
     }
-    
+
     document.addEventListener('astro:page-load', setupVotingCtaButton);
     setupVotingCtaButton();
   </script>

@@ -166,7 +166,7 @@ testimonial:
         displayName: 'Bilbao'
 
 cta:
-  title: "¿Listo para automatizar tus recordatorios?"
-  description: "Únete a cientos de profesionales que ya han eliminado las faltas de sus clientes. Comienza gratis y mejora la eficiencia de tu negocio hoy mismo."
-  buttonLabel: "Probar Gratis"
+  title: '¿Listo para automatizar tus recordatorios?'
+  description: 'Únete a cientos de profesionales que ya han eliminado las faltas de sus clientes. Comienza gratis y mejora la eficiencia de tu negocio hoy mismo.'
+  buttonLabel: 'Probar Gratis'
 ---

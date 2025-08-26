@@ -36,8 +36,8 @@ votingCTA:
   title: 'Your opinion matters'
   description: "Help us prioritise the features you need most. Only our customers can vote to ensure we develop what you'll actually use."
   buttonText: 'Collaborate with us'
-confirmed: "Confirmed"
-inDevelopment: "In development"
-planning: "Planning"
-featureUnderConsideration: "Feature under consideration"
+confirmed: 'Confirmed'
+inDevelopment: 'In development'
+planning: 'Planning'
+featureUnderConsideration: 'Feature under consideration'
 ---

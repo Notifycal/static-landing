@@ -1,3 +1,3 @@
 ---
-description: "Reminders and notifications for your clients, and yourself."
+description: 'Reminders and notifications for your clients, and yourself.'
 ---

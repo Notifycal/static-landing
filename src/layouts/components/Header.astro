@@ -19,7 +19,9 @@ export interface NavigationLink {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const { data: { signIn, languageMobileLabel } } = await getCollectionEntryByLang('header', lang);
+const {
+  data: { signIn, languageMobileLabel }
+} = await getCollectionEntryByLang('header', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
 const translatePath = useTranslatedPath(lang);
 

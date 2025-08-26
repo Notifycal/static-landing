@@ -13,7 +13,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
 
 export interface Props {
   variant: 'mobile' | 'desktop';
-  languageMobileLabel?: string
+  languageMobileLabel?: string;
   currentLang?: keyof typeof languages;
   className?: string;
 }
@@ -23,22 +23,26 @@ const { variant, languageMobileLabel, currentLang, className = '' } = Astro.prop
 
 <div class={`nav-item nav-dropdown group dropdown-button relative cursor-pointer ${className}`}>
   <span class="nav-link inline-flex items-center">
-    {variant === 'desktop' && currentLang && (
-      <img
-        alt={languages[currentLang]}
-        title={languages[currentLang]}
-        fetchpriority="high"
-        decoding="async"
-        class="mr-1 inline h-[1lh] w-4 max-w-none"
-        src={flags[currentLang].src}
-      />
-    )}
+    {
+      variant === 'desktop' && currentLang && (
+        <img
+          alt={languages[currentLang]}
+          title={languages[currentLang]}
+          fetchpriority="high"
+          decoding="async"
+          class="mr-1 inline h-[1lh] w-4 max-w-none"
+          src={flags[currentLang].src}
+        />
+      )
+    }
     {variant === 'mobile' && languageMobileLabel}
     <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
     </svg>
   </span>
-  <ul class="nav-dropdown-list mx-auto hidden duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 bg-white border border-border rounded-lg shadow-lg">
+  <ul
+    class="nav-dropdown-list border-border mx-auto hidden rounded-lg border bg-white shadow-lg duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+  >
     {
       Object.entries(languages).map(([lang, label]) => (
         <li class="nav-dropdown-item">

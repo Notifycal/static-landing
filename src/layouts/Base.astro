@@ -12,8 +12,12 @@ import { getLangFromUrl } from '@/lib/i18n-const';
 
 const { titleProp, metaTitleProp, descriptionProp, imageProp, noindexProp, canonicalProp } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const { data: { description }} = await getCollectionEntryByLang('site', lang);
-const { site: { favicon, image, author, title, baseUrl }} = config
+const {
+  data: { description }
+} = await getCollectionEntryByLang('site', lang);
+const {
+  site: { favicon, image, author, title, baseUrl }
+} = config;
 ---
 
 <!doctype html>
@@ -23,7 +27,7 @@ const { site: { favicon, image, author, title, baseUrl }} = config
     <!-- google font css -->
     <Unfont />
     <script is:inline>
-      window.onServiceConfigReady = function(callback, configKey) {
+      window.onServiceConfigReady = function (callback, configKey) {
         function executeCallback() {
           if (window.serviceConfig) {
             const configValue = window.serviceConfig[configKey];
@@ -32,7 +36,7 @@ const { site: { favicon, image, author, title, baseUrl }} = config
             }
           }
         }
-        
+
         if (window.serviceConfig) {
           executeCallback();
         } else {

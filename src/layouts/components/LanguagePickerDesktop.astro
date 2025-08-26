@@ -6,4 +6,9 @@ const lang = getLangFromUrl(Astro.url);
 const { languageMobileLabel } = Astro.props;
 ---
 
-<LanguagePicker variant="desktop" languageMobileLabel={languageMobileLabel} currentLang={lang} className="hidden lg:block" />
+<LanguagePicker
+  variant="desktop"
+  languageMobileLabel={languageMobileLabel}
+  currentLang={lang}
+  className="hidden lg:block"
+/>

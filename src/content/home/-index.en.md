@@ -166,7 +166,7 @@ testimonial:
         displayName: 'Bilbao'
 
 cta:
-  title: "Ready to automate your reminders?"
-  description: "Join hundreds of professionals who have already eliminated client no-shows. Start free and improve your business efficiency today."
-  buttonLabel: "Try Free"
+  title: 'Ready to automate your reminders?'
+  description: 'Join hundreds of professionals who have already eliminated client no-shows. Start free and improve your business efficiency today.'
+  buttonLabel: 'Try Free'
 ---
