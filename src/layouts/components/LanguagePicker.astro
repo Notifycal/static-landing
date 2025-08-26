@@ -1,5 +1,5 @@
 ---
-import { defaultLang, languages, showDefaultLang } from '@/lib/i18n-const';
+import { defaultLang, getPathWithoutLang, languages, showDefaultLang } from '@/lib/i18n-const';
 import caFlag from '@notifycal/shared/assets/icons/lang/ca.svg';
 import esFlag from '@notifycal/shared/assets/icons/lang/es.svg';
 import enFlag from '@notifycal/shared/assets/icons/lang/gb.svg';
@@ -15,10 +15,12 @@ export interface Props {
   variant: 'mobile' | 'desktop';
   languageMobileLabel?: string;
   currentLang?: keyof typeof languages;
+  currentUrl?: URL;
   className?: string;
 }
 
-const { variant, languageMobileLabel, currentLang, className = '' } = Astro.props;
+const { variant, languageMobileLabel, currentLang, currentUrl, className = '' } = Astro.props;
+const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
 ---
 
 <div class={`nav-item nav-dropdown group dropdown-button relative cursor-pointer ${className}`}>
@@ -44,21 +46,25 @@ const { variant, languageMobileLabel, currentLang, className = '' } = Astro.prop
     class="nav-dropdown-list border-border mx-auto hidden rounded-lg border bg-white shadow-lg duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[13.5rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
   >
     {
-      Object.entries(languages).map(([lang, label]) => (
-        <li class="nav-dropdown-item">
-          <a href={lang == defaultLang && !showDefaultLang ? '/' : `/${lang}`} class="nav-dropdown-link block">
-            <img
-              alt={label}
-              title={label}
-              fetchpriority="high"
-              decoding="async"
-              class="mr-1 inline h-[1lh] w-4 max-w-none"
-              src={flags[lang as keyof typeof languages].src}
-            />
-            {label}
-          </a>
-        </li>
-      ))
+      Object.entries(languages).map(([lang, label]) => {
+        const langPath = lang === defaultLang && !showDefaultLang ? '' : `/${lang}`;
+        const href = currentPath === '/' ? langPath || '/' : `${langPath}${currentPath}`;
+        return (
+          <li class="nav-dropdown-item">
+            <a href={href} class="nav-dropdown-link block">
+              <img
+                alt={label}
+                title={label}
+                fetchpriority="high"
+                decoding="async"
+                class="mr-1 inline h-[1lh] w-4 max-w-none"
+                src={flags[lang as keyof typeof languages].src}
+              />
+              {label}
+            </a>
+          </li>
+        );
+      })
     }
   </ul>
 </div>
