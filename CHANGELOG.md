@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/Notifycal/static-landing/compare/v1.14.1...v1.14.2) (2025-08-26)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.7.1 ([#432](https://github.com/Notifycal/static-landing/issues/432)) ([7d01a97](https://github.com/Notifycal/static-landing/commit/7d01a9748972653168eb89c56ba3691ae4b2cc97))
+
 ## [1.14.1](https://github.com/Notifycal/static-landing/compare/v1.14.0...v1.14.1) (2025-08-26)
 
 
