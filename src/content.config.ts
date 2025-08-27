@@ -7,7 +7,6 @@ const homeCollection = defineCollection({
     banner: z.object({
       title: z.string(),
       content: z.string().optional(),
-      image: z.string(),
       button: z
         .object({
           label: z.string(),

@@ -31,5 +31,6 @@ const { feature, index } = Astro.props;
   <div class={`lg:col-7 ${index % 2 === 0 ? 'lg:order-0' : 'lg:order-1'}`}>
     <div class="relative">
       <Image class="w-full object-contain" alt="service" width={667} height={498} src={feature.image} />
+    </div>
   </div>
 </div>

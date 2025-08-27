@@ -7,17 +7,17 @@
 }
 
 .btn-primary {
-  @apply border-0 bg-primary text-white hover:bg-primary/90 hover:shadow-primary-200/90;
+  @apply bg-primary hover:bg-primary/90 hover:shadow-primary-200/90 border-0 text-white;
 }
 
 .btn-outline-primary {
-  @apply border-primary text-text-dark relative bg-transparent hover:bg-primary hover:text-white hover:shadow-primary-200/90 border-2;
+  @apply border-primary text-text-dark hover:bg-primary hover:shadow-primary-200/90 relative border-2 bg-transparent hover:text-white;
 }
 
 .btn-white {
-  @apply text-text-dark min-w-[150px] border-white bg-white hover:shadow-primary-200/20 hover:text-text-dark;
+  @apply text-text-dark hover:shadow-primary-200/20 hover:text-text-dark min-w-[150px] border-white bg-white;
 }
 
 .btn-outline-white {
-  @apply text-white bg-transparent border-2 border-white hover:bg-white hover:text-text-dark;
+  @apply hover:text-text-dark border-2 border-white bg-transparent text-white hover:bg-white;
 }

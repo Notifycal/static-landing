@@ -48,5 +48,5 @@ code {
 }
 
 a {
-  @apply cursor-pointer hover:underline font-medium;
+  @apply cursor-pointer font-medium hover:underline;
 }
