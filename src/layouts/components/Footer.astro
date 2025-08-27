@@ -9,7 +9,7 @@ import { markdownify } from '@/lib/utils/textConverter';
 
 const lang = getLangFromUrl(Astro.url);
 const {
-  data: { description, copyright, socialsTitle, quickLinksTitle, locationContactTitle, location }
+  data: { description, copyright, socialsTitle, quickLinksTitle, locationContactTitle, location, feedback }
 } = await getCollectionEntryByLang('footer', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
 ---
@@ -54,10 +54,7 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
             <a href="https://maps.app.goo.gl/ZSm6CzY6wzDhJn9BA" target="_blank">{location}</a>
           </li>
           <li class="mb-2">
-            <a
-              class="hover:text-primary mb-2"
-              href={encodeURI(`https://privatedev.notifycal.com/#/?redirect=/feedback`)}>Feedback</a
-            >
+            <a id="feedback-link" class="hover:text-primary mb-2">{feedback}</a>
           </li>
         </ul>
       </div>
@@ -69,3 +66,16 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
     </div>
   </div>
 </footer>
+<script is:inline>
+  function setupFeedbackLink() {
+    window.onServiceConfigReady((frontendUrl) => {
+      const feedbackLink = document.getElementById('feedback-link');
+      if (feedbackLink && frontendUrl) {
+        feedbackLink.href = encodeURI(`${frontendUrl}/#/?redirect=/feedback`);
+      }
+    }, 'FRONTEND_URL');
+  }
+
+  document.addEventListener('astro:page-load', setupFeedbackLink);
+  setupFeedbackLink();
+</script>

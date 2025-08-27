@@ -201,7 +201,8 @@ const footerCollection = defineCollection({
     socialsTitle: z.string(),
     quickLinksTitle: z.string(),
     locationContactTitle: z.string(),
-    location: z.string()
+    location: z.string(),
+    feedback: z.string()
   })
 });
 

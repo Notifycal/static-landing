@@ -5,4 +5,5 @@ socialsTitle: 'Socials'
 quickLinksTitle: 'Quick Links'
 locationContactTitle: 'Location & Contact'
 location: 'Madrid, Spain'
+feedback: 'Feedback'
 ---

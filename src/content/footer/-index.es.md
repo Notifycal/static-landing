@@ -5,4 +5,5 @@ socialsTitle: 'Redes sociales'
 quickLinksTitle: 'Enlaces rápidos'
 locationContactTitle: 'Ubicación y Contacto'
 location: 'Madrid, España'
+feedback: 'Feedback'
 ---
