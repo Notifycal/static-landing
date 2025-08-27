@@ -113,24 +113,20 @@
 }
 
 /* accordion */
-.accordion {
-  background-color: #fff;
-}
-
 .accordion-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   cursor: pointer;
-  font-size: 1.6rem;
 }
 
 .accordion-icon {
-  width: 0.78em;
-  height: 0.78em;
+  width: 0.9em;
+  height: 0.9em;
   transform: rotate(0deg);
   transition: transform 0.2s ease;
+  @apply text-white font-bold 
 }
 
 .accordion-content {

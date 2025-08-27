@@ -64,16 +64,22 @@ faq:
   title: Preguntes freqüents
   description: Resol els dubtes més comuns sobre el nostre servei de recordatoris automàtics.
   faqList:
-    - title: Com funciona la facturació per crèdits?
-      content: Cada SMS costa 1 crèdit i cada email 0.1 crèdits. Només pagues pel que uses. Si s'esgoten, el servei es pausa fins que recarreguis. Pots activar recàrrega automàtica o comprar paquets amb descompte.
+    - title: Puc provar el servei abans de pagar?
+      content: Sí. Registra't amb el teu compte de Google i envia't un recordatori demo gratuït al teu número. Així veus exactament el que rebran els teus clients.
     - title: Quant de temps porta configurar Notifycal?
-      content: Menys de 5 minuts. Conectes el teu Google Calendar, tries quins calendaris sincronitzar, personalitzes les teves plantilles de missatges i ja està. Els recordatoris comencen automàticament.
-    - title: Puc usar els meus propis textos i horaris?
-      content: Completament personalitzable. Defineix quan enviar recordatoris (24h, 2h abans, etc.), crea plantilles per tipus de servei, i personalitza el contingut amb variables com nom, data i notes especials.
+      content: Només un parell de minuts. Després d'iniciar sessió amb el teu compte de Google tries, com a mínim, un calendari que vulguis usar, estil de recordatori i el remitent de l'SMS. El remitent d'SMS és un ID alfanumèric (només lletres i números) de fins a 11 caràcters. I ja està, tot a punt perquè tu et concentris en el teu negoci i nosaltres recordem als teus clients les seves cites.
     - title: Què passa si cancel·lo una cita al meu calendari?
       content: Els recordatoris es cancel·len automàticament. La sincronització és bidireccional i en temps real, per tant qualsevol canvi al teu calendari es reflecteix immediatament a Notifycal.
-    - title: Funciona amb altres calendaris a més de Google?
-      content: Actualment ens centrem en Google Calendar per la seva àmplia adopció i robusta API. Si uses un altre calendari, molts permeten sincronització amb Google Calendar com a solució intermèdia.
+    - title: Com es cobren els recordatoris?
+      content: Cada recordatori enviat consumeix una quantitat de crèdits depenent del país del telèfon de destinació. Si el missatge ocupa més d'una part, es multiplica pel número de parts.
+    - title: Rebré avisos si el meu saldo és baix?
+      content: Sí. T'avisem per email quan baixis de 25 crèdits. I de nou quan un enviament falla per falta de saldo.
+    - title: Puc comprar crèdits extra?
+      content: Sí, sempre que tinguis una subscripció activa. Tots els que vulguis, però no es pot automatitzar la compra dels mateixos. En ocasions, recomanem pujar al tier superior per una tranquil·litat extra.
+    - title: Com es gestionen els meus pagaments?
+      content: Amb Stripe, una de les passarel·les més segures. No emmagatzemem les teves dades de pagament.
+    - title: Rebré factura?
+      content: Sí, descarregable des del teu panell de control. Assegura't de proporcionar les dades fiscals en el moment de compra, o posteriorment, des de l'Àrea Privada.
 
 testimonial:
   title: Els nostres clients ja estan gaudint dels beneficis

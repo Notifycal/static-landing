@@ -64,16 +64,22 @@ faq:
   title: Preguntas frecuentes
   description: Resuelve las dudas más comunes sobre nuestro servicio de recordatorios automáticos.
   faqList:
-    - title: ¿Cómo funciona la facturación por créditos?
-      content: Cada SMS cuesta 1 crédito y cada email 0.1 créditos. Solo pagas por lo que usas. Si se agotan, el servicio se pausa hasta que recargues. Puedes activar recarga automática o comprar paquetes con descuento.
+    - title: ¿Puedo probar el servicio antes de pagar?
+      content: Sí. Regístrate con tu cuenta de Google y envíate un recordatorio demo gratuito a tu número. Así ves exactamente lo que recibirán tus clientes.
     - title: ¿Cuánto tiempo lleva configurar Notifycal?
-      content: Menos de 5 minutos. Conectas tu Google Calendar, eliges qué calendarios sincronizar, personalizas tus plantillas de mensajes y ya está. Los recordatorios comienzan automáticamente.
-    - title: ¿Puedo usar mis propios textos y horarios?
-      content: Completamente personalizable. Define cuándo enviar recordatorios (24h, 2h antes, etc.), crea plantillas por tipo de servicio, y personaliza el contenido con variables como nombre, fecha y notas especiales.
+      content: Solo un par de minutos. Después de loguearte con tu cuenta de Google eliges, al menos, un calendario que quieras usar, estilo de recordatorio y el remitente del SMS. El remitente de SMS se trata de ID alfanumérico (solo letras y números) de hasta 11 caracteres. Y ya está, todo listo para que tú te enfoques en tu negocio y nosotros recordemos a tus clientes de sus citas.
     - title: ¿Qué pasa si cancelo una cita en mi calendario?
       content: Los recordatorios se cancelan automáticamente. La sincronización es bidireccional y en tiempo real, por lo que cualquier cambio en tu calendario se refleja inmediatamente en Notifycal.
-    - title: ¿Funciona con otros calendarios además de Google?
-      content: Actualmente nos enfocamos en Google Calendar por su amplia adopción y robusta API. Si usas otro calendario, muchos permiten sincronización con Google Calendar como solución intermedia.
+    - title: ¿Cómo se cobran los recordatorios?
+      content: Cada recordatorio enviado consume una cantidad de créditos dependiendo del país del teléfono destino. Si el mensaje ocupa más de una parte, se multiplica por el número de partes.
+    - title: ¿Recibiré avisos si mi saldo es bajo?
+      content: Sí. Te avisamos por email cuando bajes de 25 créditos. Y de nuevo cuando un envío falla por falta de saldo.
+    - title: ¿Puedo comprar créditos extra?
+      content: Sí, siempre que tengas una suscripción activa. Cuantos quieras, pero no se puede automatizar la compra de los mismos. En ocasiones, recomendamos subir a la tier superior para un extra de tranquilidad.
+    - title: ¿Cómo se gestionan mis pagos?
+      content: Con Stripe, una de las pasarelas más seguras. No almacenamos tus datos de pago.
+    - title: ¿Recibiré factura?
+      content: Sí, descargable en tu panel de control. Asegúrate de proporcionar los datos fiscales en el momento de compra, o posteriormente, desde el Área Privada.
 
 testimonial:
   title: Nuestros clientes ya están disfrutando de los beneficios
