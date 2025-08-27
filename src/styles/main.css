@@ -10,13 +10,13 @@
 
   --color-primary: var(--color-primary-500);
   --color-secondary: var(--color-secondary-500);
-  --color-body: #fafafa;
-  --color-border: #ebebeb;
-  --color-light: #e5e5e5;
-  --color-dark: #1a202c;
-  --color-text: #888888;
-  --color-text-dark: #222;
-  --color-text-light: #ceced0;
+  --color-body: var(--color-background);
+  --color-border: var(--color-neutral-200);
+  --color-light: var(--color-neutral-300);
+  --color-dark: var(--color-neutral-800);
+  --color-text: var(--color-text-secondary);
+  --color-text-dark: var(--color-text-primary);
+  --color-text-light: var(--color-neutral-300);
   --color-transparent: transparent;
 }
 

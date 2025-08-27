@@ -39,7 +39,7 @@
 }
 
 .nav-dropdown-list {
-  @apply border-primary/25 bg-primary/5 z-10 mx-auto mt-4 ml-1 max-w-[150px] rounded-lg border-0 border-solid px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-[0_0.9rem_1.56rem_rgb(0,0,0,0.1)];
+  @apply border-primary/25 bg-primary/5 z-10 mx-auto ml-1 max-w-[150px] rounded-lg border-0 border-solid px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-neutral-900/10;
 }
 
 .nav-dropdown-item {

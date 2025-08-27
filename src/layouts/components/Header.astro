@@ -104,14 +104,16 @@ const { pathname } = Astro.url;
           </>
         ))
       }
-      <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
-      <li class="nav-item mt-2 lg:hidden">
-        <a id="signin-button-md" class="btn btn-white btn-sm border-border">{signIn}</a>
+      <li class="nav-item lg:hidden">
+        <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
+      </li>
+      <li class="nav-item mt-3 lg:hidden">
+        <a id="signin-button-md" class="btn btn-primary btn-sm border-border">{signIn}</a>
       </li>
     </ul>
     <div class="order-1 ml-auto flex items-center space-x-3 md:order-2 md:ml-0">
       <LanguagePickerDesktop />
-      <a id="signin-button-lg" class="btn btn-white btn-sm hidden lg:block">{signIn}</a>
+      <a id="signin-button-lg" class="btn btn-primary btn-sm hidden lg:block">{signIn}</a>
     </div>
   </nav>
 </header>

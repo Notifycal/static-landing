@@ -1,31 +1,23 @@
 .btn {
-  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-medium capitalize shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:no-underline hover:shadow-xl;
+  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-medium capitalize shadow-lg transition-all duration-300 hover:-translate-y-1 hover:no-underline hover:shadow-xl;
 }
-/* .btn {
-  @apply border-border border text-sm;
-} */
-/* btn btn-white text-primary inline-flex transform items-center bg-white  */
 
 .btn-sm {
   @apply h-[42px] leading-[24px];
 }
 
 .btn-primary {
-  @apply border-0 bg-gradient-to-tl text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)];
+  @apply border-0 bg-primary text-white hover:bg-primary/90 hover:shadow-primary-200/90;
 }
 
 .btn-outline-primary {
-  @apply border-primary text-text-dark relative bg-transparent hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
-}
-
-.btn-outline-primary::before {
-  @apply absolute top-0 right-0 bottom-0 left-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
+  @apply border-primary text-text-dark relative bg-transparent hover:bg-primary hover:text-white hover:shadow-primary-200/90 border-2;
 }
 
 .btn-white {
-  @apply text-text-dark min-w-[150px] border-white bg-white;
+  @apply text-text-dark min-w-[150px] border-white bg-white hover:shadow-primary-200/20 hover:text-text-dark;
 }
 
 .btn-outline-white {
-  @apply text-text-dark bg-transparent;
+  @apply text-white bg-transparent border-2 border-white hover:bg-white hover:text-text-dark;
 }
