@@ -1,6 +1,6 @@
 ---
 import { markdownify } from '@/lib/utils/textConverter';
-import { Image } from 'astro:assets';
+import HeroSvg from '@/components/HeroSvg.astro';
 const { hero } = Astro.props;
 const { title, button, content } = hero;
 ---
@@ -20,7 +20,7 @@ const { title, button, content } = hero;
         }
       </div>
       <div class="lg:col-6">
-        <Image class="w-full object-contain" alt="banner" src="/images/hero.svg" width={603} height={396} />
+        <HeroSvg class="w-full object-contain" width={603} height={396} />
       </div>
     </div>
   </div>
