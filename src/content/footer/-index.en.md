@@ -1,7 +1,8 @@
 ---
 description: 'Focus on your business, we will take care of the rest.'
-copyright: '© 2025 Notifycal. All rights reserved.'
-socials: 'Socials'
-quickLinks: 'Quick Links'
-locationContact: 'Location & Contact'
+copyright: 'Notifycal. All rights reserved.'
+socialsTitle: 'Socials'
+quickLinksTitle: 'Quick Links'
+locationContactTitle: 'Location & Contact'
+location: 'Madrid, Spain'
 ---

@@ -1,7 +1,6 @@
 ---
 import Logo from '@/components/Logo.astro';
 import Social from '@/components/Social.astro';
-import config from '@/config/config.json';
 import social from '@/config/social.json';
 import CookieConsent from '@/layouts/components/CookieConsent.astro';
 import { getCollectionEntryByLang } from '@/lib/i18n';
@@ -10,10 +9,9 @@ import { markdownify } from '@/lib/utils/textConverter';
 
 const lang = getLangFromUrl(Astro.url);
 const {
-  data: { description, copyright, socials, quickLinks, locationContact }
+  data: { description, copyright, socialsTitle, quickLinksTitle, locationContactTitle, location }
 } = await getCollectionEntryByLang('footer', lang);
 const navigation = await getCollectionEntryByLang('navigation', lang);
-const { location, email, phone } = config.params;
 ---
 
 <footer class="footer bg-secondary-700 text-text-light">
@@ -26,12 +24,11 @@ const { location, email, phone } = config.params;
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{socials}</h6>
-
+        <h6>{socialsTitle}</h6>
         <Social source={social} className="social-icons mt-4 lg:mt-6" />
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{quickLinks}</h6>
+        <h6>{quickLinksTitle}</h6>
         <ul>
           {
             navigation.data.footer.map((item, i) => (
@@ -47,14 +44,13 @@ const { location, email, phone } = config.params;
         </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>{locationContact}</h6>
+        <h6>{locationContactTitle}</h6>
         <ul>
-          <li class="mb-2">{location}</li>
           <li class="mb-2">
-            <a class="hover:text-primary mb-2" href={`mailto:${email}`}>{email}</a>
+            <a href="https://maps.app.goo.gl/ZSm6CzY6wzDhJn9BA" target="_blank">{location}</a>
           </li>
-          <li>
-            <a class="hover:text-primary" href={`tel:${phone}`}>{phone}</a>
+          <li class="mb-2">
+            <a class="hover:text-primary mb-2" href={encodeURI(`https://privatedev.notifycal.com/#/?redirect=/feedback`)}>Feedback</a>
           </li>
         </ul>
       </div>
@@ -62,7 +58,7 @@ const { location, email, phone } = config.params;
   </div>
   <div class="container max-w-[1440px]">
     <div class="footer-copyright border-border mx-auto border-t pt-7 pb-10 text-center">
-      <p class="content text-text-dark" set:html={markdownify(copyright)} />
+      <p set:html={"© " + new Date().getFullYear() + " " + markdownify(copyright)} />
     </div>
   </div>
 </footer>

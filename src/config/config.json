@@ -14,11 +14,5 @@
   "settings": {
     "pagination": 6,
     "summaryLength": 100
-  },
-  "params": {
-    "email": "info@notifycal.com",
-    "location": "Madrid, Spain",
-    "phone": "",
-    "contactFormAction": "#"
   }
 }

@@ -199,9 +199,10 @@ const footerCollection = defineCollection({
   schema: z.object({
     description: z.string(),
     copyright: z.string(),
-    socials: z.string(),
-    quickLinks: z.string(),
-    locationContact: z.string()
+    socialsTitle: z.string(),
+    quickLinksTitle: z.string(),
+    locationContactTitle: z.string(),
+    location: z.string()
   })
 });
 
