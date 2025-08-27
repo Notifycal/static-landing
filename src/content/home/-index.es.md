@@ -1,8 +1,7 @@
 ---
-banner:
+hero:
   title: '¿Pierdes tiempo enviando recordatorios manualmente?'
   content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.'
-  image: /images/hero.webp
   button:
     enable: true
     label: Empezar Gratis

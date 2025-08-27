@@ -4,7 +4,7 @@ import { defineCollection, z } from 'astro:content';
 const homeCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/home' }),
   schema: z.object({
-    banner: z.object({
+    hero: z.object({
       title: z.string(),
       content: z.string().optional(),
       button: z

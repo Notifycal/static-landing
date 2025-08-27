@@ -1,8 +1,7 @@
 ---
-banner:
+hero:
   title: 'Perds temps enviant recordatoris manualment?'
   content: 'Nosaltres ens encarreguem de recordar les cites als teus clients perquè tu puguis centrar-te en el que realment importa: fer créixer el teu negoci.'
-  image: /images/banner-img-replaceme.webp
   button:
     enable: true
     label: Començar Gratis

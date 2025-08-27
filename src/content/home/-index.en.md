@@ -1,8 +1,7 @@
 ---
-banner:
+hero:
   title: 'Are you wasting time sending manual reminders?'
   content: 'We take care of reminding your clients about their appointments so you can focus on what really matters: growing your business.'
-  image: /images/hero.webp
   button:
     enable: true
     label: Start Free
