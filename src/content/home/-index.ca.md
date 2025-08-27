@@ -2,7 +2,7 @@
 banner:
   title: 'Perds temps enviant recordatoris manualment?'
   content: 'Nosaltres ens encarreguem de recordar les cites als teus clients perquè tu puguis centrar-te en el que realment importa: fer créixer el teu negoci.'
-  image: /images/banner-img.webp
+  image: /images/banner-img-replaceme.webp
   button:
     enable: true
     label: Començar Gratis
@@ -15,32 +15,32 @@ features:
     tabList:
       - title: Connexió directa amb calendaris
         icon: 'calendar'
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
       - title: Accés en temps real a contactes
         icon: 'users'
-        image: '/images/sells-by-country.webp'
+        image: '/images/sells-by-country-replaceme.webp'
       - title: Enviament automàtic per múltiples canals
         icon: 'mail'
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
 
   ourFeatures:
     - title: Integració nativa amb Google Calendar
       description: Sincronitza automàticament totes les teves cites des de Google Calendar. Els recordatoris s'envien basant-se en la teva agenda real, sense configuració manual.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Sincronització bidireccional en temps real
         - Compatible amb múltiples calendaris
         - Configuració de recordatoris personalitzables
     - title: Accés directe a Google Contacts
       description: Connecta amb Google Contacts en temps real per accedir a la informació dels teus clients quan sigui necessari, sense emmagatzemar ni duplicar dades.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Accés en viu a contactes
         - Sense emmagatzematge local de dades
         - Privacitat i seguretat garantida
     - title: Canals múltiples de comunicació
       description: Envia recordatoris per SMS i email a través dels nostres proveïdors optimitzats per a màxima entrega i confiabilitat.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - SMS amb entrega garantida
         - Emails professionals personalitzables

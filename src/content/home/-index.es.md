@@ -2,7 +2,7 @@
 banner:
   title: '¿Pierdes tiempo enviando recordatorios manualmente?'
   content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.'
-  image: /images/banner-img.webp
+  image: /images/banner-img-replaceme.webp
   button:
     enable: true
     label: Empezar Gratis
@@ -15,32 +15,32 @@ features:
     tabList:
       - title: Conexión directa con calendarios
         icon: 'calendar' #icon package react-feather-icon
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
       - title: Acceso en tiempo real a contactos
         icon: 'users' #icon package react-feather-icon
-        image: '/images/sells-by-country.webp'
+        image: '/images/sells-by-country-replaceme.webp'
       - title: Envío automático por múltiples canales
         icon: 'mail' #icon package react-feather-icon
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
 
   ourFeatures:
     - title: Integración nativa con Google Calendar
       description: Sincroniza automáticamente todas tus citas desde Google Calendar. Los recordatorios se envían basándose en tu agenda real, sin configuración manual.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Sincronización bidireccional en tiempo real
         - Compatible con múltiples calendarios
         - Configuración de recordatorios personalizables
     - title: Acceso directo a Google Contacts
       description: Conecta con Google Contacts en tiempo real para acceder a la información de tus clientes cuando sea necesario, sin almacenar ni duplicar datos.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Acceso en vivo a contactos
         - Sin almacenamiento local de datos
         - Privacidad y seguridad garantizada
     - title: Canales múltiples de comunicación
       description: Envía recordatorios por SMS y email a través de nuestros proveedores optimizados para máxima entrega y confiabilidad.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - SMS con entrega garantizada
         - Emails profesionales personalizables

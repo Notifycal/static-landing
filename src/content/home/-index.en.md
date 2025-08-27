@@ -2,7 +2,7 @@
 banner:
   title: 'Are you wasting time sending manual reminders?'
   content: 'We take care of reminding your clients about their appointments so you can focus on what really matters: growing your business.'
-  image: /images/banner-img.webp
+  image: /images/banner-img-replaceme.webp
   button:
     enable: true
     label: Start Free
@@ -15,32 +15,32 @@ features:
     tabList:
       - title: Direct calendar connection
         icon: 'calendar'
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
       - title: Real-time contact access
         icon: 'users'
-        image: '/images/sells-by-country.webp'
+        image: '/images/sells-by-country-replaceme.webp'
       - title: Automatic multi-channel sending
         icon: 'mail'
-        image: '/images/collaboration.webp'
+        image: '/images/collaboration-replaceme.webp'
 
   ourFeatures:
     - title: Native Google Calendar integration
       description: Automatically sync all your appointments from Google Calendar. Reminders are sent based on your real schedule, without manual configuration.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Real-time bidirectional synchronization
         - Compatible with multiple calendars
         - Customizable reminder configuration
     - title: Direct Google Contacts access
       description: Connect with Google Contacts in real time to access your clients' information when needed, without storing or duplicating data.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - Live contact access
         - No local data storage
         - Guaranteed privacy and security
     - title: Multiple communication channels
       description: Send reminders via SMS and email through our optimized providers for maximum delivery and reliability.
-      image: '/images/collaboration.webp'
+      image: '/images/collaboration-replaceme.webp'
       list:
         - SMS with guaranteed delivery
         - Customizable professional emails
