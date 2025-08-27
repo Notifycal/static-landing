@@ -1,27 +1,31 @@
 .btn {
-  @apply border-border inline-block h-[52px] border px-8 py-2 text-sm leading-[36px] font-medium transition-all duration-200;
+  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-medium capitalize shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:no-underline hover:shadow-xl;
+}
+/* .btn {
+  @apply border-border border text-sm;
+} */
+/* btn btn-white text-primary inline-flex transform items-center bg-white  */
+
+.btn-sm {
+  @apply h-[42px] leading-[24px];
 }
 
 .btn-primary {
-  @apply cursor-pointer rounded-[50px] border-0 bg-gradient-to-tl text-center font-medium text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)];
+  @apply border-0 bg-gradient-to-tl text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)];
 }
 
 .btn-outline-primary {
-  @apply border-primary text-text-dark relative rounded-[50px] bg-transparent text-center capitalize hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
+  @apply border-primary text-text-dark relative bg-transparent hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
 }
 
 .btn-outline-primary::before {
   @apply absolute top-0 right-0 bottom-0 left-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
 }
 
-.btn-outline-white {
-  @apply text-text-dark rounded-[50px] bg-transparent text-center capitalize;
-}
-
 .btn-white {
-  @apply text-text-dark min-w-[150px] rounded-[50px] border-white bg-white text-center capitalize shadow-lg hover:shadow;
+  @apply text-text-dark min-w-[150px] border-white bg-white;
 }
 
-.btn-sm {
-  @apply h-[42px] leading-[24px];
+.btn-outline-white {
+  @apply text-text-dark bg-transparent;
 }

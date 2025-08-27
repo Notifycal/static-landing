@@ -309,7 +309,7 @@ select:invalid {
 
   .badge {
     @apply rounded-full border-2 px-6 py-1 text-sm font-medium shadow-sm;
-    @apply border-primary-200 bg-primary-50 text-primary-700;
+    @apply border-accent1-400 bg-accent1-100 text-accent1-700;
   }
 }
 
