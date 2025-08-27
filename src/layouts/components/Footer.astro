@@ -17,17 +17,21 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
 <footer class="footer bg-secondary-700 text-text-light">
   <div class="container">
     <div class="gx-5 row pt-4 pb-10 md:pt-12">
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <Logo />
+      <div class="col-12 mt-12 text-center md:col-6 md:text-left lg:col-3">
+        <div class="flex justify-center md:justify-start">
+          <Logo />
+        </div>
         <p class="mt-6">
           {description}
         </p>
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
+      <div class="col-12 mt-12 text-center md:col-6 md:text-left lg:col-3">
         <h6>{socialsTitle}</h6>
-        <Social source={social} className="social-icons mt-4 lg:mt-6" />
+        <div class="flex justify-center md:justify-start">
+          <Social source={social} className="social-icons mt-4 lg:mt-6" />
+        </div>
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
+      <div class="col-12 mt-12 text-center md:col-6 md:text-left lg:col-3">
         <h6>{quickLinksTitle}</h6>
         <ul>
           {
@@ -43,7 +47,7 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
           }
         </ul>
       </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
+      <div class="col-12 mt-12 text-center md:col-6 md:text-left lg:col-3">
         <h6>{locationContactTitle}</h6>
         <ul>
           <li class="mb-2">
