@@ -221,6 +221,14 @@ const siteCollection = defineCollection({
   })
 });
 
+const _404Collection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/404' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string()
+  })
+});
+
 const navigationCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/navigation' }),
   schema: z.object({
@@ -247,5 +255,6 @@ export const collections = {
   footer: footerCollection,
   header: headerCollection,
   site: siteCollection,
-  navigation: navigationCollection
+  navigation: navigationCollection,
+  '404': _404Collection
 };
