@@ -27,9 +27,14 @@ const translatePath = useTranslatedPath(lang);
 
 const { main }: { main: NavigationLink[] } = navigation.data;
 const { pathname } = Astro.url;
+
+function isActivePath(menuUrl: string): boolean {
+  const expectedPath = translatePath(menuUrl);
+  return pathname === expectedPath || pathname === `${expectedPath}/`;
+}
 ---
 
-<header class="header">
+<header class="header bg-secondary">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -37,13 +42,17 @@ const { pathname } = Astro.url;
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label id="show-button" for="nav-toggle" class="order-2 flex cursor-pointer items-center lg:order-1 lg:hidden">
+    <label
+      id="show-button"
+      for="nav-toggle"
+      class="text-primary order-2 flex cursor-pointer items-center lg:order-1 lg:hidden"
+    >
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Open</title>
         <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
       </svg>
     </label>
-    <label id="hide-button" for="nav-toggle" class="order-2 hidden cursor-pointer items-center lg:order-1">
+    <label id="hide-button" for="nav-toggle" class="text-primary order-2 hidden cursor-pointer items-center lg:order-1">
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
         <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"
@@ -61,9 +70,7 @@ const { pathname } = Astro.url;
                 <span
                   class={`${clsx({
                     'nav-link inline-flex items-center': true,
-                    active:
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
-                      menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                    active: menu.children?.some(({ url }) => isActivePath(url)) ?? false
                   })}`}
                 >
                   {menu.name}
@@ -79,9 +86,7 @@ const { pathname } = Astro.url;
                     <li class="nav-dropdown-item">
                       <a
                         href={translatePath(child.url)}
-                        class={`nav-dropdown-link block ${
-                          (pathname === `${child.url}/` || pathname === child.url) && 'text-primary'
-                        }`}
+                        class={`nav-dropdown-link block ${isActivePath(child.url) && 'text-primary'}`}
                       >
                         {child.name}
                       </a>
@@ -93,9 +98,7 @@ const { pathname } = Astro.url;
               <li class="nav-item">
                 <a
                   href={translatePath(menu.url)}
-                  class={`nav-link inline-block lg:block ${
-                    (pathname === `${menu.url}/` || pathname === menu.url) && 'active'
-                  }`}
+                  class={`nav-link inline-block lg:block ${isActivePath(menu.url) && 'active'}`}
                 >
                   {menu.name}
                 </a>
@@ -104,14 +107,16 @@ const { pathname } = Astro.url;
           </>
         ))
       }
-      <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
-      <li class="nav-item mt-2 lg:hidden">
-        <a id="signin-button-md" class="btn btn-white btn-sm border-border">{signIn}</a>
+      <li class="nav-item lg:hidden">
+        <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
+      </li>
+      <li class="nav-item mt-3 lg:hidden">
+        <a id="signin-button-md" class="btn btn-primary btn-sm border-border">{signIn}</a>
       </li>
     </ul>
     <div class="order-1 ml-auto flex items-center space-x-3 md:order-2 md:ml-0">
       <LanguagePickerDesktop />
-      <a id="signin-button-lg" class="btn btn-white btn-sm hidden lg:block">{signIn}</a>
+      <a id="signin-button-lg" class="btn btn-primary btn-sm hidden lg:block">{signIn}</a>
     </div>
   </nav>
 </header>

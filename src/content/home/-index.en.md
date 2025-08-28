@@ -1,8 +1,7 @@
 ---
-banner:
+hero:
   title: 'Are you wasting time sending manual reminders?'
   content: 'We take care of reminding your clients about their appointments so you can focus on what really matters: growing your business.'
-  image: /images/banner-img.webp
   button:
     enable: true
     label: Start Free
@@ -15,32 +14,32 @@ features:
     tabList:
       - title: Direct calendar connection
         icon: 'calendar'
-        image: '/images/collaboration.webp'
+        image: '/images/google-calendar-logo.webp'
       - title: Real-time contact access
         icon: 'users'
-        image: '/images/sells-by-country.webp'
+        image: '/images/google-contacts-logo.webp'
       - title: Automatic multi-channel sending
         icon: 'mail'
-        image: '/images/collaboration.webp'
+        image: '/images/automated-sending.svg'
 
   ourFeatures:
     - title: Native Google Calendar integration
       description: Automatically sync all your appointments from Google Calendar. Reminders are sent based on your real schedule, without manual configuration.
-      image: '/images/collaboration.webp'
+      image: '/images/google-calendar-logo.webp'
       list:
         - Real-time bidirectional synchronization
         - Compatible with multiple calendars
         - Customizable reminder configuration
     - title: Direct Google Contacts access
       description: Connect with Google Contacts in real time to access your clients' information when needed, without storing or duplicating data.
-      image: '/images/collaboration.webp'
+      image: '/images/google-contacts-logo.webp'
       list:
         - Live contact access
         - No local data storage
         - Guaranteed privacy and security
     - title: Multiple communication channels
       description: Send reminders via SMS and email through our optimized providers for maximum delivery and reliability.
-      image: '/images/collaboration.webp'
+      image: '/images/multiple-comms-channels.svg'
       list:
         - SMS with guaranteed delivery
         - Customizable professional emails
@@ -65,16 +64,22 @@ faq:
   title: Frequently Asked Questions
   description: Solve the most common doubts about our automatic reminder service.
   faqList:
-    - title: How does credit-based billing work?
-      content: Each SMS costs 1 credit and each email 0.1 credits. You only pay for what you use. If they run out, the service pauses until you recharge. You can activate automatic recharge or buy packages with discounts.
-    - title: How long does it take to configure Notifycal?
-      content: Less than 5 minutes. You connect your Google Calendar, choose which calendars to sync, customize your message templates and that's it. Reminders start automatically.
-    - title: Can I use my own texts and schedules?
-      content: Completely customizable. Define when to send reminders (24h, 2h before, etc.), create templates by service type, and personalize content with variables like name, date and special notes.
+    - title: Can I try the service before paying?
+      content: Yes. Sign up with your Google account and send yourself a free demo reminder to your number. This way you see exactly what your clients will receive.
+    - title: How long does it take to set up Notifycal?
+      content: Just a couple of minutes. After logging in with your Google account, you choose at least one calendar you want to use, reminder style, and the SMS sender. The SMS sender is an alphanumeric ID (letters and numbers only) of up to 11 characters. And that's it, everything ready for you to focus on your business while we remind your clients of their appointments.
     - title: What happens if I cancel an appointment in my calendar?
       content: Reminders are canceled automatically. Synchronization is bidirectional and real-time, so any changes in your calendar are immediately reflected in Notifycal.
-    - title: Does it work with other calendars besides Google?
-      content: We currently focus on Google Calendar due to its wide adoption and robust API. If you use another calendar, many allow synchronization with Google Calendar as an intermediate solution.
+    - title: How are reminders charged?
+      content: Each reminder sent consumes an amount of credits depending on the destination phone's country. If the message takes more than one part, it's multiplied by the number of parts.
+    - title: Will I receive alerts if my balance is low?
+      content: Yes. We notify you by email when you drop below 25 credits. And again when a send fails due to lack of balance.
+    - title: Can I buy extra credits?
+      content: Yes, as long as you have an active subscription. As many as you want, but you cannot automate their purchase. Sometimes, we recommend upgrading to a higher tier for extra peace of mind.
+    - title: How are my payments managed?
+      content: With Stripe, one of the most secure gateways. We don't store your payment data.
+    - title: Will I receive an invoice?
+      content: Yes, downloadable from your control panel. Make sure to provide tax information at the time of purchase, or later, from the Private Area.
 
 testimonial:
   title: Our clients are already enjoying the benefits

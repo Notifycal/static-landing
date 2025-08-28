@@ -23,8 +23,8 @@ const { member } = Astro.props;
     </div>
 
     <h3 class="mb-2">{member.name}</h3>
-    <p class="text-primary mb-4 font-semibold">{member.field}</p>
-    <p class="text-text mb-6" set:html={markdownify(member.bio)} />
+    <p class="text-accent2-600 mb-4 font-semibold">{member.field}</p>
+    <p class="text-dark mb-6" set:html={markdownify(member.bio)} />
 
     {
       (member.linkedin || member.github) && (
@@ -34,7 +34,7 @@ const { member } = Astro.props;
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-text hover:text-primary transition-colors"
+              class="text-dark hover:text-primary transition-colors"
               aria-label={`${member.name} LinkedIn`}
             >
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ const { member } = Astro.props;
               href={member.github}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-text hover:text-primary transition-colors"
+              class="text-dark hover:text-primary transition-colors"
               aria-label={`${member.name} GitHub`}
             >
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

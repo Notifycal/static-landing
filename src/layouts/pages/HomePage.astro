@@ -3,7 +3,7 @@ import Faq from '@/components/Faq.astro';
 import Features from '@/components/Features.astro';
 import Pricing from '@/components/Pricing.astro';
 import Base from '@/layouts/Base.astro';
-import Banner from '@/components/Banner.astro';
+import Hero from '@/components/Hero.astro';
 import Cta from '@/components/Cta.astro';
 import Testimonial from '@/components/Testimonial.astro';
 import { getCollectionEntryByLang } from '@/lib/i18n';
@@ -11,11 +11,11 @@ import { getLangFromUrl } from '@/lib/i18n-const';
 
 const lang = getLangFromUrl(Astro.url);
 const homepage = await getCollectionEntryByLang('home', lang);
-const { banner, features, testimonial, faq, pricing, cta } = homepage.data;
+const { hero, features, testimonial, faq, pricing, cta } = homepage.data;
 ---
 
 <Base>
-  <Banner banner={banner} />
+  <Hero hero={hero} />
   <Features features={features} />
   <Pricing pricing={pricing} />
   <Faq faq={faq} />

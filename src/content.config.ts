@@ -4,10 +4,9 @@ import { defineCollection, z } from 'astro:content';
 const homeCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/home' }),
   schema: z.object({
-    banner: z.object({
+    hero: z.object({
       title: z.string(),
       content: z.string().optional(),
-      image: z.string(),
       button: z
         .object({
           label: z.string(),
@@ -199,9 +198,11 @@ const footerCollection = defineCollection({
   schema: z.object({
     description: z.string(),
     copyright: z.string(),
-    socials: z.string(),
-    quickLinks: z.string(),
-    locationContact: z.string()
+    socialsTitle: z.string(),
+    quickLinksTitle: z.string(),
+    locationContactTitle: z.string(),
+    location: z.string(),
+    feedback: z.string()
   })
 });
 
@@ -216,6 +217,14 @@ const headerCollection = defineCollection({
 const siteCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/site' }),
   schema: z.object({
+    description: z.string()
+  })
+});
+
+const _404Collection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/404' }),
+  schema: z.object({
+    title: z.string(),
     description: z.string()
   })
 });
@@ -246,5 +255,6 @@ export const collections = {
   footer: footerCollection,
   header: headerCollection,
   site: siteCollection,
-  navigation: navigationCollection
+  navigation: navigationCollection,
+  '404': _404Collection
 };

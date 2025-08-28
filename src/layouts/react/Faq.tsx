@@ -31,19 +31,19 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
     <div className="row">
       <div className="text-center lg:col-4 lg:text-start">
         <h2>{faqData.title}</h2>
-        <p className="mt-6 lg:max-w-[404px]">{faqData.description}</p>
+        <p className="mt-6 text-lg lg:max-w-[404px]">{faqData.description}</p>
       </div>
       <div className="mt-8 lg:col-8 lg:mt-0">
-        <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
+        <div className="bg-accent2-700 rounded-xl px-5 py-5 shadow-lg lg:px-10 lg:py-8">
           {faqData.faqList.map((item, index) => (
             <div
               key={`item-${index}`}
-              className={`${clsx({ 'accordion border-border border-b': true, active: isActive.includes(index) })}`}
+              className={`${clsx({ 'accordion border-accent1-600 border-b text-white': true, active: isActive.includes(index) })}`}
               onClick={() => {
                 accordionHandler(index);
               }}
             >
-              <div className="accordion-header text-text-dark relative pl-6 text-lg font-semibold">
+              <div className="accordion-header relative pl-6 font-semibold">
                 {item.title}
                 <svg
                   className="accordion-icon absolute top-[22px] left-0"
@@ -54,7 +54,7 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
                 >
                   <path
                     d="M505.755,123.592c-8.341-8.341-21.824-8.341-30.165,0L256.005,343.176L36.421,123.592c-8.341-8.341-21.824-8.341-30.165,0 s-8.341,21.824,0,30.165l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251l234.667-234.667 C514.096,145.416,514.096,131.933,505.755,123.592z"
-                    fill="currentColor"
+                    fill="var(--color-accent1-600)"
                   ></path>
                 </svg>
               </div>

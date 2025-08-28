@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="200" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- Android logo gradients -->
+    <linearGradient id="androidGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#86A9FF"/>
+      <stop offset="100%" style="stop-color:#578CFF"/>
+    </linearGradient>
+    <linearGradient id="androidGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#578CFF"/>
+      <stop offset="100%" style="stop-color:#0057CC"/>
+    </linearGradient>
+    
+    <!-- iOS logo gradients -->
+    <linearGradient id="iosGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5bf675"/>
+      <stop offset="100%" style="stop-color:#0cbd2a"/>
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="4" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.2"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Android Messages Logo (rotated -8 degrees, positioned left, better contained) -->
+  <g transform="translate(30, 35) rotate(-8) scale(0.6)" filter="url(#dropshadow)">
+    <!-- Android logo paths with adjusted gradients -->
+    <path fill="url(#androidGradient1)" d="M58.639,123.429C26.222,123.429,0,95.767,0,61.714S26.222,0,58.639,0h61.008 c32.417,0,58.639,27.662,58.639,61.714s-26.222,61.714-58.639,61.714H58.639z"/>
+    <path fill="url(#androidGradient2)" d="M98.181,148.368V186c0,3.274-2.637,6-5.798,6c-1.547-0.011-3.022-0.651-4.087-1.773l-57.189-58.903 c-11.201-11.451-17.393-27.13-17.393-43.358c0-33.405,26.222-60.538,58.639-60.538h61.008c32.417,0,58.639,27.134,58.639,60.538 s-26.222,60.538-58.639,60.538H98.181V148.368z"/>
+    <path fill="#0057CC" d="M58.354,123.429h61.155c32.493,0,58.776-28.303,58.776-63.147c0-4.125-0.398-8.105-1.056-12.089 c-10.697-12.799-26.283-20.763-43.587-20.763H72.49c-32.493,0-58.776,28.303-58.776,63.147c0,4.125,0.398,8.105,1.056,11.945 c10.697,12.799,26.283,20.907,43.587,20.907H58.354z"/>
+  </g>
+
+  <!-- iOS Messages Logo (rotated 5 degrees, positioned right, overlapping) -->
+  <g transform="translate(180, 50) rotate(5) scale(1.3)" filter="url(#dropshadow)">
+    <!-- iOS logo background rounded rectangle -->
+    <rect ry="14.567832" rx="14.567832" y="0" x="0" height="66.145836" width="66.145836" fill="url(#iosGradient)"/>
+    <!-- iOS logo speech bubble -->
+    <path d="m 33.072918,11.450214 a 24.278298,20.222157 0 0 0 -24.278105,20.22202 24.278298,20.222157 0 0 0 11.79463,17.31574 27.365264,20.222157 0 0 1 -4.245218,5.94228 23.85735,20.222157 0 0 0 9.86038,-3.87367 24.278298,20.222157 0 0 0 6.868313,0.83768 24.278298,20.222157 0 0 0 24.2781059,-20.22203 24.278298,20.222157 0 0 0 -24.2781059,-20.22202 z" fill="#ffffff"/>
+  </g>
+</svg>

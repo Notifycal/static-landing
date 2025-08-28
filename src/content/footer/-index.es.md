@@ -1,7 +1,9 @@
 ---
 description: 'Enfócate en tu negocio, nosotros nos encargamos del resto.'
-copyright: '© 2025 Notifycal. Todos los derechos reservados.'
-socials: 'Redes sociales'
-quickLinks: 'Enlaces rápidos'
-locationContact: 'Ubicación y Contacto'
+copyright: 'Notifycal. Todos los derechos reservados.'
+socialsTitle: 'Redes sociales'
+quickLinksTitle: 'Enlaces rápidos'
+locationContactTitle: 'Ubicación y Contacto'
+location: 'Madrid, España'
+feedback: 'Feedback'
 ---

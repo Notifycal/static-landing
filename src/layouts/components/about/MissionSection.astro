@@ -17,7 +17,7 @@ const { mission } = Astro.props;
       <div class="lg:col-8">
         <div class="mb-16 text-center">
           <h2 class="mb-6">{mission.title}</h2>
-          <p class="text-text text-lg" set:html={markdownify(mission.content)} />
+          <p class="text-dark text-lg" set:html={markdownify(mission.content)} />
         </div>
       </div>
     </div>

@@ -1,27 +1,35 @@
 .btn {
-  @apply border-border inline-block h-[52px] border px-8 py-2 text-sm leading-[36px] font-medium transition-all duration-200;
-}
-
-.btn-primary {
-  @apply cursor-pointer rounded-[50px] border-0 bg-gradient-to-tl text-center font-medium text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)];
-}
-
-.btn-outline-primary {
-  @apply border-primary text-text-dark relative rounded-[50px] bg-transparent text-center capitalize hover:bg-transparent hover:text-white hover:shadow-[0px_5px_30px_rgba(252,167,111,0.5)] hover:before:opacity-100;
-}
-
-.btn-outline-primary::before {
-  @apply absolute top-0 right-0 bottom-0 left-0 -z-[1] rounded-[inherit] bg-gradient-to-tl opacity-0 transition-[inherit] content-[""];
-}
-
-.btn-outline-white {
-  @apply text-text-dark rounded-[50px] bg-transparent text-center capitalize;
-}
-
-.btn-white {
-  @apply text-text-dark min-w-[150px] rounded-[50px] border-white bg-white text-center capitalize shadow-lg hover:shadow;
+  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-semibold capitalize shadow-lg transition-all duration-300 hover:-translate-y-1 hover:no-underline hover:shadow-xl;
 }
 
 .btn-sm {
   @apply h-[42px] leading-[24px];
+}
+
+.btn-lg {
+  @apply min-w-[270px];
+}
+
+.btn-cta {
+  @apply rounded-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-xl;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 hover:shadow-primary-200/90 border-0 text-white;
+}
+
+.btn-outline-primary {
+  @apply border-primary text-text-dark hover:bg-primary hover:shadow-primary-200/90 relative border-2 bg-transparent hover:text-white;
+}
+
+.btn-white {
+  @apply text-secondary hover:shadow-primary-200/40 hover:text-text-dark min-w-[150px] border-white bg-white;
+}
+
+.btn-outline-white {
+  @apply hover:text-text-dark border-2 border-white bg-transparent text-white hover:bg-white;
+}
+
+.btn-accent2 {
+  @apply bg-accent2-600 hover:text-accent2-600 font-bold text-white hover:bg-white;
 }

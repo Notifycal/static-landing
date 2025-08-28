@@ -1,22 +1,21 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { markdownify } from '@/lib/utils/textConverter';
+import { getCollectionEntryByLang } from '@/lib/i18n';
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import { getEntry, render } from 'astro:content';
 
-const entry = (await getEntry('pages', '404')) as CollectionEntry<'pages'>;
-const { Content } = await render(entry);
+const {
+  data: { title, description }
+} = await getCollectionEntryByLang('404', 'en');
 ---
 
-<Base title={entry.data.title}>
+<Base title={title}>
   <section class="section">
     <div class="container">
       <div class="flex h-[40vh] items-center justify-center">
         <div class="text-center">
-          <Image src="/images/404.webp" class="mb-4 inline" alt="logo" height={120} width={120} />
-          <h1 class="mb-4" set:html={markdownify(entry.data.title)} />
-          <Content />
+          <Image src="/images/404.svg" class="mb-4 inline" alt="logo" height={300} width={300} />
+          <h1 class="mb-4">{title}</h1>
+          <h3 class="mb-4">{description}</h3>
         </div>
       </div>
     </div>
