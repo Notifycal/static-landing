@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.16.0](https://github.com/Notifycal/static-landing/compare/v1.15.0...v1.16.0) (2025-08-28)
+
+
+### Features
+
+* another styling pass. Buttons, images, colours, etc... in prep for google blessing. ([#454](https://github.com/Notifycal/static-landing/issues/454)) ([d99df0f](https://github.com/Notifycal/static-landing/commit/d99df0fd0f9c6f85f77e881cd6f354c645269172))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.8.0 ([#458](https://github.com/Notifycal/static-landing/issues/458)) ([d374208](https://github.com/Notifycal/static-landing/commit/d374208ebe8b49dc2a8314746d67154fc70796f3))
+* **deps:** Update Node.js Dependencies ([#455](https://github.com/Notifycal/static-landing/issues/455)) ([b1e3d97](https://github.com/Notifycal/static-landing/commit/b1e3d97d4ad59f48a1ba017defff10ce9c9fee39))
+
 ## [1.15.0](https://github.com/Notifycal/static-landing/compare/v1.14.2...v1.15.0) (2025-08-26)
 
 
