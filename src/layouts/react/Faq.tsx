@@ -25,21 +25,20 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
     } else {
       setIsActive((previous) => [...previous, index]);
     }
-
   };
 
   return (
     <div className="row">
       <div className="text-center lg:col-4 lg:text-start">
         <h2>{faqData.title}</h2>
-        <p className="mt-6 lg:max-w-[404px] text-lg">{faqData.description}</p>
+        <p className="mt-6 text-lg lg:max-w-[404px]">{faqData.description}</p>
       </div>
       <div className="mt-8 lg:col-8 lg:mt-0">
-        <div className="rounded-xl px-5 py-5 shadow-lg lg:px-10 lg:py-8 bg-accent2-700">
+        <div className="bg-accent2-700 rounded-xl px-5 py-5 shadow-lg lg:px-10 lg:py-8">
           {faqData.faqList.map((item, index) => (
             <div
               key={`item-${index}`}
-              className={`${clsx({ 'accordion text-white border-accent1-600 border-b': true, active: isActive.includes(index) })}`}
+              className={`${clsx({ 'accordion border-accent1-600 border-b text-white': true, active: isActive.includes(index) })}`}
               onClick={() => {
                 accordionHandler(index);
               }}

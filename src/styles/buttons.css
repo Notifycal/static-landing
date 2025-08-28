@@ -11,7 +11,7 @@
 }
 
 .btn-cta {
-  @apply rounded-lg font-semibold shadow-lg transition-all duration-300 hover:bg-gray-50 hover:-translate-y-1 hover:shadow-xl
+  @apply rounded-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-xl;
 }
 
 .btn-primary {
@@ -31,5 +31,5 @@
 }
 
 .btn-accent2 {
-  @apply bg-accent2-600 hover:bg-white text-white hover:text-accent2-600 font-bold;
+  @apply bg-accent2-600 hover:text-accent2-600 font-bold text-white hover:bg-white;
 }

@@ -23,15 +23,15 @@
 }
 
 .nav-link {
-  @apply text-white block p-3 py-2 text-lg transition md:px-2 lg:inline-block border border-transparent rounded-lg no-underline;
+  @apply block rounded-lg border border-transparent p-3 py-2 text-lg text-white no-underline transition md:px-2 lg:inline-block;
 
   /* @apply hover:bg-accent1-500/75 hover:text-accent1-800 hover:no-underline transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-primary-900; */
   @apply block rounded-md px-3 py-2 font-medium text-white transition-all duration-300;
 
   &:hover:not(.active) {
-    @apply bg-accent1-500/75 text-accent1-800 no-underline transition-all duration-300 scale-105 shadow-md shadow-primary-900;
+    @apply bg-accent1-500/75 text-accent1-800 shadow-primary-900 scale-105 no-underline shadow-md transition-all duration-300;
     @apply border-accent1-500 bg-accent1-500 text-secondary;
-    @apply bg-accent1-500/75 text-accent1-800 no-underline scale-105 shadow-primary-900 shadow-md;
+    @apply bg-accent1-500/75 text-accent1-800 shadow-primary-900 scale-105 no-underline shadow-md;
   }
 
   &.active {
@@ -48,8 +48,8 @@
 }
 
 .nav-dropdown-list {
-  @apply z-10 mx-auto ml-1 max-w-[130px] rounded-lg bg-transparent lg:bg-white px-4 py-3 duration-300 border border-white shadow-sm;
-  @apply lg:mt-0 lg:border-primary/25 lg:bg-white lg:shadow-neutral-900/10;
+  @apply z-10 mx-auto ml-1 max-w-[130px] rounded-lg border border-white bg-transparent px-4 py-3 shadow-sm duration-300 lg:bg-white;
+  @apply lg:border-primary/25 lg:mt-0 lg:bg-white lg:shadow-neutral-900/10;
 }
 
 .nav-dropdown-item {
@@ -57,5 +57,5 @@
 }
 
 .nav-dropdown-link {
-  @apply text-white lg:text-text-dark min-w-[80px] py-1 text-lg font-medium transition border border-transparent rounded-lg no-underline;
+  @apply lg:text-text-dark min-w-[80px] rounded-lg border border-transparent py-1 text-lg font-medium text-white no-underline transition;
 }
