@@ -27,6 +27,11 @@ const translatePath = useTranslatedPath(lang);
 
 const { main }: { main: NavigationLink[] } = navigation.data;
 const { pathname } = Astro.url;
+
+function isActivePath(menuUrl: string): boolean {
+  const expectedPath = translatePath(menuUrl);
+  return pathname === expectedPath || pathname === `${expectedPath}/`;
+}
 ---
 
 <header class="header">
@@ -61,9 +66,7 @@ const { pathname } = Astro.url;
                 <span
                   class={`${clsx({
                     'nav-link inline-flex items-center': true,
-                    active:
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
-                      menu.children?.map(({ url }) => `${url}/`).includes(pathname)
+                    active: menu.children?.some(({ url }) => isActivePath(url)) ?? false
                   })}`}
                 >
                   {menu.name}
@@ -79,9 +82,7 @@ const { pathname } = Astro.url;
                     <li class="nav-dropdown-item">
                       <a
                         href={translatePath(child.url)}
-                        class={`nav-dropdown-link block ${
-                          (pathname === `${child.url}/` || pathname === child.url) && 'text-primary'
-                        }`}
+                        class={`nav-dropdown-link block ${isActivePath(child.url) && 'text-primary'}`}
                       >
                         {child.name}
                       </a>
@@ -93,9 +94,7 @@ const { pathname } = Astro.url;
               <li class="nav-item">
                 <a
                   href={translatePath(menu.url)}
-                  class={`nav-link inline-block lg:block ${
-                    (pathname === `${menu.url}/` || pathname === menu.url) && 'active'
-                  }`}
+                  class={`nav-link inline-block lg:block ${isActivePath(menu.url) && 'active'}`}
                 >
                   {menu.name}
                 </a>
