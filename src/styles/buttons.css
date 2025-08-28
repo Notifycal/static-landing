@@ -15,7 +15,7 @@
 }
 
 .btn-white {
-  @apply text-text-dark hover:shadow-primary-200/20 hover:text-text-dark min-w-[150px] border-white bg-white;
+  @apply text-secondary hover:shadow-primary-200/40 hover:text-text-dark min-w-[150px] border-white bg-white;
 }
 
 .btn-outline-white {

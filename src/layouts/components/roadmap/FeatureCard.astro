@@ -49,7 +49,7 @@ const statusBadge = feature.status ? getStatusBadge[feature.status] : null;
           )
         }
       </div>
-      <p class="text-text leading-relaxed" set:html={markdownify(feature.description)} />
+      <p class="text-dark leading-relaxed" set:html={markdownify(feature.description)} />
       {!isConfirmed && <div class="mt-4 text-sm text-gray-500 italic">{featureUnderConsideration}</div>}
     </div>
   </div>

@@ -21,7 +21,7 @@ const { values } = Astro.props;
     <div class="row justify-center">
       <div class="mb-16 text-center lg:col-8">
         <h2 class="mb-6">{values.title}</h2>
-        <p class="text-text text-lg" set:html={markdownify(values.description)} />
+        <p class="text-dark text-lg" set:html={markdownify(values.description)} />
       </div>
     </div>
 

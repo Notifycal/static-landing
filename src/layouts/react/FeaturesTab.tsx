@@ -37,7 +37,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
       <div className="mt-6 lg:order-1 lg:col-5 lg:mt-0">
         <div className="text-container">
           <h2>{title}</h2>
-          <p className="mt-4">{description}</p>
+          <p className="mt-4 text-lg">{description}</p>
           <ul className="tab-nav">
             {tabList?.map((item, index) => {
               const FeatherIcon = Icon[humanize(item.icon) as keyof typeof Icon];

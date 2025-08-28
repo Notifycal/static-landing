@@ -32,7 +32,7 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
     <div className="row">
       <div className="text-center lg:col-4 lg:text-start">
         <h2>{faqData.title}</h2>
-        <p className="mt-6 lg:max-w-[404px]">{faqData.description}</p>
+        <p className="mt-6 lg:max-w-[404px] text-lg">{faqData.description}</p>
       </div>
       <div className="mt-8 lg:col-8 lg:mt-0">
         <div className="rounded-xl px-5 py-5 shadow-lg lg:px-10 lg:py-8 bg-accent2-700">

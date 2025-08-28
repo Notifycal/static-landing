@@ -23,7 +23,7 @@
 }
 
 .nav-link {
-  @apply text-text-dark hover:text-primary block p-3 py-2 text-[15px] transition md:px-2 lg:inline-block;
+  @apply text-text-dark hover:text-primary block p-3 py-2 text-lg transition md:px-2 lg:inline-block;
 
   &.active {
     @apply relative;
@@ -39,7 +39,7 @@
 }
 
 .nav-dropdown-list {
-  @apply border-primary/25 bg-primary/5 z-10 mx-auto ml-1 max-w-[150px] rounded-lg border-0 border-solid px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-neutral-900/10;
+  @apply border-primary/25 bg-primary/5 z-10 mx-auto ml-1 max-w-[130px] rounded-lg border-0 border-solid px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-neutral-900/10;
 }
 
 .nav-dropdown-item {
@@ -47,5 +47,5 @@
 }
 
 .nav-dropdown-link {
-  @apply text-text-dark hover:text-primary min-w-[100px] py-1 text-sm font-medium transition;
+  @apply text-text-dark hover:text-primary min-w-[80px] py-1 text-lg font-medium transition;
 }
