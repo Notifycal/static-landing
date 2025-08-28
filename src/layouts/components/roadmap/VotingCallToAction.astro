@@ -20,7 +20,8 @@ const { votingCTA } = Astro.props;
         <p set:html={markdownify(votingCTA.description)} class="mb-8 text-lg leading-relaxed text-white" />
         <a
           id="voting-cta-button"
-          class="btn btn-white inline-flex transform items-center rounded-lg bg-white px-8 py-4 font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 hover:shadow-xl"
+          class="btn btn-cta btn-accent2 inline-flex transform items-center"
+
         >
           {votingCTA.buttonText}
           <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

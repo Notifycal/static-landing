@@ -6,6 +6,14 @@
   @apply h-[42px] leading-[24px];
 }
 
+.btn-lg {
+  @apply min-w-[270px];
+}
+
+.btn-cta {
+  @apply rounded-lg font-semibold shadow-lg transition-all duration-300 hover:bg-gray-50 hover:-translate-y-1 hover:shadow-xl
+}
+
 .btn-primary {
   @apply bg-primary hover:bg-primary/90 hover:shadow-primary-200/90 border-0 text-white;
 }
@@ -20,4 +28,8 @@
 
 .btn-outline-white {
   @apply hover:text-text-dark border-2 border-white bg-transparent text-white hover:bg-white;
+}
+
+.btn-accent2 {
+  @apply bg-accent2-600 hover:bg-white text-white hover:text-accent2-600 font-bold;
 }
