@@ -589,3 +589,7 @@ select:invalid {
     }
   }
 }
+
+.logo {
+  @apply text-primary-500 h-10 transition-all duration-300 hover:scale-105 drop-shadow-md hover:drop-shadow-xl drop-shadow-primary-900 hover:drop-shadow-primary-900;
+}

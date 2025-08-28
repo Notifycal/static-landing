@@ -23,10 +23,19 @@
 }
 
 .nav-link {
-  @apply text-text-dark hover:text-primary block p-3 py-2 text-lg transition md:px-2 lg:inline-block;
+  @apply text-white block p-3 py-2 text-lg transition md:px-2 lg:inline-block border border-transparent rounded-lg no-underline;
+
+  /* @apply hover:bg-accent1-500/75 hover:text-accent1-800 hover:no-underline transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-primary-900; */
+  @apply block rounded-md px-3 py-2 font-medium text-white transition-all duration-300;
+
+  &:hover:not(.active) {
+    @apply bg-accent1-500/75 text-accent1-800 no-underline transition-all duration-300 scale-105 shadow-md shadow-primary-900;
+    @apply border-accent1-500 bg-accent1-500 text-secondary;
+    @apply bg-accent1-500/75 text-accent1-800 no-underline scale-105 shadow-primary-900 shadow-md;
+  }
 
   &.active {
-    @apply relative;
+    @apply relative cursor-default;
 
     &::after {
       @apply absolute right-2 bottom-0 left-2 h-0.5 bg-gradient-to-tl content-[''];
@@ -39,7 +48,8 @@
 }
 
 .nav-dropdown-list {
-  @apply border-primary/25 bg-primary/5 z-10 mx-auto ml-1 max-w-[130px] rounded-lg border-0 border-solid px-4 py-3 shadow-sm duration-300 lg:mt-0 lg:border lg:bg-white lg:shadow-neutral-900/10;
+  @apply z-10 mx-auto ml-1 max-w-[130px] rounded-lg bg-transparent lg:bg-white px-4 py-3 duration-300 border border-white shadow-sm;
+  @apply lg:mt-0 lg:border-primary/25 lg:bg-white lg:shadow-neutral-900/10;
 }
 
 .nav-dropdown-item {
@@ -47,5 +57,5 @@
 }
 
 .nav-dropdown-link {
-  @apply text-text-dark hover:text-primary min-w-[80px] py-1 text-lg font-medium transition;
+  @apply text-white lg:text-text-dark min-w-[80px] py-1 text-lg font-medium transition border border-transparent rounded-lg no-underline;
 }

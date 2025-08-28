@@ -24,7 +24,7 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
 ---
 
 <div class={`nav-item nav-dropdown group dropdown-button relative cursor-pointer ${className}`}>
-  <span class="nav-link inline-flex items-center">
+  <span class="nav-link text-white inline-flex items-center">
     {
       variant === 'desktop' && currentLang && (
         <img
@@ -36,14 +36,13 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
           src={flags[currentLang].src}
         />
       )
-    }
-    {variant === 'mobile' && languageMobileLabel}
+    }{variant === 'mobile' && <span>{languageMobileLabel}</span>}
     <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
     </svg>
   </span>
   <ul
-    class="nav-dropdown-list border-border mx-auto mt-1 hidden rounded-lg bg-white shadow-lg duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[8rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
+    class="nav-dropdown-list border-border mx-auto mt-1 hidden rounded-lg shadow-lg duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[8rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
   >
     {
       Object.entries(languages).map(([lang, label]) => {

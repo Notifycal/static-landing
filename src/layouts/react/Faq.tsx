@@ -44,7 +44,7 @@ const Faq = ({ faqData }: FaqProps): JSX.Element => {
                 accordionHandler(index);
               }}
             >
-              <div className="accordion-header relative pl-6 text-md font-semibold">
+              <div className="accordion-header relative pl-6 font-semibold">
                 {item.title}
                 <svg
                   className="accordion-icon absolute top-[22px] left-0"
