@@ -30,13 +30,7 @@ const FeaturesTab = ({ featuresTab }: FeaturesTabProps): JSX.Element => {
           {tabList?.map((item, index) => (
             <div key={index} className={`${clsx({ 'tab-content-panel': true, active: tab === index })}`}>
               <div className="tab-image-container">
-                <img 
-                  alt={item.title} 
-                  className="tab-image" 
-                  decoding="async"
-                  loading="lazy"
-                  src={item.image}
-                />
+                <img alt={item.title} className="tab-image" decoding="async" loading="lazy" src={item.image} />
               </div>
             </div>
           ))}
