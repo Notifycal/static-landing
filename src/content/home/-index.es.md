@@ -25,21 +25,21 @@ features:
   ourFeatures:
     - title: Reduce el absentismo hasta un 80%
       description: Tus clientes reciben recordatorios automáticos por SMS antes de su cita. Sin olvidos, sin faltas de última hora, sin pérdidas de tiempo ni dinero.
-      image: '/images/google-calendar-logo.webp'
+      image: '/images/missing-appointment.webp'
       list:
         - Recordatorios automáticos por SMS
         - Enviados automáticamente antes de cada cita
         - Reduce el absentismo hasta un 80% comprobado
     - title: Listo en 3 minutos
       description: Te logueas con tu cuenta de Google, seleccionas tu calendario para enviar recordatorios, eliges tu estilo de recordatorio y ya está. No necesitas cambiar tu forma de trabajar ni aprender sistemas complicados.
-      image: '/images/google-contacts-logo.webp'
+      image: '/images/quick-setup.webp'
       list:
         - Configuración simple en minutos
         - Sin cambiar tu flujo de trabajo actual
         - Integración transparente con Google
     - title: Sin errores ni gestión manual de números
       description: Simplemente añades a tus contactos en Google Calendar como asistentes y nosotros nos encargamos del resto. Sin copiar números uno por uno, sin errores de transcripción, sin manejar datos personales constantemente.
-      image: '/images/multiple-comms-channels.svg'
+      image: '/images/automate.webp'
       list:
         - Automatiza, sin cambiar tu forma de trabajar
         - Añades en Google Calendar, nosotros enviamos

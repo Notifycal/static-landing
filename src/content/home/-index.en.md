@@ -25,21 +25,21 @@ features:
   ourFeatures:
     - title: Reduce absenteeism by up to 80%
       description: Your clients receive automated SMS reminders before their appointment. No forgotten appointments, no last-minute no-shows, no wasted time or money.
-      image: '/images/google-calendar-logo.webp'
+      image: '/images/missing-appointment.webp'
       list:
         - Automated SMS reminders
         - Sent automatically before each appointment
         - Reduces absenteeism by up to 80% proven
     - title: Ready in 3 minutes
       description: Log in with your Google account, select your calendar to send reminders, choose your reminder style and you're done. You don't need to change your way of working or learn complicated systems.
-      image: '/images/google-contacts-logo.webp'
+      image: '/images/quick-setup.webp'
       list:
         - Simple setup in minutes
         - No changes to your current workflow
         - Seamless Google integration
     - title: Neither errors nor manual number management
       description: Simply add your contacts in Google Calendar as attendees and we take care of the rest. No copying numbers one by one, no transcription errors, no constantly handling personal data.
-      image: '/images/multiple-comms-channels.svg'
+      image: '/images/automate.webp'
       list:
         - Automates, without changing your way of working
         - You add in Google Calendar, we send

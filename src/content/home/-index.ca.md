@@ -25,21 +25,21 @@ features:
   ourFeatures:
     - title: Redueix l'absentisme fins a un 80%
       description: Els teus clients reben recordatoris automàtics per SMS abans de la seva cita. Sense oblidances, sense faltes d'última hora, sense pèrdues de temps ni diners.
-      image: '/images/google-calendar-logo.webp'
+      image: '/images/missing-appointment.webp'
       list:
         - Recordatoris automàtics per SMS
         - Enviats automàticament abans de cada cita
         - Redueix l'absentisme fins a un 80% comprovat
     - title: Llest en 3 minuts
       description: T'identifiques amb el teu compte de Google, selecciones el teu calendari per enviar recordatoris, tries el teu estil de recordatori i ja està. No necessites canviar la teva forma de treballar ni aprendre sistemes complicats.
-      image: '/images/google-contacts-logo.webp'
+      image: '/images/quick-setup.webp'
       list:
         - Configuració simple en minuts
         - Sense canviar el teu flux de treball actual
         - Integració transparent amb Google
     - title: Sense errors ni gestió manual de números
       description: Simplement afegeixes als teus contactes al Google Calendar com a assistents i nosaltres ens encarreguem de la resta. Sense copiar números un per un, sense errors de transcripció, sense gestionar dades personals constantment.
-      image: '/images/multiple-comms-channels.svg'
+      image: '/images/automate.webp'
       list:
         - Automatitza, sense canviar la teva forma de treballar
         - Afegeixes al Google Calendar, nosaltres enviem
