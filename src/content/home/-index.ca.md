@@ -14,13 +14,13 @@ features:
     tabList:
       - title: Integració directa amb Google Calendar
         icon: 'calendar'
-        image: '/images/google-calendar-logo.webp'
+        image: '/images/monitor-blur-calendar.webp'
       - title: Accés intel·ligent a contactes
         icon: 'users'
-        image: '/images/google-contacts-logo.webp'
+        image: '/images/phone-blur-contact.webp'
       - title: Múltiples canals de comunicació
         icon: 'mail'
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
     - title: Redueix l'absentisme fins a un 80%

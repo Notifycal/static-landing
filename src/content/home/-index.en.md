@@ -14,13 +14,13 @@ features:
     tabList:
       - title: Direct Google Calendar integration
         icon: 'calendar'
-        image: '/images/google-calendar-logo.webp'
+        image: '/images/monitor-blur-calendar.webp'
       - title: Intelligent contact access
         icon: 'users'
-        image: '/images/google-contacts-logo.webp'
+        image: '/images/phone-blur-contact.webp'
       - title: Multiple communication channels
         icon: 'mail'
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
     - title: Reduce absenteeism by up to 80%

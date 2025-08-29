@@ -14,13 +14,13 @@ features:
     tabList:
       - title: Integración directa con Google Calendar
         icon: 'calendar' #icon package react-feather-icon
-        image: '/images/google-calendar-logo.webp'
+        image: '/images/monitor-blur-calendar.webp'
       - title: Acceso inteligente a contactos
         icon: 'users' #icon package react-feather-icon
-        image: '/images/google-contacts-logo.webp'
+        image: '/images/phone-blur-contact.webp'
       - title: Múltiples canales de comunicación
         icon: 'mail' #icon package react-feather-icon
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
     - title: Reduce el absentismo hasta un 80%
