@@ -6,44 +6,45 @@ hero:
     enable: true
     label: Començar Gratis
     link: 'https://private.notifycal.com'
+  poweredBy: 'Powered by:'
 
 features:
   featuresTab:
     title: Connecta amb les teves eines sense canviar el teu flux de treball
     description: Notifycal actua com a proxy intel·ligent entre les teves aplicacions existents i els teus clients, sense emmagatzemar ni duplicar informació.
     tabList:
-      - title: Connexió directa amb calendaris
+      - title: Integració directa amb Google Calendar
         icon: 'calendar'
-        image: '/images/google-calendar-logo.webp'
-      - title: Accés en temps real a contactes
+        image: '/images/monitor-blur-calendar.webp'
+      - title: Accés intel·ligent a contactes
         icon: 'users'
-        image: '/images/google-contacts-logo.webp'
-      - title: Enviament automàtic per múltiples canals
+        image: '/images/phone-blur-contact.webp'
+      - title: Múltiples canals de comunicació
         icon: 'mail'
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
-    - title: Integració nativa amb Google Calendar
-      description: Sincronitza automàticament totes les teves cites des de Google Calendar. Els recordatoris s'envien basant-se en la teva agenda real, sense configuració manual.
-      image: '/images/google-calendar-logo.webp'
+    - title: Redueix l'absentisme fins a un 80%
+      description: Els teus clients reben recordatoris automàtics per SMS abans de la seva cita. Sense oblidances, sense faltes d'última hora, sense pèrdues de temps ni diners.
+      image: '/images/missing-appointment.webp'
       list:
-        - Sincronització bidireccional en temps real
-        - Compatible amb múltiples calendaris
-        - Configuració de recordatoris personalitzables
-    - title: Accés directe a Google Contacts
-      description: Connecta amb Google Contacts en temps real per accedir a la informació dels teus clients quan sigui necessari, sense emmagatzemar ni duplicar dades.
-      image: '/images/google-contacts-logo.webp'
+        - Recordatoris automàtics per SMS
+        - Enviats automàticament abans de cada cita
+        - Redueix l'absentisme fins a un 80% comprovat
+    - title: Llest en 3 minuts
+      description: T'identifiques amb el teu compte de Google, selecciones el teu calendari per enviar recordatoris, tries el teu estil de recordatori i ja està. No necessites canviar la teva forma de treballar ni aprendre sistemes complicats.
+      image: '/images/quick-setup.webp'
       list:
-        - Accés en viu a contactes
-        - Sense emmagatzematge local de dades
-        - Privacitat i seguretat garantida
-    - title: Canals múltiples de comunicació
-      description: Envia recordatoris per SMS i email a través dels nostres proveïdors optimitzats per a màxima entrega i confiabilitat.
-      image: '/images/multiple-comms-channels.svg'
+        - Configuració simple en minuts
+        - Sense canviar el teu flux de treball actual
+        - Integració transparent amb Google
+    - title: Sense errors ni gestió manual de números
+      description: Simplement afegeixes als teus contactes al Google Calendar com a assistents i nosaltres ens encarreguem de la resta. Sense copiar números un per un, sense errors de transcripció, sense gestionar dades personals constantment.
+      image: '/images/automate.webp'
       list:
-        - SMS amb entrega garantida
-        - Emails professionals personalitzables
-        - Estadístiques d'obertura i entrega
+        - Automatitza, sense canviar la teva forma de treballar
+        - Afegeixes al Google Calendar, nosaltres enviem
+        - Menys errors, menys treball administratiu
 
   featuresVideo:
     title: Configuració simple i efectiva
