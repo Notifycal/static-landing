@@ -6,44 +6,45 @@ hero:
     enable: true
     label: Start Free
     link: 'https://private.notifycal.com'
+  poweredBy: 'Powered by:'
 
 features:
   featuresTab:
     title: Connect with your tools without changing your workflow
     description: Notifycal acts as an intelligent proxy between your existing applications and your clients, without storing or duplicating information.
     tabList:
-      - title: Direct calendar connection
+      - title: Direct Google Calendar integration
         icon: 'calendar'
-        image: '/images/google-calendar-logo.webp'
-      - title: Real-time contact access
+        image: '/images/monitor-blur-calendar.webp'
+      - title: Intelligent contact access
         icon: 'users'
-        image: '/images/google-contacts-logo.webp'
-      - title: Automatic multi-channel sending
+        image: '/images/phone-blur-contact.webp'
+      - title: Multiple communication channels
         icon: 'mail'
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
-    - title: Native Google Calendar integration
-      description: Automatically sync all your appointments from Google Calendar. Reminders are sent based on your real schedule, without manual configuration.
-      image: '/images/google-calendar-logo.webp'
+    - title: Reduce absenteeism by up to 80%
+      description: Your clients receive automated SMS reminders before their appointment. No forgotten appointments, no last-minute no-shows, no wasted time or money.
+      image: '/images/missing-appointment.webp'
       list:
-        - Real-time bidirectional synchronization
-        - Compatible with multiple calendars
-        - Customizable reminder configuration
-    - title: Direct Google Contacts access
-      description: Connect with Google Contacts in real time to access your clients' information when needed, without storing or duplicating data.
-      image: '/images/google-contacts-logo.webp'
+        - Automated SMS reminders
+        - Sent automatically before each appointment
+        - Reduces absenteeism by up to 80% proven
+    - title: Ready in 3 minutes
+      description: Log in with your Google account, select your calendar to send reminders, choose your reminder style and you're done. You don't need to change your way of working or learn complicated systems.
+      image: '/images/quick-setup.webp'
       list:
-        - Live contact access
-        - No local data storage
-        - Guaranteed privacy and security
-    - title: Multiple communication channels
-      description: Send reminders via SMS and email through our optimized providers for maximum delivery and reliability.
-      image: '/images/multiple-comms-channels.svg'
+        - Simple setup in minutes
+        - No changes to your current workflow
+        - Seamless Google integration
+    - title: Neither errors nor manual number management
+      description: Simply add your contacts in Google Calendar as attendees and we take care of the rest. No copying numbers one by one, no transcription errors, no constantly handling personal data.
+      image: '/images/automate.webp'
       list:
-        - SMS with guaranteed delivery
-        - Customizable professional emails
-        - Opening and delivery statistics
+        - Automates, without changing your way of working
+        - You add in Google Calendar, we send
+        - Fewer errors, less administrative work
 
   featuresVideo:
     title: Simple and effective configuration

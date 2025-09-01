@@ -6,44 +6,45 @@ hero:
     enable: true
     label: Empezar Gratis
     link: 'https://private.notifycal.com'
+  poweredBy: 'Powered by:'
 
 features:
   featuresTab:
     title: Conecta con tus herramientas sin cambiar tu flujo de trabajo
     description: Notifycal actúa como proxy inteligente entre tus aplicaciones existentes y tus clientes, sin almacenar ni duplicar información.
     tabList:
-      - title: Conexión directa con calendarios
+      - title: Integración directa con Google Calendar
         icon: 'calendar' #icon package react-feather-icon
-        image: '/images/google-calendar-logo.webp'
-      - title: Acceso en tiempo real a contactos
+        image: '/images/monitor-blur-calendar.webp'
+      - title: Acceso inteligente a contactos
         icon: 'users' #icon package react-feather-icon
-        image: '/images/google-contacts-logo.webp'
-      - title: Envío automático por múltiples canales
+        image: '/images/phone-blur-contact.webp'
+      - title: Múltiples canales de comunicación
         icon: 'mail' #icon package react-feather-icon
-        image: '/images/automated-sending.svg'
+        image: '/images/multiple-comms-channels.webp'
 
   ourFeatures:
-    - title: Integración nativa con Google Calendar
-      description: Sincroniza automáticamente todas tus citas desde Google Calendar. Los recordatorios se envían basándose en tu agenda real, sin configuración manual.
-      image: '/images/google-calendar-logo.webp'
+    - title: Reduce el absentismo hasta un 80%
+      description: Tus clientes reciben recordatorios automáticos por SMS antes de su cita. Sin olvidos, sin faltas de última hora, sin pérdidas de tiempo ni dinero.
+      image: '/images/missing-appointment.webp'
       list:
-        - Sincronización bidireccional en tiempo real
-        - Compatible con múltiples calendarios
-        - Configuración de recordatorios personalizables
-    - title: Acceso directo a Google Contacts
-      description: Conecta con Google Contacts en tiempo real para acceder a la información de tus clientes cuando sea necesario, sin almacenar ni duplicar datos.
-      image: '/images/google-contacts-logo.webp'
+        - Recordatorios automáticos por SMS
+        - Enviados automáticamente antes de cada cita
+        - Reduce el absentismo hasta un 80% comprobado
+    - title: Listo en 3 minutos
+      description: Te logueas con tu cuenta de Google, seleccionas tu calendario para enviar recordatorios, eliges tu estilo de recordatorio y ya está. No necesitas cambiar tu forma de trabajar ni aprender sistemas complicados.
+      image: '/images/quick-setup.webp'
       list:
-        - Acceso en vivo a contactos
-        - Sin almacenamiento local de datos
-        - Privacidad y seguridad garantizada
-    - title: Canales múltiples de comunicación
-      description: Envía recordatorios por SMS y email a través de nuestros proveedores optimizados para máxima entrega y confiabilidad.
-      image: '/images/multiple-comms-channels.svg'
+        - Configuración simple en minutos
+        - Sin cambiar tu flujo de trabajo actual
+        - Integración transparente con Google
+    - title: Sin errores ni gestión manual de números
+      description: Simplemente añades a tus contactos en Google Calendar como asistentes y nosotros nos encargamos del resto. Sin copiar números uno por uno, sin errores de transcripción, sin manejar datos personales constantemente.
+      image: '/images/automate.webp'
       list:
-        - SMS con entrega garantizada
-        - Emails profesionales personalizables
-        - Estadísticas de apertura y entrega
+        - Automatiza, sin cambiar tu forma de trabajar
+        - Añades en Google Calendar, nosotros enviamos
+        - Menos errores, menos trabajo administrativo
 
   featuresVideo:
     title: Configuración simple y efectiva

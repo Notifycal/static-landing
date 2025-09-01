@@ -56,7 +56,7 @@
 }
 
 .tab-content .tab-content-panel {
-  @apply hidden p-8;
+  @apply hidden p-8 opacity-0 transition-opacity duration-300;
 }
 
 .tab-content-panel p {
@@ -64,7 +64,30 @@
 }
 
 .tab-content .tab-content-panel.active {
-  @apply block;
+  @apply block opacity-100;
+}
+
+.tab-image-container {
+  @apply relative w-full overflow-hidden;
+  aspect-ratio: 5 / 4;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.tab-image {
+  @apply h-full w-full object-contain transition-opacity duration-300;
+}
+
+@media (min-width: 1200px) {
+  .tab-image-container {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .tab-image-container {
+    max-width: 880px;
+  }
 }
 
 /* notice */

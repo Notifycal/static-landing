@@ -13,7 +13,8 @@ const homeCollection = defineCollection({
           link: z.string(),
           enable: z.boolean().default(true)
         })
-        .optional()
+        .optional(),
+      poweredBy: z.string()
     }),
     features: z.object({
       featuresTab: z.object({
