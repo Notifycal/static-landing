@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.16.1](https://github.com/Notifycal/static-landing/compare/v1.16.0...v1.16.1) (2025-09-01)
+
+
+### Bug Fixes
+
+* adjust wording and images ([#461](https://github.com/Notifycal/static-landing/issues/461)) ([4c0d957](https://github.com/Notifycal/static-landing/commit/4c0d957459b788669b4990ba2e8bd9089ba388eb))
+* **deps:** Update dependency @mantine/core to v8.2.8 ([#464](https://github.com/Notifycal/static-landing/issues/464)) ([76cd7cb](https://github.com/Notifycal/static-landing/commit/76cd7cbca7100918e596b4ed66acf8616a04a1de))
+* **deps:** Update dependency @notifycal/shared to v7.9.2 ([#460](https://github.com/Notifycal/static-landing/issues/460)) ([657aa3a](https://github.com/Notifycal/static-landing/commit/657aa3afe7e75ed06b7bc624fb34e357791c8a15))
+* **deps:** Update dependency astro to v5.13.5 ([#462](https://github.com/Notifycal/static-landing/issues/462)) ([e46dfe9](https://github.com/Notifycal/static-landing/commit/e46dfe9faab4e8a0b70d6fcaa3d200bf48b66c5b))
+* **deps:** Update dependency vite to v7.1.4 ([#466](https://github.com/Notifycal/static-landing/issues/466)) ([27a7efb](https://github.com/Notifycal/static-landing/commit/27a7efb707976b154b0ea232a12c50ec410d48be))
+
 ## [1.16.0](https://github.com/Notifycal/static-landing/compare/v1.15.0...v1.16.0) (2025-08-28)
 
 
