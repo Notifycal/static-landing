@@ -6,6 +6,7 @@ hero:
     enable: true
     label: Empezar Gratis
     link: 'https://private.notifycal.com'
+  poweredBy: 'Powered by:'
 
 features:
   featuresTab:

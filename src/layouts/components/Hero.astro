@@ -2,7 +2,7 @@
 import { markdownify } from '@/lib/utils/textConverter';
 import { Image } from 'astro:assets';
 const { hero } = Astro.props;
-const { title, button, content } = hero;
+const { title, button, content, poweredBy } = hero;
 ---
 
 <section class="section banner relative">
@@ -22,7 +22,7 @@ const { title, button, content } = hero;
       <div class="my-11 lg:col-6">
         <Image class="mx-auto w-full object-contain" alt="service" width={480} height={320} src="/images/hero.webp" />
         <section class="mt-8 flex flex-col">
-          <h4 class="text-dark mb-4 ml-6 text-left">Powered by:</h4>
+          <h4 class="text-dark mb-4 ml-6 text-left">{poweredBy}</h4>
           <div class="ml-8 flex justify-center gap-10">
             <img
               src="/images/google-calendar-icon.svg"
