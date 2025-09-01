@@ -15,5 +15,5 @@
 }
 
 @utility bg-gradient-accent2 {
-  background-image: linear-gradient(184.78deg, var(--color-accent2-500) 7.64%, var(--color-secondary-500) 120.07%);
+  background-image: linear-gradient(184.78deg, var(--color-accent2-400) 7.64%, var(--color-secondary-500) 120.07%);
 }
