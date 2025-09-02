@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.17.0](https://github.com/Notifycal/static-landing/compare/v1.16.1...v1.17.0) (2025-09-02)
+
+
+### Features
+
+* rrss links ([#467](https://github.com/Notifycal/static-landing/issues/467)) ([18664d2](https://github.com/Notifycal/static-landing/commit/18664d2304888639550eba02e985afa7faa2fe95))
+
+
+### Bug Fixes
+
+* btn-primary. about page contrast. get rid of some unused css code. Cookie modal styling ([#465](https://github.com/Notifycal/static-landing/issues/465)) ([509663a](https://github.com/Notifycal/static-landing/commit/509663ae9da39f32d22d1e9c5d9ec6851c86a78d))
+
 ## [1.16.1](https://github.com/Notifycal/static-landing/compare/v1.16.0...v1.16.1) (2025-09-01)
 
 
