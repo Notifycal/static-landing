@@ -4,7 +4,7 @@ hero:
   content: 'We take care of reminding your clients about their appointments so you can focus on what really matters: growing your business.'
   button:
     enable: true
-    label: Start Free
+    label: 'Start saving time'
     link: 'https://private.notifycal.com'
   poweredBy: 'Powered by:'
 
@@ -174,5 +174,5 @@ testimonial:
 cta:
   title: 'Ready to automate your reminders?'
   description: 'Join hundreds of professionals who have already eliminated client no-shows. Start free and improve your business efficiency today.'
-  buttonLabel: 'Try Free'
+  buttonLabel: 'Create your account in one minute'
 ---
