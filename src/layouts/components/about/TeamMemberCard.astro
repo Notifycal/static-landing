@@ -22,7 +22,7 @@ const { member } = Astro.props;
       <Image class="mx-auto rounded-full" src={member.image} alt={member.name} width={120} height={120} />
     </div>
 
-    <h3 class="mb-2">{member.name}</h3>
+    <h3 class="text-dark mb-2">{member.name}</h3>
     <p class="text-accent2-600 mb-4 font-semibold">{member.field}</p>
     <p class="text-dark mb-6" set:html={markdownify(member.bio)} />
 

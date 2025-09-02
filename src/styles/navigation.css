@@ -23,15 +23,16 @@
 }
 
 .nav-link {
-  @apply block rounded-lg border border-transparent p-3 py-2 text-lg text-white no-underline transition md:px-2 lg:inline-block;
+  @apply block rounded-lg p-3 py-2 text-lg text-white no-underline transition md:px-2 lg:inline-block;
 
-  /* @apply hover:bg-accent1-500/75 hover:text-accent1-800 hover:no-underline transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-primary-900; */
   @apply block rounded-md px-3 py-2 font-medium text-white transition-all duration-300;
 
   &:hover:not(.active) {
-    @apply bg-accent1-500/75 text-accent1-800 shadow-primary-900 scale-105 no-underline shadow-md transition-all duration-300;
-    @apply border-accent1-500 bg-accent1-500 text-secondary;
-    @apply bg-accent1-500/75 text-accent1-800 shadow-primary-900 scale-105 no-underline shadow-md;
+    @apply scale-105 no-underline transition-all duration-300;
+
+    &::after {
+      @apply bg-gradient-accent1 absolute right-2 bottom-0 left-2 h-1 content-[''];
+    }
   }
 
   &.active {
