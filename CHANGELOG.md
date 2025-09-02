@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/Notifycal/static-landing/compare/v1.17.0...v1.17.1) (2025-09-02)
+
+
+### Bug Fixes
+
+* cta button text. Remove capitalize ([#469](https://github.com/Notifycal/static-landing/issues/469)) ([098c5f0](https://github.com/Notifycal/static-landing/commit/098c5f09e97cd012acde25594effdce46534c473))
+
 ## [1.17.0](https://github.com/Notifycal/static-landing/compare/v1.16.1...v1.17.0) (2025-09-02)
 
 
