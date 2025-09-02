@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-semibold capitalize shadow-lg transition-all duration-300 hover:-translate-y-1 hover:no-underline hover:shadow-xl;
+  @apply inline-block h-[52px] cursor-pointer rounded-lg px-8 py-2 text-center leading-[36px] font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:no-underline hover:shadow-xl;
 }
 
 .btn-sm {

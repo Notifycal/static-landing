@@ -4,7 +4,7 @@ hero:
   content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.'
   button:
     enable: true
-    label: Empezar Gratis
+    label: 'Empieza a ahorrar tiempo'
     link: 'https://private.notifycal.com'
   poweredBy: 'Powered by:'
 
@@ -174,5 +174,5 @@ testimonial:
 cta:
   title: '¿Listo para automatizar tus recordatorios?'
   description: 'Únete a cientos de profesionales que ya han eliminado las faltas de sus clientes. Comienza gratis y mejora la eficiencia de tu negocio hoy mismo.'
-  buttonLabel: 'Probar Gratis'
+  buttonLabel: 'Crea tu cuenta en un minuto'
 ---
