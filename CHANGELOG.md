@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/Notifycal/static-landing/compare/v2.0.0...v2.0.1) (2025-09-04)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.10.1 ([#477](https://github.com/Notifycal/static-landing/issues/477)) ([5105086](https://github.com/Notifycal/static-landing/commit/5105086d0ed283abe6bdc46d49409e3f0c53bead))
+* **deps:** Update Terraform github.com/Notifycal/tofu-module-static-website to v3.0.1 ([#481](https://github.com/Notifycal/static-landing/issues/481)) ([757f745](https://github.com/Notifycal/static-landing/commit/757f745455b8ee52581e032c71678f426452b9c7))
+
 ## [2.0.0](https://github.com/Notifycal/static-landing/compare/v1.17.2...v2.0.0) (2025-09-04)
 
 
