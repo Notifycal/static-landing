@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Notifycal/static-landing/compare/v1.17.2...v2.0.0) (2025-09-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* go live ([#474](https://github.com/Notifycal/static-landing/issues/474))
+
+### Features
+
+* go live ([#474](https://github.com/Notifycal/static-landing/issues/474)) ([c71b7bc](https://github.com/Notifycal/static-landing/commit/c71b7bc39b90273433ed39d888d90b776fe0beb5))
+
 ## [1.17.2](https://github.com/Notifycal/static-landing/compare/v1.17.1...v1.17.2) (2025-09-02)
 
 
