@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.2](https://github.com/Notifycal/static-landing/compare/v2.0.1...v2.0.2) (2025-09-08)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency vite to v7.1.5 ([#486](https://github.com/Notifycal/static-landing/issues/486)) ([ed32c31](https://github.com/Notifycal/static-landing/commit/ed32c31a596a673d422ff98f43d8e24ebb0c8516))
+* do not show service config info in Devtools console ([#487](https://github.com/Notifycal/static-landing/issues/487)) ([e4d3157](https://github.com/Notifycal/static-landing/commit/e4d3157e4dda6e5b1e27728a1edeab45023172da))
+
 ## [2.0.1](https://github.com/Notifycal/static-landing/compare/v2.0.0...v2.0.1) (2025-09-04)
 
 
