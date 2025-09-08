@@ -38,7 +38,6 @@ function waitForGlobalConfig(callback: () => void, maxAttempts = 50): void {
 waitForGlobalConfig(() => {
   loadServiceConfig();
   window.serviceConfig = getServiceConfig();
-  console.log('Service config processed:', window.serviceConfig);
 
   window.dispatchEvent(
     new CustomEvent('serviceConfigReady', {
