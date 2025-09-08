@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/Notifycal/static-landing/compare/v2.0.2...v2.0.3) (2025-09-08)
+
+
+### Bug Fixes
+
+* replace gtag.js with GTM ([#489](https://github.com/Notifycal/static-landing/issues/489)) ([8cfadcd](https://github.com/Notifycal/static-landing/commit/8cfadcd5ba3d048bbe3cdb9a46371fe3f6deaf65))
+
 ## [2.0.2](https://github.com/Notifycal/static-landing/compare/v2.0.1...v2.0.2) (2025-09-08)
 
 
