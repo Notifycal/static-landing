@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.1](https://github.com/Notifycal/static-landing/compare/v2.1.0...v2.1.1) (2025-09-09)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency astro to v5.13.7 ([#496](https://github.com/Notifycal/static-landing/issues/496)) ([0203e4b](https://github.com/Notifycal/static-landing/commit/0203e4b57a508ada345e7a889136952f91f0e68c))
+* replace gtag.js with gtm + bespoke GTM event on consent change ([#499](https://github.com/Notifycal/static-landing/issues/499)) ([940fd0f](https://github.com/Notifycal/static-landing/commit/940fd0f5f8f6be89fc30f78e767736a101c94d12))
+
 ## [2.1.0](https://github.com/Notifycal/static-landing/compare/v2.0.3...v2.1.0) (2025-09-09)
 
 
