@@ -27,6 +27,21 @@ const {
     <!-- google font css -->
     <Unfont />
     <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'denied'
+      });
+    </script>
+    <script is:inline>
       window.onServiceConfigReady = function (callback, configKey) {
         function executeCallback() {
           if (window.serviceConfig) {
