@@ -31,6 +31,8 @@ const {
       window.gtag = function () {
         window.dataLayer.push(arguments);
       };
+
+      // Default consent denied needs to happen early, before loading GTM
       window.gtag('consent', 'default', {
         ad_storage: 'denied',
         ad_user_data: 'denied',
