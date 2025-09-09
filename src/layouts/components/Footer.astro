@@ -40,9 +40,18 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
                 {item.type === 'anchor' ? (
                   <CookieConsent buttonSettingsText={item.name} />
                 ) : item.type === 'frontend' ? (
-                  <a id={`frontend-link-${i}`} href={item.url} data-original-url={item.url} {...(item.target && { target: item.target })}>{item.name}</a>
+                  <a
+                    id={`frontend-link-${i}`}
+                    href={item.url}
+                    data-original-url={item.url}
+                    {...(item.target && { target: item.target })}
+                  >
+                    {item.name}
+                  </a>
                 ) : (
-                  <a href={item.url} {...(item.target && { target: item.target })}>{item.name}</a>
+                  <a href={item.url} {...(item.target && { target: item.target })}>
+                    {item.name}
+                  </a>
                 )}
               </li>
             ))
@@ -72,13 +81,13 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
   function setupFrontendLinks() {
     window.onServiceConfigReady((frontendUrl) => {
       if (!frontendUrl) return;
-      
+
       const feedbackLink = document.getElementById('feedback-link');
       if (feedbackLink) {
         feedbackLink.href = encodeURI(`${frontendUrl}/#/?redirect=/feedback`);
       }
       const frontendLinks = document.querySelectorAll('[id^="frontend-link-"]');
-      frontendLinks.forEach(link => {
+      frontendLinks.forEach((link) => {
         const originalUrl = link.getAttribute('data-original-url');
         link.href = `${frontendUrl}${originalUrl}`;
       });
