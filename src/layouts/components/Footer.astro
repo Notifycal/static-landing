@@ -37,10 +37,12 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
           {
             navigation.data.footer.map((item, i) => (
               <li class={navigation.data.footer.length - 1 === i ? 'mb-0' : 'mb-4'}>
-                {item.url === '#cookie-settings' ? (
+                {item.type === 'anchor' ? (
                   <CookieConsent buttonSettingsText={item.name} />
+                ) : item.type === 'frontend' ? (
+                  <a id={`frontend-link-${i}`} href={item.url} data-original-url={item.url} {...(item.target && { target: item.target })}>{item.name}</a>
                 ) : (
-                  <a href={item.url}>{item.name}</a>
+                  <a href={item.url} {...(item.target && { target: item.target })}>{item.name}</a>
                 )}
               </li>
             ))
@@ -67,15 +69,22 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
   </div>
 </footer>
 <script is:inline>
-  function setupFeedbackLink() {
+  function setupFrontendLinks() {
     window.onServiceConfigReady((frontendUrl) => {
+      if (!frontendUrl) return;
+      
       const feedbackLink = document.getElementById('feedback-link');
-      if (feedbackLink && frontendUrl) {
+      if (feedbackLink) {
         feedbackLink.href = encodeURI(`${frontendUrl}/#/?redirect=/feedback`);
       }
+      const frontendLinks = document.querySelectorAll('[id^="frontend-link-"]');
+      frontendLinks.forEach(link => {
+        const originalUrl = link.getAttribute('data-original-url');
+        link.href = `${frontendUrl}${originalUrl}`;
+      });
     }, 'FRONTEND_URL');
   }
 
-  document.addEventListener('astro:page-load', setupFeedbackLink);
-  setupFeedbackLink();
+  document.addEventListener('astro:page-load', setupFrontendLinks);
+  setupFrontendLinks();
 </script>

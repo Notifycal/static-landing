@@ -242,7 +242,9 @@ const navigationCollection = defineCollection({
     footer: z.array(
       z.object({
         name: z.string(),
-        url: z.string()
+        url: z.string(),
+        type: z.enum(['internal', 'frontend', 'anchor']),
+        target: z.enum(['_blank', '_self', '_parent', '_top']).optional()
       })
     )
   })
