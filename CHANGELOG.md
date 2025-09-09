@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/Notifycal/static-landing/compare/v2.0.3...v2.1.0) (2025-09-09)
+
+
+### Features
+
+* privacy policy and terms and conditions links ([#495](https://github.com/Notifycal/static-landing/issues/495)) ([b726afe](https://github.com/Notifycal/static-landing/commit/b726afe452a2dd5b31937cb5f8784045067d9b19))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.3.0 ([#490](https://github.com/Notifycal/static-landing/issues/490)) ([9ff6ffe](https://github.com/Notifycal/static-landing/commit/9ff6ffe3731178226fbeec866280838c38f40e6d))
+* **deps:** Update Node.js Dependencies ([#494](https://github.com/Notifycal/static-landing/issues/494)) ([a686d40](https://github.com/Notifycal/static-landing/commit/a686d40e3ccbdace40926e4a6996be267fe92e47))
+
 ## [2.0.3](https://github.com/Notifycal/static-landing/compare/v2.0.2...v2.0.3) (2025-09-08)
 
 
