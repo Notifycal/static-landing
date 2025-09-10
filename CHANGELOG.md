@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/Notifycal/static-landing/compare/v2.1.1...v2.1.2) (2025-09-10)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.3.1 ([#500](https://github.com/Notifycal/static-landing/issues/500)) ([900f2a5](https://github.com/Notifycal/static-landing/commit/900f2a5d7ab31af3dfae9420d13161b2f9c761ce))
+* reference landing-specific GTM id ([#502](https://github.com/Notifycal/static-landing/issues/502)) ([02a9c69](https://github.com/Notifycal/static-landing/commit/02a9c699ad5fd2822644c14a682302cf007e8d5c))
+
 ## [2.1.1](https://github.com/Notifycal/static-landing/compare/v2.1.0...v2.1.1) (2025-09-09)
 
 
