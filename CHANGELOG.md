@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.3](https://github.com/Notifycal/static-landing/compare/v2.1.2...v2.1.3) (2025-09-10)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.12.0 ([#503](https://github.com/Notifycal/static-landing/issues/503)) ([5230b75](https://github.com/Notifycal/static-landing/commit/5230b75c4bb6fe7dbb5f450233d777062e3a5e8f))
+* renaming of GTM setup script ([#505](https://github.com/Notifycal/static-landing/issues/505)) ([2672ed8](https://github.com/Notifycal/static-landing/commit/2672ed8b681b2342f61baf125414c7e136ea6358))
+
 ## [2.1.2](https://github.com/Notifycal/static-landing/compare/v2.1.1...v2.1.2) (2025-09-10)
 
 
