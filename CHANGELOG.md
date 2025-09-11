@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.4](https://github.com/Notifycal/static-landing/compare/v2.1.3...v2.1.4) (2025-09-11)
+
+
+### Bug Fixes
+
+* increase Tier Selection width to match rest of sections ([#512](https://github.com/Notifycal/static-landing/issues/512)) ([120fe19](https://github.com/Notifycal/static-landing/commit/120fe190f21e495d70fb63ec4db4956b84b19b56))
+* use single GTM id for all apps in a given environment ([#513](https://github.com/Notifycal/static-landing/issues/513)) ([d44c2c8](https://github.com/Notifycal/static-landing/commit/d44c2c8d2e04ab6fd777bc6828d0c8c3b4506527))
+
 ## [2.1.3](https://github.com/Notifycal/static-landing/compare/v2.1.2...v2.1.3) (2025-09-10)
 
 
