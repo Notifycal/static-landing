@@ -1,4 +1,4 @@
-import { Container, MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import { TierSelection as TierSelectionReact } from '@notifycal/shared/components';
 import { orderedTierInfoWithIcons } from '@notifycal/shared/pricing';
 import type { LanguageCode } from '@notifycal/shared/types';
@@ -26,18 +26,16 @@ export function TierSelection({ locale }: TierSelection): JSX.Element {
         colors: colors
       }}
     >
-      <Container>
-        <TierSelectionReact
-          isCardButtonDisabled={() => false}
-          isCardButtonLoading={() => false}
-          lang={locale}
-          orderedTierInfoWithIcons={orderedTierInfoWithIcons(tiers, locale)}
-          onTierSelection={() => {
-            window.open(frontendUrl, '_blank');
-            return Promise.resolve();
-          }}
-        />
-      </Container>
+      <TierSelectionReact
+        isCardButtonDisabled={() => false}
+        isCardButtonLoading={() => false}
+        lang={locale}
+        orderedTierInfoWithIcons={orderedTierInfoWithIcons(tiers, locale)}
+        onTierSelection={() => {
+          window.open(frontendUrl, '_blank');
+          return Promise.resolve();
+        }}
+      />
     </MantineProvider>
   );
 }
