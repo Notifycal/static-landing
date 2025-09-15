@@ -2,9 +2,19 @@ import type { LanguageCode } from '@notifycal/shared/types';
 import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:content';
 import { defaultLang, languages, showDefaultLang } from './i18n-const';
 
+export function buildLocalizedUrl(path: string, lang: LanguageCode): string {
+  const [pathPart, anchorPart] = path.split('#');
+  const basePath = pathPart || '/';
+
+  const localizedPath =
+    !showDefaultLang && lang === defaultLang ? basePath : `/${lang}${basePath === '/' ? '' : basePath}`;
+
+  return anchorPart ? `${localizedPath}#${anchorPart}` : localizedPath;
+}
+
 export function useTranslatedPath(lang: LanguageCode) {
   return function translatePath(path: string, l: LanguageCode = lang): string {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path === '/' ? '' : path}`;
+    return buildLocalizedUrl(path, l);
   };
 }
 

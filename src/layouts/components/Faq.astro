@@ -9,7 +9,7 @@ type Props = {
 const { faq } = Astro.props;
 ---
 
-<section class="section faqs">
+<section class="section faqs" id="faq">
   <div class="container max-w-[1230px]">
     <FaqComponent client:load faqData={faq} />
   </div>
