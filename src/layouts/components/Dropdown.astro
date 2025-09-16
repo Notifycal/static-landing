@@ -50,6 +50,14 @@ const { width = 'w-48', className = '', triggerIcon = true, items = [] } = Astro
   document.addEventListener('astro:page-load', () => {
     document.querySelectorAll('.dropdown-button').forEach((button) => {
       button.addEventListener('click', (e) => {
+        if (e.target.closest('.dropdown-item')) {
+          const dropdown = e.currentTarget.querySelector('.nav-dropdown-list');
+          if (dropdown) {
+            dropdown.classList.add('hidden');
+          }
+          return;
+        }
+
         e.preventDefault();
 
         const dropdown = e.currentTarget.querySelector('.nav-dropdown-list');
@@ -62,7 +70,6 @@ const { width = 'w-48', className = '', triggerIcon = true, items = [] } = Astro
           otherDropdown.classList.add('hidden');
         });
 
-        // Toggle current dropdown
         if (!isCurrentlyOpen) {
           dropdown.classList.remove('hidden');
         }
