@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.5](https://github.com/Notifycal/static-landing/compare/v2.1.4...v2.1.5) (2025-09-16)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @tabler/icons-react to v3.35.0 ([#521](https://github.com/Notifycal/static-landing/issues/521)) ([26b8a26](https://github.com/Notifycal/static-landing/commit/26b8a266bd86c21f1eee59e6458d5caaf230a97a))
+* **deps:** Update dependency marked to v16.3.0 ([#518](https://github.com/Notifycal/static-landing/issues/518)) ([5e0d6f1](https://github.com/Notifycal/static-landing/commit/5e0d6f17340b5ce16d729b374e2bbf4e269c64cc))
+* **deps:** Update dependency swiper to v12 ([#516](https://github.com/Notifycal/static-landing/issues/516)) ([d803da8](https://github.com/Notifycal/static-landing/commit/d803da8f4744a5aed5d779f51160c70942f4350d))
+* devalue package security vulnerability ([#522](https://github.com/Notifycal/static-landing/issues/522)) ([15a07e5](https://github.com/Notifycal/static-landing/commit/15a07e5cdde423e1f7de49904b4699312ada8735))
+
 ## [2.1.4](https://github.com/Notifycal/static-landing/compare/v2.1.3...v2.1.4) (2025-09-11)
 
 
