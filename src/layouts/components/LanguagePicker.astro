@@ -28,39 +28,40 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
 
 <Dropdown width="w-36" className={className}>
   <Fragment slot="trigger">
-    {variant === 'desktop' && currentLang && (
-      <img
-        alt={languages[currentLang]}
-        title={languages[currentLang]}
-        fetchpriority="high"
-        decoding="async"
-        class="mr-1 inline aspect-square h-6 w-6 max-w-none"
-        src={flags[currentLang].src}
-      />
-    )}
+    {
+      variant === 'desktop' && currentLang && (
+        <img
+          alt={languages[currentLang]}
+          title={languages[currentLang]}
+          fetchpriority="high"
+          decoding="async"
+          class="mr-1 inline aspect-square h-6 w-6 max-w-none"
+          src={flags[currentLang].src}
+        />
+      )
+    }
     {variant === 'mobile' && <span class="text-white">{languageMobileLabel}</span>}
   </Fragment>
   <Fragment slot="items">
-    {Object.entries(languages).map(([lang, label]) => {
-      const href = buildLocalizedUrl(currentPath, lang as LanguageCode);
-      return (
-        <li class="nav-dropdown-item">
-          <a
-            href={href}
-            class="nav-link dropdown-item"
-          >
-            <img
-              alt={label}
-              title={label}
-              fetchpriority="high"
-              decoding="async"
-              class="inline-block h-4 w-4 flex-shrink-0"
-              src={flags[lang as keyof typeof languages].src}
-            />
-            <span>{label}</span>
-          </a>
-        </li>
-      );
-    })}
+    {
+      Object.entries(languages).map(([lang, label]) => {
+        const href = buildLocalizedUrl(currentPath, lang as LanguageCode);
+        return (
+          <li class="nav-dropdown-item">
+            <a href={href} class="nav-link dropdown-item">
+              <img
+                alt={label}
+                title={label}
+                fetchpriority="high"
+                decoding="async"
+                class="inline-block h-4 w-4 flex-shrink-0"
+                src={flags[lang as keyof typeof languages].src}
+              />
+              <span>{label}</span>
+            </a>
+          </li>
+        );
+      })
+    }
   </Fragment>
 </Dropdown>
