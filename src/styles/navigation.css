@@ -33,7 +33,7 @@
     }
   }
 
-  &.active {
+  &.active {    
     @apply relative cursor-default;
 
     &::after {

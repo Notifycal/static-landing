@@ -6,13 +6,13 @@ main:
     url: '/#features'
   - name: 'Pricing'
     url: '/#pricing'
-  - name: 'FAQ'
-    url: '/#faq'
   - name: 'See More'
     url: ''
     children:
       - name: 'About us'
         url: '/about'
+      - name: 'FAQ'
+        url: '/#faq'
       - name: 'Roadmap'
         url: '/roadmap'
 
