@@ -84,5 +84,18 @@ const { width = 'w-48', className = '', triggerIcon = true, items = [] } = Astro
         });
       }
     });
+
+    // Preserve anchors for all dropdown item links
+    document.querySelectorAll('.nav-dropdown-item a.dropdown-item').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const currentHash = window.location.hash;
+        if (currentHash) {
+          e.preventDefault();
+          const href = e.currentTarget.href;
+          const newUrl = href.includes('#') ? href : href + currentHash;
+          window.location.href = newUrl;
+        }
+      });
+    });
   });
 </script>
