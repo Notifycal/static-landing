@@ -23,12 +23,10 @@
 }
 
 .nav-link {
-  @apply block rounded-lg p-3 py-2 text-lg text-white lg:text-white no-underline transition md:px-2 lg:inline-block;
-
-  @apply block rounded-md px-3 py-2 font-medium text-white lg:text-white transition-all duration-300;
+  @apply block px-3 py-3 font-medium rounded-lg text-lg text-white lg:text-white no-underline transition md:px-4 lg:inline-block transition-all duration-300;
 
   &:hover:not(.active) {
-    @apply scale-105 no-underline transition-all duration-300;
+    @apply scale-105;
 
     &::after {
       @apply bg-gradient-accent1 absolute right-3 bottom-0 left-3 h-1 content-[''];
@@ -44,6 +42,24 @@
   }
 
   &.dropdown-item {
-    @apply flex items-center px-4 py-4 text-white lg:text-gray-700;
+    @apply flex items-center text-white lg:text-gray-700 transition-colors;
+
+    &:hover {
+      @apply bg-accent1-500 text-gray-900;
+
+      /* Remove inherited underline effect from nav-link */
+      &::after {
+        display: none;
+      }
+    }
+    /* Remove underline from active dropdown items */
+    &.active::after {
+      display: none;
+    }
+
+    /* Apply spacing to all direct children */
+    & > * {
+      @apply mx-2;
+    }
   }
 }

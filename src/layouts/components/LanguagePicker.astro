@@ -54,7 +54,7 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
               title={label}
               fetchpriority="high"
               decoding="async"
-              class="mr-3 inline-block h-4 w-4 flex-shrink-0"
+              class="inline-block h-4 w-4 flex-shrink-0"
               src={flags[lang as keyof typeof languages].src}
             />
             <span>{label}</span>
