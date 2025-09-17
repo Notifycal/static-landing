@@ -1,0 +1,179 @@
+---
+import type { CollectionEntry } from 'astro:content';
+type HeroEntry = CollectionEntry<'home'>['data']['hero'];
+
+import { markdownify } from '@/lib/utils/textConverter';
+import { TbSquareRoundedChevronDownFilled } from 'react-icons/tb';
+
+const { hero } = Astro.props as { hero: HeroEntry };
+const { title, subtitles, mainButton, secondaryButton, content, poweredBy, sellingPoints } = hero;
+
+// TODO:
+// - [DONE] Preload image as background, then transition to video
+// - [DONE] Fix no subtitles/dynamism on language change
+// - Verify language text "length". ie: buttons,
+// - Decide on sub-sub-title (adjust width)
+// - min-h for video?
+// - review lighthouse scores
+---
+
+<section class="relative h-[calc(100vh-103px)] w-full overflow-hidden">
+  <picture>
+    <source
+      srcset="
+        /images/hero-768.webp 768w,
+        /images/hero-1280.webp 1280w,
+        /images/hero-1920.webp 1920w,
+      "
+      sizes="(max-width: 768px) 100vw,
+           (max-width: 1280px) 100vw,
+           1920px"
+      type="image/webp"
+    />
+    <img
+      id="heroVideoFallback"
+      src="/images/hero-1920.webp"
+      alt=""
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-1000 ease-in-out"
+    />
+  </picture>
+
+  <video
+    id="heroVideo"
+    class="absolute top-0 left-0 z-[-1] h-full w-full object-cover"
+    autoplay
+    muted
+    playsinline
+    preload="none"
+  >
+    <source src="/video/hero.mp4" type="video/mp4" />
+  </video>
+
+  <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply backdrop-blur-sm"></div>
+
+  <div class="text-primary-50 relative z-10 container flex h-full items-center">
+    <div class="hero-content w-full text-center">
+      <h1 class="text-secondary-200 text-center font-bold" style="min-height: 180px;">
+        {title}<br />
+        <span id="dynamicSubtitle" class="text-primary-500 text-7xl transition-opacity duration-500 ease-in-out"></span>
+      </h1>
+
+      <p class="text-center text-xl">
+        Gestiona tus citas con recordatorios por SMS.<br />Optimiza tu tiempo y ofrece una experiencia más profesional.
+      </p>
+
+      <div class="mx-auto max-w-2xl">
+        <div class="my-8 grid justify-center justify-items-start gap-4 sm:grid-cols-[max-content_max-content]">
+          {
+            sellingPoints.map((item) => (
+              <div class="flex items-center">
+                <svg
+                  class="mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-primary-50">{item}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      {content && <p class="text-center text-xl" set:html={markdownify(content)} />}
+      <div>
+        <div class="mx-auto mt-16 mb-8 flex max-w-xl flex-col justify-center gap-12 sm:flex-row">
+          {
+            mainButton && mainButton.enable && (
+              <div class="flex-1 text-center">
+                <a class="btn btn-primary button-vibrate w-full" href={mainButton.link}>
+                  {mainButton.label}
+                </a>
+              </div>
+            )
+          }
+
+          {
+            secondaryButton && secondaryButton.enable && (
+              <div class="flex-1 text-center">
+                <a class="btn w-full border-1 border-white bg-transparent" href={secondaryButton.link}>
+                  {secondaryButton.label}
+                </a>
+              </div>
+            )
+          }
+        </div>
+        <div class="mb-4 flex items-center justify-center gap-4 py-2">
+          <span class="text-secondary-200 text-lg">{poweredBy.title}</span>
+          {
+            poweredBy.powerers.map((power) => (
+              <img
+                src={power.image}
+                alt={power.title}
+                class="size-7 opacity-90 transition-opacity duration-200 hover:opacity-100"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <a
+      href="#features"
+      class="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 animate-bounce text-white [animation-duration:3s] hover:[animation-duration:1s]"
+    >
+      <TbSquareRoundedChevronDownFilled size="80px" />
+    </a>
+  </div>
+</section>
+
+<script is:inline define:vars={{ subtitles }}>
+  const handleHeroSubtitles = (subtitles, subtitleElement) => {
+    let subtitleIndex = 0;
+
+    // Show the first subtitle immediately
+    subtitleElement.innerText = subtitles[subtitleIndex];
+    subtitleElement.style.opacity = '1';
+    subtitleIndex = 1; // Start with the second one in the loop
+
+    function showNextSubtitle() {
+      // Fade out
+      subtitleElement.style.opacity = '0';
+
+      setTimeout(() => {
+        // Update text and fade in
+        subtitleElement.innerText = subtitles[subtitleIndex];
+        subtitleElement.style.opacity = '1';
+        subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+      }, 500); // Corresponds to duration-500
+    }
+
+    // Start the loop
+    setInterval(showNextSubtitle, 3000); // Change every 3 seconds
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    const subtitleElement = document.getElementById('dynamicSubtitle');
+    if (!subtitleElement) return;
+
+    handleHeroSubtitles(subtitles, subtitleElement);
+  });
+</script>
+
+<script>
+  import { handleVideoFallback, handleVideoPause } from '@/lib/utils/heroVideo';
+
+  document.addEventListener('astro:page-load', () => {
+    const video = document.querySelector<HTMLVideoElement>('#heroVideo');
+    const videoFallback = document.querySelector<HTMLImageElement>('#heroVideoFallback');
+
+    if (!video) return;
+
+    if (videoFallback) {
+      handleVideoFallback(video, videoFallback);
+    }
+
+    handleVideoPause(video);
+  });
+</script>

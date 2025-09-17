@@ -139,3 +139,11 @@ const {
     <Footer />
   </body>
 </html>
+
+<script>
+  import { updateScrollMargins } from '@/lib/utils/scrollMargins';
+
+  updateScrollMargins();
+
+  window.addEventListener('resize', () => updateScrollMargins());
+</script>

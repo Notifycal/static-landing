@@ -1,12 +1,34 @@
 ---
 hero:
-  title: 'Are you wasting time sending manual reminders?'
+  title: 'Are you tired of'
+  subtitles:
+    - spending hours sending reminders?
+    - your clients forgetting their appointments?
+    - last-minute calls and emails?
+    - working more on reminders than on your business?
   content: 'We take care of reminding your clients about their appointments so you can focus on what really matters: growing your business.'
-  button:
+  mainButton:
     enable: true
     label: 'Start saving time'
     link: 'https://private.notifycal.com'
-  poweredBy: 'Powered by:'
+  secondaryButton:
+    enable: true
+    label: 'Watch demo (2 min)'
+    link: '#video'
+  sellingPoints:
+    - Setup in under 5 minutes
+    - No technical skills required
+    - 24/7 automated responses
+    - Integrates with existing tools
+  poweredBy:
+    title: 'Powered by'
+    powerers:
+      - title: Google Calendar
+        image: /images/google-calendar-icon.svg
+      - title: Google Contacts
+        image: /images/google-contacts-icon.svg
+      - title: Stripe
+        image: /images/stripe-icon.svg
 
 features:
   featuresTab:

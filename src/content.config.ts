@@ -1,20 +1,33 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
+const heroButton = z
+  .object({
+    label: z.string(),
+    link: z.string(),
+    enable: z.boolean().default(true)
+  })
+  .optional();
+
 const homeCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/home' }),
   schema: z.object({
     hero: z.object({
       title: z.string(),
+      subtitles: z.array(z.string()),
       content: z.string().optional(),
-      button: z
-        .object({
-          label: z.string(),
-          link: z.string(),
-          enable: z.boolean().default(true)
-        })
-        .optional(),
-      poweredBy: z.string()
+      mainButton: heroButton,
+      secondaryButton: heroButton,
+      sellingPoints: z.array(z.string()),
+      poweredBy: z.object({
+        title: z.string(),
+        powerers: z.array(
+          z.object({
+            title: z.string(),
+            image: z.string()
+          })
+        )
+      })
     }),
     features: z.object({
       featuresTab: z.object({

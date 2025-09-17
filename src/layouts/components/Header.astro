@@ -34,7 +34,7 @@ function isActivePath(menuUrl: string): boolean {
 }
 ---
 
-<header class="header bg-secondary">
+<header class="header bg-secondary" id="siteHeader">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -102,7 +102,10 @@ function isActivePath(menuUrl: string): boolean {
               <li class="nav-item">
                 <a
                   href={translatePath(menu.url)}
-                  class={`nav-link inline-block lg:block ${isActivePath(menu.url) && 'active'}`}
+                  class={clsx({
+                    'nav-link inline-block lg:block': true,
+                    'active pointer-events-none': isActivePath(menu.url)
+                  })}
                 >
                   {menu.name}
                 </a>
