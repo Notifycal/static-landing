@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.1](https://github.com/Notifycal/static-landing/compare/v2.2.0...v2.2.1) (2025-09-18)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.13.1 ([#531](https://github.com/Notifycal/static-landing/issues/531)) ([8f322b4](https://github.com/Notifycal/static-landing/commit/8f322b4a5d37e545518bc09d744d01005727d247))
+* **deps:** Update dependency swiper to v12.0.2 ([#532](https://github.com/Notifycal/static-landing/issues/532)) ([1a286fa](https://github.com/Notifycal/static-landing/commit/1a286fad8689f6ba7e5b0e00f1bd33d2b73c1f32))
+* use trailing slash like prod ([#534](https://github.com/Notifycal/static-landing/issues/534)) ([49c32b7](https://github.com/Notifycal/static-landing/commit/49c32b7c746bfbd85c0a4866fcb02623dad30afd))
+
+## [2.2.0](https://github.com/Notifycal/static-landing/compare/v2.1.5...v2.2.0) (2025-09-18)
+
+
+### Features
+
+* more nav links ([#519](https://github.com/Notifycal/static-landing/issues/519)) ([1da7322](https://github.com/Notifycal/static-landing/commit/1da73222e098f41559455caa2c842c22a50d03e5))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.12.1 ([#523](https://github.com/Notifycal/static-landing/issues/523)) ([448ec7d](https://github.com/Notifycal/static-landing/commit/448ec7dbbb625e6510f6241f7c69e86408b8d8aa))
+* **deps:** Update dependency @notifycal/shared to v7.13.0 ([#528](https://github.com/Notifycal/static-landing/issues/528)) ([090fedc](https://github.com/Notifycal/static-landing/commit/090fedcdaf06455cf242a2a03d48bfc71b437ea4))
+* **deps:** Update dependency vite to v7.1.6 ([#529](https://github.com/Notifycal/static-landing/issues/529)) ([b6ce34d](https://github.com/Notifycal/static-landing/commit/b6ce34da5158d7883eb90f369e77aabef75f5467))
+* **deps:** Update Node.js Dependencies ([#525](https://github.com/Notifycal/static-landing/issues/525)) ([009000c](https://github.com/Notifycal/static-landing/commit/009000c13456a634df8fc0c48527f91b71f5962f))
+
 ## [2.1.5](https://github.com/Notifycal/static-landing/compare/v2.1.4...v2.1.5) (2025-09-16)
 
 

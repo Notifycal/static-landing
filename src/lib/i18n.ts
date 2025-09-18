@@ -3,11 +3,15 @@ import { getCollection, type CollectionEntry, type DataEntryMap } from 'astro:co
 import { defaultLang, languages, showDefaultLang } from './i18n-const';
 
 export function buildLocalizedUrl(path: string, lang: LanguageCode): string {
-  const [pathPart, anchorPart] = path.split('#');
-  const basePath = pathPart || '/';
+  const [pathPart, ...anchorParts] = path.split('#');
+  const anchorPart = anchorParts.length > 0 ? anchorParts.join('#') : undefined;
+
+  const normalizedPath = pathPart || '/';
+  const pathWithTrailingSlash =
+    normalizedPath === '/' ? '/' : normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`;
 
   const localizedPath =
-    !showDefaultLang && lang === defaultLang ? basePath : `/${lang}${basePath === '/' ? '' : basePath}`;
+    !showDefaultLang && lang === defaultLang ? pathWithTrailingSlash : `/${lang}${pathWithTrailingSlash}`;
 
   return anchorPart ? `${localizedPath}#${anchorPart}` : localizedPath;
 }
