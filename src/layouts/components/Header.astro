@@ -2,9 +2,6 @@
 import Logo from '@/components/Logo.astro';
 import { getCollectionEntryByLang, useTranslatedPath } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
-import clsx from 'clsx';
-import LanguagePickerMobile from './LanguagePickerMobile.astro';
-import LanguagePickerDesktop from './LanguagePickerDesktop.astro';
 import Dropdown from './Dropdown.astro';
 import LanguagePicker from './LanguagePicker.astro';
 
@@ -70,24 +67,16 @@ function isActivePath(menuUrl: string): boolean {
           <>
             {menu.children && menu.children.length > 0 ? (
               <Dropdown
-                width="w-44"
-                className={clsx({
-                  active: menu.children?.some(({ url }) => isActivePath(url)) ?? false
-                })}
                 items={menu.children.map((child) => ({
                   content: child.name,
-                  href: translatePath(child.url),
-                  isActive: isActivePath(child.url)
+                  href: translatePath(child.url)
                 }))}
               >
                 <Fragment slot="trigger">{menu.name}</Fragment>
               </Dropdown>
             ) : (
               <li class="nav-item">
-                <a
-                  href={translatePath(menu.url)}
-                  class={`nav-link inline-block lg:block ${isActivePath(menu.url) && 'active'}`}
-                >
+                <a href={translatePath(menu.url)} class="nav-link inline-block lg:block">
                   {menu.name}
                 </a>
               </li>
@@ -155,4 +144,30 @@ function isActivePath(menuUrl: string): boolean {
       window.addEventListener('pageshow', toggle);
     }
   });
+</script>
+
+<script>
+  function updateActiveLinks() {
+    const links = document.querySelectorAll('.navbar a.nav-link');
+    const currentHash = window.location.hash;
+    const currentPath = window.location.pathname;
+
+    links.forEach((link) => {
+      const [linkPath, linkHash] = link.getAttribute('href').split('#');
+      console.log(`linkPath: ${linkPath}, linkHash: ${linkHash}`);
+
+      const pathMatches = currentPath === linkPath || currentPath === `${linkPath}/`;
+      const hashMatches = linkHash ? currentHash === `#${linkHash}` : currentHash === '' || currentHash === '#';
+
+      if (pathMatches && hashMatches) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  updateActiveLinks();
+  window.addEventListener('popstate', updateActiveLinks);
+  document.addEventListener('astro:page-load', updateActiveLinks);
 </script>
