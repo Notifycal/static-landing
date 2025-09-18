@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import LanguagePickerMobile from './LanguagePickerMobile.astro';
 import LanguagePickerDesktop from './LanguagePickerDesktop.astro';
 import Dropdown from './Dropdown.astro';
+import LanguagePicker from './LanguagePicker.astro';
 
 export interface ChildNavigationLink {
   name: string;
@@ -95,14 +96,26 @@ function isActivePath(menuUrl: string): boolean {
         ))
       }
       <li class="nav-item lg:hidden">
-        <LanguagePickerMobile languageMobileLabel={languageMobileLabel} />
+        <LanguagePicker
+          variant="mobile"
+          languageMobileLabel={languageMobileLabel}
+          currentLang={lang}
+          currentUrl={Astro.url}
+          className="lg:hidden"
+        />
       </li>
       <li class="nav-item mt-3 lg:hidden">
         <a id="signin-button-md" class="btn btn-primary btn-sm border-border">{signIn}</a>
       </li>
     </ul>
     <div class="order-1 ml-auto flex items-center space-x-3 md:order-2 md:ml-0">
-      <LanguagePickerDesktop />
+      <LanguagePicker
+        variant="desktop"
+        languageMobileLabel={languageMobileLabel}
+        currentLang={lang}
+        currentUrl={Astro.url}
+        className="hidden lg:block"
+      />
       <a id="signin-button-lg" class="btn btn-primary btn-sm hidden lg:block">{signIn}</a>
     </div>
   </nav>
