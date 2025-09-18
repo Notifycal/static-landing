@@ -5,7 +5,7 @@ const { buttonSettingsText } = Astro.props;
 ---
 
 <div transition:persist id="cc-container">
-  <a class="text-sm hover:text-primary" data-cc="show-preferencesModal">{buttonSettingsText}</a>
+  <a class="hover:text-primary text-sm" data-cc="show-preferencesModal">{buttonSettingsText}</a>
 
   <script>
     import { getLangFromUrl } from '@/lib/i18n-const';
