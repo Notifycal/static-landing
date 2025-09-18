@@ -7,15 +7,11 @@ export function buildLocalizedUrl(path: string, lang: LanguageCode): string {
   const anchorPart = anchorParts.length > 0 ? anchorParts.join('#') : undefined;
 
   const normalizedPath = pathPart || '/';
-  const pathWithTrailingSlash = normalizedPath === '/'
-    ? '/'
-    : normalizedPath.endsWith('/')
-      ? normalizedPath
-      : `${normalizedPath}/`;
+  const pathWithTrailingSlash =
+    normalizedPath === '/' ? '/' : normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`;
 
-  const localizedPath = !showDefaultLang && lang === defaultLang
-    ? pathWithTrailingSlash
-    : `/${lang}${pathWithTrailingSlash}`;
+  const localizedPath =
+    !showDefaultLang && lang === defaultLang ? pathWithTrailingSlash : `/${lang}${pathWithTrailingSlash}`;
 
   return anchorPart ? `${localizedPath}#${anchorPart}` : localizedPath;
 }
