@@ -9,7 +9,7 @@ type Props = {
 const { faq } = Astro.props;
 ---
 
-<section class="section faqs" id="faq">
+<section class="section faqs" id="faq" data-scroll-mt>
   <div class="container max-w-[1230px]">
     <FaqComponent client:load faqData={faq} />
   </div>
