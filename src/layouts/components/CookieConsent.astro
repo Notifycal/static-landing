@@ -4,27 +4,30 @@ import '@notifycal/shared/styles/cookie-consent-theme.css';
 const { buttonSettingsText } = Astro.props;
 ---
 
-<a data-cc="show-preferencesModal">
-  {buttonSettingsText}
-</a>
+<div transition:persist id="cc-container">
+  <a class="text-sm hover:text-primary" data-cc="show-preferencesModal">{buttonSettingsText}</a>
 
-<script>
-  import { getLangFromUrl } from '@/lib/i18n-const';
-  import { gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
-  import { run } from 'vanilla-cookieconsent';
+  <script>
+    import { getLangFromUrl } from '@/lib/i18n-const';
+    import { gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
+    import { run } from 'vanilla-cookieconsent';
 
-  window.initializeCookieConsent = function () {
     const lang = getLangFromUrl(new URL(window.location.href));
     document.body.classList.add('cc--theme');
-    run(gtagConsentConfig(lang, updateAllGtagConsent));
-  };
-</script>
+    run({
+      root: '#cc-container',
+      ...gtagConsentConfig(lang, updateAllGtagConsent)
+    });
 
-<script is:inline>
-  // Handle Astro View Transitions navigation
-  document.addEventListener('astro:page-load', function () {
-    if (window.initializeCookieConsent) {
-      window.initializeCookieConsent();
-    }
-  });
-</script>
+    // Important, the plugin adds classes to the html tag,
+    // so we need keep track of the className attribute.
+    document.addEventListener('astro:before-preparation', () => {
+      window._htmlClassName = window.document.documentElement.className;
+    });
+
+    document.addEventListener('astro:before-swap', (event) => {
+      event.newDocument.documentElement.className = window._htmlClassName;
+      event.newDocument.body.classList.add('cc--theme');
+    });
+  </script>
+</div>
