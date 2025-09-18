@@ -17,7 +17,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 // - review lighthouse scores
 ---
 
-<section class="relative h-[calc(100vh-103px)] w-full overflow-hidden">
+<section class="relative h-[calc(100dvh-103px)] w-full overflow-hidden">
   <picture>
     <source
       srcset="
@@ -46,10 +46,10 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
     playsinline
     preload="none"
   >
-    <source src="/video/baked-blur-720p-h265.mp4" type="video/mp4" />
+    <source src="/video/hero.mp4" type="video/mp4" />
   </video>
 
-  <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply "></div>
+  <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply"></div>
 
   <div class="text-primary-50 relative z-10 container flex h-full items-center">
     <div class="hero-content w-full text-center">
@@ -83,7 +83,6 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
         </div>
       </div>
 
-      
       <div>
         <div class="mx-auto mt-16 mb-8 flex max-w-xl flex-col justify-center gap-12 sm:flex-row">
           {
