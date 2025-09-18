@@ -21,9 +21,8 @@ export function getPathWithoutLang(url: URL): string {
   const segments = url.pathname.split('/').filter(Boolean);
   const [firstSegment] = segments;
 
-  if (firstSegment in languages) {
-    return segments.length > 1 ? `/${segments.slice(1).join('/')}` : '/';
-  }
+  const pathWithoutLang =
+    firstSegment in languages ? (segments.length > 1 ? `/${segments.slice(1).join('/')}` : '/') : url.pathname;
 
-  return url.pathname;
+  return url.hash ? `${pathWithoutLang}${url.hash}` : pathWithoutLang;
 }

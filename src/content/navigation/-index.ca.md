@@ -2,10 +2,19 @@
 main:
   - name: 'Inici'
     url: '/'
-  - name: 'Sobre nosaltres'
-    url: '/about'
-  - name: 'Roadmap'
-    url: '/roadmap'
+  - name: 'Característiques'
+    url: '/#features'
+  - name: 'Preus'
+    url: '/#pricing'
+  - name: 'Veure Més'
+    url: ''
+    children:
+      - name: 'Sobre nosaltres'
+        url: '/about'
+      - name: 'FAQ'
+        url: '/#faq'
+      - name: 'Roadmap'
+        url: '/roadmap'
 
 footer:
   - name: 'Inici'
