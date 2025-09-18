@@ -11,20 +11,28 @@ const { buttonSettingsText } = Astro.props;
 <script>
   import { getLangFromUrl } from '@/lib/i18n-const';
   import { gtagConsentConfig, updateAllGtagConsent } from '@notifycal/shared/cookies';
-  import { run } from 'vanilla-cookieconsent';
+  import { reset, run } from 'vanilla-cookieconsent';
 
   window.initializeCookieConsent = function () {
     const lang = getLangFromUrl(new URL(window.location.href));
     document.body.classList.add('cc--theme');
     run(gtagConsentConfig(lang, updateAllGtagConsent));
   };
+  window.reinitializeCookieConsent = function () {
+    if (typeof reset === 'function') {
+      reset();
+    }
+    window.initializeCookieConsent();
+  };
+
+  window.initializeCookieConsent();
 </script>
 
 <script is:inline>
   // Handle Astro View Transitions navigation
   document.addEventListener('astro:page-load', function () {
-    if (window.initializeCookieConsent) {
-      window.initializeCookieConsent();
+    if (window.reinitializeCookieConsent) {
+      window.reinitializeCookieConsent();
     }
   });
 </script>
