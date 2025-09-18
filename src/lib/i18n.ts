@@ -6,8 +6,9 @@ export function buildLocalizedUrl(path: string, lang: LanguageCode): string {
   const [pathPart, anchorPart] = path.split('#');
   const basePath = pathPart || '/';
 
+  // I think this is what needs changing, but not 100% sure...
   const localizedPath =
-    !showDefaultLang && lang === defaultLang ? basePath : `/${lang}${basePath === '/' ? '' : basePath}`;
+    !showDefaultLang && lang === defaultLang ? basePath : `/${lang}${basePath === '/' ? '/' : basePath}`;
 
   return anchorPart ? `${localizedPath}#${anchorPart}` : localizedPath;
 }
