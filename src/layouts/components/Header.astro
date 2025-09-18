@@ -31,7 +31,7 @@ function isActivePath(menuUrl: string): boolean {
 ---
 
 <header class="header bg-secondary" id="siteHeader">
-  <nav class="navbar container">
+  <nav class="navbar relative container">
     <!-- logo -->
     <div class="order-0">
       <Logo />
@@ -61,7 +61,10 @@ function isActivePath(menuUrl: string): boolean {
     </label>
 
     <!-- /navbar toggler -->
-    <ul id="nav-menu" class="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto">
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden w-full flex-col lg:absolute lg:left-1/2 lg:order-1 lg:flex lg:w-auto lg:-translate-x-1/2 lg:flex-row"
+    >
       {
         main.map((menu) => (
           <>
