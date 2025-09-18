@@ -243,13 +243,17 @@ const _404Collection = defineCollection({
   })
 });
 
+const link = z.object({
+  name: z.string(),
+  url: z.string()
+});
+
 const navigationCollection = defineCollection({
   loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/navigation' }),
   schema: z.object({
     main: z.array(
-      z.object({
-        name: z.string(),
-        url: z.string()
+      link.extend({
+        children: z.array(link).optional()
       })
     ),
     footer: z.array(

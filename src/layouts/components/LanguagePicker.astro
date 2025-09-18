@@ -1,9 +1,12 @@
 ---
-import { defaultLang, getPathWithoutLang, languages, showDefaultLang } from '@/lib/i18n-const';
+import { buildLocalizedUrl } from '@/lib/i18n';
+import { getPathWithoutLang, languages } from '@/lib/i18n-const';
 import caFlag from '@notifycal/shared/assets/icons/lang/ca.svg';
 import esFlag from '@notifycal/shared/assets/icons/lang/es.svg';
 import enFlag from '@notifycal/shared/assets/icons/lang/gb.svg';
+import type { LanguageCode } from '@notifycal/shared/types';
 import type { ImageMetadata } from 'astro';
+import Dropdown from './Dropdown.astro';
 
 const flags: Record<keyof typeof languages, ImageMetadata> = {
   en: enFlag,
@@ -23,8 +26,8 @@ const { variant, languageMobileLabel, currentLang, currentUrl, className = '' } 
 const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
 ---
 
-<div class={`nav-item nav-dropdown group dropdown-button relative cursor-pointer ${className}`}>
-  <span class="nav-link inline-flex items-center text-white">
+<Dropdown width="w-36" className={className}>
+  <Fragment slot="trigger">
     {
       variant === 'desktop' && currentLang && (
         <img
@@ -36,34 +39,29 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
           src={flags[currentLang].src}
         />
       )
-    }{variant === 'mobile' && <span>{languageMobileLabel}</span>}
-    <svg class="h-6 w-6 fill-current" viewBox="0 0 20 20">
-      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
-    </svg>
-  </span>
-  <ul
-    class="nav-dropdown-list border-border mx-auto mt-1 hidden rounded-lg shadow-lg duration-300 lg:invisible lg:absolute lg:block lg:h-auto lg:w-[8rem] lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"
-  >
+    }
+    {variant === 'mobile' && <span class="text-white">{languageMobileLabel}</span>}
+  </Fragment>
+  <Fragment slot="items">
     {
       Object.entries(languages).map(([lang, label]) => {
-        const langPath = lang === defaultLang && !showDefaultLang ? '' : `/${lang}`;
-        const href = currentPath === '/' ? langPath || '/' : `${langPath}${currentPath}`;
+        const href = buildLocalizedUrl(currentPath, lang as LanguageCode);
         return (
           <li class="nav-dropdown-item">
-            <a href={href} class="nav-dropdown-link block text-center">
+            <a href={href} class="nav-link dropdown-item">
               <img
                 alt={label}
                 title={label}
                 fetchpriority="high"
                 decoding="async"
-                class="mr-1 inline aspect-square h-4 w-4 max-w-none"
+                class="inline-block h-4 w-4 flex-shrink-0"
                 src={flags[lang as keyof typeof languages].src}
               />
-              {label}
+              <span>{label}</span>
             </a>
           </li>
         );
       })
     }
-  </ul>
-</div>
+  </Fragment>
+</Dropdown>
