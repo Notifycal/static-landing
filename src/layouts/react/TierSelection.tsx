@@ -51,6 +51,7 @@ export function TierSelection({ locale }: TierSelection): JSX.Element {
           defaultExpanded
           contactUrl={`${frontendUrl}/#/onboarding/feedback`}
           isSelectButtonLoading={false}
+          lang={locale}
           orderedTierInfoWithIcons={translatedOrderedTierInfoWithIcons}
           onTierRecommendation={setTierRecommended}
           onTierSelect={onTierSelected}
