@@ -22,12 +22,6 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
 const translatePath = useTranslatedPath(lang);
 
 const { main }: { main: NavigationLink[] } = navigation.data;
-const { pathname } = Astro.url;
-
-function isActivePath(menuUrl: string): boolean {
-  const expectedPath = translatePath(menuUrl);
-  return pathname === expectedPath || pathname === `${expectedPath}/`;
-}
 ---
 
 <header class="header bg-secondary" id="siteHeader">
