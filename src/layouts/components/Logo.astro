@@ -1,5 +1,7 @@
 ---
 import config from '@/config/config.json';
+import { useTranslatedPath } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 
 import NotifycalIsologo from '@notifycal/shared/assets/logos/notifycal-isologo.svg';
 
@@ -12,8 +14,11 @@ const {
   logoHeight: any;
   title: string;
 } = config.site;
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<a href="/" class="navbar-brand block">
+<a href={translatePath('/')} class="navbar-brand block">
   <NotifycalIsologo style={{ width: logoWidth, height: logoHeight }} class="logo" aria-label={title} />
 </a>
