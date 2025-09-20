@@ -156,7 +156,8 @@ function isActivePath(menuUrl: string): boolean {
     const currentPath = window.location.pathname;
 
     links.forEach((link) => {
-      const [linkPath, linkHash] = link.getAttribute('href').split('#');
+      const href = link.getAttribute('href') || '';
+      const [linkPath, linkHash] = href.split('#');
       console.log(`linkPath: ${linkPath}, linkHash: ${linkHash}`);
 
       const pathMatches = currentPath === linkPath || currentPath === `${linkPath}/`;
