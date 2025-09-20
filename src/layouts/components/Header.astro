@@ -4,6 +4,7 @@ import { getCollectionEntryByLang, useTranslatedPath } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
 import Dropdown from './Dropdown.astro';
 import LanguagePicker from './LanguagePicker.astro';
+import clsx from 'clsx';
 
 export interface ChildNavigationLink {
   name: string;
@@ -22,6 +23,12 @@ const navigation = await getCollectionEntryByLang('navigation', lang);
 const translatePath = useTranslatedPath(lang);
 
 const { main }: { main: NavigationLink[] } = navigation.data;
+const { pathname } = Astro.url;
+
+function isActivePath(menuUrl: string): boolean {
+  const expectedPath = translatePath(menuUrl);
+  return pathname === expectedPath || pathname === `${expectedPath}/`;
+}
 ---
 
 <header class="header bg-secondary" id="siteHeader">
@@ -66,14 +73,24 @@ const { main }: { main: NavigationLink[] } = navigation.data;
               <Dropdown
                 items={menu.children.map((child) => ({
                   content: child.name,
-                  href: translatePath(child.url)
+                  href: translatePath(child.url),
+                  isActive: isActivePath(child.url)
                 }))}
+                className={clsx({
+                  active: menu.children?.some(({ url }) => isActivePath(url)) ?? false
+                })}
               >
                 <Fragment slot="trigger">{menu.name}</Fragment>
               </Dropdown>
             ) : (
               <li class="nav-item">
-                <a href={translatePath(menu.url)} class="nav-link inline-block lg:block">
+                <a
+                  href={translatePath(menu.url)}
+                  class={clsx({
+                    'nav-link inline-block lg:block': true,
+                    active: isActivePath(menu.url)
+                  })}
+                >
                   {menu.name}
                 </a>
               </li>
@@ -144,35 +161,9 @@ const { main }: { main: NavigationLink[] } = navigation.data;
 </script>
 
 <script>
-  function updateActiveLinks() {
-    const links = document.querySelectorAll('.navbar a.nav-link');
-    const currentHash = window.location.hash;
-    const currentPath = window.location.pathname;
+  import { closeMobileMenu } from '@/lib/utils/mobileMenuClose';
+  import { updateActiveAnchorLinks } from '@/lib/utils/navigationLinks';
 
-    links.forEach((link) => {
-      const href = link.getAttribute('href') || '';
-      const [linkPath, linkHash] = href.split('#');
-      console.log(`linkPath: ${linkPath}, linkHash: ${linkHash}`);
-
-      const pathMatches = currentPath === linkPath || currentPath === `${linkPath}/`;
-      const hashMatches = linkHash ? currentHash === `#${linkHash}` : currentHash === '' || currentHash === '#';
-
-      if (pathMatches && hashMatches) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-
-  updateActiveLinks();
-  window.addEventListener('popstate', () => {
-    const mobileMenuToggle = document.querySelector<HTMLInputElement>('#nav-toggle');
-    if (mobileMenuToggle && mobileMenuToggle.checked) {
-      mobileMenuToggle.checked = false;
-    }
-
-    updateActiveLinks();
-  });
-  document.addEventListener('astro:page-load', updateActiveLinks);
+  window.addEventListener('popstate', closeMobileMenu);
+  document.addEventListener('astro:page-load', updateActiveAnchorLinks);
 </script>
