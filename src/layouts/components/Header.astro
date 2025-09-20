@@ -172,6 +172,13 @@ function isActivePath(menuUrl: string): boolean {
   }
 
   updateActiveLinks();
-  window.addEventListener('popstate', updateActiveLinks);
+  window.addEventListener('popstate', () => {
+    const mobileMenuToggle = document.querySelector<HTMLInputElement>('#nav-toggle');
+    if (mobileMenuToggle && mobileMenuToggle.checked) {
+      mobileMenuToggle.checked = false;
+    }
+
+    updateActiveLinks();
+  });
   document.addEventListener('astro:page-load', updateActiveLinks);
 </script>
