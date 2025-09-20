@@ -6,6 +6,7 @@ import esFlag from '@notifycal/shared/assets/icons/lang/es.svg';
 import enFlag from '@notifycal/shared/assets/icons/lang/gb.svg';
 import type { LanguageCode } from '@notifycal/shared/types';
 import type { ImageMetadata } from 'astro';
+import clsx from 'clsx';
 import Dropdown from './Dropdown.astro';
 
 const flags: Record<keyof typeof languages, ImageMetadata> = {
@@ -17,7 +18,7 @@ const flags: Record<keyof typeof languages, ImageMetadata> = {
 export interface Props {
   variant: 'mobile' | 'desktop';
   languageMobileLabel?: string;
-  currentLang?: keyof typeof languages;
+  currentLang: keyof typeof languages;
   currentUrl?: URL;
   className?: string;
 }
@@ -48,7 +49,13 @@ const currentPath = currentUrl ? getPathWithoutLang(currentUrl) : '/';
         const href = buildLocalizedUrl(currentPath, lang as LanguageCode);
         return (
           <li class="nav-dropdown-item">
-            <a href={href} class="nav-link dropdown-item">
+            <a
+              href={href}
+              class={clsx({
+                'dropdown-item': true,
+                active: lang === currentLang
+              })}
+            >
               <img
                 alt={label}
                 title={label}

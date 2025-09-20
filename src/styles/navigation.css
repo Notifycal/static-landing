@@ -22,7 +22,8 @@
   @apply text-center lg:text-left;
 }
 
-.nav-link {
+.nav-link,
+.dropdown-item {
   @apply block rounded-lg px-3 py-3 text-lg font-medium text-white no-underline transition transition-all duration-300 md:px-4 lg:inline-block lg:text-white;
 
   &:hover:not(.active) {
