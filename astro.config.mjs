@@ -36,7 +36,26 @@ export default defineConfig({
       }
     }),
     react(),
-    sitemap(),
+    sitemap({
+      serialize: (item) => {
+        const url = new URL(item.url);
+        const pathname = url.pathname;
+
+        if (pathname === '/' || pathname === '/en/' || pathname === '/ca/') {
+          item.priority = 1.0;
+          item.changefreq = 'daily';
+        } else if (pathname.includes('/about') || pathname.includes('/roadmap')) {
+          item.priority = 0.7;
+          item.changefreq = 'monthly';
+        } else {
+          item.priority = 0.5;
+          item.changefreq = 'monthly';
+        }
+
+        item.lastmod = new Date();
+        return item;
+      }
+    }),
     mdx(),
     playformCompress({
       HTML: {
