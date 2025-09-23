@@ -1,7 +1,6 @@
 ---
 import TwSizeIndicator from '@/components/TwSizeIndicator.astro';
-import config from '@/config/config.json';
-import { plainify } from '@/lib/utils/textConverter';
+import SEO from '@/layouts/components/SEO.astro';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import '@/styles/main.css';
@@ -9,23 +8,70 @@ import { ClientRouter } from 'astro:transitions';
 import Unfont from 'unplugin-fonts/astro/component.astro';
 import { getCollectionEntryByLang } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
+import config from '@/config/config.json';
+import { plainify } from '@/lib/utils/textConverter';
 
-const { titleProp, metaTitleProp, descriptionProp, imageProp, noindexProp, canonicalProp } = Astro.props;
+interface Props {
+  title?: string;
+  metaTitle?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  seoType?: 'website' | 'article' | 'product';
+  seoSchema?: 'Organization' | 'SoftwareApplication' | 'FAQPage' | 'Offer' | 'BreadcrumbList';
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  offers?: Array<{ name: string; price: string; currency: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+}
+
+const {
+  title,
+  metaTitle,
+  description: descriptionProp,
+  image,
+  noindex,
+  canonical,
+  seoType,
+  seoSchema,
+  breadcrumbs,
+  offers,
+  faqs
+} = Astro.props;
+
 const lang = getLangFromUrl(Astro.url);
 const {
   data: { description }
 } = await getCollectionEntryByLang('site', lang);
-const {
-  site: { favicon, image, author, title, baseUrl }
-} = config;
+const favicon = config.site.favicon;
+const finalTitle = plainify(metaTitle || title || 'Notifycal') || 'Notifycal';
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- google font css -->
+
+    <title>{finalTitle}</title>
+
+    <SEO
+      title={finalTitle}
+      description={descriptionProp || description}
+      image={image}
+      canonical={canonical}
+      noindex={noindex}
+      type={seoType || 'website'}
+      schema={seoSchema || 'SoftwareApplication'}
+      breadcrumbs={breadcrumbs}
+      offers={offers}
+      faqs={faqs}
+    />
+
+    <link rel="shortcut icon" href={favicon} />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+
     <Unfont />
+
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () {
@@ -84,51 +130,8 @@ const {
     </script>
     <script type="text/javascript" src="/config.js" is:inline></script>
     <script src="/src/scripts/config-processor.ts"></script>
-    <!-- favicon -->
-    <link rel="shortcut icon" href={favicon} />
-
-    <!-- responsive meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-
-    <!-- title -->
-    <title>
-      {plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)}
-    </title>
-
-    <!-- canonical url -->
-    {canonicalProp && <link rel="canonical" href={canonicalProp} item-prop="url" />}
-
-    <!-- noindex robots -->
-    {noindexProp && <meta name="robots" content="noindex,nofollow" />}
-
-    <!-- meta-description -->
-    <meta name="description" content={plainify(descriptionProp ? descriptionProp : description)} />
 
     <ClientRouter />
-
-    <!-- author from config.json -->
-    <meta name="author" content={author} />
-
-    <!-- og-title -->
-    <meta property="og:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
-
-    <!-- og-description -->
-    <meta property="og:description" content={plainify(descriptionProp ? descriptionProp : description)} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`} />
-
-    <!-- twitter-title -->
-    <meta name="twitter:title" content={plainify(metaTitleProp ? metaTitleProp : titleProp ? titleProp : title)} />
-
-    <!-- twitter-description -->
-    <meta name="twitter:description" content={plainify(descriptionProp ? descriptionProp : description)} />
-
-    <!-- og-image -->
-    <meta property="og:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
-
-    <!-- twitter-image -->
-    <meta name="twitter:image" content={`${baseUrl}${imageProp ? imageProp : image}`} />
-    <meta name="twitter:card" content="summaryLargeImage" />
   </head>
   <body>
     <Header />
