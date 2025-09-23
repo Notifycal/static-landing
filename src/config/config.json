@@ -3,7 +3,7 @@
     "title": "Notifycal",
     "baseUrl": "https://notifycal.com",
     "basePath": "/",
-    "trailingSlash": false,
+    "trailingSlash": true,
     "favicon": "/images/favicon.svg",
     "logoWidth": "auto",
     "logoHeight": "55px",

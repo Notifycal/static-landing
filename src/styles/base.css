@@ -1,6 +1,5 @@
 html {
-  @apply text-base;
-  scroll-behavior: smooth;
+  @apply scroll-smooth text-base;
 }
 
 body {

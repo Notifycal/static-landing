@@ -1,7 +1,7 @@
 ---
 main:
   - name: 'Inici'
-    url: '/'
+    url: '/#start'
   - name: 'Característiques'
     url: '/#features'
   - name: 'Preus'
@@ -10,21 +10,21 @@ main:
     url: ''
     children:
       - name: 'Sobre nosaltres'
-        url: '/about'
+        url: '/about/'
       - name: 'FAQ'
         url: '/#faq'
       - name: 'Roadmap'
-        url: '/roadmap'
+        url: '/roadmap/'
 
 footer:
   - name: 'Inici'
-    url: '/'
+    url: '/#start'
     type: 'internal'
   - name: 'Sobre nosaltres'
-    url: '/about'
+    url: '/about/'
     type: 'internal'
   - name: 'Roadmap'
-    url: '/roadmap'
+    url: '/roadmap/'
     type: 'internal'
   - name: 'Política de privacitat'
     url: '/#/privacy-policy'

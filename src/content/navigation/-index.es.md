@@ -1,7 +1,7 @@
 ---
 main:
   - name: 'Inicio'
-    url: '/'
+    url: '/#start'
   - name: 'Características'
     url: '/#features'
   - name: 'Precios'
@@ -10,21 +10,21 @@ main:
     url: ''
     children:
       - name: 'Sobre nosotros'
-        url: '/about'
+        url: '/about/'
       - name: 'FAQ'
         url: '/#faq'
       - name: 'Roadmap'
-        url: '/roadmap'
+        url: '/roadmap/'
 
 footer:
   - name: 'Inicio'
-    url: '/'
+    url: '/#start'
     type: 'internal'
   - name: 'Sobre nosotros'
-    url: '/about'
+    url: '/about/'
     type: 'internal'
   - name: 'Roadmap'
-    url: '/roadmap'
+    url: '/roadmap/'
     type: 'internal'
   - name: 'Política de privacidad'
     url: '/#/privacy-policy'

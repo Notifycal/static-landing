@@ -2,7 +2,8 @@ export const updateScrollMargins = (headerSelector = '#siteHeader', targetSelect
   const header = document.querySelector<HTMLElement>(headerSelector);
   const headerHeight = header?.offsetHeight ?? 0;
 
-  document.querySelectorAll<HTMLElement>(targetSelector).forEach((element) => {
+  const scrollTargets = document.querySelectorAll<HTMLElement>(targetSelector);
+  scrollTargets.forEach((element) => {
     element.style.scrollMarginTop = `${headerHeight}px`;
   });
 };
