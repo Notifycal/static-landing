@@ -6,8 +6,7 @@ import { plainify } from '@/lib/utils/textConverter';
 import type { LanguageCode } from '@notifycal/shared/types';
 
 interface Props {
-  title?: string;
-  metaTitle?: string;
+  title: string;
   description?: string;
   image?: string;
   canonical?: string;
@@ -21,7 +20,6 @@ interface Props {
 
 const {
   title,
-  metaTitle,
   description,
   image,
   canonical,
@@ -35,12 +33,11 @@ const {
 
 const lang = getLangFromUrl(Astro.url);
 const {
-  site: { baseUrl, author, favicon }
+  site: { baseUrl, author }
 } = config;
 
 const seoDefaults = getSEODefaults(lang);
 
-const finalTitle = plainify(metaTitle || title || seoDefaults.title) || seoDefaults.title;
 const finalDescription = plainify(description || seoDefaults.description) || seoDefaults.description;
 const finalImage = image ? `${baseUrl}${image}` : `${baseUrl}${seoDefaults.image}`;
 const finalCanonical = canonical || `${baseUrl}${Astro.url.pathname}`;
@@ -48,7 +45,7 @@ const finalCanonical = canonical || `${baseUrl}${Astro.url.pathname}`;
 const structuredData = await generateStructuredData({
   type: schema,
   lang,
-  title: finalTitle,
+  title: title,
   description: finalDescription,
   url: finalCanonical,
   image: finalImage,
@@ -69,7 +66,6 @@ const hreflangs = Object.entries(hrefLangMap).map(([lang, url]) => ({
 }));
 ---
 
-<title>{finalTitle}</title>
 <meta name="description" content={finalDescription} />
 <meta name="author" content={author} />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -83,7 +79,7 @@ const hreflangs = Object.entries(hrefLangMap).map(([lang, url]) => ({
 <link rel="alternate" hreflang="x-default" href={`${baseUrl}${hreflangs[0].url}`} />
 
 <meta property="og:type" content={type} />
-<meta property="og:title" content={finalTitle} />
+<meta property="og:title" content={title} />
 <meta property="og:description" content={finalDescription} />
 <meta property="og:image" content={finalImage} />
 <meta property="og:url" content={finalCanonical} />
@@ -91,11 +87,8 @@ const hreflangs = Object.entries(hrefLangMap).map(([lang, url]) => ({
 <meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'ca_ES'} />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={finalTitle} />
+<meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={finalDescription} />
 <meta name="twitter:image" content={finalImage} />
-
-<link rel="shortcut icon" href={favicon} />
-<link rel="icon" type="image/svg+xml" href={favicon} />
 
 {structuredData && <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />}
