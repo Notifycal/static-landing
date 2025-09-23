@@ -81,7 +81,13 @@ interface ProductSchema extends BaseSchema {
   }>;
 }
 
-type StructuredDataSchema = OrganizationSchema | SoftwareApplicationSchema | FAQPageSchema | BreadcrumbListSchema | ProductSchema | null;
+type StructuredDataSchema =
+  | OrganizationSchema
+  | SoftwareApplicationSchema
+  | FAQPageSchema
+  | BreadcrumbListSchema
+  | ProductSchema
+  | null;
 
 function getDefaultOffers(lang: LanguageCode): Array<{ name: string; price: string; currency: string }> {
   const offers = {
@@ -118,7 +124,7 @@ async function getHomepageFAQs(lang: LanguageCode): Promise<Array<{ question: st
 }
 
 function generateBreadcrumbs(url: string, lang: LanguageCode): Array<{ name: string; url: string }> {
-  const pathSegments = url.split('/').filter(segment => segment && segment !== lang);
+  const pathSegments = url.split('/').filter((segment) => segment && segment !== lang);
 
   const breadcrumbNames: Record<LanguageCode, Record<string, string>> = {
     es: { about: 'Acerca de', roadmap: 'Roadmap' },
@@ -264,23 +270,31 @@ export function getSectorKeywords(lang: LanguageCode, sector: keyof typeof keywo
   return keywordsMap[lang]?.sectors[sector] || keywordsMap.es.sectors[sector];
 }
 
-export function getSEODefaults(lang: LanguageCode): { title: string; description: string; image: string; keywords: string; }     {
+export function getSEODefaults(lang: LanguageCode): {
+  title: string;
+  description: string;
+  image: string;
+  keywords: string;
+} {
   const defaults = {
     es: {
       title: 'Notifycal - Recordatorios Automáticos de Citas | Reduce Ausencias',
-      description: 'Sistema de recordatorios automáticos sin conocimientos técnicos. Integración directa con Google Calendar y Contactos. Reduce ausencias hasta 80% en clínicas dentales, talleres, centros de tatuajes, spas y más.',
+      description:
+        'Sistema de recordatorios automáticos sin conocimientos técnicos. Integración directa con Google Calendar y Contactos. Reduce ausencias hasta 80% en clínicas dentales, talleres, centros de tatuajes, spas y más.',
       image: '/images/og-image.png',
       keywords: keywordsMap.es.primary.join(', ')
     },
     en: {
       title: 'Notifycal - Automated Appointment Reminders | Reduce No-Shows',
-      description: 'Automated reminder system without technical knowledge required. Direct Google Calendar and Contacts integration. Reduce no-shows up to 80% for dental clinics, car workshops, tattoo studios, spas and more.',
+      description:
+        'Automated reminder system without technical knowledge required. Direct Google Calendar and Contacts integration. Reduce no-shows up to 80% for dental clinics, car workshops, tattoo studios, spas and more.',
       image: '/images/og-image.png',
       keywords: keywordsMap.en.primary.join(', ')
     },
     ca: {
       title: 'Notifycal - Recordatoris Automàtics Cites | Redueix Absències',
-      description: 'Sistema de recordatoris automàtics sense coneixements tècnics. Integració directa amb Google Calendar i Contactes. Redueix absències fins 80% en clíniques dentals, tallers, centres de tatuatges, spas i més.',
+      description:
+        'Sistema de recordatoris automàtics sense coneixements tècnics. Integració directa amb Google Calendar i Contactes. Redueix absències fins 80% en clíniques dentals, tallers, centres de tatuatges, spas i més.',
       image: '/images/og-image.png',
       keywords: keywordsMap.ca.primary.join(', ')
     }
@@ -290,7 +304,9 @@ export function getSEODefaults(lang: LanguageCode): { title: string; description
 }
 
 function createOrganizationSchema(lang: LanguageCode): OrganizationSchema {
-  const { site: { baseUrl, author } } = config;
+  const {
+    site: { baseUrl, author }
+  } = config;
 
   return {
     '@context': 'https://schema.org',
@@ -332,7 +348,9 @@ export async function generateStructuredData({
   offers?: Array<{ name: string; price: string; currency: string }>;
   faqs?: Array<{ question: string; answer: string }>;
 }): Promise<StructuredDataSchema> {
-  const { site: { baseUrl } } = config;
+  const {
+    site: { baseUrl }
+  } = config;
   const organizationSchema = createOrganizationSchema(lang);
 
   const finalOffers = offers.length > 0 ? offers : getDefaultOffers(lang);
@@ -355,25 +373,26 @@ export async function generateStructuredData({
         operatingSystem: 'Web-based',
         softwareVersion: '1.0',
         provider: organizationSchema,
-        offers: finalOffers.map(offer => ({
+        offers: finalOffers.map((offer) => ({
           '@type': 'Offer',
           name: offer.name,
           price: offer.price,
           priceCurrency: offer.currency,
           availability: 'https://schema.org/InStock'
         })),
-        featureList: lang === 'es'
-          ? ['Recordatorios automáticos SMS', 'Notificaciones WhatsApp', 'Reducción de ausencias', 'Panel de control']
-          : lang === 'en'
-          ? ['Automated SMS reminders', 'WhatsApp notifications', 'No-show reduction', 'Control dashboard']
-          : ['Recordatoris automàtics SMS', 'Notificacions WhatsApp', 'Reducció absències', 'Panell de control']
+        featureList:
+          lang === 'es'
+            ? ['Recordatorios automáticos SMS', 'Notificaciones WhatsApp', 'Reducción de ausencias', 'Panel de control']
+            : lang === 'en'
+              ? ['Automated SMS reminders', 'WhatsApp notifications', 'No-show reduction', 'Control dashboard']
+              : ['Recordatoris automàtics SMS', 'Notificacions WhatsApp', 'Reducció absències', 'Panell de control']
       };
 
     case 'FAQPage':
       return {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: finalFaqs.map(faq => ({
+        mainEntity: finalFaqs.map((faq) => ({
           '@type': 'Question',
           name: faq.question,
           acceptedAnswer: {
@@ -384,33 +403,37 @@ export async function generateStructuredData({
       };
 
     case 'BreadcrumbList':
-      return finalBreadcrumbs.length > 0 ? {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: finalBreadcrumbs.map((breadcrumb, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: breadcrumb.name,
-          item: `${baseUrl}${breadcrumb.url}`
-        }))
-      } : null;
+      return finalBreadcrumbs.length > 0
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: finalBreadcrumbs.map((breadcrumb, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: breadcrumb.name,
+              item: `${baseUrl}${breadcrumb.url}`
+            }))
+          }
+        : null;
 
     case 'Offer':
-      return finalOffers.length > 0 ? {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: title,
-        description,
-        image,
-        offers: finalOffers.map(offer => ({
-          '@type': 'Offer',
-          name: offer.name,
-          price: offer.price,
-          priceCurrency: offer.currency,
-          availability: 'https://schema.org/InStock',
-          seller: organizationSchema
-        }))
-      } : null;
+      return finalOffers.length > 0
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: title,
+            description,
+            image,
+            offers: finalOffers.map((offer) => ({
+              '@type': 'Offer',
+              name: offer.name,
+              price: offer.price,
+              priceCurrency: offer.currency,
+              availability: 'https://schema.org/InStock',
+              seller: organizationSchema
+            }))
+          }
+        : null;
 
     default:
       return organizationSchema;
@@ -422,38 +445,54 @@ export function generateMetaDescription(lang: LanguageCode, sector?: string, cus
 
   const sectorTemplates = {
     es: {
-      dental: 'Recordatorios automáticos para clínicas dentales. Reduce ausencias hasta 80% con SMS y WhatsApp. Configuración en 3 minutos.',
-      medical: 'Avisos automáticos citas médicas. Sistema de recordatorios SMS que reduce faltas hasta 80%. Integración Google Calendar.',
-      automotive: 'Recordatorios automáticos talleres de coches. Avisos SMS para revisiones y reparaciones. Reduce ausencias 80%.',
-      tattoo: 'Recordatorios automáticos centros de tatuajes. Avisos SMS para sesiones y citas. Sistema profesional y fácil.',
-      massage: 'Recordatorios automáticos spa y masajes. Notificaciones SMS para tratamientos. Reduce faltas hasta 80%.',
-      optical: 'Recordatorios automáticos ópticas. Avisos SMS para revisiones visuales y entregas. Configuración simple.',
-      therapy: 'Recordatorios automáticos terapia psicológica. Sistema SMS para citas terapéuticas. Integración transparente.',
-      veterinary: 'Recordatorios automáticos clínicas veterinarias. Avisos SMS vacunas y revisiones. Reduce ausencias 80%.',
-      beauty: 'Recordatorios automáticos centros estética. Notificaciones SMS tratamientos belleza. Sistema profesional.',
+      dental:
+        'Recordatorios automáticos para clínicas dentales. Reduce ausencias hasta 80% con SMS y WhatsApp. Configuración en 3 minutos.',
+      medical:
+        'Avisos automáticos citas médicas. Sistema de recordatorios SMS que reduce faltas hasta 80%. Integración Google Calendar.',
+      automotive:
+        'Recordatorios automáticos talleres de coches. Avisos SMS para revisiones y reparaciones. Reduce ausencias 80%.',
+      tattoo:
+        'Recordatorios automáticos centros de tatuajes. Avisos SMS para sesiones y citas. Sistema profesional y fácil.',
+      massage:
+        'Recordatorios automáticos spa y masajes. Notificaciones SMS para tratamientos. Reduce faltas hasta 80%.',
+      optical:
+        'Recordatorios automáticos ópticas. Avisos SMS para revisiones visuales y entregas. Configuración simple.',
+      therapy:
+        'Recordatorios automáticos terapia psicológica. Sistema SMS para citas terapéuticas. Integración transparente.',
+      veterinary:
+        'Recordatorios automáticos clínicas veterinarias. Avisos SMS vacunas y revisiones. Reduce ausencias 80%.',
+      beauty:
+        'Recordatorios automáticos centros estética. Notificaciones SMS tratamientos belleza. Sistema profesional.',
       laboratory: 'Recordatorios automáticos laboratorios. Avisos SMS entregas y seguimientos. Coordinación perfecta.'
     },
     en: {
-      dental: 'Automated reminders for dental clinics. Reduce no-shows up to 80% with SMS and WhatsApp. Setup in 3 minutes.',
-      medical: 'Automated medical appointment alerts. SMS reminder system reduces absences up to 80%. Google Calendar integration.',
+      dental:
+        'Automated reminders for dental clinics. Reduce no-shows up to 80% with SMS and WhatsApp. Setup in 3 minutes.',
+      medical:
+        'Automated medical appointment alerts. SMS reminder system reduces absences up to 80%. Google Calendar integration.',
       automotive: 'Automated car workshop reminders. SMS alerts for reviews and repairs. Reduce no-shows by 80%.',
-      tattoo: 'Automated tattoo studio reminders. SMS notifications for sessions and appointments. Professional and easy system.',
+      tattoo:
+        'Automated tattoo studio reminders. SMS notifications for sessions and appointments. Professional and easy system.',
       massage: 'Automated spa and massage reminders. SMS notifications for treatments. Reduce no-shows up to 80%.',
       optical: 'Automated optical clinic reminders. SMS alerts for eye exams and deliveries. Simple setup.',
       therapy: 'Automated therapy appointment reminders. SMS system for therapeutic sessions. Seamless integration.',
-      veterinary: 'Automated veterinary clinic reminders. SMS alerts for vaccinations and checkups. Reduce absences 80%.',
+      veterinary:
+        'Automated veterinary clinic reminders. SMS alerts for vaccinations and checkups. Reduce absences 80%.',
       beauty: 'Automated beauty center reminders. SMS notifications for aesthetic treatments. Professional system.',
       laboratory: 'Automated laboratory reminders. SMS alerts for deliveries and follow-ups. Perfect coordination.'
     },
     ca: {
-      dental: 'Recordatoris automàtics clíniques dentals. Redueix absències fins 80% amb SMS i WhatsApp. Configuració 3 minuts.',
-      medical: 'Avisos automàtics cites mèdiques. Sistema recordatoris SMS redueix faltes fins 80%. Integració Google Calendar.',
+      dental:
+        'Recordatoris automàtics clíniques dentals. Redueix absències fins 80% amb SMS i WhatsApp. Configuració 3 minuts.',
+      medical:
+        'Avisos automàtics cites mèdiques. Sistema recordatoris SMS redueix faltes fins 80%. Integració Google Calendar.',
       automotive: 'Recordatoris automàtics tallers cotxes. Avisos SMS revisions i reparacions. Redueix absències 80%.',
       tattoo: 'Recordatoris automàtics centres tatuatges. Avisos SMS sessions i cites. Sistema professional i fàcil.',
       massage: 'Recordatoris automàtics spa i massatges. Notificacions SMS tractaments. Redueix faltes fins 80%.',
       optical: 'Recordatoris automàtics òptiques. Avisos SMS revisions visuals i lliuraments. Configuració simple.',
       therapy: 'Recordatoris automàtics teràpia psicològica. Sistema SMS cites terapèutiques. Integració transparent.',
-      veterinary: 'Recordatoris automàtics clíniques veterinàries. Avisos SMS vacunes i revisions. Redueix absències 80%.',
+      veterinary:
+        'Recordatoris automàtics clíniques veterinàries. Avisos SMS vacunes i revisions. Redueix absències 80%.',
       beauty: 'Recordatoris automàtics centres estètica. Notificacions SMS tractaments bellesa. Sistema professional.',
       laboratory: 'Recordatoris automàtics laboratoris. Avisos SMS lliuraments i seguiments. Coordinació perfecta.'
     }
@@ -510,7 +549,7 @@ export function generateTitle(lang: LanguageCode, pageTitle: string, sector?: st
         optical: 'Òptiques',
         therapy: 'Centres de Teràpia',
         veterinary: 'Clíniques Veterinàries',
-        beauty: 'Centres d\'Estètica',
+        beauty: "Centres d'Estètica",
         laboratory: 'Laboratoris'
       }
     };
