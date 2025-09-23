@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.2.2](https://github.com/Notifycal/static-landing/compare/v2.2.1...v2.2.2) (2025-09-23)
+
+
+### Bug Fixes
+
+* cookie consent once again. FML. Good one. ([#539](https://github.com/Notifycal/static-landing/issues/539)) ([f6d80c4](https://github.com/Notifycal/static-landing/commit/f6d80c494e32d3f19f6bf921d17ff25d2547c84f))
+* **deps:** Update dependency astro to v5.13.9 ([#540](https://github.com/Notifycal/static-landing/issues/540)) ([ec69adf](https://github.com/Notifycal/static-landing/commit/ec69adfdf828b7a56f5399fe516ba31112dfd677))
+* **deps:** Update Node.js Dependencies ([#546](https://github.com/Notifycal/static-landing/issues/546)) ([c377cd2](https://github.com/Notifycal/static-landing/commit/c377cd2a9dd2c63fbb43420d27e7ec3783c5befb))
+* navigation fixes ([#544](https://github.com/Notifycal/static-landing/issues/544)) ([ca6f131](https://github.com/Notifycal/static-landing/commit/ca6f131c138d5399e01514c6e4d89ecf85997028))
+* take header height into account for anchors + smooth scroll ([#535](https://github.com/Notifycal/static-landing/issues/535)) ([bb3f991](https://github.com/Notifycal/static-landing/commit/bb3f9915be0b2a3c6f85f28f4ebca15e8b6e6b81))
+
 ## [2.2.1](https://github.com/Notifycal/static-landing/compare/v2.2.0...v2.2.1) (2025-09-18)
 
 
