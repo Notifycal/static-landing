@@ -1,7 +1,7 @@
 ---
 main:
   - name: 'Inici'
-    url: '/'
+    url: '/#start'
   - name: 'Característiques'
     url: '/#features'
   - name: 'Preus'
@@ -18,7 +18,7 @@ main:
 
 footer:
   - name: 'Inici'
-    url: '/'
+    url: '/#start'
     type: 'internal'
   - name: 'Sobre nosaltres'
     url: '/about/'

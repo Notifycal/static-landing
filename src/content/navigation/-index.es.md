@@ -1,7 +1,7 @@
 ---
 main:
   - name: 'Inicio'
-    url: '/'
+    url: '/#start'
   - name: 'Características'
     url: '/#features'
   - name: 'Precios'
@@ -18,7 +18,7 @@ main:
 
 footer:
   - name: 'Inicio'
-    url: '/'
+    url: '/#start'
     type: 'internal'
   - name: 'Sobre nosotros'
     url: '/about/'

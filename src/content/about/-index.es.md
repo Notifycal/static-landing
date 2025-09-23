@@ -13,7 +13,7 @@ members:
   title: 'Nuestro Equipo'
   description: 'Somos dos profesionales apasionados por crear soluciones que marquen una diferencia real en las operaciones diarias de los negocios.'
   memberList:
-    - name: 'Daniel Sigüero García'
+    - name: 'Daniel Siguero García'
       field: 'Cofundador'
       image: '/images/users/team-maria.webp'
       bio: 'DevSecOps con 12 años de experiencia en desarrollo de productos SaaS. Anteriormente trabajó en proyectos del gobierno del Reino Unido'

@@ -12,7 +12,7 @@ export interface Props {
   items?: DropdownItem[];
 }
 
-const { width = 'w-48', className = '', triggerIcon = true, items = [] } = Astro.props;
+const { className = '', triggerIcon = true, items = [] } = Astro.props;
 ---
 
 <div class={`nav-item nav-dropdown dropdown-button relative cursor-pointer ${className}`}>
@@ -27,7 +27,7 @@ const { width = 'w-48', className = '', triggerIcon = true, items = [] } = Astro
     }
   </span>
   <ul
-    class={`nav-dropdown-list z-10 mx-auto mt-2 mb-4 lg:mt-2 lg:mb-2 hidden rounded-lg border border-gray-200 bg-secondary-500 lg:bg-white px-0 py-2 shadow-lg duration-300 relative lg:absolute ${width} overflow-hidden`}
+    class="nav-dropdown-list bg-secondary-500 relative left-1/2 z-10 mx-auto hidden min-w-max -translate-x-1/2 overflow-hidden rounded-lg border border-gray-200 px-2 py-2 shadow-lg duration-300 lg:absolute lg:bg-white"
   >
     {
       items && items.length > 0 ? (
