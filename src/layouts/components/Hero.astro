@@ -55,9 +55,9 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
   <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply"></div>
 
   <div class="text-primary-50 relative z-10 container flex h-full grow flex-col">
-    <div class="hero-content flex w-full flex-1 flex-col items-center justify-center text-center">
+    <div class="hero-content flex w-full flex-1 flex-col items-center justify-center pt-8 text-center">
       <h1 class="text-secondary-200 text-center text-5xl font-bold xl:text-6xl">
-        <span class="text-4xl">{title}</span><br />
+        <span class="text-4xl xl:text-5xl">{title}</span><br />
         <div id="dynamicSubtitle" class="relative w-full pb-2 md:pb-8">
           <p class="invisible">
             {subtitles.reduce((a, b) => (b.length > a.length ? b : a))}
@@ -95,7 +95,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
                 >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-primary-50">{item}</span>
+                <span class="text-primary-50 text-left">{item}</span>
               </div>
             ))
           }
