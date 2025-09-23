@@ -13,7 +13,7 @@ members:
   title: 'El Nostre Equip'
   description: 'Som dos professionals apassionats per crear solucions que marquin una diferència real en les operacions diàries dels negocis.'
   memberList:
-    - name: 'Daniel Sigüero García'
+    - name: 'Daniel Siguero García'
       field: 'Cofundador'
       image: '/images/users/team-maria.webp'
       bio: "DevSecOps amb 12 anys d'experiència en desenvolupament de productes SaaS. Prèviament va treballar en projectes del govern del Regne Unit"
