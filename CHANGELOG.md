@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.3](https://github.com/Notifycal/static-landing/compare/v2.2.2...v2.2.3) (2025-09-23)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @notifycal/shared to v7.13.2 ([#550](https://github.com/Notifycal/static-landing/issues/550)) ([76207a5](https://github.com/Notifycal/static-landing/commit/76207a54f675cf7f0b531d0cf92748d0ff056c62))
+* seo improvements ([#547](https://github.com/Notifycal/static-landing/issues/547)) ([9f559e6](https://github.com/Notifycal/static-landing/commit/9f559e6205f256f9af5aa31ac687bd7fd7ebe187))
+
 ## [2.2.2](https://github.com/Notifycal/static-landing/compare/v2.2.1...v2.2.2) (2025-09-23)
 
 
