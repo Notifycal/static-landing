@@ -15,7 +15,7 @@ export interface Props {
 const { className = '', triggerIcon = true, items = [] } = Astro.props;
 ---
 
-<div class={`nav-item nav-dropdown dropdown-button relative cursor-pointer ${className}`}>
+<div class={`nav-dropdown dropdown-button relative cursor-pointer ${className}`}>
   <span class="nav-link inline-flex items-center">
     <slot name="trigger" />
     {
@@ -27,7 +27,7 @@ const { className = '', triggerIcon = true, items = [] } = Astro.props;
     }
   </span>
   <ul
-    class="nav-dropdown-list bg-secondary-500 relative left-1/2 z-10 mx-auto hidden min-w-max -translate-x-1/2 overflow-hidden rounded-lg border border-gray-200 px-2 py-2 shadow-lg duration-300 lg:absolute lg:bg-white"
+    class="nav-dropdown-list bg-secondary-500 relative left-1/2 z-10 mx-auto mt-6 hidden min-w-max -translate-x-1/2 overflow-hidden rounded-lg border border-gray-200 px-2 py-2 shadow-lg duration-300 lg:absolute lg:mt-2 lg:bg-white"
   >
     {
       items && items.length > 0 ? (

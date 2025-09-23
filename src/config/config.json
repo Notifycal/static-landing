@@ -5,11 +5,7 @@
     "basePath": "/",
     "trailingSlash": true,
     "favicon": "/images/favicon.svg",
-    "logoWidth": "auto",
-    "logoHeight": "55px",
-    "logoText": "Notifycal",
-    "author": "Notifycal",
-    "image": "/images/og-image.webp"
+    "author": "Notifycal"
   },
   "settings": {
     "pagination": 6,

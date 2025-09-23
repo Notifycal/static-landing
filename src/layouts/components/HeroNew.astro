@@ -18,7 +18,11 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 // - review lighthouse scores
 ---
 
-<section class="relative h-[calc(100dvh-103px)] w-full overflow-hidden" id="start" data-scroll-mt>
+<section
+  class="relative flex min-h-[calc(100dvh-var(--header-height))] w-full flex-col items-center overflow-hidden"
+  id="start"
+  data-scroll-mt
+>
   <picture>
     <source
       srcset="
@@ -52,11 +56,11 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 
   <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply"></div>
 
-  <div class="text-primary-50 relative z-10 container flex h-full items-center">
+  <div class="text-primary-50 relative z-10 container flex h-full grow flex-col items-center justify-center">
     <div class="hero-content w-full text-center">
-      <h1 class="text-secondary-200 text-center text-5xl font-bold md:text-7xl">
-        {title}<br />
-        <div id="dynamicSubtitle" class="relative w-full pb-8">
+      <h1 class="text-secondary-200 text-center text-5xl font-bold xl:text-6xl">
+        <span class="text-4xl">{title}</span><br />
+        <div id="dynamicSubtitle" class="relative w-full pb-2 md:pb-8">
           <p class="invisible">
             {subtitles.reduce((a, b) => (b.length > a.length ? b : a))}
           </p>
@@ -76,18 +80,20 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
         </div>
       </h1>
 
-      <p class="text-center text-xl">
+      <p class="text-md text-center md:text-xl">
         Gestiona tus citas con recordatorios por SMS.<br />Optimiza tu tiempo y ofrece una experiencia más profesional.
       </p>
-      {content && <p class="text-center text-xl" set:html={markdownify(content)} />}
+      <!-- {content && <p class="text-center text-xl" set:html={markdownify(content)} />} -->
 
       <div class="mx-auto max-w-2xl">
-        <div class="my-8 grid justify-center justify-items-start gap-4 sm:grid-cols-[max-content_max-content]">
+        <div
+          class="my-4 grid justify-center justify-items-start gap-0 sm:grid-cols-[max-content_max-content] sm:gap-2 md:my-6"
+        >
           {
             sellingPoints.map((item) => (
               <div class="flex items-center">
                 <svg
-                  class="mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  class="mr-3 size-5 flex-shrink-0 text-green-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -102,7 +108,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
       </div>
 
       <div>
-        <div class="mx-auto mt-16 mb-8 flex max-w-xl flex-col justify-center gap-4 sm:flex-row sm:gap-12">
+        <div class="mx-auto mb-8 flex max-w-xl flex-col justify-center gap-4 sm:flex-row sm:gap-12 xl:mt-8">
           {
             mainButton && mainButton.enable && (
               <div class="flex-1 text-center">
@@ -139,9 +145,9 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
     </div>
     <a
       href="#features"
-      class="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 animate-bounce text-white [animation-duration:3s] hover:[animation-duration:1s]"
+      class="mt-2 size-12 animate-bounce text-white [animation-duration:3s] hover:[animation-duration:1s] md:mt-12 md:size-16"
     >
-      <TbSquareRoundedChevronDownFilled size="80px" />
+      <TbSquareRoundedChevronDownFilled size="100%" />
     </a>
   </div>
 </section>

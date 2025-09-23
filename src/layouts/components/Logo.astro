@@ -4,14 +4,13 @@ import { useTranslatedPath } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
 
 import NotifycalIsologo from '@notifycal/shared/assets/logos/notifycal-isologo.svg';
+import clsx from 'clsx';
+
+const { className } = Astro.props;
 
 const {
-  logoWidth,
-  logoHeight,
   title
 }: {
-  logoWidth: any;
-  logoHeight: any;
   title: string;
 } = config.site;
 
@@ -20,5 +19,5 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <a href={translatePath('/')} class="navbar-brand block">
-  <NotifycalIsologo style={{ width: logoWidth, height: logoHeight }} class="logo" aria-label={title} />
+  <NotifycalIsologo class={clsx('logo', className)} aria-label={title} />
 </a>

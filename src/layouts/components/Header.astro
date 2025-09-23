@@ -31,11 +31,11 @@ function isActivePath(menuUrl: string): boolean {
 }
 ---
 
-<header class="header bg-secondary" id="siteHeader">
+<header class="header" id="siteHeader">
   <nav class="navbar relative container">
     <!-- logo -->
     <div class="order-0">
-      <Logo />
+      <Logo className="h-10" />
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
@@ -64,11 +64,11 @@ function isActivePath(menuUrl: string): boolean {
     <!-- /navbar toggler -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full flex-col lg:absolute lg:left-1/2 lg:order-1 lg:flex lg:w-auto lg:-translate-x-1/2 lg:flex-row"
+      class="navbar-nav absolute order-3 hidden w-full flex-col lg:top-auto lg:left-1/2 lg:order-1 lg:flex lg:w-auto lg:-translate-x-1/2 lg:flex-row"
     >
       {
         main.map((menu) => (
-          <>
+          <li class="nav-item">
             {menu.children && menu.children.length > 0 ? (
               <Dropdown
                 items={menu.children.map((child) => ({
@@ -83,19 +83,17 @@ function isActivePath(menuUrl: string): boolean {
                 <Fragment slot="trigger">{menu.name}</Fragment>
               </Dropdown>
             ) : (
-              <li class="nav-item">
-                <a
-                  href={translatePath(menu.url)}
-                  class={clsx({
-                    'nav-link inline-block lg:block': true,
-                    active: isActivePath(menu.url)
-                  })}
-                >
-                  {menu.name}
-                </a>
-              </li>
+              <a
+                href={translatePath(menu.url)}
+                class={clsx({
+                  'nav-link inline-block lg:block': true,
+                  active: isActivePath(menu.url)
+                })}
+              >
+                {menu.name}
+              </a>
             )}
-          </>
+          </li>
         ))
       }
       <li class="nav-item lg:hidden">

@@ -1,5 +1,9 @@
 html {
   @apply scroll-smooth text-base;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
@@ -76,5 +80,15 @@ a {
 
   &:hover {
     animation: none;
+  }
+}
+
+:root {
+  --header-height: theme('spacing.16');
+}
+
+@variant lg {
+  :root {
+    --header-height: theme('spacing.20');
   }
 }
