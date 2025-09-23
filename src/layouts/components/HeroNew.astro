@@ -10,8 +10,6 @@ const { hero } = Astro.props as { hero: HeroEntry };
 const { title, subtitles, mainButton, secondaryButton, content, poweredBy, sellingPoints } = hero;
 
 // TODO:
-// - [DONE] Preload image as background, then transition to video
-// - [DONE] Fix no subtitles/dynamism on language change
 // - Verify language text "length". ie: buttons,
 // - Decide on sub-sub-title (adjust width)
 // - min-h for video?
@@ -56,8 +54,8 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 
   <div class="absolute inset-0 z-1 bg-[rgba(0,0,0,0.45)] bg-blend-multiply"></div>
 
-  <div class="text-primary-50 relative z-10 container flex h-full grow flex-col items-center justify-center">
-    <div class="hero-content w-full text-center">
+  <div class="text-primary-50 relative z-10 container flex h-full grow flex-col">
+    <div class="hero-content flex w-full flex-1 flex-col items-center justify-center text-center">
       <h1 class="text-secondary-200 text-center text-5xl font-bold xl:text-6xl">
         <span class="text-4xl">{title}</span><br />
         <div id="dynamicSubtitle" class="relative w-full pb-2 md:pb-8">
@@ -104,48 +102,48 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
         </div>
       </div>
 
-      <div>
-        <div class="mx-auto mb-8 flex max-w-xl flex-col justify-center gap-4 sm:flex-row sm:gap-12 xl:mt-8">
-          {
-            mainButton && mainButton.enable && (
-              <div class="flex-1 text-center">
-                <a class="btn btn-primary button-vibrate h-auto w-full" href={mainButton.link}>
-                  {mainButton.label}
-                </a>
-              </div>
-            )
-          }
+      <div class="mx-auto mb-8 flex w-full max-w-2xl flex-col justify-center gap-4 sm:flex-row sm:gap-12 xl:mt-8">
+        {
+          mainButton && mainButton.enable && (
+            <div class="flex-1 text-center">
+              <a class="btn btn-primary button-vibrate h-auto w-full" href={mainButton.link}>
+                {mainButton.label}
+              </a>
+            </div>
+          )
+        }
 
-          {
-            secondaryButton && secondaryButton.enable && (
-              <div class="flex-1 text-center">
-                <a class="btn w-full border-1 border-white bg-transparent" href={secondaryButton.link}>
-                  {secondaryButton.label}
-                </a>
-              </div>
-            )
-          }
-        </div>
-        <div class="mb-4 flex items-center justify-center gap-4 py-2">
-          <span class="text-secondary-200 text-lg">{poweredBy.title}</span>
-          {
-            poweredBy.powerers.map((power) => (
-              <img
-                src={power.image}
-                alt={power.title}
-                class="size-7 opacity-90 transition-opacity duration-200 hover:opacity-100"
-              />
-            ))
-          }
-        </div>
+        {
+          secondaryButton && secondaryButton.enable && (
+            <div class="flex-1 text-center">
+              <a class="btn h-auto w-full border-1 border-white bg-transparent" href={secondaryButton.link}>
+                {secondaryButton.label}
+              </a>
+            </div>
+          )
+        }
+      </div>
+      <div class="mb-4 flex items-center justify-center gap-4 py-2">
+        <span class="text-secondary-200 text-lg">{poweredBy.title}</span>
+        {
+          poweredBy.powerers.map((power) => (
+            <img
+              src={power.image}
+              alt={power.title}
+              class="size-7 opacity-90 transition-opacity duration-200 hover:opacity-100"
+            />
+          ))
+        }
       </div>
     </div>
-    <a
-      href="#features"
-      class="mt-2 size-12 animate-bounce text-white [animation-duration:3s] hover:[animation-duration:1s] md:mt-12 md:size-16"
-    >
-      <TbSquareRoundedChevronDownFilled size="100%" />
-    </a>
+    <div class="flex justify-center pb-6">
+      <a
+        href="#features"
+        class="mt-2 size-12 animate-bounce text-white [animation-duration:3s] hover:[animation-duration:1s] md:mt-12 md:size-16"
+      >
+        <TbSquareRoundedChevronDownFilled size="100%" />
+      </a>
+    </div>
   </div>
 </section>
 
