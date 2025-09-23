@@ -1,0 +1,93 @@
+---
+import config from '@/config/config.json';
+import { getLangFromUrl } from '@/lib/i18n-const';
+import { generateStructuredData, getSEODefaults } from '@/lib/utils/seo';
+import { plainify } from '@/lib/utils/textConverter';
+import type { LanguageCode } from '@notifycal/shared/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article' | 'product';
+  schema?: 'Organization' | 'SoftwareApplication' | 'FAQPage' | 'Offer' | 'BreadcrumbList';
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  offers?: Array<{ name: string; price: string; currency: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+}
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  noindex = false,
+  type = 'website',
+  schema = 'SoftwareApplication',
+  breadcrumbs = [],
+  offers = [],
+  faqs = []
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const {
+  site: { baseUrl, author }
+} = config;
+
+const seoDefaults = getSEODefaults(lang);
+
+const finalDescription = plainify(description || seoDefaults.description) || seoDefaults.description;
+const finalImage = image ? `${baseUrl}${image}` : `${baseUrl}${seoDefaults.image}`;
+const finalCanonical = canonical || `${baseUrl}${Astro.url.pathname}`;
+
+const structuredData = await generateStructuredData({
+  type: schema,
+  lang,
+  title: title,
+  description: finalDescription,
+  url: finalCanonical,
+  image: finalImage,
+  breadcrumbs,
+  offers,
+  faqs
+});
+
+const hrefLangMap: Record<LanguageCode, string> = {
+  es: Astro.url.pathname.replace(/^\/(en|ca)\//, '/'),
+  en: `/en${Astro.url.pathname.replace(/^\/(en|ca)\//, '/')}`,
+  ca: `/ca${Astro.url.pathname.replace(/^\/(en|ca)\//, '/')}`
+};
+
+const hreflangs = Object.entries(hrefLangMap).map(([lang, url]) => ({
+  lang: lang as LanguageCode,
+  url
+}));
+---
+
+<meta name="description" content={finalDescription} />
+<meta name="author" content={author} />
+
+<link rel="canonical" href={finalCanonical} />
+
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+{!noindex && <meta name="robots" content="index,follow" />}
+
+{hreflangs.map(({ lang: hrefLang, url }) => <link rel="alternate" hreflang={hrefLang} href={`${baseUrl}${url}`} />)}
+<link rel="alternate" hreflang="x-default" href={`${baseUrl}${hreflangs[0].url}`} />
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={finalDescription} />
+<meta property="og:image" content={finalImage} />
+<meta property="og:url" content={finalCanonical} />
+<meta property="og:site_name" content="Notifycal" />
+<meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'en' ? 'en_US' : 'ca_ES'} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={finalDescription} />
+<meta name="twitter:image" content={finalImage} />
+
+{structuredData && <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />}
