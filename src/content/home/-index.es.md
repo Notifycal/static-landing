@@ -6,7 +6,7 @@ hero:
     - 'que tus clientes olviden sus citas?'
     - 'llamadas y correos de última hora?'
     - 'trabajar más en recordatorios que en tu negocio?'
-  content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa.'
+  content: 'Gestiona tus citas con recordatorios por SMS.<br/>Optimiza tu tiempo y ofrece una experiencia más profesional.'
   mainButton:
     enable: true
     label: 'Empieza a ahorrar tiempo'

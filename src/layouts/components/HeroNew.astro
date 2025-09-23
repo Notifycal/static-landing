@@ -80,10 +80,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
         </div>
       </h1>
 
-      <p class="text-md text-center md:text-xl">
-        Gestiona tus citas con recordatorios por SMS.<br />Optimiza tu tiempo y ofrece una experiencia más profesional.
-      </p>
-      <!-- {content && <p class="text-center text-xl" set:html={markdownify(content)} />} -->
+      {content && <p class="ttext-md text-center md:text-xl" set:html={markdownify(content)} />}
 
       <div class="mx-auto max-w-2xl">
         <div
@@ -112,7 +109,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
           {
             mainButton && mainButton.enable && (
               <div class="flex-1 text-center">
-                <a class="btn btn-primary button-vibrate w-full" href={mainButton.link}>
+                <a class="btn btn-primary button-vibrate h-auto w-full" href={mainButton.link}>
                   {mainButton.label}
                 </a>
               </div>

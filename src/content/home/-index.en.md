@@ -6,7 +6,7 @@ hero:
     - your clients forgetting their appointments?
     - last-minute calls and emails?
     - working more on reminders than on your business?
-  content: 'We take care of reminding your clients about their appointments so you can focus on what really matters.'
+  content: 'Manage your appointments with SMS reminders.<br/>Optimize your time and offer a more professional experience.'
   mainButton:
     enable: true
     label: 'Start saving time'

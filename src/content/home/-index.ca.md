@@ -6,7 +6,7 @@ hero:
     - que els teus clients oblidin les seves cites?
     - trucades i correus d’última hora?
     - treballes més en recordatoris que en el teu negoci?
-  content: 'Nosaltres ens encarreguem de recordar les cites als teus clients perquè tu puguis centrar-te en el que realment importa.'
+  content: 'Gestiona les teves cites amb recordatoris per SMS.<br/>Optimitza el teu temps i ofereix una experiència més professional.'
   mainButton:
     enable: true
     label: 'Comença a estalviar temps'
