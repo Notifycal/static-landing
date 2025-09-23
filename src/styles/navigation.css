@@ -22,7 +22,8 @@
   @apply text-center lg:text-left;
 }
 
-.nav-link {
+.nav-link,
+.dropdown-item {
   @apply block rounded-lg px-3 py-3 text-lg font-medium text-white no-underline transition transition-all duration-300 md:px-4 lg:inline-block lg:text-white;
 
   &:hover:not(.active) {
@@ -44,8 +45,9 @@
   &.dropdown-item {
     @apply flex items-center text-white transition-colors lg:text-gray-700;
 
-    &:hover {
-      @apply bg-accent1-500 text-gray-900;
+    &:hover,
+    &.active {
+      @apply bg-accent1-500 scale-100 text-gray-900;
 
       /* Remove inherited underline effect from nav-link */
       &::after {
@@ -62,4 +64,9 @@
       @apply mx-2;
     }
   }
+}
+
+.nav-item {
+  display: block;
+  margin: 0 auto;
 }

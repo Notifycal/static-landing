@@ -8,5 +8,5 @@ input#nav-toggle:checked ~ label#hide-button {
 }
 
 input#nav-toggle:checked ~ #nav-menu {
-  @apply block lg:flex;
+  @apply flex flex-col lg:flex;
 }

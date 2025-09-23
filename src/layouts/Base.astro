@@ -146,7 +146,9 @@ const finalTitle = plainify(metaTitle || title || 'Notifycal') || 'Notifycal';
 <script>
   import { updateScrollMargins } from '@/lib/utils/scrollMargins';
 
-  updateScrollMargins();
+  document.addEventListener('astro:page-load', () => {
+    requestAnimationFrame(() => updateScrollMargins());
+  });
 
   window.addEventListener('resize', () => updateScrollMargins());
 </script>
