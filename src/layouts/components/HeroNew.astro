@@ -4,6 +4,7 @@ type HeroEntry = CollectionEntry<'home'>['data']['hero'];
 
 import { markdownify } from '@/lib/utils/textConverter';
 import { TbSquareRoundedChevronDownFilled } from 'react-icons/tb';
+import clsx from 'clsx';
 
 const { hero } = Astro.props as { hero: HeroEntry };
 const { title, subtitles, mainButton, secondaryButton, content, poweredBy, sellingPoints } = hero;
@@ -17,7 +18,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 // - review lighthouse scores
 ---
 
-<section class="relative h-[calc(100dvh-103px)] w-full overflow-hidden">
+<section class="relative h-[calc(100dvh-103px)] w-full overflow-hidden" id="start" data-scroll-mt>
   <picture>
     <source
       srcset="
@@ -53,9 +54,26 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
 
   <div class="text-primary-50 relative z-10 container flex h-full items-center">
     <div class="hero-content w-full text-center">
-      <h1 class="text-secondary-200 text-center font-bold" style="min-height: 180px;">
+      <h1 class="text-secondary-200 text-center text-5xl font-bold md:text-7xl">
         {title}<br />
-        <span id="dynamicSubtitle" class="text-primary-500 text-7xl transition-opacity duration-500 ease-in-out"></span>
+        <div id="dynamicSubtitle" class="relative w-full pb-8">
+          <p class="invisible">
+            {subtitles.reduce((a, b) => (b.length > a.length ? b : a))}
+          </p>
+          {
+            subtitles.map((subtitle, index) => (
+              <p
+                class={clsx(
+                  'text-primary-500 absolute inset-0 transition-opacity duration-700 ease-in-out',
+                  index === 0 ? 'opacity-100' : 'opacity-0'
+                )}
+                data-subtitle={index}
+              >
+                {subtitle}
+              </p>
+            ))
+          }
+        </div>
       </h1>
 
       <p class="text-center text-xl">
@@ -84,7 +102,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
       </div>
 
       <div>
-        <div class="mx-auto mt-16 mb-8 flex max-w-xl flex-col justify-center gap-12 sm:flex-row">
+        <div class="mx-auto mt-16 mb-8 flex max-w-xl flex-col justify-center gap-4 sm:flex-row sm:gap-12">
           {
             mainButton && mainButton.enable && (
               <div class="flex-1 text-center">
@@ -128,39 +146,6 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
   </div>
 </section>
 
-<script is:inline define:vars={{ subtitles }}>
-  const handleHeroSubtitles = (subtitles, subtitleElement) => {
-    let subtitleIndex = 0;
-
-    // Show the first subtitle immediately
-    subtitleElement.innerText = subtitles[subtitleIndex];
-    subtitleElement.style.opacity = '1';
-    subtitleIndex = 1; // Start with the second one in the loop
-
-    function showNextSubtitle() {
-      // Fade out
-      subtitleElement.style.opacity = '0';
-
-      setTimeout(() => {
-        // Update text and fade in
-        subtitleElement.innerText = subtitles[subtitleIndex];
-        subtitleElement.style.opacity = '1';
-        subtitleIndex = (subtitleIndex + 1) % subtitles.length;
-      }, 500); // Corresponds to duration-500
-    }
-
-    // Start the loop
-    setInterval(showNextSubtitle, 3000); // Change every 3 seconds
-  };
-
-  document.addEventListener('astro:page-load', () => {
-    const subtitleElement = document.getElementById('dynamicSubtitle');
-    if (!subtitleElement) return;
-
-    handleHeroSubtitles(subtitles, subtitleElement);
-  });
-</script>
-
 <script>
   import { handleVideoFallback, handleVideoPause } from '@/lib/utils/heroVideo';
 
@@ -175,5 +160,21 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
     }
 
     handleVideoPause(video);
+  });
+</script>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const subtitles = document.querySelectorAll<HTMLElement>('[data-subtitle]');
+    let index = 0;
+
+    setInterval(() => {
+      const current = subtitles[index];
+      index = (index + 1) % subtitles.length;
+      const next = subtitles[index];
+
+      current.style.opacity = '0';
+      next.style.opacity = '1';
+    }, 3000);
   });
 </script>
