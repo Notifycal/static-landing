@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/Notifycal/static-landing/compare/v2.2.3...v2.3.0) (2025-09-24)
+
+
+### Features
+
+* dynamic hero [wip] ([#526](https://github.com/Notifycal/static-landing/issues/526)) ([1366231](https://github.com/Notifycal/static-landing/commit/1366231783bfb7b081efcb3439c73001e3052bd1))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.3.2 ([#552](https://github.com/Notifycal/static-landing/issues/552)) ([8a30b0b](https://github.com/Notifycal/static-landing/commit/8a30b0b142927de13c7571a9b5cdb1419e90e24f))
+
 ## [2.2.3](https://github.com/Notifycal/static-landing/compare/v2.2.2...v2.2.3) (2025-09-23)
 
 
