@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/Notifycal/static-landing/compare/v2.3.0...v2.4.0) (2025-09-24)
+
+
+### Features
+
+* pricing calculator ([#542](https://github.com/Notifycal/static-landing/issues/542)) ([edc8ae3](https://github.com/Notifycal/static-landing/commit/edc8ae3f048e653104db3614e79be9793ac7cfeb))
+
 ## [2.3.0](https://github.com/Notifycal/static-landing/compare/v2.2.3...v2.3.0) (2025-09-24)
 
 
