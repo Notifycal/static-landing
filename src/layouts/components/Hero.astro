@@ -8,12 +8,6 @@ import clsx from 'clsx';
 
 const { hero } = Astro.props as { hero: HeroEntry };
 const { title, subtitles, mainButton, secondaryButton, content, poweredBy, sellingPoints } = hero;
-
-// TODO:
-// - Verify language text "length". ie: buttons,
-// - Decide on sub-sub-title (adjust width)
-// - min-h for video?
-// - review lighthouse scores
 ---
 
 <section
@@ -78,7 +72,7 @@ const { title, subtitles, mainButton, secondaryButton, content, poweredBy, selli
         </div>
       </h1>
 
-      {content && <p class="ttext-md text-center md:text-xl" set:html={markdownify(content)} />}
+      {content && <p class="text-md text-center md:text-xl" set:html={markdownify(content)} />}
 
       <div class="mx-auto max-w-2xl">
         <div
