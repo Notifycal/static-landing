@@ -1,12 +1,34 @@
 ---
 hero:
-  title: '¿Pierdes tiempo enviando recordatorios manualmente?'
-  content: 'Nosotros nos encargamos de recordar las citas a tus clientes para que tú puedas enfocarte en lo que realmente importa: hacer crecer tu negocio.'
-  button:
+  title: '¿Estás cansado de'
+  subtitles:
+    - 'perder horas enviando recordatorios?'
+    - 'que tus clientes olviden sus citas?'
+    - 'llamadas y correos de última hora?'
+    - 'trabajar más en recordatorios que en tu negocio?'
+  content: 'Gestiona tus citas con recordatorios por SMS.<br/>Optimiza tu tiempo y ofrece una experiencia más profesional.'
+  mainButton:
     enable: true
     label: 'Empieza a ahorrar tiempo'
     link: 'https://private.notifycal.com'
-  poweredBy: 'Powered by:'
+  secondaryButton:
+    enable: true
+    label: 'Ver demo (2 min)'
+    link: '#video'
+  sellingPoints:
+    - Configúralo en menos de 5 minutos
+    - No se necesitan conocimientos técnicos
+    - Respuestas automatizadas 24/7
+    - Se integra con tus herramientas existentes
+  poweredBy:
+    title: 'Con tecnología de'
+    powerers:
+      - title: Google Calendar
+        image: /images/google-calendar-icon.svg
+      - title: Google Contacts
+        image: /images/google-contacts-icon.svg
+      - title: Stripe
+        image: /images/stripe-icon.svg
 
 features:
   featuresTab:
