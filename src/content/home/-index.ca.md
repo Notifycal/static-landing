@@ -1,12 +1,34 @@
 ---
 hero:
-  title: 'Perds temps enviant recordatoris manualment?'
-  content: 'Nosaltres ens encarreguem de recordar les cites als teus clients perquè tu puguis centrar-te en el que realment importa: fer créixer el teu negoci.'
-  button:
+  title: 'Estàs tip de'
+  subtitles:
+    - perds hores enviant recordatoris?
+    - que els teus clients oblidin les seves cites?
+    - trucades i correus d’última hora?
+    - treballes més en recordatoris que en el teu negoci?
+  content: 'Gestiona les teves cites amb recordatoris per SMS.<br/>Optimitza el teu temps i ofereix una experiència més professional.'
+  mainButton:
     enable: true
     label: 'Comença a estalviar temps'
     link: 'https://private.notifycal.com'
-  poweredBy: 'Powered by:'
+  secondaryButton:
+    enable: true
+    label: 'Veure demo (2 min)'
+    link: '#video'
+  sellingPoints:
+    - Configura-ho en menys de 5 minuts
+    - No es necessiten coneixements tècnics
+    - Respostes automatitzades 24/7
+    - S’integra amb les teves eines existents
+  poweredBy:
+    title: 'Amb tecnologia de'
+    powerers:
+      - title: Google Calendar
+        image: /images/google-calendar-icon.svg
+      - title: Google Contacts
+        image: /images/google-contacts-icon.svg
+      - title: Stripe
+        image: /images/stripe-icon.svg
 
 features:
   featuresTab:

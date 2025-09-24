@@ -82,5 +82,8 @@ export default defineConfig({
       wrap: true
     },
     extendDefaultPlugins: true
+  },
+  server: {
+    host: true
   }
 });
