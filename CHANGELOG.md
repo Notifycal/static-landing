@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/Notifycal/static-landing/compare/v2.4.1...v2.4.2) (2025-09-25)
+
+
+### Bug Fixes
+
+* staff pics ([#560](https://github.com/Notifycal/static-landing/issues/560)) ([09d6ca0](https://github.com/Notifycal/static-landing/commit/09d6ca0b2159b66309d62386d3fa076bd40dd52a))
+
 ## [2.4.1](https://github.com/Notifycal/static-landing/compare/v2.4.0...v2.4.1) (2025-09-25)
 
 
