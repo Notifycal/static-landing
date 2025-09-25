@@ -15,13 +15,13 @@ members:
   memberList:
     - name: 'Daniel Siguero García'
       field: 'Cofundador'
-      image: '/images/users/team-maria.webp'
+      image: '/images/staff/dan.webp'
       bio: "DevSecOps amb 12 anys d'experiència en desenvolupament de productes SaaS. Prèviament va treballar en projectes del govern del Regne Unit"
       linkedin: 'https://linkedin.com/in/dsiguero'
       github: 'https://github.com/dsiguero'
     - name: 'Sergio Martín Sánchez'
       field: 'Cofundador'
-      image: '/images/users/team-carlos.webp'
+      image: '/images/staff/sergio.webp'
       bio: 'Especialista en DevOps en arquitectures escalables i APIs. Experiència construint sistemes distribuïts i treballant amb equips àgils.'
       linkedin: 'https://linkedin.com/in/sergio-martin-sanchez'
       github: 'https://github.com/sergiojoker11'
