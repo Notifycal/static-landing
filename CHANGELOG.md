@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.1](https://github.com/Notifycal/static-landing/compare/v2.4.0...v2.4.1) (2025-09-25)
+
+
+### Bug Fixes
+
+* cookie consent privacy policy ([#559](https://github.com/Notifycal/static-landing/issues/559)) ([f697042](https://github.com/Notifycal/static-landing/commit/f6970428b2c448ebe49efc2f6c3ff5efefa98a03))
+* **deps:** Update dependency astro to v5.13.11 ([#557](https://github.com/Notifycal/static-landing/issues/557)) ([166a2b6](https://github.com/Notifycal/static-landing/commit/166a2b6ebd830b090b963e8bf747c2c7fc5ae50b))
+
 ## [2.4.0](https://github.com/Notifycal/static-landing/compare/v2.3.0...v2.4.0) (2025-09-24)
 
 
