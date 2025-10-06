@@ -1,8 +1,5 @@
 import { useRef, useState, type FC } from 'react';
 import SwiperCore from 'swiper';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
