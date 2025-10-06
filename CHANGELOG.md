@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.3](https://github.com/Notifycal/static-landing/compare/v2.4.2...v2.4.3) (2025-10-06)
+
+
+### Bug Fixes
+
+* carousel progress dots by bundling .css outside React island ([#581](https://github.com/Notifycal/static-landing/issues/581)) ([2deef85](https://github.com/Notifycal/static-landing/commit/2deef85ece0e51a79da19170c920c9546ca13871))
+* **deps:** Update dependency @mantine/core to v8.3.3 ([#574](https://github.com/Notifycal/static-landing/issues/574)) ([5789a6a](https://github.com/Notifycal/static-landing/commit/5789a6a0ae65850ac473c5d86e2364b4a3966c2e))
+* **deps:** Update dependency astro to v5.14.1 ([#565](https://github.com/Notifycal/static-landing/issues/565)) ([d9b3d67](https://github.com/Notifycal/static-landing/commit/d9b3d67265b129fbef86c1a2f7b71a6f4b50e951))
+* **deps:** Update dependency astro-auto-import to v0.4.5 ([#577](https://github.com/Notifycal/static-landing/issues/577)) ([b71e580](https://github.com/Notifycal/static-landing/commit/b71e5806f3a29fd2bd81da325632514b4bd4f6a1))
+* **deps:** Update dependency vite to v7.1.8 ([#573](https://github.com/Notifycal/static-landing/issues/573)) ([eaaff9b](https://github.com/Notifycal/static-landing/commit/eaaff9ba630dd98f05c20e6682e5b098ad3eac11))
+* **deps:** Update dependency vite to v7.1.9 ([#575](https://github.com/Notifycal/static-landing/issues/575)) ([a3e0b1c](https://github.com/Notifycal/static-landing/commit/a3e0b1cb0f93b0181515d57750cc002b92982ff7))
+* **deps:** Update Node.js Dependencies ([#562](https://github.com/Notifycal/static-landing/issues/562)) ([1dbaaab](https://github.com/Notifycal/static-landing/commit/1dbaaabc31ac7519269b97c3a8c79d0ffbed7920))
+* **deps:** Update Node.js Dependencies to v19.2.0 ([#572](https://github.com/Notifycal/static-landing/issues/572)) ([3d646bb](https://github.com/Notifycal/static-landing/commit/3d646bb6890c944e38a8213ee3ab06307f19a609))
+
 ## [2.4.2](https://github.com/Notifycal/static-landing/compare/v2.4.1...v2.4.2) (2025-09-25)
 
 
