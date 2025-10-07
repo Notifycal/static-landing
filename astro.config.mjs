@@ -39,7 +39,7 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: defaultLang,
-        locales: Object.keys(languages)
+        locales: Object.keys(languages).reduce((acc, lang) => ({ ...acc, [lang]: lang }), {})
       },
       serialize: (item) => {
         const url = new URL(item.url);
