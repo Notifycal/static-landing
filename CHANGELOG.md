@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.5.0](https://github.com/Notifycal/static-landing/compare/v2.4.3...v2.5.0) (2025-10-07)
+
+
+### Features
+
+* add video ([#586](https://github.com/Notifycal/static-landing/issues/586)) ([e8f1b4b](https://github.com/Notifycal/static-landing/commit/e8f1b4bc0131a264535b2d037a1d4c8f181cc9b5))
+
+
+### Bug Fixes
+
+* **deps:** Update dependency marked to v16.4.0 ([#584](https://github.com/Notifycal/static-landing/issues/584)) ([b5b4d2b](https://github.com/Notifycal/static-landing/commit/b5b4d2b4362ccc9a9786fc0ff69f426e64bc354c))
+* sitemap generation ([#587](https://github.com/Notifycal/static-landing/issues/587)) ([3ab8deb](https://github.com/Notifycal/static-landing/commit/3ab8deb293c1bd781ca6551c1b65a8c9ec26c357))
+
 ## [2.4.3](https://github.com/Notifycal/static-landing/compare/v2.4.2...v2.4.3) (2025-10-06)
 
 
