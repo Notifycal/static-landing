@@ -72,10 +72,10 @@ features:
     title: Simple and effective configuration
     description: Connect Google Calendar, import your contacts from Google and set up your automatic reminders in less than 5 minutes. No complicated installations.
     video:
-      thumbnail: '/images/intro-thumbnail.webp'
-      videoId: 'g3-VxLQO7do'
+      thumbnail: '/images/video-thumbnail.webp'
+      videoId: 'Q_Kpj5wz1o8'
     button:
-      enable: true
+      enable: false
       label: Watch Demo
       link: '#'
 
