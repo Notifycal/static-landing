@@ -2,14 +2,15 @@
 import type { CollectionEntry } from 'astro:content';
 import FeaturesTab from '../react/FeaturesTab';
 import SingleFeature from './SingleFeature.astro';
+import VideoFeature from './VideoFeature.astro';
 
 interface Props {
   features: CollectionEntry<'home'>['data']['features'];
 }
 const { features } = Astro.props;
-const { featuresTab, ourFeatures /*, featuresVideo*/ } = features;
+const { featuresTab, ourFeatures, featuresVideo } = features;
 
-// const featuresLength = ourFeatures.length;
+const featuresLength = ourFeatures.length;
 ---
 
 <section class="section features pt-16" id="features" data-scroll-mt>
@@ -18,8 +19,8 @@ const { featuresTab, ourFeatures /*, featuresVideo*/ } = features;
     <div class="subsection">
       <FeaturesTab client:load featuresTab={featuresTab} />
     </div>
-    <!-- <div class="subsection">
+    <div class="subsection" id="video">
       <VideoFeature videoFeature={featuresVideo} index={featuresLength - 1} />
-    </div> -->
+    </div>
   </div>
 </section>

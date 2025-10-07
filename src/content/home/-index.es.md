@@ -72,10 +72,10 @@ features:
     title: Configuración simple y efectiva
     description: Conecta Google Calendar, importa tus contactos de Google y configura tus recordatorios automáticos en menos de 5 minutos. Sin instalaciones complicadas.
     video:
-      thumbnail: '/images/intro-thumbnail.webp'
-      videoId: 'g3-VxLQO7do'
+      thumbnail: '/images/video-thumbnail.webp'
+      videoId: 'Q_Kpj5wz1o8'
     button:
-      enable: true
+      enable: false
       label: Ver Demo
       link: '#'
 

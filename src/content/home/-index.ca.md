@@ -72,10 +72,10 @@ features:
     title: Configuració simple i efectiva
     description: Connecta Google Calendar, importa els teus contactes de Google i configura els teus recordatoris automàtics en menys de 5 minuts. Sense instal·lacions complicades.
     video:
-      thumbnail: '/images/intro-thumbnail.webp'
-      videoId: 'g3-VxLQO7do'
+      thumbnail: '/images/video-thumbnail.webp'
+      videoId: 'Q_Kpj5wz1o8'
     button:
-      enable: true
+      enable: false
       label: Veure Demo
       link: '#'
 
