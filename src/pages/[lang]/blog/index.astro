@@ -1,0 +1,8 @@
+---
+import BlogIndexPage from '@/layouts/pages/BlogIndexPage.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+
+export const getStaticPaths = getLanguageStaticPaths;
+---
+
+<BlogIndexPage />

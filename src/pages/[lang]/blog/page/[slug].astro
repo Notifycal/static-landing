@@ -1,0 +1,29 @@
+---
+import config from '@/config/config.json';
+import BlogPaginationPage from '@/layouts/pages/blog/PaginationPage.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+
+export async function getStaticPaths() {
+  const languagePaths = await getLanguageStaticPaths();
+  const posts = await getSinglePage('blog');
+  const totalPages = Math.ceil(posts.length / config.settings.pagination);
+
+  return languagePaths.flatMap(({ params: { lang } }) => {
+    const paths = [];
+    for (let i = 1; i < totalPages; i++) {
+      paths.push({
+        params: {
+          lang,
+          slug: (i + 1).toString()
+        }
+      });
+    }
+    return paths;
+  });
+}
+
+const { slug } = Astro.params;
+---
+
+<BlogPaginationPage slug={slug!} />

@@ -1,0 +1,40 @@
+---
+import Blog from '@/components/Blog.astro';
+import BlogCategories from '@/components/blog/BlogCategories.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import Base from '@/layouts/Base.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+import taxonomyFilter from '@/lib/utils/taxonomyFilter';
+
+type Props = {
+  category: string;
+  item: string;
+};
+
+const categories = await getTaxonomy('blog', 'categories');
+const { category, item } = Astro.props;
+
+const posts = await getSinglePage('blog');
+const filterByTags = taxonomyFilter(posts, 'categories', category);
+const pageData = {
+  indexTitle: 'Categories',
+  slug: item
+};
+---
+
+<Base title={category}>
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content max-w-[883px]">
+        <Breadcrumb pageData={pageData} />
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <BlogCategories categories={categories} />
+      <Blog posts={filterByTags} />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,25 @@
+---
+import Blog from '@/components/Blog.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import BlogCategories from '@/components/blog/BlogCategories.astro';
+import Base from '@/layouts/Base.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+
+const posts = await getSinglePage('blog');
+const categories = await getTaxonomy('blog', 'categories');
+---
+
+<Base title={'categories'}>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumb pageData={{ title: 'Categories' }} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <BlogCategories categories={categories} />
+      <Blog posts={posts} />
+    </div>
+  </section>
+</Base>

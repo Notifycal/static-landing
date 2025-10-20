@@ -1,0 +1,31 @@
+---
+import CategoryPage from '@/layouts/pages/categories/Page.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+import { slugify } from '@/lib/utils/textConverter';
+
+export async function getStaticPaths() {
+  const languagePaths = await getLanguageStaticPaths();
+  const categories = await getTaxonomy('blog', 'categories');
+
+  return languagePaths.flatMap(({ params: { lang } }) =>
+    categories.map((item) => {
+      const category = slugify(item);
+      return {
+        params: {
+          lang,
+          category
+        },
+        props: {
+          item
+        }
+      };
+    })
+  );
+}
+
+const { category } = Astro.params;
+const { item } = Astro.props;
+---
+
+<CategoryPage category={category!} item={item} />

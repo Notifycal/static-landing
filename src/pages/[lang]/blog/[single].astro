@@ -1,0 +1,24 @@
+---
+import BlogSinglePage from '@/layouts/pages/blog/SinglePage.astro';
+import { getSinglePage } from '@/lib/contentParser.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+
+export async function getStaticPaths() {
+  const languagePaths = await getLanguageStaticPaths();
+  const posts = await getSinglePage('blog');
+
+  return languagePaths.flatMap(({ params: { lang } }) =>
+    posts.map((post) => ({
+      params: {
+        lang,
+        single: post.id
+      },
+      props: { post }
+    }))
+  );
+}
+
+const { post } = Astro.props;
+---
+
+<BlogSinglePage post={post} />

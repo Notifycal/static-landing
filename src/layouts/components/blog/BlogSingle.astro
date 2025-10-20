@@ -2,12 +2,12 @@
 import dateFormat from '@/lib/utils/dateFormat';
 import readingTime from '@/lib/utils/readingTime';
 
+import Breadcrumb from '@/layouts/components/Breadcrumb.astro';
 import { humanize, slugify } from '@/lib/utils/textConverter';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
 import { FaRegCalendarAlt, FaRegClock, FaRegFolder, FaRegUserCircle } from 'react-icons/fa';
-import Breadcrumb from './components/Breadcrumb.astro';
 
 type Props = {
   post: CollectionEntry<'blog'>;
@@ -20,8 +20,8 @@ const { Content } = await render(post);
 <section class="section blog-single">
   <div class="container">
     <div class="row mb-8">
-        <Breadcrumb pageData={{ indexTitle: 'Categories', pageTitle: humanize(post.data.categories[0]) }} />
-      </div>
+      <Breadcrumb pageData={{ indexTitle: 'Categories', pageTitle: humanize(post.data.categories[0]) }} />
+    </div>
     <div class="row justify-center">
       <div class="lg:col-10">
         <Image
@@ -47,7 +47,6 @@ const { Content } = await render(post);
               <FaRegCalendarAlt className={'-mt-1 mr-2 inline-block'} />
               {dateFormat(post.data.date!)}
             </li>
-
 
             {
               post.body && (

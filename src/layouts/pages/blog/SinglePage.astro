@@ -1,0 +1,15 @@
+---
+import Base from '@/layouts/Base.astro';
+import BlogSingle from '@/layouts/components/blog/BlogSingle.astro';
+
+type Props = {
+  post: any;
+};
+
+const { post } = Astro.props;
+const { title, metaTitle, description, image } = post.data;
+---
+
+<Base title={title} metaTitle={metaTitle} description={description} image={image}>
+  <BlogSingle post={post} />
+</Base>
