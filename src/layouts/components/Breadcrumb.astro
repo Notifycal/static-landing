@@ -1,14 +1,19 @@
 ---
+import { useTranslatedPath } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { humanize, slugify } from '@/lib/utils/textConverter';
 const { pageData } = Astro.props || {};
 const { title, indexTitle, pageTitle, slug } = pageData || {};
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <nav aria-label="Breadcrumb" class="flex">
   <ol role="list" class="flex items-center space-x-6">
     <li>
       <div>
-        <a href="/" class="text-dark hover:text-accent1-500 hover:no-underline text-2xl font-medium inline-flex items-center">
+        <a href={translatePath('/blog/')} class="text-dark hover:text-accent1-500 hover:no-underline text-2xl font-medium inline-flex items-center">
           <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-7 shrink-0">
             <path d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" fill-rule="evenodd" />
           </svg>
