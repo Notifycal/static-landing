@@ -2,7 +2,6 @@
 import Blog from '@/components/Blog.astro';
 import Cta from '@/components/Cta.astro';
 import PageHeader from '@/components/PageHeader.astro';
-import Shape from '@/components/Shape.astro';
 import BlogCategories from '@/components/blog/BlogCategories.astro';
 import FeaturedBlog from '@/components/blog/FeaturedBlog.astro';
 import config from '@/config/config.json';
@@ -10,10 +9,10 @@ import Base from '@/layouts/Base.astro';
 import Pagination from '@/layouts/components/Pagination.astro';
 import { getSinglePage } from '@/lib/contentParser.astro';
 import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { getTaxonomy } from '@/lib/taxonomyParser.astro';
 import { sortByDate } from '@/lib/utils/sortFunctions';
 import { getEntry } from 'astro:content';
-import { getLangFromUrl } from '@/lib/i18n-const';
 
 const lang = getLangFromUrl(Astro.url);
 const blogIndex = await getEntry('blog', '-index');
@@ -34,7 +33,7 @@ const { cta } = homepage.data;
   description={blogIndex?.data.description}
   image={blogIndex?.data.image}
 >
-  <section class="page-hero pt-16">
+  <section class="page-hero">
     <div class="container">
       <PageHeader pageData={blogIndex?.data} />
     </div>
@@ -43,7 +42,7 @@ const { cta } = homepage.data;
     <div class="container">
       <FeaturedBlog posts={featuredPost} />
       <BlogCategories categories={categories} />
-      <h2 class="h4 mb-4">Recent Posts</h2>
+      <h3 class="mb-4">Recent Posts</h3>
       <Blog posts={currentPosts} />
       <Pagination section={'blog'} currentPage={1} totalPages={totalPages} />
     </div>

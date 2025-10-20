@@ -1,6 +1,6 @@
 /* section style */
 .section {
-  @apply py-8 md:py-16;
+  @apply py-6 md:py-13;
 
   .subsection {
     @apply pt-16;
@@ -615,4 +615,8 @@ select:invalid {
 
 .logo {
   @apply text-primary-500 drop-shadow-primary-900 hover:drop-shadow-primary-900 h-10 drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl;
+}
+
+.page-hero {
+  @apply pt-12;
 }

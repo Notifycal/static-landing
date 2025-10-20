@@ -1,7 +1,6 @@
 ---
 import Blog from '@/components/Blog.astro';
 import PageHeader from '@/components/PageHeader.astro';
-import Shape from '@/components/Shape.astro';
 import config from '@/config/config.json';
 import Base from '@/layouts/Base.astro';
 import Pagination from '@/layouts/components/Pagination.astro';
@@ -47,14 +46,14 @@ const pageData = {
   description={blogIndex.data.description}
   image={blogIndex.data.image}
 >
-  <section class="page-hero pt-16">
+  <section class="page-hero">
     <div class="container">
       <PageHeader pageData={pageData} />
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <h2 class="h4 mb-4">Recent Posts</h2>
+      <h3 class="mb-4">Recent Posts</h3>
       <Blog posts={currentPosts} />
       <Pagination section={'blog'} totalPages={totalPages} currentPage={currentPage} />
     </div>
