@@ -12,7 +12,7 @@ const params = Astro.params;
 <div class="category-filter mt-3 mb-10 rounded-xl bg-[#EEEEEE] p-4">
   <ul class="filter-list flex flex-wrap items-center">
     <li>
-      <a class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`} href="/categories"
+      <a class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`} href="/categories/"
         >All Categories</a
       >
     </li>
@@ -21,7 +21,7 @@ const params = Astro.params;
         <li>
           <a
             class={`filter-btn ${params.category === slugify(category) ? 'filter-btn-active' : undefined} btn btn-sm`}
-            href={`/categories/${slugify(category)}`}
+            href={`/categories/${slugify(category)}/`}
           >
             {humanize(category)}
           </a>

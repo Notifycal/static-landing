@@ -57,7 +57,7 @@ const { Content } = await render(post);
               <FaRegFolder className={'-mt-1 mr-2 inline-block'} />
               {
                 post.data.categories.map((category, index) => (
-                  <a href={`/categories/${slugify(category)}`} class="hover:text-primary">
+                  <a href={`/categories/${slugify(category)}/`} class="hover:text-primary">
                     {humanize(category)}
                     {index !== post.data.categories.length - 1 && ','}
                   </a>
