@@ -1,6 +1,6 @@
 ---
 import Blog from '@/components/Blog.astro';
-import PageHeader from '@/components/PageHeader.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
 import config from '@/config/config.json';
 import Base from '@/layouts/Base.astro';
 import Pagination from '@/layouts/components/Pagination.astro';
@@ -48,7 +48,7 @@ const pageData = {
 >
   <section class="page-hero">
     <div class="container">
-      <PageHeader pageData={pageData} />
+      <Breadcrumb pageData={pageData} />
     </div>
   </section>
   <section class="section">
