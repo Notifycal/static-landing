@@ -3,7 +3,6 @@ import Blog from '@/components/Blog.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Cta from '@/components/Cta.astro';
 import BlogCategories from '@/components/blog/BlogCategories.astro';
-import FeaturedBlog from '@/components/blog/FeaturedBlog.astro';
 import config from '@/config/config.json';
 import Base from '@/layouts/Base.astro';
 import Pagination from '@/layouts/components/Pagination.astro';
@@ -40,7 +39,7 @@ const { cta } = homepage.data;
   </section>
   <section class="section">
     <div class="container">
-      <FeaturedBlog posts={featuredPost} />
+      <Blog posts={featuredPost} columns="md:col-6" title="Featured Posts" featured={true} />
       <BlogCategories categories={categories} />
       <h3 class="mb-4">Recent Posts</h3>
       <Blog posts={currentPosts} />

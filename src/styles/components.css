@@ -430,12 +430,15 @@ select:invalid {
 }
 
 .filter-btn {
-  @apply text-text-dark m-3 rounded-3xl border border-[#A9A9A9];
+  @apply text-text-dark bg-white m-3 rounded-3xl;
+  &:hover:not(.filter-btn-active) {
+    @apply text-accent1-500 bg-accent1-100;
+  }
 }
 
 .filter-btn-active,
 .filter-btn.active {
-  @apply text-text-dark border-white bg-white shadow-[0px_15px_34px_rgba(0,0,0,0.1)];
+  @apply text-primary bg-secondary;
 }
 
 /* career-single */
