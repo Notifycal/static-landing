@@ -1,26 +1,29 @@
 ---
+import type { LanguageCode } from '@notifycal/shared/types';
 import config from '@/config/config.json';
 import BlogPaginationPage from '@/layouts/pages/blog/PaginationPage.astro';
-import { getSinglePage } from '@/lib/contentParser.astro';
+import { getSinglePageByLang } from '@/lib/contentParser';
 import { getLanguageStaticPaths } from '@/lib/i18n';
 
 export async function getStaticPaths() {
-  const languagePaths = await getLanguageStaticPaths();
-  const posts = await getSinglePage('blog');
-  const totalPages = Math.ceil(posts.length / config.settings.pagination);
+  const languagePaths = getLanguageStaticPaths();
 
-  return languagePaths.flatMap(({ params: { lang } }) => {
-    const paths = [];
-    for (let i = 1; i < totalPages; i++) {
-      paths.push({
-        params: {
-          lang,
-          slug: (i + 1).toString()
-        }
-      });
-    }
-    return paths;
-  });
+  return Promise.all(
+    languagePaths.map(async ({ params: { lang } }) => {
+      const posts = await getSinglePageByLang('blog', lang as LanguageCode);
+      const totalPages = Math.ceil(posts.length / config.settings.pagination);
+      const paths = [];
+      for (let i = 1; i < totalPages; i++) {
+        paths.push({
+          params: {
+            lang,
+            slug: (i + 1).toString()
+          }
+        });
+      }
+      return paths;
+    })
+  ).then((results) => results.flat());
 }
 
 const { slug } = Astro.params;

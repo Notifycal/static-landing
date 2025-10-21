@@ -1,7 +1,7 @@
 ---
 import config from '@/config/config.json';
 import PaginationPage from '@/layouts/pages/blog/PaginationPage.astro';
-import { getSinglePage } from '@/lib/contentParser.astro';
+import { getSinglePage } from '@/lib/contentParser';
 
 export async function getStaticPaths() {
   const posts = await getSinglePage('blog');

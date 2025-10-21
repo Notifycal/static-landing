@@ -3,6 +3,9 @@ import dateFormat from '@/lib/utils/dateFormat';
 import readingTime from '@/lib/utils/readingTime';
 
 import Breadcrumb from '@/layouts/components/Breadcrumb.astro';
+import { translateCategory } from '@/lib/categoryTranslations';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { humanize, slugify } from '@/lib/utils/textConverter';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
@@ -15,12 +18,20 @@ type Props = {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const lang = getLangFromUrl(Astro.url);
+const categoriesIndex = await getCollectionEntryByLang('categories', lang);
 ---
 
 <section class="section blog-single">
   <div class="container">
     <div class="row mb-8">
-      <Breadcrumb pageData={{ indexTitle: 'Categories', pageTitle: humanize(post.data.categories[0]) }} />
+      <Breadcrumb
+        pageData={{
+          indexTitle: categoriesIndex.data.title,
+          indexPath: '/categories/',
+          pageTitle: translateCategory(post.data.categories[0], lang)
+        }}
+      />
     </div>
     <div class="row justify-center">
       <div class="lg:col-10">
@@ -45,14 +56,14 @@ const { Content } = await render(post);
 
             <li class="mr-4 inline-block">
               <FaRegCalendarAlt className={'-mt-1 mr-2 inline-block'} />
-              {dateFormat(post.data.date!)}
+              {dateFormat(post.data.date!, lang)}
             </li>
 
             {
               post.body && (
                 <li class="mr-4 inline-block">
                   <FaRegClock className={'-mt-1 mr-2 inline-block'} />
-                  {readingTime(post.body)}
+                  {readingTime(post.body, lang)}
                 </li>
               )
             }
@@ -62,7 +73,7 @@ const { Content } = await render(post);
               {
                 post.data.categories.map((category, index) => (
                   <a href={`/categories/${slugify(category)}/`} class="hover:text-primary">
-                    {humanize(category)}
+                    {translateCategory(category, lang)}
                     {index !== post.data.categories.length - 1 && ','}
                   </a>
                 ))

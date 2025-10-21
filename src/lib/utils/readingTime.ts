@@ -1,4 +1,21 @@
-const readingTime = (content: string): string => {
+import { defaultLang, type LanguageCode } from '../i18n-const';
+
+const translations: Record<LanguageCode, { min: string; mins: string }> = {
+  es: {
+    min: 'Min de lectura',
+    mins: 'Mins de lectura'
+  },
+  en: {
+    min: 'Min read',
+    mins: 'Mins read'
+  },
+  ca: {
+    min: 'Min de lectura',
+    mins: 'Mins de lectura'
+  }
+};
+
+const readingTime = (content: string, lang: LanguageCode = defaultLang): string => {
   const WPS = 275 / 60;
 
   let images = 0;
@@ -24,15 +41,16 @@ const readingTime = (content: string): string => {
   }
 
   const minutes = Math.ceil(((words - imageAdjust) / WPS + imageSecs) / 60);
+  const t = translations[lang];
 
   if (minutes < 10) {
     if (minutes < 2) {
-      return '0' + minutes + ` Min read`;
+      return '0' + minutes + ` ${t.min}`;
     } else {
-      return '0' + minutes + ` Mins read`;
+      return '0' + minutes + ` ${t.mins}`;
     }
   } else {
-    return minutes + ` Mins read`;
+    return minutes + ` ${t.mins}`;
   }
 };
 

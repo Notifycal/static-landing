@@ -3,7 +3,7 @@ import { useTranslatedPath } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
 import { humanize, slugify } from '@/lib/utils/textConverter';
 const { pageData } = Astro.props || {};
-const { title, indexTitle, pageTitle, slug } = pageData || {};
+const { title, indexTitle, pageTitle, slug, indexPath } = pageData || {};
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
@@ -27,7 +27,7 @@ const translatePath = useTranslatedPath(lang);
           <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-7 shrink-0 text-dark opacity-50">
             <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
           </svg>
-          <a href={`/${slugify(indexTitle)}/`} class="ml-6 text-2xl font-semibold text-dark hover:text-accent1-500 hover:no-underline">
+          <a href={indexPath ? translatePath(indexPath) : `/${slugify(indexTitle)}/`} class="ml-6 text-2xl font-semibold text-dark hover:text-accent1-500 hover:no-underline">
             {indexTitle}
           </a>
         </div>

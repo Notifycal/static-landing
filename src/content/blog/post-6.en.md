@@ -1,10 +1,10 @@
 ---
-title: How Video Analytics Can Help Understand and Increase
+title: 6 Product Launch Email Examples You’ll Want to Steal
 subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-image: '/images/posts/post-5.webp'
+image: '/images/posts/post-10.webp'
 author: Abdullah Al Shifat
-date: 2022-04-04T05:00:00Z
-categories: ['development', 'design']
+date: 2022-04-05T05:00:00Z
+categories: ['development']
 featured: false
 draft: false
 ---

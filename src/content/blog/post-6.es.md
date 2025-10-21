@@ -1,8 +1,8 @@
 ---
-title: Keep on Top of your To-Do List With Slick New Comment
+title: 6 Product Launch Email Examples You’ll Want to Steal
 subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
-image: '/images/posts/post-6.webp'
-author: Al Murad Uzzaman
+image: '/images/posts/post-10.webp'
+author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
 categories: ['development']
 featured: false

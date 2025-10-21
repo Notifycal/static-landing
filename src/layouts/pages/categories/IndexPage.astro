@@ -3,17 +3,21 @@ import Blog from '@/components/Blog.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import BlogCategories from '@/components/blog/BlogCategories.astro';
 import Base from '@/layouts/Base.astro';
-import { getSinglePage } from '@/lib/contentParser.astro';
+import { getSinglePageByLang } from '@/lib/contentParser';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { getTaxonomy } from '@/lib/taxonomyParser.astro';
 
-const posts = await getSinglePage('blog');
+const lang = getLangFromUrl(Astro.url);
+const categoriesIndex = await getCollectionEntryByLang('categories', lang);
+const posts = await getSinglePageByLang('blog', lang);
 const categories = await getTaxonomy('blog', 'categories');
 ---
 
-<Base title={'categories'}>
+<Base title={categoriesIndex.data.title}>
   <section class="page-hero">
     <div class="container">
-      <Breadcrumb pageData={{ title: 'Categories' }} />
+      <Breadcrumb pageData={{ title: categoriesIndex.data.title }} />
     </div>
   </section>
   <section class="section">

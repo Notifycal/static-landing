@@ -1,21 +1,24 @@
 ---
+import type { LanguageCode } from '@notifycal/shared/types';
 import BlogSinglePage from '@/layouts/pages/blog/SinglePage.astro';
-import { getSinglePage } from '@/lib/contentParser.astro';
+import { getSinglePageByLang, removeLanguageSuffix } from '@/lib/contentParser';
 import { getLanguageStaticPaths } from '@/lib/i18n';
 
 export async function getStaticPaths() {
-  const languagePaths = await getLanguageStaticPaths();
-  const posts = await getSinglePage('blog');
+  const languagePaths = getLanguageStaticPaths();
 
-  return languagePaths.flatMap(({ params: { lang } }) =>
-    posts.map((post) => ({
-      params: {
-        lang,
-        single: post.id
-      },
-      props: { post }
-    }))
-  );
+  return Promise.all(
+    languagePaths.map(async ({ params: { lang } }) => {
+      const posts = await getSinglePageByLang('blog', lang as LanguageCode);
+      return posts.map((post) => ({
+        params: {
+          lang,
+          single: removeLanguageSuffix(post.id)
+        },
+        props: { post }
+      }));
+    })
+  ).then((results) => results.flat());
 }
 
 const { post } = Astro.props;

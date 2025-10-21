@@ -3,7 +3,10 @@ import Blog from '@/components/Blog.astro';
 import BlogCategories from '@/components/blog/BlogCategories.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Base from '@/layouts/Base.astro';
-import { getSinglePage } from '@/lib/contentParser.astro';
+import { translateCategory } from '@/lib/categoryTranslations';
+import { getSinglePageByLang } from '@/lib/contentParser';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
 import { getTaxonomy } from '@/lib/taxonomyParser.astro';
 import taxonomyFilter from '@/lib/utils/taxonomyFilter';
 
@@ -12,14 +15,18 @@ type Props = {
   item: string;
 };
 
+const lang = getLangFromUrl(Astro.url);
+const categoriesIndex = await getCollectionEntryByLang('categories', lang);
 const categories = await getTaxonomy('blog', 'categories');
 const { category, item } = Astro.props;
 
-const posts = await getSinglePage('blog');
+const posts = await getSinglePageByLang('blog', lang);
 const filterByTags = taxonomyFilter(posts, 'categories', category);
 const pageData = {
-  indexTitle: 'Categories',
-  slug: item
+  indexTitle: categoriesIndex.data.title,
+  indexPath: '/categories/',
+  slug: item,
+  pageTitle: translateCategory(category, lang)
 };
 ---
 

@@ -1,5 +1,8 @@
 ---
-import { humanize, slugify } from '@/lib/utils/textConverter';
+import { translateCategory } from '@/lib/categoryTranslations';
+import { useTranslatedPath } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
+import { slugify } from '@/lib/utils/textConverter';
 import type { CollectionEntry } from 'astro:content';
 
 type Props = {
@@ -7,13 +10,15 @@ type Props = {
 };
 const { categories } = Astro.props;
 const params = Astro.params;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <div class="category-filter mt-3 mb-10 rounded-xl bg-neutral-200 p-4">
   <ul class="filter-list flex flex-wrap items-center">
     <li>
-      <a class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`} href="/categories/"
-        >All Categories</a
+      <a class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`} href={translatePath('/categories/')}
+        >{translateCategory('all categories', lang)}</a
       >
     </li>
     {
@@ -21,9 +26,9 @@ const params = Astro.params;
         <li>
           <a
             class={`filter-btn ${params.category === slugify(category) ? 'filter-btn-active' : undefined} btn btn-sm`}
-            href={`/categories/${slugify(category)}/`}
+            href={translatePath(`/categories/${slugify(category)}/`)}
           >
-            {humanize(category)}
+            {translateCategory(category, lang)}
           </a>
         </li>
       ))

@@ -280,10 +280,21 @@ const blogCollection = defineCollection({
     author: z.string().optional(),
     categories: z.array(z.string()).default(['others']),
     draft: z.boolean().optional(),
-    featured: z.boolean().optional()
+    featured: z.boolean().optional(),
+    featuredPostsTitle: z.string().optional(),
+    recentPostsTitle: z.string().optional()
   })
 });
 
+const categoriesCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/categories' }),
+  schema: z.object({
+    title: z.string(),
+    metaTitle: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional()
+  })
+});
 
 export const collections = {
   home: homeCollection,
@@ -295,5 +306,6 @@ export const collections = {
   site: siteCollection,
   navigation: navigationCollection,
   blog: blogCollection,
+  categories: categoriesCollection,
   '404': _404Collection
 };
