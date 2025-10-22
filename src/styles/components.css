@@ -401,7 +401,7 @@ select:invalid {
 
 /* tag */
 .tag {
-  @apply border-primary text-primary hover:bg-primary inline-block h-8 rounded-3xl border bg-[#FAEBE1] px-3.5 py-2 text-sm leading-none transition-all hover:text-white;
+  @apply border-primary bg-primary text-white font-semibold inline-block h-8 rounded-3xl border px-3.5 py-2 text-sm leading-none transition-all no-underline hover:opacity-60;
 }
 
 .filter-btn {
