@@ -5,7 +5,6 @@ image: '/images/posts/post-2.webp'
 author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
 categories: ['email marketing']
-featured: true
 draft: false
 ---
 

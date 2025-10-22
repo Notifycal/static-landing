@@ -280,9 +280,9 @@ const blogCollection = defineCollection({
     author: z.string().optional(),
     categories: z.array(z.string()).default(['others']),
     draft: z.boolean().optional(),
-    featured: z.boolean().optional(),
-    featuredPostsTitle: z.string().optional(),
-    recentPostsTitle: z.string().optional()
+    recentPostsTitle: z.string().optional(),
+    previousText: z.string().optional(),
+    nextText: z.string().optional()
   })
 });
 

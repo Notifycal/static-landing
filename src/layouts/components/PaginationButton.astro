@@ -1,0 +1,35 @@
+---
+import ChevronLeft from './icons/ChevronLeft.astro';
+import ChevronRight from './icons/ChevronRight.astro';
+
+type Props = {
+  href?: string;
+  disabled?: boolean;
+  text: string;
+  direction: 'prev' | 'next';
+};
+
+const { href, disabled = false, text, direction } = Astro.props;
+const isPrev = direction === 'prev';
+const isNext = direction === 'next';
+
+const baseClasses = `flex items-center rounded-full border px-4 py-2 md:px-6 md:py-3 font-semibold gap-4`;
+const enabledClasses = `text-text-dark hover:shadow-lg ${isPrev ? 'mr-5' : 'ml-5'} hover:bg-accent1-500 hover:text-white hover:border-accent1-500 no-underline`;
+const disabledClasses = `text-text border-white capitalize ${isPrev ? 'mr-5 min-w-[150px]' : 'ml-5 min-w-0'}`;
+---
+
+{
+  disabled ? (
+    <span class={`${baseClasses} ${disabledClasses} text-center`}>
+      {isPrev && <ChevronLeft />}
+      <span>{text}</span>
+      {isNext && <ChevronRight />}
+    </span>
+  ) : (
+    <a href={href} class={`${baseClasses} ${enabledClasses}`}>
+      {isPrev && <ChevronLeft />}
+      <span>{text}</span>
+      {isNext && <ChevronRight />}
+    </a>
+  )
+}

@@ -1,22 +1,20 @@
 ---
-import Blog from '@/components/Blog.astro';
+import RecentPosts from '@/components/blog/RecentPosts.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Cta from '@/components/Cta.astro';
-import config from '@/config/config.json';
 import Base from '@/layouts/Base.astro';
-import Pagination from '@/layouts/components/Pagination.astro';
 import { getSinglePageByLang } from '@/lib/contentParser';
 import { getCollectionEntryByLang } from '@/lib/i18n';
 import { getLangFromUrl } from '@/lib/i18n-const';
-import { sortByDate } from '@/lib/utils/sortFunctions';
 
+type Props = {
+  slug?: string;
+};
+
+const { slug } = Astro.props as Props;
 const lang = getLangFromUrl(Astro.url);
 const blogIndex = await getCollectionEntryByLang('blog', lang);
 const posts = await getSinglePageByLang('blog', lang);
-const sortedPosts = sortByDate(posts);
-const recentPost = sortedPosts.filter((item) => !item.data.featured);
-const totalPages = Math.ceil(recentPost.length / config.settings.pagination);
-const currentPosts = recentPost.slice(0, config.settings.pagination);
 const homepage = await getCollectionEntryByLang('home', lang);
 const { cta } = homepage.data;
 ---
@@ -34,9 +32,7 @@ const { cta } = homepage.data;
   </section>
   <section class="section">
     <div class="container">
-      <h3 class="mb-4">{blogIndex?.data.recentPostsTitle}</h3>
-      <Blog posts={currentPosts} />
-      <Pagination section={'blog'} currentPage={1} totalPages={totalPages} />
+      <RecentPosts allPosts={posts} slug={slug} section="blog" title={blogIndex?.data.recentPostsTitle} blogIndex={blogIndex} />
     </div>
   </section>
   <Cta cta={cta} />

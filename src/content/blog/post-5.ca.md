@@ -5,7 +5,6 @@ image: '/images/posts/post-8.webp'
 author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
 categories: ['rate optimization']
-featured: false
 draft: false
 ---
 

@@ -5,7 +5,6 @@ image: '/images/posts/post-6.webp'
 author: Al Murad Uzzaman
 date: 2022-04-05T05:00:00Z
 categories: ['development']
-featured: false
 draft: false
 ---
 

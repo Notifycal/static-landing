@@ -1,0 +1,19 @@
+---
+import { sortByDate } from '@/lib/utils/sortFunctions';
+import type { CollectionEntry } from 'astro:content';
+import BlogPaginated from './BlogPaginated.astro';
+
+type Props = {
+  allPosts: CollectionEntry<'blog'>[];
+  slug?: string;
+  section: string;
+  title?: string;
+  columns?: string;
+  blogIndex: CollectionEntry<'blog'>;
+};
+
+const { allPosts, slug, section, title, columns, blogIndex } = Astro.props;
+const sortedPosts = sortByDate(allPosts);
+---
+
+<BlogPaginated posts={sortedPosts} slug={slug} section={section} title={title} columns={columns} blogIndex={blogIndex} />

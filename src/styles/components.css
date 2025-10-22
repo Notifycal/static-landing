@@ -404,11 +404,6 @@ select:invalid {
   @apply border-primary text-primary hover:bg-primary inline-block h-8 rounded-3xl border bg-[#FAEBE1] px-3.5 py-2 text-sm leading-none transition-all hover:text-white;
 }
 
-/* featured-posts */
-.featured-posts .card-title {
-  @apply text-2xl;
-}
-
 .filter-btn {
   @apply text-text-dark bg-white m-3 rounded-3xl;
   &:hover:not(.filter-btn-active) {

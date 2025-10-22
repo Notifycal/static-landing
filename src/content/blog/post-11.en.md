@@ -5,7 +5,6 @@ image: '/images/posts/post-3.webp'
 author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
 categories: ['updates']
-featured: true
 draft: false
 ---
 

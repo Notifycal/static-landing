@@ -5,7 +5,6 @@ image: '/images/posts/post-1.webp'
 author: Emily Chen
 date: 2022-04-06T05:00:00Z
 categories: ['email marketing', 'updates']
-featured: true
 draft: false
 ---
 

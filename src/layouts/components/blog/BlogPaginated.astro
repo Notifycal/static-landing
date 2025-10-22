@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Blog from '@/components/Blog.astro';
+import config from '@/config/config.json';
+import Pagination from '@/layouts/components/Pagination.astro';
+
+type Props = {
+  posts: CollectionEntry<'blog'>[];
+  slug?: string;
+  section: string;
+  title?: string;
+  columns?: string;
+  blogIndex: CollectionEntry<'blog'>;
+};
+
+const { posts, slug, section, title, columns, blogIndex } = Astro.props;
+
+const totalPages = Math.ceil(posts.length / config.settings.pagination);
+const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
+const indexOfLastPost = currentPage * config.settings.pagination;
+const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
+const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+---
+
+{title && <h3 class="mb-4">{title}</h3>}
+<Blog posts={currentPosts} columns={columns} />
+<Pagination section={section} currentPage={currentPage} totalPages={totalPages} blogIndex={blogIndex} />

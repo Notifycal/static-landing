@@ -5,7 +5,6 @@ image: '/images/posts/post-5.webp'
 author: Abdullah Al Shifat
 date: 2022-04-04T05:00:00Z
 categories: ['development', 'design']
-featured: false
 draft: false
 ---
 

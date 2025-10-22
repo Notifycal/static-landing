@@ -5,4 +5,6 @@ metaTitle: Notifycal Blog
 description: ''
 image: ''
 recentPostsTitle: 'Posts Recents'
+previousText: 'Anterior'
+nextText: 'Següent'
 ---
