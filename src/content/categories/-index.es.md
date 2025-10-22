@@ -1,6 +1,6 @@
 ---
 title: 'Categorías'
-metaTitle: 'Notifycal Categorías del Blog'
+metaTitle: 'Notifycal Blog'
 description: ''
 image: ''
 ---

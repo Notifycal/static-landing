@@ -8,7 +8,7 @@ import type { CollectionEntry } from 'astro:content';
 type Props = {
   categories: CollectionEntry<'blog'>['data']['categories'];
 };
-const { categories } = Astro.props;
+const { categories } = Astro.props as Props;
 const params = Astro.params;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);

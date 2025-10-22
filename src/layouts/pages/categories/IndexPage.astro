@@ -14,7 +14,7 @@ const posts = await getSinglePageByLang('blog', lang);
 const categories = await getTaxonomy('blog', 'categories');
 ---
 
-<Base title={categoriesIndex.data.title}>
+<Base metaTitle={categoriesIndex?.data.metaTitle}>
   <section class="page-hero">
     <div class="container">
       <Breadcrumb pageData={{ title: categoriesIndex.data.title }} />
