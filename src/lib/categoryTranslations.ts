@@ -20,6 +20,11 @@ export const categoryTranslations: CategoryTranslations = {
     en: 'Legislation',
     ca: 'Legislació'
   },
+  guides: {
+    es: 'Guías',
+    en: 'Guides',
+    ca: 'Guies'
+  },
   'all categories': {
     es: 'Todas las categorías',
     en: 'All categories',
