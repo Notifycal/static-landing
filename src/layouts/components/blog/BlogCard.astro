@@ -37,7 +37,7 @@ const postUrl = translatePath(`/blog/${removeLanguageSuffix(post.id)}/`);
       <h3 class="h4 card-title">
         {post.data.title}
       </h3>
-      {post.body && <p class="text-text mb-4">{plainify(post.body?.slice(0, Number(summaryLength)))}...</p>}
+      {post.body && <p class="text-text mb-4">{await plainify(post.body?.slice(0, Number(summaryLength)))}...</p>}
     </div>
 
     <div class="card-footer mt-auto flex space-x-4">
