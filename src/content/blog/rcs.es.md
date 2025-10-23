@@ -1,7 +1,7 @@
 ---
 title: RCS, la revolución de la mensajería que ya está en tu móvil
 image: '/images/posts/sms-vs-rcs.webp'
-author: Equipo Notifical
+author: Equipo Notifycal
 date: 2024-10-10T10:00:00Z
 categories: ['technology', 'communication']
 draft: false
