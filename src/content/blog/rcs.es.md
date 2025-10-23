@@ -1,6 +1,5 @@
 ---
 title: RCS, la revolución de la mensajería que ya está en tu móvil
-subtitle: El protocolo que unifica Android e iOS sin instalar nada
 image: '/images/posts/sms-vs-rcs.webp'
 author: Equipo Notifical
 date: 2024-10-10T10:00:00Z
