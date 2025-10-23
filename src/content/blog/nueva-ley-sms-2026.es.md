@@ -1,10 +1,9 @@
 ---
 title: 'Nueva ley de SMS en España: las empresas deberán registrar sus identificadores antes del 7 de junio de 2026'
-subtitle: 'El Ministerio de Asuntos Económicos crea una base de datos oficial para evitar el fraude en los SMS comerciales. Te explicamos qué cambia, cómo afecta a tu negocio y cómo prepararte.'
 image: '/images/posts/ley-sms-2026.png'
 author: Notifycal
 date: 2025-10-23T13:00:00Z
-categories: ['development', 'design']
+categories: ['legislation', 'communication']
 draft: false
 ---
 

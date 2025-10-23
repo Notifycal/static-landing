@@ -15,6 +15,11 @@ export const categoryTranslations: CategoryTranslations = {
     en: 'Communication',
     ca: 'Comunicació'
   },
+  legislation: {
+    es: 'Legislación',
+    en: 'Legislation',
+    ca: 'Legislació'
+  },
   'all categories': {
     es: 'Todas las categorías',
     en: 'All categories',

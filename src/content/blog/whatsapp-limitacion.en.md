@@ -1,7 +1,7 @@
 ---
 title: The limitations that make WhatsApp unfeasible for most businesses
 image: '/images/posts/whatsapp-lock.webp'
-author: Notifycal Team
+author: Notifycal
 date: 2024-11-02T10:00:00Z
 categories: ['technology', 'communication']
 draft: false

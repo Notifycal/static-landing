@@ -1,7 +1,7 @@
 ---
 title: Las limitaciones que hacen inviable WhatsApp para la mayoría de negocios
 image: '/images/posts/whatsapp-lock.webp'
-author: Equipo Notifycal
+author: Notifycal
 date: 2024-11-02T10:00:00Z
 categories: ['technology', 'communication']
 draft: false

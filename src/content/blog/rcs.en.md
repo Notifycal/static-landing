@@ -1,7 +1,7 @@
 ---
 title: RCS, the messaging revolution that's already on your phone
 image: '/images/posts/sms-vs-rcs.webp'
-author: Notifycal Team
+author: Notifycal
 date: 2024-10-10T10:00:00Z
 categories: ['technology', 'communication']
 draft: false

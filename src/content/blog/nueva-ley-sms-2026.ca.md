@@ -1,10 +1,9 @@
 ---
 title: 'Nova llei d’SMS a Espanya: les empreses hauran de registrar els seus identificadors abans del 7 de juny de 2026'
-subtitle: 'El Govern crea una base de dades oficial per evitar el frau en els missatges SMS. T’expliquem què canvia, com t’afecta i com preparar-te.'
 image: '/images/posts/ley-sms-2026.png'
 author: Notifycal
 date: 2025-10-23T13:00:00Z
-categories: ['development', 'design']
+categories: ['legislation', 'communication']
 draft: false
 ---
 

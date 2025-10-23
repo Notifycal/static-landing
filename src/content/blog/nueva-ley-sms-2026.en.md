@@ -1,12 +1,10 @@
 ---
 title: 'New Spanish SMS Law: Businesses Must Register Their Sender IDs by June 7, 2026'
-subtitle: 'The Spanish Government creates an official database to prevent SMS fraud. Here’s what changes, how it affects your business, and how to prepare.'
 image: '/images/posts/ley-sms-2026.png'
 author: Notifycal
 date: 2025-10-23T13:00:00Z
-categories: ['development', 'design']
+categories: ['legislation', 'communication']
 draft: false
-slug: foobar
 ---
 
 Starting June 7, 2026, a new regulation will come into effect in Spain requiring all businesses and public bodies that use alphanumeric sender IDs in SMS messages (names like “ClinicaLopez” or “Notifycal”) to register them in an official database managed by the CNMC.
