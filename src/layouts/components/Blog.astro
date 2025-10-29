@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BlogCard from './blog/BlogCard.astro';
+
+type Props = {
+  posts: CollectionEntry<'blog'>[];
+  columns?: string;
+  title?: string;
+};
+
+const { posts, columns = 'md:col-6 lg:col-4', title } = Astro.props as Props;
+---
+
+{title && <h3 class="mb-4">{title}</h3>}
+<div class={'row'}>
+  {
+    posts.map((post) => (
+      <div class={`mb-8 ${columns} flex`}>
+        <BlogCard post={post} />
+      </div>
+    ))
+  }
+</div>

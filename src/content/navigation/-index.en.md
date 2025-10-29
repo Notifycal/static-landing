@@ -6,6 +6,8 @@ main:
     url: '/#features'
   - name: 'Pricing'
     url: '/#pricing'
+  - name: 'Blog'
+    url: '/blog/'
   - name: 'See More'
     url: ''
     children:

@@ -1,0 +1,8 @@
+---
+import CategoriesIndexPage from '@/layouts/pages/categories/IndexPage.astro';
+import { getLanguageStaticPaths } from '@/lib/i18n';
+
+export const getStaticPaths = getLanguageStaticPaths;
+---
+
+<CategoriesIndexPage />

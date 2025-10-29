@@ -40,10 +40,11 @@ const htmlEntityDecoder = (htmlWithEntities: string): string => {
   return htmlWithoutEntities;
 };
 
-export const plainify = (content: string): string | null => {
+export const plainify = async (content: string): Promise<string | null> => {
   if (!content) return null;
 
-  const filterBrackets = content.replace(/<\/?[^>]+(>|$)/gm, '');
+  const htmlContent = await marked.parse(content);
+  const filterBrackets = htmlContent.replace(/<\/?[^>]+(>|$)/gm, '');
   const filterSpaces = filterBrackets.replace(/[\r\n]\s*[\r\n]/gm, '');
   const stripHTML = htmlEntityDecoder(filterSpaces);
   return stripHTML;

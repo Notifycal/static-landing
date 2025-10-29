@@ -1,6 +1,6 @@
 /* section style */
 .section {
-  @apply py-8 md:py-16;
+  @apply py-6 md:py-13;
 
   .subsection {
     @apply pt-16;
@@ -376,7 +376,7 @@ select:invalid {
 
 /* card */
 .card {
-  @apply relative h-full rounded-xl bg-white p-5 shadow-lg;
+  @apply relative flex h-full flex-col rounded-xl bg-white p-5 shadow-lg;
 }
 
 .card-img {
@@ -384,11 +384,11 @@ select:invalid {
 }
 
 .card-tags {
-  @apply absolute top-10 right-10 z-[1] mb-6;
+  @apply mb-6 min-h-[40px];
 }
 
 .card-content {
-  @apply pt-6;
+  @apply flex flex-1 flex-col justify-between pt-6;
 }
 
 .card-title {
@@ -401,41 +401,19 @@ select:invalid {
 
 /* tag */
 .tag {
-  @apply border-primary text-primary hover:bg-primary inline-block h-8 rounded-3xl border bg-[#FAEBE1] px-3.5 py-2 text-sm leading-none transition-all hover:text-white;
-}
-
-/* featured-posts */
-.featured-posts .card {
-  @apply items-center lg:flex;
-}
-
-.featured-posts .card-img {
-  @apply max-h-[210px] w-full self-stretch rounded-md object-cover lg:max-h-full lg:max-w-[40%] xl:max-w-[235px];
-}
-
-.featured-posts .card-title {
-  @apply text-2xl;
-}
-
-.featured-posts .card-content {
-  @apply lg:py-6 lg:pl-5;
-}
-
-.featured-posts .card-tags {
-  @apply relative top-0 left-0;
-}
-
-.featured-posts .card-footer {
-  @apply border-t-0 pt-0;
+  @apply border-primary bg-primary inline-block h-8 rounded-3xl border px-3.5 py-2 text-sm leading-none font-semibold text-white no-underline transition-all hover:opacity-60;
 }
 
 .filter-btn {
-  @apply text-text-dark m-3 rounded-3xl border border-[#A9A9A9];
+  @apply text-text-dark m-3 rounded-3xl bg-white;
+  &:hover:not(.filter-btn-active) {
+    @apply text-accent1-500 bg-accent1-100;
+  }
 }
 
 .filter-btn-active,
 .filter-btn.active {
-  @apply text-text-dark border-white bg-white shadow-[0px_15px_34px_rgba(0,0,0,0.1)];
+  @apply text-primary bg-secondary;
 }
 
 /* career-single */
@@ -615,4 +593,8 @@ select:invalid {
 
 .logo {
   @apply text-primary-500 drop-shadow-primary-900 hover:drop-shadow-primary-900 h-10 drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl;
+}
+
+.page-hero {
+  @apply pt-12;
 }

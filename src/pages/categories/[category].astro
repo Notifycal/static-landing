@@ -1,0 +1,23 @@
+---
+import Page from '@/layouts/pages/categories/Page.astro';
+import { getTaxonomy } from '@/lib/taxonomyParser.astro';
+import { slugify } from '@/lib/utils/textConverter';
+
+export async function getStaticPaths() {
+  const categories = await getTaxonomy('blog', 'categories');
+  return categories.map((item) => {
+    const category = slugify(item);
+    return {
+      params: { category },
+      props: {
+        item
+      }
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { item } = Astro.props;
+---
+
+<Page category={category!} item={item} />

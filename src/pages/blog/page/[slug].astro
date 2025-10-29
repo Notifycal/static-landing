@@ -1,0 +1,24 @@
+---
+import config from '@/config/config.json';
+import PaginationPage from '@/layouts/pages/blog/PaginationPage.astro';
+import { getSinglePage } from '@/lib/contentParser';
+
+export async function getStaticPaths() {
+  const posts = await getSinglePage('blog');
+  const totalPages = Math.ceil(posts.length / config.settings.pagination);
+  const paths = [];
+
+  for (let i = 1; i < totalPages; i++) {
+    paths.push({
+      params: {
+        slug: (i + 1).toString()
+      }
+    });
+  }
+  return paths;
+}
+
+const { slug } = Astro.params;
+---
+
+<PaginationPage slug={slug!} />

@@ -1,5 +1,7 @@
 import type { LanguageCode } from '@notifycal/shared/types';
 
+export type { LanguageCode };
+
 export const languages: Record<LanguageCode, string> = {
   es: 'Español',
   en: 'English',

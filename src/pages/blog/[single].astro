@@ -1,0 +1,21 @@
+---
+import SinglePage from '@/layouts/pages/blog/SinglePage.astro';
+import { getSinglePageByLang, removeLanguageSuffix } from '@/lib/contentParser';
+import { defaultLang } from '@/lib/i18n-const';
+
+export async function getStaticPaths() {
+  const posts = await getSinglePageByLang('blog', defaultLang);
+
+  const paths = posts.map((post) => ({
+    params: {
+      single: removeLanguageSuffix(post.id)
+    },
+    props: { post }
+  }));
+  return paths;
+}
+
+const { post } = Astro.props;
+---
+
+<SinglePage post={post} />

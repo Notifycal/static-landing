@@ -1,0 +1,47 @@
+---
+import RecentPosts from '@/components/blog/RecentPosts.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import Cta from '@/components/Cta.astro';
+import Base from '@/layouts/Base.astro';
+import { getSinglePageByLang } from '@/lib/contentParser';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
+import { sortByDate } from '@/lib/utils/sortFunctions';
+
+type Props = {
+  slug: string;
+};
+
+const { slug } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const blogIndex = await getCollectionEntryByLang('blog', lang);
+const posts = await getSinglePageByLang('blog', lang);
+const sortedPosts = sortByDate(posts);
+const homepage = await getCollectionEntryByLang('home', lang);
+const { cta } = homepage.data;
+---
+
+<Base
+  title={blogIndex?.data.title}
+  metaTitle={blogIndex?.data.metaTitle}
+  description={blogIndex?.data.description}
+  image={blogIndex?.data.image}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumb pageData={blogIndex?.data} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <RecentPosts
+        allPosts={sortedPosts}
+        slug={slug}
+        section="blog"
+        title={blogIndex?.data.recentPostsTitle}
+        blogIndex={blogIndex}
+      />
+    </div>
+  </section>
+  <Cta cta={cta} />
+</Base>
