@@ -25,6 +25,11 @@ export const categoryTranslations: CategoryTranslations = {
     en: 'Guides',
     ca: 'Guies'
   },
+  savings: {
+    es: 'Ahorro',
+    en: 'Savings',
+    ca: 'Estalvi'
+  },
   'all categories': {
     es: 'Todas las categorías',
     en: 'All categories',
