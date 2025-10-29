@@ -134,6 +134,7 @@ Esta es la filosofía que defendemos: usar herramientas estándar y abiertas que
 ## La ventaja de la simplicidad
 
 A veces, la mejor solución no es la más completa o la más especializada. A veces, la mejor solución es la que:
+
 - Ya conoces y usas
 - Se integra con lo que ya tienes
 - Tiene costes predecibles

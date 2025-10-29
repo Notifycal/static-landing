@@ -13,37 +13,60 @@ const translatePath = useTranslatedPath(lang);
   <ol role="list" class="flex items-center space-x-6">
     <li>
       <div>
-        <a href={translatePath('/blog/')} class="text-dark hover:text-accent1-500 hover:no-underline text-2xl font-medium inline-flex items-center">
+        <a
+          href={translatePath('/blog/')}
+          class="text-dark hover:text-accent1-500 inline-flex items-center text-2xl font-medium hover:no-underline"
+        >
           <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-7 shrink-0">
-            <path d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" fill-rule="evenodd" />
+            <path
+              d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+              clip-rule="evenodd"
+              fill-rule="evenodd"></path>
           </svg>
           <span class="sr-only">Home</span>
         </a>
       </div>
     </li>
-    {indexTitle && (
-      <li>
-        <div class="flex items-center">
-          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-7 shrink-0 text-dark opacity-50">
-            <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-          </svg>
-          <a href={indexPath ? translatePath(indexPath) : `/${slugify(indexTitle)}/`} class="ml-6 text-2xl font-semibold text-dark hover:text-accent1-500 hover:no-underline">
-            {indexTitle}
-          </a>
-        </div>
-      </li>
-    )}
-    {(indexTitle || title) && (
-      <li>
-        <div class="flex items-center">
-          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-7 shrink-0 text-dark opacity-50">
-            <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-          </svg>
-          <span aria-current="page" class="ml-6 text-2xl font-bold text-dark">
-            {indexTitle ? (pageTitle || humanize(slug.replace('page /', ''))) : title}
-          </span>
-        </div>
-      </li>
-    )}
+    {
+      indexTitle && (
+        <li>
+          <div class="flex items-center">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="text-dark size-7 shrink-0 opacity-50"
+            >
+              <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+            </svg>
+            <a
+              href={indexPath ? translatePath(indexPath) : `/${slugify(indexTitle)}/`}
+              class="text-dark hover:text-accent1-500 ml-6 text-2xl font-semibold hover:no-underline"
+            >
+              {indexTitle}
+            </a>
+          </div>
+        </li>
+      )
+    }
+    {
+      (indexTitle || title) && (
+        <li>
+          <div class="flex items-center">
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              class="text-dark size-7 shrink-0 opacity-50"
+            >
+              <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+            </svg>
+            <span aria-current="page" class="text-dark ml-6 text-2xl font-bold">
+              {indexTitle ? pageTitle || humanize(slug.replace('page /', '')) : title}
+            </span>
+          </div>
+        </li>
+      )
+    }
   </ol>
 </nav>

@@ -16,4 +16,11 @@ const { allPosts, slug, section, title, columns, blogIndex } = Astro.props;
 const sortedPosts = sortByDate(allPosts);
 ---
 
-<BlogPaginated posts={sortedPosts} slug={slug} section={section} title={title} columns={columns} blogIndex={blogIndex} />
+<BlogPaginated
+  posts={sortedPosts}
+  slug={slug}
+  section={section}
+  title={title}
+  columns={columns}
+  blogIndex={blogIndex}
+/>

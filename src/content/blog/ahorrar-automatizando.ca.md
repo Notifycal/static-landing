@@ -1,5 +1,5 @@
 ---
-title: "El que perds enviant recordatoris manualment"
+title: 'El que perds enviant recordatoris manualment'
 image: '/images/posts/ahorro-notifycal.jpg'
 author: Equipo Notifycal
 date: 2025-10-02T10:00:00Z
@@ -20,17 +20,20 @@ Imaginem un negoci típic que necessita enviar recordatoris als seus clients: un
 ### Escenari 1: Negoci petit (80 recordatoris/mes)
 
 **Mètode manual:**
+
 - 80 recordatoris al mes
 - Temps per recordatori: 2 minuts (buscar contacte, escriure missatge, enviar, confirmar)
 - Temps total: 160 minuts/mes = **2,67 hores/mes**
 
 **Cost laboral mínim:**
 Amb el cost més baix possible (salari base + Seguretat Social ≈ 1.540€/mes):
+
 - Cost per hora: 9,63€
 - Cost d'enviar recordatoris: 2,67 hores × 9,63€ = **25,71€/mes**
 
 **Cost laboral realista:**
 Amb un salari habitual d'auxiliar administratiu (1.400€ nets + SS ≈ 1.820€/mes):
+
 - Cost per hora: 11,38€
 - Cost d'enviar recordatoris: 2,67 hores × 11,38€ = **30,38€/mes**
 
@@ -42,11 +45,13 @@ Amb un salari habitual d'auxiliar administratiu (1.400€ nets + SS ≈ 1.820€
 ### Escenari 2: Negoci mitjà (300 recordatoris/mes)
 
 **Mètode manual:**
+
 - 300 recordatoris al mes
 - Temps total: 600 minuts/mes = **10 hores/mes**
 
 **Cost laboral realista:**
 Amb salari habitual (11,38€/hora):
+
 - 10 hores × 11,38€ = **113,80€/mes**
 
 **Cost amb Notifycal:** 44€/mes
@@ -59,6 +64,7 @@ Fins i tot en l'escenari de cost mínim (9,63€/hora), l'estalvi seria de 627,6
 ### Escenari 3: Negoci gran (1.200 recordatoris/mes)
 
 **Mètode manual:**
+
 - 1.200 recordatoris al mes
 - Temps total: 2.400 minuts/mes = **40 hores/mes**
 
@@ -66,6 +72,7 @@ Aquí estem parlant de gairebé una persona a temps complet dedicada únicament 
 
 **Cost laboral realista:**
 Amb salari habitual (11,38€/hora):
+
 - 40 hores × 11,38€ = **455,20€/mes**
 
 **Cost amb Notifycal:** 99€/mes
@@ -88,6 +95,7 @@ En l'escenari gran, són **40 hores mensuals**. Una persona a temps complet dedi
 **Què passa quan alliberes aquestes hores?**
 
 El teu equip pot:
+
 - Atendre millor els clients que ja tens
 - Fer trucades de captació de nous clients
 - Millorar processos interns
@@ -121,6 +129,7 @@ Però aquí està el truc: aquest temps té un cost, el vegis o no. I cada mes q
 Aquí hi ha un altre cost ocult: **les absències per recordatori no enviat**.
 
 Si envies recordatoris manualment:
+
 - Et pots oblidar (especialment en dies complicats)
 - Pots equivocar-te de client
 - Pots enviar el recordatori a destemps
@@ -135,14 +144,15 @@ Amb Notifycal, el sistema funciona 24/7. Sense oblits, sense errors, sense excep
 Tornem als números. Comparem els tres escenaris en un any amb salaris habituals del mercat:
 
 | Recordatoris/mes | Mètode Manual | Notifycal | Estalvi Anual |
-|------------------|---------------|-----------|---------------|
+| ---------------- | ------------- | --------- | ------------- |
 | 80               | 364,56€       | 192€      | 172,56€       |
 | 300              | 1.365,60€     | 528€      | 837,60€       |
 | 1.200            | 5.462,40€     | 1.188€    | 4.274,40€     |
 
-*Càlculs basats en cost laboral de 11,38€/hora (salari habitual administratiu + càrregues socials)*
+_Càlculs basats en cost laboral de 11,38€/hora (salari habitual administratiu + càrregues socials)_
 
 I recorda: això és només el cost directe del temps. No estem comptant:
+
 - Vacances i baixes de l'empleat
 - Errors i oblits
 - Cites perdudes per recordatoris no enviats

@@ -1,5 +1,5 @@
 ---
-title: "What you lose by sending reminders manually"
+title: 'What you lose by sending reminders manually'
 image: '/images/posts/ahorro-notifycal.jpg'
 author: Equipo Notifycal
 date: 2025-10-02T10:00:00Z
@@ -20,17 +20,20 @@ Imagine a typical business that needs to send reminders to its clients: a dental
 ### Scenario 1: Small business (80 reminders/month)
 
 **Manual method:**
+
 - 80 reminders per month
 - Time per reminder: 2 minutes (find contact, write message, send, confirm)
 - Total time: 160 minutes/month = **2.67 hours/month**
 
 **Minimum labor cost:**
 With the lowest possible cost (base salary + Social Security ≈ €1,540/month):
+
 - Cost per hour: €9.63
 - Cost of sending reminders: 2.67 hours × €9.63 = **€25.71/month**
 
 **Realistic labor cost:**
 With a typical administrative assistant salary (€1,400 net + SS ≈ €1,820/month):
+
 - Cost per hour: €11.38
 - Cost of sending reminders: 2.67 hours × €11.38 = **€30.38/month**
 
@@ -42,11 +45,13 @@ With a typical administrative assistant salary (€1,400 net + SS ≈ €1,820/m
 ### Scenario 2: Medium business (300 reminders/month)
 
 **Manual method:**
+
 - 300 reminders per month
 - Total time: 600 minutes/month = **10 hours/month**
 
 **Realistic labor cost:**
 With typical salary (€11.38/hour):
+
 - 10 hours × €11.38 = **€113.80/month**
 
 **Cost with Notifycal:** €44/month
@@ -59,6 +64,7 @@ Even in the minimum cost scenario (€9.63/hour), the savings would be €627.60
 ### Scenario 3: Large business (1,200 reminders/month)
 
 **Manual method:**
+
 - 1,200 reminders per month
 - Total time: 2,400 minutes/month = **40 hours/month**
 
@@ -66,6 +72,7 @@ Here we're talking about almost a full-time person dedicated exclusively to send
 
 **Realistic labor cost:**
 With typical salary (€11.38/hour):
+
 - 40 hours × €11.38 = **€455.20/month**
 
 **Cost with Notifycal:** €99/month
@@ -88,6 +95,7 @@ In the large scenario, it's **40 hours per month**. A full-time person dedicated
 **What happens when you free up those hours?**
 
 Your team can:
+
 - Better serve the customers you already have
 - Make calls to attract new clients
 - Improve internal processes
@@ -121,6 +129,7 @@ But here's the trick: that time has a cost, whether you see it or not. And every
 Here's another hidden cost: **absences due to unsent reminders**.
 
 If you send reminders manually:
+
 - You can forget (especially on complicated days)
 - You can mix up clients
 - You can send the reminder at the wrong time
@@ -135,14 +144,15 @@ With Notifycal, the system works 24/7. No forgetting, no errors, no exceptions. 
 Let's go back to the numbers. Let's compare the three scenarios in a year with typical market salaries:
 
 | Reminders/month | Manual Method | Notifycal | Annual Savings |
-|-----------------|---------------|-----------|----------------|
+| --------------- | ------------- | --------- | -------------- |
 | 80              | €364.56       | €192      | €172.56        |
 | 300             | €1,365.60     | €528      | €837.60        |
 | 1,200           | €5,462.40     | €1,188    | €4,274.40      |
 
-*Calculations based on labor cost of €11.38/hour (typical administrative salary + social security contributions)*
+_Calculations based on labor cost of €11.38/hour (typical administrative salary + social security contributions)_
 
 And remember: this is only the direct cost of time. We're not counting:
+
 - Employee vacations and absences
 - Errors and oversights
 - Appointments lost due to unsent reminders

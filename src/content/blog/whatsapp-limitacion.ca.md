@@ -16,6 +16,7 @@ Per enviar missatges automatitzats a través de WhatsApp, les empreses han d'uti
 Aquí ve el problema més greu: **quan registres un número de telèfon a WhatsApp Business Platform, aquest número queda completament bloquejat per a ús normal**.
 
 Una vegada registrat:
+
 - No pots utilitzar aquest número a WhatsApp personal
 - No pots utilitzar aquest número a l'aplicació WhatsApp Business
 - No pots accedir des de WhatsApp Web
@@ -56,6 +57,7 @@ Per a petites i mitjanes empreses, les barreres són massa altes.
 ### Per què Notifycal tria SMS i RCS
 
 A Notifycal apostem per canals que:
+
 - Funcionen amb qualsevol número de telèfon sense segrestar-lo
 - No requereixen apps específiques instal·lades
 - Tenen preus predictibles i transparents

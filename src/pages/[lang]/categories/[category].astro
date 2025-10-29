@@ -5,7 +5,7 @@ import { getTaxonomy } from '@/lib/taxonomyParser.astro';
 import { slugify } from '@/lib/utils/textConverter';
 
 export async function getStaticPaths() {
-  const languagePaths = await getLanguageStaticPaths();
+  const languagePaths = getLanguageStaticPaths();
   const categories = await getTaxonomy('blog', 'categories');
 
   return languagePaths.flatMap(({ params: { lang } }) =>

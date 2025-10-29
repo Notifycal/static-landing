@@ -13,16 +13,12 @@ const hasNextPage = totalPages > currentPage;
 
 const pageList = Array.from({ length: totalPages }, (_, i) => i + 1);
 
-const prevHref = indexPageLink
-  ? translatePath(`/${section}/`)
-  : translatePath(`/${section}/page/${currentPage - 1}/`);
+const prevHref = indexPageLink ? translatePath(`/${section}/`) : translatePath(`/${section}/page/${currentPage - 1}/`);
 
 const nextHref = translatePath(`/${section}/page/${currentPage + 1}/`);
 
 const getPageHref = (page: number) =>
-  page === 1
-    ? translatePath(`/${section}/`)
-    : translatePath(`/${section}/page/${page}/`);
+  page === 1 ? translatePath(`/${section}/`) : translatePath(`/${section}/page/${page}/`);
 ---
 
 {
@@ -48,7 +44,7 @@ const getPageHref = (page: number) =>
           <a
             href={getPageHref(pagination)}
             aria-current="page"
-            class={`text-text-dark hover:bg-accent1-500 mx-1 flex h-10 w-10 items-center justify-center rounded-full border hover:text-white md:h-12 md:w-12 no-underline`}
+            class={`text-text-dark hover:bg-accent1-500 mx-1 flex h-10 w-10 items-center justify-center rounded-full border no-underline hover:text-white md:h-12 md:w-12`}
           >
             {pagination}
           </a>

@@ -32,7 +32,13 @@ const { cta } = homepage.data;
   </section>
   <section class="section">
     <div class="container">
-      <RecentPosts allPosts={posts} slug={slug} section="blog" title={blogIndex?.data.recentPostsTitle} blogIndex={blogIndex} />
+      <RecentPosts
+        allPosts={posts}
+        slug={slug}
+        section="blog"
+        title={blogIndex?.data.recentPostsTitle}
+        blogIndex={blogIndex}
+      />
     </div>
   </section>
   <Cta cta={cta} />

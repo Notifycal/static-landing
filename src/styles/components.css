@@ -401,11 +401,11 @@ select:invalid {
 
 /* tag */
 .tag {
-  @apply border-primary bg-primary text-white font-semibold inline-block h-8 rounded-3xl border px-3.5 py-2 text-sm leading-none transition-all no-underline hover:opacity-60;
+  @apply border-primary bg-primary inline-block h-8 rounded-3xl border px-3.5 py-2 text-sm leading-none font-semibold text-white no-underline transition-all hover:opacity-60;
 }
 
 .filter-btn {
-  @apply text-text-dark bg-white m-3 rounded-3xl;
+  @apply text-text-dark m-3 rounded-3xl bg-white;
   &:hover:not(.filter-btn-active) {
     @apply text-accent1-500 bg-accent1-100;
   }

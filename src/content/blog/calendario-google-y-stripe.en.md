@@ -134,6 +134,7 @@ This is the philosophy we defend: use standard and open tools that integrate wel
 ## The advantage of simplicity
 
 Sometimes, the best solution is not the most complete or the most specialized. Sometimes, the best solution is the one that:
+
 - You already know and use
 - Integrates with what you already have
 - Has predictable costs

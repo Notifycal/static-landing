@@ -1,5 +1,5 @@
 ---
-title: "Lo que pierdes enviando recordatorios a mano"
+title: 'Lo que pierdes enviando recordatorios a mano'
 image: '/images/posts/ahorro-notifycal.jpg'
 author: Equipo Notifycal
 date: 2025-10-02T10:00:00Z
@@ -20,17 +20,20 @@ Imaginemos un negocio típico que necesita enviar recordatorios a sus clientes: 
 ### Escenario 1: Negocio pequeño (80 recordatorios/mes)
 
 **Método manual:**
+
 - 80 recordatorios al mes
 - Tiempo por recordatorio: 2 minutos (buscar contacto, escribir mensaje, enviar, confirmar)
 - Tiempo total: 160 minutos/mes = **2,67 horas/mes**
 
 **Coste laboral mínimo:**
 Con el coste más bajo posible (salario base + Seguridad Social ≈ 1.540€/mes):
+
 - Coste por hora: 9,63€
 - Coste de enviar recordatorios: 2,67 horas × 9,63€ = **25,71€/mes**
 
 **Coste laboral realista:**
 Con un salario habitual de auxiliar administrativo (1.400€ netos + SS ≈ 1.820€/mes):
+
 - Coste por hora: 11,38€
 - Coste de enviar recordatorios: 2,67 horas × 11,38€ = **30,38€/mes**
 
@@ -42,11 +45,13 @@ Con un salario habitual de auxiliar administrativo (1.400€ netos + SS ≈ 1.82
 ### Escenario 2: Negocio mediano (300 recordatorios/mes)
 
 **Método manual:**
+
 - 300 recordatorios al mes
 - Tiempo total: 600 minutos/mes = **10 horas/mes**
 
 **Coste laboral realista:**
 Con salario habitual (11,38€/hora):
+
 - 10 horas × 11,38€ = **113,80€/mes**
 
 **Coste con Notifycal:** 44€/mes
@@ -59,6 +64,7 @@ Incluso en el escenario de coste mínimo (9,63€/hora), el ahorro sería de 627
 ### Escenario 3: Negocio grande (1.200 recordatorios/mes)
 
 **Método manual:**
+
 - 1.200 recordatorios al mes
 - Tiempo total: 2.400 minutos/mes = **40 horas/mes**
 
@@ -66,6 +72,7 @@ Aquí estamos hablando de casi una persona a tiempo completo dedicada únicament
 
 **Coste laboral realista:**
 Con salario habitual (11,38€/hora):
+
 - 40 horas × 11,38€ = **455,20€/mes**
 
 **Coste con Notifycal:** 99€/mes
@@ -88,6 +95,7 @@ En el escenario grande, son **40 horas mensuales**. Una persona a tiempo complet
 **¿Qué pasa cuando liberas esas horas?**
 
 Tu equipo puede:
+
 - Atender mejor a los clientes que ya tienes
 - Hacer llamadas de captación de nuevos clientes
 - Mejorar procesos internos
@@ -121,6 +129,7 @@ Pero ahí está el truco: ese tiempo tiene un coste, lo veas o no. Y cada mes qu
 Aquí hay otro coste oculto: **las ausencias por recordatorio no enviado**.
 
 Si envías recordatorios manualmente:
+
 - Te puedes olvidar (especialmente en días complicados)
 - Puedes equivocarte de cliente
 - Puedes enviar el recordatorio a destiempo
@@ -135,14 +144,15 @@ Con Notifycal, el sistema funciona 24/7. Sin olvidos, sin errores, sin excepcion
 Volvamos a los números. Comparemos los tres escenarios en un año con salarios habituales del mercado:
 
 | Recordatorios/mes | Método Manual | Notifycal | Ahorro Anual |
-|-------------------|---------------|-----------|--------------|
+| ----------------- | ------------- | --------- | ------------ |
 | 80                | 364,56€       | 192€      | 172,56€      |
 | 300               | 1.365,60€     | 528€      | 837,60€      |
 | 1.200             | 5.462,40€     | 1.188€    | 4.274,40€    |
 
-*Cálculos basados en coste laboral de 11,38€/hora (salario habitual administrativo + cargas sociales)*
+_Cálculos basados en coste laboral de 11,38€/hora (salario habitual administrativo + cargas sociales)_
 
 Y recuerda: esto es solo el coste directo del tiempo. No estamos contando:
+
 - Vacaciones y bajas del empleado
 - Errores y olvidos
 - Citas perdidas por recordatorios no enviados
@@ -159,7 +169,7 @@ Esas cosas no tienen precio. O mejor dicho: tienen un precio invisible que pagas
 
 ### Automatizar no es un gasto, es una inversión
 
-Cuando miras los números con perspectiva, la pregunta no es "¿puedo permitirme automatizar?". 
+Cuando miras los números con perspectiva, la pregunta no es "¿puedo permitirme automatizar?".
 
 La pregunta es: **"¿puedo permitirme NO automatizar?"**
 

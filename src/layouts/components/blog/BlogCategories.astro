@@ -17,8 +17,9 @@ const translatePath = useTranslatedPath(lang);
 <div class="category-filter mt-3 mb-10 rounded-xl bg-neutral-200 p-4">
   <ul class="filter-list flex flex-wrap items-center">
     <li>
-      <a class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`} href={translatePath('/categories/')}
-        >{translateCategory('all categories', lang)}</a
+      <a
+        class={`filter-btn ${!params.category ? 'filter-btn-active' : undefined} btn btn-sm`}
+        href={translatePath('/categories/')}>{translateCategory('all categories', lang)}</a
       >
     </li>
     {

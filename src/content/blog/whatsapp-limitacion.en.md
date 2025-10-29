@@ -16,6 +16,7 @@ To send automated messages through WhatsApp, businesses must use **WhatsApp Busi
 Here comes the most serious problem: **when you register a phone number on WhatsApp Business Platform, that number becomes completely locked for normal use**.
 
 Once registered:
+
 - You cannot use that number on personal WhatsApp
 - You cannot use that number on the WhatsApp Business app
 - You cannot access it from WhatsApp Web
@@ -56,6 +57,7 @@ For small and medium-sized businesses, the barriers are too high.
 ### Why Notifycal chooses SMS and RCS
 
 At Notifycal we bet on channels that:
+
 - Work with any phone number without hijacking it
 - Don't require specific apps installed
 - Have predictable and transparent pricing

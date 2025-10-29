@@ -134,6 +134,7 @@ Aquesta és la filosofia que defensem: utilitzar eines estàndard i obertes que 
 ## L'avantatge de la simplicitat
 
 De vegades, la millor solució no és la més completa o la més especialitzada. De vegades, la millor solució és la que:
+
 - Ja coneixes i utilitzes
 - S'integra amb el que ja tens
 - Té costos predictibles
