@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/Notifycal/static-landing/compare/v2.5.1...v2.6.0) (2025-10-29)
+
+
+### Features
+
+* blog ([#603](https://github.com/Notifycal/static-landing/issues/603)) ([98e4041](https://github.com/Notifycal/static-landing/commit/98e40415ecfa7c7a83c34a5887a8bc2db3dcc868))
+
 ## [2.5.1](https://github.com/Notifycal/static-landing/compare/v2.5.0...v2.5.1) (2025-10-29)
 
 
