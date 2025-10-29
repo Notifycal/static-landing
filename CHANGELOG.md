@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.5.1](https://github.com/Notifycal/static-landing/compare/v2.5.0...v2.5.1) (2025-10-29)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency @mantine/core to v8.3.4 ([#590](https://github.com/Notifycal/static-landing/issues/590)) ([d00fea6](https://github.com/Notifycal/static-landing/commit/d00fea6cd3b82bc1bff823ca2a9678770725ffa6))
+* **deps:** Update dependency @mantine/core to v8.3.5 ([#596](https://github.com/Notifycal/static-landing/issues/596)) ([7f0fafe](https://github.com/Notifycal/static-landing/commit/7f0fafe3c13d636e1406e8828026123f6e9b0f16))
+* **deps:** Update dependency @mantine/core to v8.3.6 ([#614](https://github.com/Notifycal/static-landing/issues/614)) ([0b0dcdc](https://github.com/Notifycal/static-landing/commit/0b0dcdcb7f3f677fdcffc23b1cc019ff243d98cd))
+* **deps:** Update dependency @notifycal/shared to v7.15.0 ([#591](https://github.com/Notifycal/static-landing/issues/591)) ([87e7f7a](https://github.com/Notifycal/static-landing/commit/87e7f7ad3fc170b5c97c95c53e506e8925433908))
+* **deps:** Update dependency astro to v5.14.4 ([#592](https://github.com/Notifycal/static-landing/issues/592)) ([77d31c2](https://github.com/Notifycal/static-landing/commit/77d31c2e4af8be031a22555e624b517de67ff2e4))
+* **deps:** Update dependency astro to v5.14.6 ([#600](https://github.com/Notifycal/static-landing/issues/600)) ([9b34138](https://github.com/Notifycal/static-landing/commit/9b34138ff04b21d9e823f1d74e71a56c6a5cc3f3))
+* **deps:** Update dependency astro to v5.14.7 ([#604](https://github.com/Notifycal/static-landing/issues/604)) ([4b425b4](https://github.com/Notifycal/static-landing/commit/4b425b4adaf50ef2e00e99efaf4502a73b3e76d4))
+* **deps:** Update dependency astro to v5.15.1 ([#609](https://github.com/Notifycal/static-landing/issues/609)) ([993bb47](https://github.com/Notifycal/static-landing/commit/993bb4780e5632ab9fbaba43d567baa72bfd688b))
+* **deps:** Update dependency marked to v16.4.1 ([#599](https://github.com/Notifycal/static-landing/issues/599)) ([f406e5f](https://github.com/Notifycal/static-landing/commit/f406e5f0e0f037ff8aff37647550e9cc5c804987))
+* **deps:** Update dependency vite to v7.1.12 ([#607](https://github.com/Notifycal/static-landing/issues/607)) ([b5c31d0](https://github.com/Notifycal/static-landing/commit/b5c31d0514263e629ebf28e7245a7f08f60f0d70))
+* **deps:** Update Node.js Dependencies ([#588](https://github.com/Notifycal/static-landing/issues/588)) ([eb19f18](https://github.com/Notifycal/static-landing/commit/eb19f1845fad44e68398b5bb195fbbfaf81cadb5))
+* **deps:** Update Node.js Dependencies ([#595](https://github.com/Notifycal/static-landing/issues/595)) ([3f3ed4e](https://github.com/Notifycal/static-landing/commit/3f3ed4e6905b3d6856a565dc501f7ac04bbaa7be))
+* **deps:** Update Node.js Dependencies ([#601](https://github.com/Notifycal/static-landing/issues/601)) ([af0c083](https://github.com/Notifycal/static-landing/commit/af0c083e08246c571df47898ade9e0bd7339584a))
+* **deps:** Update Node.js Dependencies ([#605](https://github.com/Notifycal/static-landing/issues/605)) ([25c58ac](https://github.com/Notifycal/static-landing/commit/25c58acdc36c42acc12c49d2b9f6a22379e8454a))
+* **deps:** Update Node.js Dependencies ([#608](https://github.com/Notifycal/static-landing/issues/608)) ([ab53b7e](https://github.com/Notifycal/static-landing/commit/ab53b7ed31a381bec68762d46e9ca3e49b2b8fbd))
+* **deps:** Update Node.js Dependencies ([#613](https://github.com/Notifycal/static-landing/issues/613)) ([888be1c](https://github.com/Notifycal/static-landing/commit/888be1c7f6d415dca4a448eb938011a4e98a85b3))
+
 ## [2.5.0](https://github.com/Notifycal/static-landing/compare/v2.4.3...v2.5.0) (2025-10-07)
 
 
