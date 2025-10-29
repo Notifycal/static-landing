@@ -5,30 +5,30 @@ type CategoryTranslations = {
 };
 
 export const categoryTranslations: CategoryTranslations = {
-  development: {
-    es: 'Desarrollo',
-    en: 'Development',
-    ca: 'Desenvolupament'
+  technology: {
+    es: 'Tecnología',
+    en: 'Technology',
+    ca: 'Tecnologia'
   },
-  design: {
-    es: 'Diseño',
-    en: 'Design',
-    ca: 'Disseny'
+  communication: {
+    es: 'Comunicación',
+    en: 'Communication',
+    ca: 'Comunicació'
   },
-  'email marketing': {
-    es: 'Marketing por email',
-    en: 'Email marketing',
-    ca: 'Màrqueting per email'
+  legislation: {
+    es: 'Legislación',
+    en: 'Legislation',
+    ca: 'Legislació'
   },
-  updates: {
-    es: 'Actualizaciones',
-    en: 'Updates',
-    ca: 'Actualitzacions'
+  guides: {
+    es: 'Guías',
+    en: 'Guides',
+    ca: 'Guies'
   },
-  'rate optimization': {
-    es: 'Optimización de tasas',
-    en: 'Rate optimization',
-    ca: 'Optimització de taxes'
+  savings: {
+    es: 'Ahorro',
+    en: 'Savings',
+    ca: 'Estalvi'
   },
   'all categories': {
     es: 'Todas las categorías',

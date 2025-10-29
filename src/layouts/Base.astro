@@ -44,7 +44,7 @@ const {
   data: { description }
 } = await getCollectionEntryByLang('site', lang);
 const favicon = config.site.favicon;
-const finalTitle = plainify(metaTitle || title || 'Notifycal') || 'Notifycal';
+const finalTitle = (await plainify(metaTitle || title || 'Notifycal')) || 'Notifycal';
 ---
 
 <!doctype html>

@@ -38,7 +38,7 @@ const {
 
 const seoDefaults = getSEODefaults(lang);
 
-const finalDescription = plainify(description || seoDefaults.description) || seoDefaults.description;
+const finalDescription = (await plainify(description || seoDefaults.description)) || seoDefaults.description;
 const finalImage = image ? `${baseUrl}${image}` : `${baseUrl}${seoDefaults.image}`;
 const finalCanonical = canonical || `${baseUrl}${Astro.url.pathname}`;
 
