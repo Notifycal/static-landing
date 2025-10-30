@@ -14,7 +14,7 @@ RCS (Rich Communication Services) és el protocol de missatgeria que està trans
 A diferència de l'antiquat SMS que portem dècades utilitzant, RCS permet enviar fotos i vídeos en alta resolució, compartir ubicació en temps real, crear xats grupals avançats, veure quan algú està escrivint i confirmar la lectura de missatges. Tot això funcionant directament des de l'app de missatges que ja tens al teu mòbil.
 
 <Blockquote name="Equip Notifycal">
-<strong>Notifycal compta amb integració RCS disponible per a clients que la necessitin.</strong> Si t'interessa aprofitar els avantatges d'aquest protocol de comunicació de nova generació per als teus recordatoris automatitzats. <a href="mailto:info@notifycal.com">Contacta'ns per a més info</a>
+<strong>Notifycal compta amb integració RCS disponible per a clients que la necessitin.</strong> Si t'interessa aprofitar els avantatges d'aquest protocol de comunicació de nova generació per als teus recordatoris automatitzats. <a href="https://www.instagram.com/notifycal/">Contacta'ns per a més info</a>
 </Blockquote>
 
 ### El substitut natural de WhatsApp

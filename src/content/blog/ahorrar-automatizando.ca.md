@@ -181,4 +181,4 @@ Cada hora que dediques a tasques que una màquina pot fer per tu és una hora qu
 
 **Vols calcular quant pots estalviar en el teu cas concret?**
 
-<a href="mailto:info@notifycal.com">Escriu-nos</a> i t'ajudem a fer els números amb el teu volum de recordatoris. Sense compromís, sense lletra petita. Només números reals perquè prenguis la millor decisió per al teu negoci.
+<a href="https://www.instagram.com/notifycal/">Escriu-nos</a> i t'ajudem a fer els números amb el teu volum de recordatoris. Sense compromís, sense lletra petita. Només números reals perquè prenguis la millor decisió per al teu negoci.
