@@ -151,4 +151,4 @@ Pero si tu negocio es más directo, si tus clientes ya te conocen, si prefieres 
 
 Se trata de saber que tienes opciones. Y que a veces, las herramientas más simples son las más poderosas.
 
-¿Te interesa configurar esta integración o añadir Notifycal a tu flujo de trabajo? <a href="mailto:info@notifycal.com">Contáctanos</a> y te ayudamos a configurarlo todo.
+¿Te interesa configurar esta integración o añadir Notifycal a tu flujo de trabajo? <a href="https://www.instagram.com/notifycal/">Contáctanos</a> y te ayudamos a configurarlo todo.

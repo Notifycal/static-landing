@@ -181,4 +181,4 @@ It's a necessity.
 
 **Want to calculate how much you can save in your specific case?**
 
-<a href="mailto:info@notifycal.com">Write to us</a> and we'll help you do the math with your volume of reminders. No commitment, no fine print. Just real numbers so you can make the best decision for your business.
+<a href="https://www.instagram.com/notifycal/">Write to us</a> and we'll help you do the math with your volume of reminders. No commitment, no fine print. Just real numbers so you can make the best decision for your business.
