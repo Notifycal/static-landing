@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.1](https://github.com/Notifycal/static-landing/compare/v2.6.0...v2.6.1) (2025-10-30)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency astro to v5.15.3 ([#616](https://github.com/Notifycal/static-landing/issues/616)) ([197b25a](https://github.com/Notifycal/static-landing/commit/197b25a911d99eaa30cc151c6f5261d8aed23744))
+* use Instagram profile link rather than mailto link ([#618](https://github.com/Notifycal/static-landing/issues/618)) ([188497c](https://github.com/Notifycal/static-landing/commit/188497cd74cf7dd5c63435d8ea19a2178da959a0))
+
 ## [2.6.0](https://github.com/Notifycal/static-landing/compare/v2.5.1...v2.6.0) (2025-10-29)
 
 
