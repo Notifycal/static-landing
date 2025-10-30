@@ -181,4 +181,4 @@ Es una necesidad.
 
 **¿Quieres calcular cuánto puedes ahorrar en tu caso concreto?**
 
-<a href="mailto:info@notifycal.com">Escríbenos</a> y te ayudamos a hacer los números con tu volumen de recordatorios. Sin compromiso, sin letra pequeña. Solo números reales para que tomes la mejor decisión para tu negocio.
+<a href="https://www.instagram.com/notifycal/">Escríbenos</a> y te ayudamos a hacer los números con tu volumen de recordatorios. Sin compromiso, sin letra pequeña. Solo números reales para que tomes la mejor decisión para tu negocio.

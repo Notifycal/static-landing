@@ -151,4 +151,4 @@ But if your business is more straightforward, if your clients already know you, 
 
 It's about knowing you have options. And that sometimes, the simplest tools are the most powerful.
 
-Interested in setting up this integration or adding Notifycal to your workflow? <a href="mailto:info@notifycal.com">Contact us</a> and we'll help you configure everything.
+Interested in setting up this integration or adding Notifycal to your workflow? <a href="https://www.instagram.com/notifycal/">Contact us</a> and we'll help you configure everything.

@@ -70,4 +70,4 @@ WhatsApp Business Platform requires our users to get an additional number, lose 
 
 The decision not to integrate WhatsApp Business Platform is not due to lack of technical capability. It's a conscious decision based on offering accessible solutions for the majority of our users.
 
-That said, if your organization has the needs and resources to take advantage of WhatsApp Business Platform, and you're interested in us implementing this integration, <a href="mailto:info@notifycal.com">contact us for more information</a> and we'll study it. Each case is different, and we'll be happy to evaluate if it makes sense for your specific situation.
+That said, if your organization has the needs and resources to take advantage of WhatsApp Business Platform, and you're interested in us implementing this integration, <a href="https://www.instagram.com/notifycal/">contact us for more information</a> and we'll study it. Each case is different, and we'll be happy to evaluate if it makes sense for your specific situation.

@@ -151,4 +151,4 @@ Però si el teu negoci és més directe, si els teus clients ja et coneixen, si 
 
 Es tracta de saber que tens opcions. I que de vegades, les eines més simples són les més potents.
 
-T'interessa configurar aquesta integració o afegir Notifycal al teu flux de treball? <a href="mailto:info@notifycal.com">Contacta'ns</a> i t'ajudem a configurar-ho tot.
+T'interessa configurar aquesta integració o afegir Notifycal al teu flux de treball? <a href="https://www.instagram.com/notifycal/">Contacta'ns</a> i t'ajudem a configurar-ho tot.

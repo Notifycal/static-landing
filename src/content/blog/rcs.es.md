@@ -14,7 +14,7 @@ RCS (Rich Communication Services) es el protocolo de mensajería que está trans
 A diferencia del anticuado SMS que llevamos décadas usando, RCS permite enviar fotos y vídeos en alta resolución, compartir ubicación en tiempo real, crear chats grupales avanzados, ver cuándo alguien está escribiendo y confirmar la lectura de mensajes. Todo esto funcionando directamente desde la app de mensajes que ya tienes en tu móvil.
 
 <Blockquote name="Equipo Notifycal">
-<strong>Notifycal cuenta con integración RCS disponible para clientes que la necesiten.</strong> Si te interesa aprovechar las ventajas de este protocolo de comunicación de nueva generación para tus recordatorios automatizados. <a href="mailto:info@notifycal.com">Contáctanos para mas info</a>
+<strong>Notifycal cuenta con integración RCS disponible para clientes que la necesiten.</strong> Si te interesa aprovechar las ventajas de este protocolo de comunicación de nueva generación para tus recordatorios automatizados. <a href="https://www.instagram.com/notifycal/">Contáctanos para mas info</a>
 </Blockquote>
 
 ### El sustituto natural de WhatsApp
