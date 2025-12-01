@@ -13,6 +13,8 @@ main:
     children:
       - name: 'About us'
         url: '/about/'
+      - name: 'Partnerships'
+        url: '/partnerships/'
       - name: 'FAQ'
         url: '/#faq'
       - name: 'Roadmap'

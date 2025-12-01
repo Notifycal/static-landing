@@ -9,7 +9,7 @@ hero:
   content: 'Gestiona les teves cites amb recordatoris per SMS.<br/>Optimitza el teu temps i ofereix una experiència més professional.'
   mainButton:
     enable: true
-    label: 'Comença a estalviar temps'
+    label: 'Prova GRATUÏTA'
     link: 'https://private.notifycal.com'
   secondaryButton:
     enable: true
