@@ -328,7 +328,7 @@ const partnershipsCollection = defineCollection({
           description: z.string(),
           benefits: z.array(z.string()),
           ideal: z.string(),
-          icon: z.string()
+          icon: z.enum(['code', 'briefcase', 'users'])
         })
       )
     }),

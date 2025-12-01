@@ -18,8 +18,8 @@ const { hero } = Astro.props;
       <div class="lg:col-10">
         <div class="text-center">
           <h1 class="mb-4">{hero.title}</h1>
-          <h2 class="mb-6 text-2xl font-normal text-dark/80">{hero.subtitle}</h2>
-          <p class="mx-auto max-w-3xl text-lg text-dark/70" set:html={markdownify(hero.description)} />
+          <h2 class="text-dark/80 mb-6 text-2xl font-normal">{hero.subtitle}</h2>
+          <p class="text-dark/70 mx-auto max-w-3xl text-lg" set:html={markdownify(hero.description)} />
         </div>
       </div>
     </div>

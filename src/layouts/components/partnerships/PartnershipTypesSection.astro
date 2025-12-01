@@ -1,4 +1,5 @@
 ---
+import type { IconType } from 'react-icons';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { IoBriefcase, IoCode, IoPeople } from 'react-icons/io5';
 
@@ -6,13 +7,19 @@ interface Props {
   partnershipTypes: {
     title: string;
     description: string;
-    types: Array;
+    types: Array<{
+      title: string;
+      description: string;
+      icon: 'code' | 'briefcase' | 'users';
+      benefits: string[];
+      ideal: string;
+    }>;
   };
 }
 
 const { partnershipTypes } = Astro.props;
 
-const iconMap: Record = {
+const iconMap: Record<Props['partnershipTypes']['types'][0]['icon'], IconType> = {
   code: IoCode,
   briefcase: IoBriefcase,
   users: IoPeople

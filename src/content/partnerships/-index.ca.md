@@ -29,7 +29,7 @@ whyPartner:
 
 partnershipTypes:
   title: 'Modalitats de col·laboració'
-  description: 'Tria l''opció que millor s''adapti a la teva organització'
+  description: "Tria l'opció que millor s'adapti a la teva organització"
   types:
     - title: 'Integració Tècnica (OEM/Embedded)'
       description: 'Integra el nostre motor de recordatoris al teu CRM, ERP o plataforma de gestió. Els teus usuaris no surten del teu sistema.'
