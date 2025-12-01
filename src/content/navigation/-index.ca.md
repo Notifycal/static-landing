@@ -13,6 +13,8 @@ main:
     children:
       - name: 'Sobre nosaltres'
         url: '/about/'
+      - name: 'Col·labora amb nosaltres'
+        url: '/partnerships/'
       - name: 'FAQ'
         url: '/#faq'
       - name: 'Roadmap'

@@ -295,6 +295,53 @@ const categoriesCollection = defineCollection({
   })
 });
 
+const partnershipsCollection = defineCollection({
+  loader: glob({ pattern: '**/-*.{md,mdx}', base: 'src/content/partnerships' }),
+  schema: z.object({
+    title: z.string(),
+    pageTitle: z.string(),
+    metaTitle: z.string(),
+    description: z.string(),
+    image: z.string(),
+    hero: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      description: z.string()
+    }),
+    whyPartner: z.object({
+      title: z.string(),
+      description: z.string(),
+      benefits: z.array(
+        z.object({
+          title: z.string(),
+          description: z.string(),
+          icon: z.string()
+        })
+      )
+    }),
+    partnershipTypes: z.object({
+      title: z.string(),
+      description: z.string(),
+      types: z.array(
+        z.object({
+          title: z.string(),
+          description: z.string(),
+          benefits: z.array(z.string()),
+          ideal: z.string(),
+          icon: z.enum(['code', 'briefcase', 'users'])
+        })
+      )
+    }),
+    cta: z.object({
+      title: z.string(),
+      description: z.string(),
+      email: z.string(),
+      buttonLabel: z.string(),
+      buttonLink: z.string()
+    })
+  })
+});
+
 export const collections = {
   home: homeCollection,
   about: aboutCollection,
@@ -306,5 +353,6 @@ export const collections = {
   navigation: navigationCollection,
   blog: blogCollection,
   categories: categoriesCollection,
+  partnerships: partnershipsCollection,
   '404': _404Collection
 };

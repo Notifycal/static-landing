@@ -1,0 +1,35 @@
+---
+interface Props {
+  cta: {
+    title: string;
+    description: string;
+    email: string;
+    buttonLabel: string;
+    buttonLink: string;
+  };
+}
+
+const { cta } = Astro.props;
+---
+
+<section>
+  <div class="bg-gradient justify-center">
+    <div class="container">
+      <div class="px-10 py-20 text-center lg:text-left">
+        <div class="flex flex-col lg:flex-row [&>div]:flex-1 [&>div]:px-3">
+          <div class="flex flex-col">
+            <h2 class="text-white">{cta.title}</h2>
+            <a href={cta.buttonLink} class="btn btn-cta btn-lg btn-accent2 mt-8 h-auto self-center lg:self-start">
+              {cta.buttonLabel}
+            </a>
+          </div>
+          <div class="mt-8 lg:mt-0">
+            <p class="text-lg text-white">
+              {cta.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

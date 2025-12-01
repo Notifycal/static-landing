@@ -1,0 +1,77 @@
+---
+import type { IconType } from 'react-icons';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import { IoBriefcase, IoCode, IoPeople } from 'react-icons/io5';
+
+interface Props {
+  partnershipTypes: {
+    title: string;
+    description: string;
+    types: Array<{
+      title: string;
+      description: string;
+      icon: 'code' | 'briefcase' | 'users';
+      benefits: string[];
+      ideal: string;
+    }>;
+  };
+}
+
+const { partnershipTypes } = Astro.props;
+
+const iconMap: Record<Props['partnershipTypes']['types'][0]['icon'], IconType> = {
+  code: IoCode,
+  briefcase: IoBriefcase,
+  users: IoPeople
+};
+---
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-center">
+      <div class="lg:col-10">
+        <div class="mb-12 text-center">
+          <h2 class="mb-4">{partnershipTypes.title}</h2>
+          <p class="text-dark/70 text-lg">{partnershipTypes.description}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row gy-10">
+      {
+        partnershipTypes.types.map((type) => {
+          const IconComponent = iconMap[type.icon] || AiFillCheckCircle;
+          return (
+            <div class="my-2 md:col-6 lg:col-4">
+              <div class="h-full rounded-2xl bg-white p-10 shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl">
+                <div class="mb-6 text-center">
+                  <div class="bg-primary/10 mx-auto mb-4 flex size-16 items-center justify-center rounded-full">
+                    <IconComponent className="size-8 text-primary" />
+                  </div>
+                  <h3 class="mb-3 text-xl font-semibold">{type.title}</h3>
+                  <p class="text-dark/70">{type.description}</p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-dark/60 mb-3 text-sm font-semibold tracking-wide uppercase">Incluye</h4>
+                  <ul class="space-y-2">
+                    {type.benefits.map((benefit) => (
+                      <li class="flex items-start gap-2 text-sm">
+                        <AiFillCheckCircle className="mt-0.5 size-4 shrink-0 text-success" />
+                        <span class="text-dark/80">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="bg-gradient/10 rounded-lg px-4 py-3">
+                  <p class="text-xs">
+                    <span class="text-dark font-semibold">Ideal para:</span>{' '}
+                    <span class="text-dark/70">{type.ideal}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

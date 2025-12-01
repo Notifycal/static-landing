@@ -9,7 +9,7 @@ hero:
   content: 'Manage your appointments with SMS reminders.<br/>Optimize your time and offer a more professional experience.'
   mainButton:
     enable: true
-    label: 'Start saving time'
+    label: 'FREE trial'
     link: 'https://private.notifycal.com'
   secondaryButton:
     enable: true

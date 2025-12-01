@@ -1,0 +1,25 @@
+---
+import Base from '@/layouts/Base.astro';
+import HeroSection from '@/layouts/components/partnerships/HeroSection.astro';
+import WhyPartnerSection from '@/layouts/components/partnerships/WhyPartnerSection.astro';
+import PartnershipTypesSection from '@/layouts/components/partnerships/PartnershipTypesSection.astro';
+import CTASection from '@/layouts/components/partnerships/CTASection.astro';
+import { getCollectionEntryByLang } from '@/lib/i18n';
+import { getLangFromUrl } from '@/lib/i18n-const';
+
+const lang = getLangFromUrl(Astro.url);
+const partnerships = await getCollectionEntryByLang('partnerships', lang);
+const { hero, whyPartner, partnershipTypes, cta } = partnerships.data;
+---
+
+<Base
+  title={partnerships.data.title}
+  metaTitle={partnerships.data.metaTitle}
+  description={partnerships.data.description}
+  image={partnerships.data.image}
+>
+  <HeroSection hero={hero} />
+  <WhyPartnerSection whyPartner={whyPartner} />
+  <PartnershipTypesSection partnershipTypes={partnershipTypes} />
+  <CTASection cta={cta} />
+</Base>
