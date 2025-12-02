@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.1](https://github.com/Notifycal/static-landing/compare/v2.7.0...v2.7.1) (2025-12-02)
+
+
+### Bug Fixes
+
+* upgrade nodejs build ([#664](https://github.com/Notifycal/static-landing/issues/664)) ([4668b03](https://github.com/Notifycal/static-landing/commit/4668b03844bf59375732de79fdd12bb6ff201e27))
+
 ## [2.7.0](https://github.com/Notifycal/static-landing/compare/v2.6.1...v2.7.0) (2025-12-01)
 
 
