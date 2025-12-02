@@ -64,5 +64,5 @@ cta:
   description: 'Charlemos 15 minutos para entender tu caso y encontrar la mejor forma de trabajar juntos.'
   email: 'colaboraciones@notifycal.com'
   buttonLabel: 'Agenda una llamada'
-  buttonLink: 'mailto:colaboraciones@notifycal.com?subject=Interés%20en%20colaboración%20con%20Notifycal'
+  buttonLink: 'https://linkedin.com/company/notifycal/'
 ---
