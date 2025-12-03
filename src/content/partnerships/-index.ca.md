@@ -64,5 +64,5 @@ cta:
   description: 'Parlem 15 minuts per entendre el teu cas i trobar la millor forma de treballar junts.'
   email: 'colaboraciones@notifycal.com'
   buttonLabel: 'Agenda una trucada'
-  buttonLink: 'mailto:colaboraciones@notifycal.com?subject=Interès%20en%20col·laboració%20amb%20Notifycal'
+  buttonLink: 'https://linkedin.com/company/notifycal/'
 ---

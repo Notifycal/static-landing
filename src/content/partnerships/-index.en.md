@@ -64,5 +64,5 @@ cta:
   description: "Let's chat for 15 minutes to understand your case and find the best way to work together."
   email: 'colaboraciones@notifycal.com'
   buttonLabel: 'Schedule a call'
-  buttonLink: 'mailto:colaboraciones@notifycal.com?subject=Interest%20in%20partnership%20with%20Notifycal'
+  buttonLink: 'https://linkedin.com/company/notifycal/'
 ---
