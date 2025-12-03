@@ -146,7 +146,7 @@ Si el teu negoci necessita gestionar facturació o comunicacions amb clients de 
 
 **Fonts:**
 - [Agència Tributària: Sistemes Informàtics de Facturació i VERIFACTU](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html)
-- [VeriFactu 2025: nou sistema de facturació, terminis i requisits](https://blog.groupseres.com/nuevo-sistema-facturacion-verifactu)
+- [Hisenda retarda un any Verifactu - elDiario.es](https://www.eldiario.es/economia/hacienda-retrasa-ano-entrada-vigor-verifactu-nuevos-sistema-facturacion-pymes-autonomos_1_12813478.html)
 - [Hisenda dóna un respir a empreses i autònoms i retarda Verifactu al 2027](https://www.eleconomista.es/legal/noticias/13672020/12/25/hacienda-da-un-respiro-a-empresas-y-autonomos-y-retrasa-verifactu-a-2027.html)
-- [El Govern ajorna al 2027 l'entrada en vigor de Verifactu després de les crítiques d'autònoms i empreses](https://okdiario.com/economia/gobierno-aplaza-2027-entrada-vigor-verifactu-criticas-autonomos-empresas-15864824)
+- [Hisenda ajorna fins el 2027 l'obligació de facturar amb Verifactu - Infobae](https://www.infobae.com/espana/2025/12/02/hacienda-aplaza-hasta-2027-la-obligacion-de-facturar-con-verifactu-para-autonomos-y-pymes/)
 - [Verifactu estava a punt d'arribar. El Govern acaba d'ajornar-lo, i per un motiu polític](https://www.xataka.com/legislacion-y-derechos/verifactu-estaba-al-caer-gobierno-acaba-aplazarlo)

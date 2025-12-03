@@ -146,7 +146,7 @@ If your business needs to manage invoicing or client communications efficiently 
 
 **Sources:**
 - [Tax Agency: Invoicing Computer Systems and VERIFACTU](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html)
-- [VeriFactu 2025: new invoicing system, deadlines and requirements](https://blog.groupseres.com/nuevo-sistema-facturacion-verifactu)
+- [Tax Ministry delays Verifactu by one year - elDiario.es](https://www.eldiario.es/economia/hacienda-retrasa-ano-entrada-vigor-verifactu-nuevos-sistema-facturacion-pymes-autonomos_1_12813478.html)
 - [Tax Agency gives businesses and freelancers a breather and delays Verifactu to 2027](https://www.eleconomista.es/legal/noticias/13672020/12/25/hacienda-da-un-respiro-a-empresas-y-autonomos-y-retrasa-verifactu-a-2027.html)
-- [Government postpones Verifactu's entry into force to 2027 after criticism from freelancers and businesses](https://okdiario.com/economia/gobierno-aplaza-2027-entrada-vigor-verifactu-criticas-autonomos-empresas-15864824)
+- [Tax Ministry postpones obligation to invoice with Verifactu until 2027 - Infobae](https://www.infobae.com/espana/2025/12/02/hacienda-aplaza-hasta-2027-la-obligacion-de-facturar-con-verifactu-para-autonomos-y-pymes/)
 - [Verifactu was imminent. The Government has just postponed it, for a political reason](https://www.xataka.com/legislacion-y-derechos/verifactu-estaba-al-caer-gobierno-acaba-aplazarlo)
