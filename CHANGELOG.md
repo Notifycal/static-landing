@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.3](https://github.com/Notifycal/static-landing/compare/v2.7.2...v2.7.3) (2025-12-03)
+
+
+### Bug Fixes
+
+* replace email links ([#669](https://github.com/Notifycal/static-landing/issues/669)) ([35e01d9](https://github.com/Notifycal/static-landing/commit/35e01d97eca16c6aa9c5272f489bd6a7c0367b93))
+
 ## [2.7.2](https://github.com/Notifycal/static-landing/compare/v2.7.1...v2.7.2) (2025-12-02)
 
 
