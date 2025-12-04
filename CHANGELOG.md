@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/Notifycal/static-landing/compare/v2.7.3...v2.8.0) (2025-12-04)
+
+
+### Features
+
+* verifactu ([#672](https://github.com/Notifycal/static-landing/issues/672)) ([d9d9d81](https://github.com/Notifycal/static-landing/commit/d9d9d815806502efe8171f4f2c2a8fcfd39be456))
+
+
+### Bug Fixes
+
+* **deps:** Update Node.js Dependencies ([#673](https://github.com/Notifycal/static-landing/issues/673)) ([060c115](https://github.com/Notifycal/static-landing/commit/060c115fa5e58bf1574c5857ea0287c7046fd1a3))
+
 ## [2.7.3](https://github.com/Notifycal/static-landing/compare/v2.7.2...v2.7.3) (2025-12-03)
 
 
