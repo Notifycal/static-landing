@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.1](https://github.com/Notifycal/static-landing/compare/v2.8.0...v2.8.1) (2025-12-05)
+
+
+### Bug Fixes
+
+* tier card button loading ([#675](https://github.com/Notifycal/static-landing/issues/675)) ([392d4ee](https://github.com/Notifycal/static-landing/commit/392d4ee4e1f221158909cf0b7dcbbde100155e05))
+
 ## [2.8.0](https://github.com/Notifycal/static-landing/compare/v2.7.3...v2.8.0) (2025-12-04)
 
 
