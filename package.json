@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "4.3.12",
+    "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
     "@astrojs/rss": "4.0.14",
     "@astrojs/sitemap": "^3.4.2",
@@ -29,7 +29,7 @@
     "@notifycal/shared": "7.16.2",
     "@playform/compress": "^0.2.0",
     "@tabler/icons-react": "^3.34.1",
-    "astro": "5.16.4",
+    "astro": "5.16.5",
     "astro-auto-import": "^0.4.4",
     "date-fns": "^4.1.0",
     "github-slugger": "^2.0.0",
