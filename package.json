@@ -42,7 +42,7 @@
     "react-youtube": "^10.1.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "shufflejs": "^6.1.2",
+    "shufflejs": "^7.0.0",
     "swiper": "^12.0.0",
     "vanilla-cookieconsent": "^3.1.0",
     "vite": "^7.0.6"
