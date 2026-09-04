@@ -22,7 +22,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "5.0.0",
     "@astrojs/react": "5.0.0",
-    "@astrojs/rss": "4.0.17",
+    "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "^3.4.2",
     "@justinribeiro/lite-youtube": "^1.8.2",
     "@mantine/core": "^8.2.4",
